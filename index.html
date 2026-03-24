@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta -->
+  <title>StoreCraft — Shopify Stores & Business Websites | 7-Day Delivery UK</title>
+  <meta name="description" content="Professional Shopify stores & local business websites for UK small brands. From £350. Done for you in 7 days. 50/50 payment. Zero risk." />
+  <meta name="keywords" content="Shopify store UK, small business website UK, Shopify developer UK, local business website Wolverhampton, ecommerce store setup UK" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vaelariss.github.io/portfolio/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="StoreCraft — Shopify Stores That Actually Convert" />
+  <meta property="og:description" content="7-day delivery. 50/50 payment. Full Shopify stores from £400. Local business websites from £350." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vaelariss.github.io/portfolio/" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "StoreCraft",
+    "description": "Shopify stores and local business websites for UK small brands",
+    "url": "https://vaelariss.github.io/portfolio/",
+    "areaServed": "GB",
+    "priceRange": "££",
+    "serviceType": ["Shopify Store Development", "Local Business Website Design"],
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Shopify Store Build",
+        "price": "400",
+        "priceCurrency": "GBP"
+      },
+      {
+        "@type": "Offer",
+        "name": "Local Business Website",
+        "price": "350",
+        "priceCurrency": "GBP"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" />
+
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black:    #0a0908;
+      --ink:      #111010;
+      --card:     #161412;
+      --border:   rgba(255,255,255,0.07);
+      --gold:     #c9a84c;
+      --gold-lt:  #e2c97e;
+      --cream:    #f4ede4;
+      --muted:    #6b6560;
+      --text:     #d8d0c8;
+      --white:    #faf8f5;
+      --radius:   4px;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-ui:      'Syne', sans-serif;
+      --font-body:    'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ── CUSTOM CURSOR ── */
+    .cursor {
+      position: fixed;
+      width: 10px; height: 10px;
+      background: var(--gold);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease;
+      mix-blend-mode: difference;
+    }
+    .cursor-ring {
+      position: fixed;
+      width: 36px; height: 36px;
+      border: 1px solid rgba(201,168,76,0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease;
+    }
+    body:has(a:hover) .cursor, body:has(button:hover) .cursor {
+      width: 20px; height: 20px;
+    }
+
+    /* ── GRAIN OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.022;
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* ── SELECTION ── */
+    ::selection { background: var(--gold); color: var(--black); }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.1; }
+    h4, h5, nav, button, .label { font-family: var(--font-ui); }
+
+    /* ── LAYOUT ── */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    section { position: relative; }
+
+    /* ── ENTRANCE ANIMATIONS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: background 0.4s ease, padding 0.4s ease, border-color 0.4s ease;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled {
+      background: rgba(10,9,8,0.94);
+      backdrop-filter: blur(20px);
+      padding: 14px 0;
+      border-color: var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-ui);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 32px; align-items: center; }
+    .nav-links a {
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--black) !important;
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      font-weight: 600 !important;
+      letter-spacing: 0.08em !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--gold-lt) !important; transform: translateY(-1px); }
+
+    .nav-mobile-btn {
+      display: none;
+      background: none; border: 1px solid var(--border);
+      color: var(--white); padding: 8px 12px;
+      border-radius: var(--radius);
+      font-family: var(--font-ui);
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(201,168,76,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.03) 0%, transparent 50%);
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 70%);
+    }
+    .hero-availability {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 100px;
+      padding: 6px 14px 6px 10px;
+      margin-bottom: 36px;
+      width: fit-content;
+    }
+    .hero-availability .dot {
+      width: 7px; height: 7px;
+      background: #4ade80;
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.85); }
+    }
+    .hero-availability span {
+      font-family: var(--font-ui);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold-lt);
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-ui);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(52px, 8vw, 100px);
+      color: var(--white);
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+    .hero h1 .line-indent {
+      display: block;
+      padding-left: clamp(40px, 6vw, 120px);
+    }
+
+    .hero-sub {
+      max-width: 520px;
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 32px 0 44px;
+      font-weight: 300;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 400; }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold);
+      color: var(--black);
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-family: var(--font-ui);
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 0 0 rgba(201,168,76,0);
+    }
+    .btn-primary:hover {
+      background: var(--gold-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201,168,76,0.25);
+    }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-family: var(--font-ui);
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold-lt);
+      background: rgba(201,168,76,0.04);
+    }
+
+    .hero-stats {
+      display: flex; gap: 48px;
+      margin-top: 72px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-stat-num {
+      font-family: var(--font-display);
+      font-size: 42px; font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+    }
+    .hero-stat-num span { color: var(--gold); }
+    .hero-stat-label {
+      font-family: var(--font-ui);
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ── TICKER ── */
+    .ticker {
+      background: var(--gold);
+      padding: 13px 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: ticker-scroll 30s linear infinite;
+    }
+    @keyframes ticker-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 0 28px;
+      font-family: var(--font-ui);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--black);
+      white-space: nowrap;
+    }
+    .ticker-item::after {
+      content: '✦';
+      font-size: 8px;
+      opacity: 0.5;
+    }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      font-family: var(--font-ui);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--gold);
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 20px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px; height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-size: clamp(36px, 5vw, 64px);
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .section-title em { font-style: italic; color: var(--gold-lt); }
+
+    .section-sub {
+      font-size: 16px; color: var(--muted);
+      max-width: 520px; line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 120px 0;
+    }
+    .services-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      gap: 40px; flex-wrap: wrap;
+      margin-bottom: 72px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .service-card {
+      background: var(--card);
+      padding: 36px 32px;
+      position: relative;
+      transition: background 0.3s;
+      overflow: hidden;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .service-card:hover { background: #1a1714; }
+    .service-card:hover::before { opacity: 1; }
+
+    .service-num {
+      font-family: var(--font-display);
+      font-size: 11px; font-weight: 400;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+    .service-icon {
+      font-size: 22px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .service-card h3 {
+      font-size: 20px;
+      color: var(--white);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .service-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .service-arrow {
+      position: absolute;
+      top: 32px; right: 32px;
+      color: var(--border);
+      font-size: 14px;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .service-card:hover .service-arrow {
+      color: var(--gold);
+      transform: translate(2px, -2px);
+    }
+
+    /* ── HOW IT WORKS ── */
+    .process {
+      padding: 120px 0;
+      background: var(--ink);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .process-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .process-header .section-label { justify-content: center; }
+    .process-header .section-label::before { display: none; }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: 12.5%; right: 12.5%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+    }
+    .process-step {
+      padding: 0 24px;
+      text-align: center;
+    }
+    .step-circle {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--card);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 28px;
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .process-step:hover .step-circle {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.08);
+    }
+    .step-day {
+      font-family: var(--font-ui);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .process-step h3 {
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .process-step p {
+      font-size: 13px; color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── WORK ── */
+    .work {
+      padding: 120px 0;
+    }
+    .work-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      flex-wrap: wrap; gap: 24px;
+      margin-bottom: 64px;
+    }
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .work-card {
+      background: var(--card);
+      padding: 52px 48px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: block;
+    }
+    .work-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .work-card:hover { background: #1a1714; }
+    .work-card:hover::after { opacity: 1; }
+
+    .work-tag {
+      display: inline-flex; gap: 6px; align-items: center;
+      margin-bottom: 28px;
+    }
+    .tag {
+      font-family: var(--font-ui);
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+    .tag-live {
+      border-color: rgba(74,222,128,0.3);
+      color: #4ade80;
+      background: rgba(74,222,128,0.06);
+    }
+    .work-card h3 {
+      font-size: 36px;
+      color: var(--white);
+      margin-bottom: 12px;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+    .work-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 360px;
+      margin-bottom: 32px;
+    }
+    .work-meta {
+      display: flex; gap: 20px; flex-wrap: wrap;
+    }
+    .work-meta-item {
+      font-family: var(--font-ui);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .work-meta-item strong { color: var(--gold); font-weight: 600; }
+    .work-link-arrow {
+      position: absolute;
+      top: 48px; right: 48px;
+      width: 40px; height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted);
+      font-size: 14px;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s, background 0.2s;
+    }
+    .work-card:hover .work-link-arrow {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: rotate(45deg);
+      background: rgba(201,168,76,0.08);
+    }
+
+    /* ── WORK SINGLE CARD ── */
+    .work-grid-single { grid-template-columns: 1fr; }
+    .work-card-full { max-width: 100%; }
+    .work-card-full p { max-width: 600px; }
+    .work-card-full .work-meta { gap: 28px; }
+
+    /* ── EARLY ADOPTER ── */
+    .early {
+      padding: 120px 0;
+      border-top: 1px solid var(--border);
+    }
+    .early-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .early-card {
+      background: var(--card);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      padding: 40px 36px;
+      background: linear-gradient(135deg, #1a1510 0%, var(--card) 100%);
+    }
+    .early-card-label {
+      font-family: var(--font-ui);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .early-card-label::after {
+      content: '';
+      flex: 1; height: 1px;
+      background: linear-gradient(90deg, rgba(201,168,76,0.3), transparent);
+    }
+    .early-pricing-row {
+      display: flex; align-items: center; gap: 0;
+      margin-bottom: 32px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .early-price-item {
+      flex: 1;
+      padding: 24px 20px;
+      text-align: center;
+    }
+    .early-divider-v {
+      width: 1px;
+      height: 80px;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+    .early-price-now {
+      font-family: var(--font-display);
+      font-size: 44px;
+      color: var(--white);
+      line-height: 1;
+    }
+    .early-price-later {
+      font-family: var(--font-ui);
+      font-size: 11px; font-weight: 600;
+      color: var(--gold);
+      margin: 6px 0 4px;
+      letter-spacing: 0.04em;
+    }
+    .early-price-type {
+      font-family: var(--font-ui);
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--muted);
+    }
+    .early-cta {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%;
+      background: var(--gold);
+      color: var(--black);
+      padding: 15px 24px;
+      border-radius: var(--radius);
+      font-family: var(--font-ui);
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .early-cta:hover {
+      background: var(--gold-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(201,168,76,0.28);
+    }
+    .early-note {
+      text-align: center;
+      font-size: 12px; color: var(--muted);
+      margin-top: 12px;
+    }
+    @media (max-width: 900px) {
+      .early-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ── TRUST ── */
+    .trust {
+      padding: 120px 0;
+      background: var(--ink);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 64px;
+    }
+    .trust-card {
+      background: var(--card);
+      padding: 44px 36px;
+    }
+    .trust-icon {
+      font-size: 26px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .trust-card h3 {
+      font-size: 20px;
+      color: var(--white);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .trust-card p {
+      font-size: 14px; color: var(--muted);
+      line-height: 1.65;
+    }
+    .trust-card p strong { color: var(--text); font-weight: 400; }
+
+    /* ── PRICING ── */
+    .pricing {
+      padding: 120px 0;
+    }
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .pricing-header .section-label { justify-content: center; }
+    .pricing-header .section-label::before { display: none; }
+    .pricing-header .section-sub { margin: 0 auto; text-align: center; }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .price-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 44px 40px;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .price-card:hover {
+      border-color: rgba(201,168,76,0.3);
+      transform: translateY(-4px);
+    }
+    .price-card.featured {
+      border-color: var(--gold);
+      background: linear-gradient(135deg, #1a1510 0%, var(--card) 100%);
+    }
+    .price-badge {
+      position: absolute;
+      top: -12px; left: 32px;
+      background: var(--gold);
+      color: var(--black);
+      font-family: var(--font-ui);
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+    .price-name {
+      font-family: var(--font-ui);
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 64px;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .price-amount sup {
+      font-size: 28px;
+      vertical-align: top;
+      margin-top: 12px;
+      color: var(--gold);
+    }
+    .price-note {
+      font-size: 12px; color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .price-divider {
+      height: 1px; background: var(--border);
+      margin: 24px 0;
+    }
+    .price-features {
+      list-style: none;
+      margin-bottom: 36px;
+    }
+    .price-features li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: var(--text);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
+    }
+    .price-features li:last-child { border-bottom: none; }
+    .price-features li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 12px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .price-cta {
+      display: block; width: 100%;
+      text-align: center;
+      padding: 14px 24px;
+      border-radius: var(--radius);
+      font-family: var(--font-ui);
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .price-cta-primary {
+      background: var(--gold); color: var(--black);
+    }
+    .price-cta-primary:hover {
+      background: var(--gold-lt);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.25);
+    }
+    .price-cta-ghost {
+      border: 1px solid var(--border); color: var(--text);
+    }
+    .price-cta-ghost:hover {
+      border-color: var(--gold); color: var(--gold-lt);
+      background: rgba(201,168,76,0.04);
+    }
+    .price-deposit {
+      text-align: center;
+      font-size: 12px; color: var(--muted);
+      margin-top: 12px;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 120px 0;
+      background: var(--ink);
+      border-top: 1px solid var(--border);
+    }
+    .faq-header {
+      max-width: 480px;
+      margin-bottom: 64px;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .faq-item {
+      background: var(--card);
+      padding: 32px 36px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .faq-item:hover { background: #1a1714; }
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
+    }
+    .faq-q h4 {
+      font-family: var(--font-ui);
+      font-size: 15px; font-weight: 600;
+      color: var(--white);
+      line-height: 1.4;
+    }
+    .faq-toggle {
+      width: 24px; height: 24px; flex-shrink: 0;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted);
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+    .faq-item.open .faq-toggle {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: rotate(45deg);
+    }
+    .faq-a {
+      font-size: 14px; color: var(--muted);
+      line-height: 1.7;
+      margin-top: 16px;
+      display: none;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      padding: 120px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-banner h2 {
+      font-size: clamp(40px, 6vw, 80px);
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .cta-banner h2 em { color: var(--gold-lt); }
+    .cta-banner p {
+      font-size: 16px; color: var(--muted);
+      margin-bottom: 44px;
+      font-weight: 300;
+    }
+    .cta-actions {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+    }
+    .cta-reassurance {
+      font-family: var(--font-ui);
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-top: 20px;
+    }
+    .cta-reassurance span { color: var(--gold); }
+
+    .btn-instagram {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: var(--radius);
+      font-family: var(--font-ui);
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(221,42,123,0.25);
+    }
+    .btn-instagram:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(221,42,123,0.35);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 48px 0 32px;
+      background: var(--ink);
+    }
+    .footer-inner {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-logo {
+      font-family: var(--font-ui);
+      font-size: 14px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-copy {
+      font-size: 12px; color: var(--muted);
+      text-align: center;
+    }
+    .footer-link {
+      font-family: var(--font-ui);
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-link:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-mobile-btn { display: block; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+      .process-steps::before { display: none; }
+      .work-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 480px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 28px; flex-wrap: wrap; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: clamp(44px, 12vw, 64px); }
+      .hero h1 .line-indent { padding-left: 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .work-card { padding: 36px 28px; }
+      .process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ── NAV ── -->
+  <nav id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">Store<span>Craft</span></a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://instagram.com/storecraftbuilds" target="_blank" class="nav-cta">Get Started</a>
+        </div>
+        <a href="https://instagram.com/storecraftbuilds" target="_blank" class="nav-mobile-btn">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="container" style="position:relative;z-index:2;">
+
+      <div class="hero-availability reveal">
+        <span class="dot"></span>
+        <span>Available for new projects</span>
+      </div>
+
+      <p class="hero-eyebrow reveal reveal-delay-1">UK Web Design · Shopify Specialist</p>
+
+      <h1 class="reveal reveal-delay-1">
+        Websites that
+        <em class="line-indent">actually sell.</em>
+      </h1>
+
+      <p class="hero-sub reveal reveal-delay-2">
+        I build <strong>Shopify stores</strong> and <strong>local business websites</strong> for small UK brands —
+        done for you, delivered in <strong>7 days</strong>, starting from <strong>£350</strong>.
+      </p>
+
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="https://instagram.com/storecraftbuilds" target="_blank" class="btn-primary">
+          Start Your Project →
+        </a>
+        <a href="#work" class="btn-ghost">See Real Work ↓</a>
+      </div>
+
+      <div class="hero-stats reveal reveal-delay-4">
+        <div>
+          <div class="hero-stat-num">7<span>d</span></div>
+          <div class="hero-stat-label">Delivery Guaranteed</div>
+        </div>
+        <div>
+          <div class="hero-stat-num"><span>£</span>350</div>
+          <div class="hero-stat-label">Starting Price</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">50<span>%</span></div>
+          <div class="hero-stat-label">Upfront Only</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">0<span>risk</span></div>
+          <div class="hero-stat-label">Pay Rest on Delivery</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TICKER ── -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">7-Day Delivery</span>
+      <span class="ticker-item">Shopify Stores</span>
+      <span class="ticker-item">Local Business Sites</span>
+      <span class="ticker-item">50/50 Payment</span>
+      <span class="ticker-item">UK Based</span>
+      <span class="ticker-item">Mobile Optimised</span>
+      <span class="ticker-item">Done For You</span>
+      <span class="ticker-item">Conversion Focused</span>
+      <span class="ticker-item">Free Revisions</span>
+      <span class="ticker-item">7-Day Delivery</span>
+      <span class="ticker-item">Shopify Stores</span>
+      <span class="ticker-item">Local Business Sites</span>
+      <span class="ticker-item">50/50 Payment</span>
+      <span class="ticker-item">UK Based</span>
+      <span class="ticker-item">Mobile Optimised</span>
+      <span class="ticker-item">Done For You</span>
+      <span class="ticker-item">Conversion Focused</span>
+      <span class="ticker-item">Free Revisions</span>
+    </div>
+  </div>
+
+  <!-- ── SERVICES ── -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services-header">
+        <div>
+          <p class="section-label reveal">What I Build</p>
+          <h2 class="section-title reveal reveal-delay-1">
+            Two services.<br><em>One goal.</em>
+          </h2>
+        </div>
+        <p class="section-sub reveal reveal-delay-2">
+          Every build is done for you, end to end. You brief me, I build it, you launch it — no back-and-forth, no confusion.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-num">01</div>
+          <span class="service-icon">🏗️</span>
+          <h3>Full Store Build</h3>
+          <p>Complete Shopify setup — theme, homepage, product pages, cart, checkout. Ready to take real orders on day one.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-num">02</div>
+          <span class="service-icon">⚡</span>
+          <h3>Conversion Optimised</h3>
+          <p>Every store is built for sales, not just looks. Fast loading, clear CTAs, trust signals, frictionless checkout.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-num">03</div>
+          <span class="service-icon">🎨</span>
+          <h3>Brand-Matched Design</h3>
+          <p>Your site feels like it belongs to your brand — the right colours, fonts, and vibe to attract your exact customer.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-num">04</div>
+          <span class="service-icon">📦</span>
+          <h3>Products & Setup</h3>
+          <p>All products uploaded, priced, described, and tagged. Payment gateways, shipping, and legal pages all done.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+        <div class="service-card reveal reveal-delay-4">
+          <div class="service-num">05</div>
+          <span class="service-icon">🏪</span>
+          <h3>Local Business Sites</h3>
+          <p>Premium brochure sites for shops, salons, jewellers, restaurants. Mobile-first, trust-building, built to make the phone ring.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+        <div class="service-card reveal reveal-delay-5">
+          <div class="service-num">06</div>
+          <span class="service-icon">🔧</span>
+          <h3>7 Days Free Revisions</h3>
+          <p>Something doesn't look right after launch? I fix it, no questions asked. You're not left to figure it out alone.</p>
+          <span class="service-arrow">↗</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROCESS ── -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="process-header">
+        <p class="section-label reveal">How It Works</p>
+        <h2 class="section-title reveal reveal-delay-1">
+          Simple process.<br><em>Zero headaches.</em>
+        </h2>
+        <p class="section-sub reveal reveal-delay-2" style="margin:16px auto 0;">Four steps from brief to live. You don't have to do anything except fill in a quick form.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal">
+          <div class="step-circle">1</div>
+          <div class="step-day">Day 1</div>
+          <h3>Quick Brief</h3>
+          <p>Fill in a short questionnaire — brand, colours, products, references. Takes 10 minutes.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-circle">2</div>
+          <div class="step-day">Days 2–6</div>
+          <h3>I Build It</h3>
+          <p>You sit back. I design and build your full site — no back-and-forth, no delays.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-circle">3</div>
+          <div class="step-day">Day 7</div>
+          <h3>You Review</h3>
+          <p>I send you a preview. You give feedback, I make tweaks until it's exactly right.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-circle">4</div>
+          <div class="step-day">Day 7</div>
+          <h3>Go Live</h3>
+          <p>Site is handed over, fully live, ready to start selling. Everything is yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WORK ── -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="work-header">
+        <div>
+          <p class="section-label reveal">Real Work</p>
+          <h2 class="section-title reveal reveal-delay-1">Built and live.<br><em>Not just mockups.</em></h2>
+        </div>
+        <p class="section-sub reveal reveal-delay-2">Every project was briefed, built, and delivered — ready to share the same week.</p>
+      </div>
+
+      <div class="work-grid work-grid-single">
+        <a href="https://syncrotechstore.myshopify.com" target="_blank" class="work-card work-card-full">
+          <div class="work-tag">
+            <span class="tag">Shopify</span>
+            <span class="tag">Dropshipping</span>
+            <span class="tag tag-live">● Live</span>
+          </div>
+          <h3>Volta Store</h3>
+          <p>Full Shopify dropshipping store built in the tech accessories niche. Branded collections, conversion-optimised product pages, sticky add-to-cart, trust badges, and mobile-first layout built for TikTok traffic. Set up with 5 products across multiple variants — live and taking orders from day one.</p>
+          <div class="work-meta">
+            <div class="work-meta-item">Type: <strong>Shopify Store</strong></div>
+            <div class="work-meta-item">Niche: <strong>Tech Accessories</strong></div>
+            <div class="work-meta-item">Products: <strong>5 SKUs + Variants</strong></div>
+            <div class="work-meta-item">Status: <strong>Live ↗</strong></div>
+          </div>
+          <div class="work-link-arrow">↗</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EARLY ADOPTER ── -->
+  <section class="early" id="early">
+    <div class="container">
+      <div class="early-inner reveal">
+        <div class="early-left">
+          <p class="section-label" style="margin-bottom:16px;">Introductory Pricing</p>
+          <h2 class="section-title" style="margin-bottom:16px;">
+            Early access.<br><em>Locked-in price.</em>
+          </h2>
+          <p style="font-size:15px; color:var(--muted); line-height:1.75; max-width:440px; font-weight:300;">
+            StoreCraft is in its early days — which means you get agency-quality work at a fraction of what it'll cost in 6 months.
+            I'm building my portfolio. You get a great site. It's a straightforward deal.
+          </p>
+          <p style="font-size:15px; color:var(--muted); line-height:1.75; max-width:440px; font-weight:300; margin-top:14px;">
+            Once I have a full client roster and case studies, prices go up. The work doesn't change — the rate does.
+            <strong style="color:var(--text);">The current rate won't last.</strong>
+          </p>
+        </div>
+        <div class="early-right">
+          <div class="early-card">
+            <div class="early-card-label">Current Rate</div>
+            <div class="early-pricing-row">
+              <div class="early-price-item">
+                <div class="early-price-now">£400</div>
+                <div class="early-price-later">→ £1,500+ later</div>
+                <div class="early-price-type">Shopify Store</div>
+              </div>
+              <div class="early-divider-v"></div>
+              <div class="early-price-item">
+                <div class="early-price-now">£350</div>
+                <div class="early-price-later">→ £1,000+ later</div>
+                <div class="early-price-type">Brochure Site</div>
+              </div>
+            </div>
+            <a href="https://instagram.com/storecraftbuilds" target="_blank" class="early-cta">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              DM @storecraftbuilds on Instagram
+            </a>
+            <p class="early-note">Usually replies within a few hours · No commitment required</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST ── -->
+  <section class="trust" id="trust">
+    <div class="container">
+      <div style="text-align:center; margin-bottom: 0;">
+        <p class="section-label reveal" style="justify-content:center;"><span style="display:none">::before</span>Why Work With Me</p>
+        <h2 class="section-title reveal reveal-delay-1">Small operation.<br><em>Big quality.</em></h2>
+        <p class="section-sub reveal reveal-delay-2" style="margin: 16px auto 0; text-align:center;">
+          I work with one client at a time — that means your project gets 100% of my attention.
+        </p>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card reveal">
+          <span class="trust-icon">🔒</span>
+          <h3>Safe 50/50 Payment</h3>
+          <p>You pay <strong>£175–£200 upfront</strong>, and the rest <strong>only when you're happy</strong> with the result. All payments through PayPal with full buyer protection. Absolutely zero financial risk.</p>
+        </div>
+        <div class="trust-card reveal reveal-delay-1">
+          <span class="trust-icon">⚡</span>
+          <h3>7-Day Turnaround</h3>
+          <p>You get a <strong>preview of your complete site within 7 days</strong>. No waiting weeks. No vague timelines. A real deadline, every single time — or I'll refund your deposit.</p>
+        </div>
+        <div class="trust-card reveal reveal-delay-2">
+          <span class="trust-icon">🛠️</span>
+          <h3>7 Days Free Revisions</h3>
+          <p><strong>7 days of free changes</strong> after delivery. Something doesn't look right? I fix it, no questions asked. You won't be left holding the bag after launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PRICING ── -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="pricing-header">
+        <p class="section-label reveal">Pricing</p>
+        <h2 class="section-title reveal reveal-delay-1">Flat pricing.<br><em>No surprises.</em></h2>
+        <p class="section-sub reveal reveal-delay-2">No hidden fees. No scope creep. One price, everything included.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card featured reveal">
+          <div class="price-badge">Most Popular</div>
+          <div class="price-name">Shopify Store</div>
+          <div class="price-amount"><sup>£</sup>400</div>
+          <div class="price-note">Full ecommerce store, built and ready to sell.</div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li>Full Shopify store from scratch</li>
+            <li>Conversion-focused design</li>
+            <li>Up to 20 products set up</li>
+            <li>Homepage, collections, product pages</li>
+            <li>Payment gateways & shipping configured</li>
+            <li>Policies & legal pages included</li>
+            <li>Mobile optimised & fast loading</li>
+            <li>7 days free revisions after delivery</li>
+          </ul>
+          <a href="https://instagram.com/storecraftbuilds" target="_blank" class="price-cta price-cta-primary">
+            Get Started — £400 →
+          </a>
+          <p class="price-deposit">£200 deposit · £200 on delivery · 7-day turnaround</p>
+          <p class="price-deposit" style="margin-top:8px; color: rgba(107,101,96,0.7);">Note: Shopify plan required (~£25/mo, your account)</p>
+        </div>
+
+        <div class="price-card reveal reveal-delay-1">
+          <div class="price-name">Local Business Website</div>
+          <div class="price-amount"><sup>£</sup>350</div>
+          <div class="price-note">Premium brochure site for shops, salons & local businesses. <strong style="color:var(--gold)">No monthly fees.</strong></div>
+          <div class="price-divider"></div>
+          <ul class="price-features">
+            <li>Custom-designed brochure website</li>
+            <li>Hero, services, about, reviews sections</li>
+            <li>Opening hours, address & phone prominent</li>
+            <li>Google Maps directions link</li>
+            <li>FAQ section included</li>
+            <li>Real photos integrated from your images</li>
+            <li>Mobile-first, fast & production-ready</li>
+            <li>7 days free revisions after delivery</li>
+          </ul>
+          <a href="https://instagram.com/storecraftbuilds" target="_blank" class="price-cta price-cta-ghost">
+            Get Started — £350 →
+          </a>
+          <p class="price-deposit">£175 deposit · £175 on delivery · 7-day turnaround</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-header">
+        <p class="section-label reveal">FAQ</p>
+        <h2 class="section-title reveal reveal-delay-1">Common questions<br><em>answered.</em></h2>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item reveal" onclick="toggleFaq(this)">
+          <div class="faq-q">
+            <h4>How does the 50/50 payment work?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <p class="faq-a">You pay 50% upfront to secure your project slot. The remaining 50% is only due after you've reviewed the finished site and you're happy with it. All payments go through PayPal, so you have full buyer protection — you'll never be out of pocket.</p>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-1" onclick="toggleFaq(this)">
+          <div class="faq-q">
+            <h4>What do I need to provide?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <p class="faq-a">Just a short brief: your brand name, products or services, any colours or logos you have, and a couple of reference sites you like. No technical knowledge needed. I ask you everything in a simple questionnaire that takes around 10 minutes.</p>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-2" onclick="toggleFaq(this)">
+          <div class="faq-q">
+            <h4>What if I need changes after delivery?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <p class="faq-a">You get 7 days of free revisions after I hand over the site. If something doesn't look right or needs tweaking, just let me know and I'll fix it. No extra charge for reasonable changes during that period.</p>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-3" onclick="toggleFaq(this)">
+          <div class="faq-q">
+            <h4>Do you actually deliver in 7 days?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <p class="faq-a">Yes. The 7-day timeline starts the day after I receive your completed brief. I take on one project at a time so your build gets my full attention. If something delays delivery significantly, I'll communicate it early and offer a partial refund.</p>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-4" onclick="toggleFaq(this)">
+          <div class="faq-q">
+            <h4>Do I need a Shopify subscription?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <p class="faq-a">Only if you're selling products online and taking payments through your website. Shopify plans start at around £25/month and you'll set this up in your own name — I'll walk you through it. <strong>However, if you're a local business like a jeweller, barber, salon, or restaurant</strong> that doesn't need online payments, you do <em>not</em> need Shopify at all. Your brochure site is built with plain HTML/CSS and has no monthly fees.</p>
+        </div>
+
+        <div class="faq-item reveal reveal-delay-5" onclick="toggleFaq(this)">
+          <div class="faq-q">
+            <h4>I'm a local business — do I need online payments?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <p class="faq-a">Not necessarily. Most local businesses — jewellers, barbers, salons, restaurants — just need a website that looks professional, shows what they do, and makes it easy to call, find directions, or book. The brochure site package (£350) is built exactly for this. No Shopify, no monthly fees, no complicated setup. Just a great-looking site that works.</p>
+        </div>
+
+        <div class="faq-item reveal" onclick="toggleFaq(this)">
+          <div class="faq-q">
+            <h4>How do I get started?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <p class="faq-a">DM me on Instagram (@storecraftbuilds) saying you're interested in a Shopify store or brochure site. I'll reply within a few hours with a short brief form. Once you fill it in and pay the deposit, I get started straight away.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA BANNER ── -->
+  <section class="cta-banner" id="contact">
+    <div class="container">
+      <p class="section-label reveal" style="justify-content:center; margin-bottom:24px;">Ready to Start?</p>
+      <h2 class="reveal reveal-delay-1">
+        A website that works<br><em>while you sleep.</em>
+      </h2>
+      <p class="reveal reveal-delay-2">DM me on Instagram — usually replies within a few hours. No commitment required.</p>
+      <div class="cta-actions reveal reveal-delay-3">
+        <a href="https://instagram.com/storecraftbuilds" target="_blank" class="btn-instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          DM @storecraftbuilds on Instagram
+        </a>
+      </div>
+      <p class="cta-reassurance reveal reveal-delay-4">
+        <span>✓</span> 50/50 payment &nbsp;·&nbsp;
+        <span>✓</span> 7-day delivery &nbsp;·&nbsp;
+        <span>✓</span> Free revisions &nbsp;·&nbsp;
+        <span>✓</span> Introductory pricing — won't last
+      </p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#" class="footer-logo">Store<span>Craft</span></a>
+        <p class="footer-copy">© 2026 StoreCraft. Built for small businesses ready to grow.</p>
+        <a href="https://instagram.com/storecraftbuilds" target="_blank" class="footer-link">@storecraftbuilds ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── CURSOR ──
+    const cursor = document.getElementById('cursor');
+    const ring = document.getElementById('cursorRing');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    function animCursor() {
+      cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+      rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      requestAnimationFrame(animCursor);
+    }
+    animCursor();
+
+    // ── NAV SCROLL ──
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ── REVEAL ON SCROLL ──
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+
+    // ── FAQ TOGGLE ──
+    function toggleFaq(el) {
+      const isOpen = el.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(item => item.classList.remove('open'));
+      if (!isOpen) el.classList.add('open');
+    }
+
+    // ── SECTION LABEL FIX (remove pseudo before via inline) ──
+    document.querySelectorAll('.section-label').forEach(el => {
+      if (el.style.justifyContent === 'center') {
+        const pseudo = el.querySelector('span[style]');
+        if (pseudo) pseudo.remove();
+      }
+    });
+  </script>
+</body>
+</html>
