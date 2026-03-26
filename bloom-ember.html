@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bloom & Ember — Handmade Candles | UK Small Brand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#fdf8f2;--bg2:#f7efe4;--bg3:#f0e4d4;--burnt:#c25c2a;--burnt2:#e07040;--cream:#3d2a1a;--muted:#9a7d68;--border:#e8d8c8;--card:#ffffff;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--cream);font-family:'Jost',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.15;}
+.demo-bar{background:var(--burnt);color:#fff;text-align:center;padding:10px;font-size:0.8rem;font-weight:600;}
+.demo-bar span{font-weight:400;opacity:0.85;margin-left:6px;}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 6%;background:rgba(253,248,242,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--cream);text-decoration:none;letter-spacing:0.5px;}
+.logo span{color:var(--burnt);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s;}
+.nav-links a:hover{color:var(--cream);}
+.nav-btn{background:var(--burnt);color:#fff;font-family:'Jost',sans-serif;font-weight:500;font-size:0.82rem;padding:10px 22px;border-radius:50px;text-decoration:none;transition:background 0.2s;}
+.nav-btn:hover{background:var(--burnt2);}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:90vh;align-items:center;padding:80px 6%;gap:60px;background:linear-gradient(135deg,var(--bg) 60%,var(--bg2) 100%);}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(194,92,42,0.08);border:1px solid rgba(194,92,42,0.2);border-radius:50px;padding:6px 16px;font-size:0.75rem;font-weight:500;color:var(--burnt);margin-bottom:24px;letter-spacing:0.5px;}
+.hero h1{font-size:clamp(2.8rem,5vw,4rem);font-weight:700;color:var(--cream);margin-bottom:20px;letter-spacing:-0.5px;}
+.hero h1 em{font-style:italic;color:var(--burnt);}
+.hero p{font-size:0.97rem;color:var(--muted);max-width:440px;line-height:1.75;margin-bottom:36px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:var(--burnt);color:#fff;font-family:'Jost',sans-serif;font-weight:500;font-size:0.88rem;padding:14px 28px;border-radius:50px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.2s;}
+.btn-primary:hover{background:var(--burnt2);transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--cream);font-family:'Jost',sans-serif;font-weight:400;font-size:0.88rem;padding:14px 28px;border-radius:50px;text-decoration:none;border:1.5px solid var(--border);transition:border-color 0.2s;}
+.btn-outline:hover{border-color:var(--muted);}
+
+/* HERO VISUAL */
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;}
+.candle-showcase{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px;text-align:center;box-shadow:0 8px 40px rgba(194,92,42,0.1);}
+.candle-img{width:100%;max-width:280px;height:280px;object-fit:cover;border-radius:16px;margin-bottom:20px;display:block;margin-left:auto;margin-right:auto;background:var(--bg2);}
+.candle-placeholder{width:100%;max-width:280px;height:280px;border-radius:16px;margin-bottom:20px;display:flex;align-items:center;justify-content:center;font-size:6rem;background:linear-gradient(135deg,#f5e8d8,#eed4b8);}
+.scent-tag{display:inline-block;background:rgba(194,92,42,0.08);color:var(--burnt);font-size:0.78rem;font-weight:500;padding:6px 16px;border-radius:50px;margin-bottom:8px;border:1px solid rgba(194,92,42,0.15);}
+.candle-name{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--cream);margin-bottom:4px;}
+.candle-price{font-size:1rem;color:var(--muted);}
+
+/* MARQUEE */
+.marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;overflow:hidden;background:var(--bg2);}
+.marquee{display:flex;gap:40px;animation:scroll 22s linear infinite;white-space:nowrap;}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.m-item{font-size:0.78rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;gap:10px;}
+.m-dot{color:var(--burnt);}
+
+/* COLLECTIONS */
+.collections{padding:90px 6%;}
+.si{max-width:1200px;margin:0 auto;}
+.sec-eyebrow{font-size:0.7rem;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--burnt);margin-bottom:14px;}
+.sec-title{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;color:var(--cream);margin-bottom:16px;}
+.sec-title em{font-style:italic;color:var(--burnt);}
+.sec-sub{font-size:0.93rem;color:var(--muted);max-width:480px;line-height:1.75;margin-bottom:52px;}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.pcard{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(194,92,42,0.12);}
+.pcard-img{height:240px;display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;}
+.pcard-img.amber{background:linear-gradient(135deg,#fdf0e4,#f5dfc0);}
+.pcard-img.sage{background:linear-gradient(135deg,#e8f0e4,#d4e4cc);}
+.pcard-img.dusk{background:linear-gradient(135deg,#e8e0f0,#d4c8e8);}
+.pcard-badge{position:absolute;top:12px;left:12px;background:var(--burnt);color:#fff;font-size:0.65rem;font-weight:700;padding:4px 10px;border-radius:50px;}
+.pcard-info{padding:22px;}
+.pcard-info h3{font-family:'Playfair Display',serif;font-size:1.15rem;margin-bottom:6px;}
+.pcard-info .scent{font-size:0.8rem;color:var(--burnt);margin-bottom:8px;font-style:italic;}
+.pcard-info p{font-size:0.83rem;color:var(--muted);margin-bottom:16px;line-height:1.6;}
+.pcard-footer{display:flex;align-items:center;justify-content:space-between;}
+.price{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--cream);}
+.add-btn{background:var(--burnt);color:#fff;font-size:0.78rem;font-weight:500;padding:9px 18px;border-radius:50px;border:none;cursor:pointer;transition:background 0.2s;}
+.add-btn:hover{background:var(--burnt2);}
+
+/* ABOUT */
+.about{padding:90px 6%;background:var(--bg2);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto;}
+.about-img{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:48px;text-align:center;box-shadow:0 4px 24px rgba(194,92,42,0.08);}
+.about-img .portrait{font-size:7rem;margin-bottom:16px;display:block;}
+.about-img h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:4px;}
+.about-img p{font-size:0.85rem;color:var(--muted);}
+.about-text .quote{font-family:'Playfair Display',serif;font-size:1.7rem;font-style:italic;color:var(--cream);line-height:1.4;margin-bottom:24px;}
+.about-text .quote em{color:var(--burnt);font-style:italic;}
+.about-text p{font-size:0.9rem;color:var(--muted);line-height:1.75;margin-bottom:20px;}
+
+/* BUNDLES */
+.bundles{padding:90px 6%;}
+.bundles-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:1200px;margin:0 auto;}
+.bundle-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:36px;display:flex;align-items:center;gap:28px;transition:border-color 0.2s,transform 0.2s;}
+.bundle-card:hover{border-color:var(--burnt);transform:translateY(-3px);}
+.bundle-icon{font-size:3.5rem;flex-shrink:0;}
+.bundle-info h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:6px;}
+.bundle-info p{font-size:0.83rem;color:var(--muted);margin-bottom:12px;line-height:1.6;}
+.bundle-footer{display:flex;align-items:center;gap:16px;}
+.bundle-price{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--burnt);}
+.bundle-save{font-size:0.72rem;background:rgba(194,92,42,0.1);color:var(--burnt);padding:3px 10px;border-radius:50px;font-weight:600;}
+
+/* REVIEWS */
+.reviews{padding:90px 6%;background:var(--bg2);}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto;}
+.review-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;}
+.stars{color:#e8a030;font-size:0.9rem;margin-bottom:14px;letter-spacing:2px;}
+.review-card p{font-size:0.87rem;color:var(--muted);line-height:1.7;font-style:italic;margin-bottom:14px;}
+.reviewer{font-size:0.78rem;font-weight:600;color:var(--burnt);}
+
+/* NEWSLETTER */
+.newsletter{padding:90px 6%;}
+.nl-box{max-width:600px;margin:0 auto;text-align:center;background:linear-gradient(135deg,var(--burnt),var(--burnt2));border-radius:28px;padding:60px 40px;}
+.nl-box h2{color:#fff;font-size:clamp(1.8rem,3vw,2.3rem);margin-bottom:12px;}
+.nl-box p{color:rgba(255,255,255,0.85);font-size:0.93rem;line-height:1.7;margin-bottom:32px;}
+.nl-form{display:flex;gap:10px;max-width:380px;margin:0 auto;}
+.nl-input{flex:1;padding:13px 18px;border-radius:50px;border:none;font-family:'Jost',sans-serif;font-size:0.88rem;outline:none;}
+.nl-btn{background:#fff;color:var(--burnt);font-family:'Jost',sans-serif;font-weight:600;font-size:0.82rem;padding:13px 22px;border-radius:50px;border:none;cursor:pointer;white-space:nowrap;transition:transform 0.2s;}
+.nl-btn:hover{transform:scale(1.03);}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:48px 6%;background:var(--bg);}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;}
+.f-brand .logo{display:inline-block;margin-bottom:12px;}
+.f-brand p{font-size:0.82rem;color:var(--muted);max-width:240px;line-height:1.65;}
+.f-col h4{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:14px;}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.f-col ul a{color:var(--muted);text-decoration:none;font-size:0.84rem;transition:color 0.2s;}
+.f-col ul a:hover{color:var(--cream);}
+.footer-btm{max-width:1200px;margin:24px auto 0;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:0.76rem;color:var(--muted);}
+
+/* STORECRAFT CREDIT */
+.sc-credit{text-align:center;padding:16px;background:var(--bg2);border-top:1px solid var(--border);font-size:0.78rem;color:var(--muted);}
+.sc-credit a{color:var(--burnt);text-decoration:none;font-weight:600;}
+
+@media(max-width:900px){.hero{grid-template-columns:1fr;}.about-grid{grid-template-columns:1fr;}.products-grid{grid-template-columns:1fr 1fr;}.bundles-grid{grid-template-columns:1fr;}.reviews-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr 1fr;}.nav-links{display:none;}}
+@media(max-width:600px){.products-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr;}section{padding:60px 5%;}.nl-form{flex-direction:column;}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">✦ Demo site built by StoreCraft — <span>this is what your website could look like · storecraftbuilds.co.uk</span></div>
+
+<nav>
+  <a href="#" class="logo">Bloom <span>&</span> Ember</a>
+  <ul class="nav-links">
+    <li><a href="#collections">Shop</a></li>
+    <li><a href="#bundles">Bundles</a></li>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <a href="#collections" class="nav-btn">Shop Now</a>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-badge">🕯️ Handpoured in Small Batches · UK Made</div>
+    <h1>Light your space<br/>with something <em>beautiful.</em></h1>
+    <p>Handpoured soy candles made in small batches with premium fragrance oils. Every scent is crafted to create a mood, not just fill a room.</p>
+    <div class="hero-btns">
+      <a href="#collections" class="btn-primary">Shop Candles →</a>
+      <a href="#about" class="btn-outline">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="candle-showcase">
+      <div class="candle-placeholder">🕯️</div>
+      <div class="scent-tag">Amber & Sandalwood</div>
+      <div class="candle-name">The Signature Candle</div>
+      <div class="candle-price">From £14.00</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span class="m-item">🕯️ Handpoured Soy Wax <span class="m-dot">✦</span></span>
+    <span class="m-item">Premium Fragrance Oils <span class="m-dot">✦</span></span>
+    <span class="m-item">🌿 Clean Burn Formula <span class="m-dot">✦</span></span>
+    <span class="m-item">Made in the UK <span class="m-dot">✦</span></span>
+    <span class="m-item">📦 Free UK Shipping Over £30 <span class="m-dot">✦</span></span>
+    <span class="m-item">Gift Wrapping Available <span class="m-dot">✦</span></span>
+    <span class="m-item">🕯️ Handpoured Soy Wax <span class="m-dot">✦</span></span>
+    <span class="m-item">Premium Fragrance Oils <span class="m-dot">✦</span></span>
+    <span class="m-item">🌿 Clean Burn Formula <span class="m-dot">✦</span></span>
+    <span class="m-item">Made in the UK <span class="m-dot">✦</span></span>
+    <span class="m-item">📦 Free UK Shipping Over £30 <span class="m-dot">✦</span></span>
+    <span class="m-item">Gift Wrapping Available <span class="m-dot">✦</span></span>
+  </div>
+</div>
+
+<section class="collections" id="collections">
+  <div class="si">
+    <div class="sec-eyebrow">The Collection</div>
+    <h2 class="sec-title">Every scent tells <em>a story.</em></h2>
+    <p class="sec-sub">Handpoured in small batches using premium soy wax and long-lasting fragrance oils. Designed to transform your space.</p>
+    <div class="products-grid">
+      <div class="pcard">
+        <div class="pcard-img amber"><span>🕯️</span><span class="pcard-badge">Bestseller</span></div>
+        <div class="pcard-info">
+          <h3>Amber & Sandalwood</h3>
+          <div class="scent">Warm · Woody · Grounding</div>
+          <p>A rich, warming blend of amber resin and creamy sandalwood. Perfect for cosy evenings at home.</p>
+          <div class="pcard-footer"><span class="price">£14.00</span><button class="add-btn">Add to Bag</button></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img sage"><span>🌿</span><span class="pcard-badge">New In</span></div>
+        <div class="pcard-info">
+          <h3>Wild Sage & Citrus</h3>
+          <div class="scent">Fresh · Herbal · Uplifting</div>
+          <p>A bright, energising blend of wild sage, bergamot, and a hint of lemon zest. Makes any space feel alive.</p>
+          <div class="pcard-footer"><span class="price">£14.00</span><button class="add-btn">Add to Bag</button></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img dusk"><span>🌸</span></div>
+        <div class="pcard-info">
+          <h3>Rose & Oud</h3>
+          <div class="scent">Floral · Luxurious · Romantic</div>
+          <p>Soft Bulgarian rose petals layered with dark, smoky oud. A truly luxurious scent for special moments.</p>
+          <div class="pcard-footer"><span class="price">£16.00</span><button class="add-btn">Add to Bag</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-img">
+      <span class="portrait">🕯️</span>
+      <h3>Bloom & Ember</h3>
+      <p>Handpoured with love · UK Made</p>
+    </div>
+    <div class="about-text">
+      <p class="quote">"Every candle starts with a <em>feeling</em> I want to create."</p>
+      <p>Bloom & Ember started at a kitchen table with a passion for fragrance and a love of slow, intentional living. Every candle is handpoured in small batches — never rushed, never mass produced.</p>
+      <p>We use only premium soy wax, phthalate-free fragrance oils, and cotton wicks. No nasties. No shortcuts. Just beautiful candles that burn clean and last longer.</p>
+      <a href="#collections" class="btn-primary" style="width:fit-content;">Shop the Collection →</a>
+    </div>
+  </div>
+</section>
+
+<section class="bundles" id="bundles">
+  <div class="si">
+    <div class="sec-eyebrow">Gift Sets</div>
+    <h2 class="sec-title" style="margin-bottom:12px;">Perfect for <em>gifting.</em></h2>
+    <p class="sec-sub" style="margin-bottom:48px;">Every bundle arrives beautifully wrapped and ready to give. Free gift message included.</p>
+    <div class="bundles-grid">
+      <div class="bundle-card">
+        <div class="bundle-icon">🎁</div>
+        <div class="bundle-info">
+          <h3>The Duo Set</h3>
+          <p>Two of our bestselling candles in a gift box with tissue paper. Perfect for birthdays, housewarmings, or just because.</p>
+          <div class="bundle-footer"><span class="bundle-price">£26.00</span><span class="bundle-save">Save £2</span></div>
+        </div>
+      </div>
+      <div class="bundle-card">
+        <div class="bundle-icon">✨</div>
+        <div class="bundle-info">
+          <h3>The Full Collection</h3>
+          <p>All three signature candles in a luxury gift box. The ultimate gift for anyone who loves a beautiful home.</p>
+          <div class="bundle-footer"><span class="bundle-price">£38.00</span><span class="bundle-save">Save £6</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="si">
+    <div class="sec-eyebrow">Customer Reviews</div>
+    <h2 class="sec-title" style="margin-bottom:40px;">What people are <em>saying.</em></h2>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="stars">★★★★★</div><p>"The Amber & Sandalwood candle is absolutely stunning. The scent lasts for hours and the burn is so clean. I've already ordered three more for gifts!"</p><div class="reviewer">— Emily R., Verified Buyer</div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p>"I bought the duo gift set for my mum's birthday and she absolutely loved it. The packaging is beautiful and the candles smell incredible. Will definitely order again."</p><div class="reviewer">— Jade S., Verified Buyer</div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p>"Finally found candles that actually smell like they're supposed to! The Rose & Oud is my favourite. So luxurious. A small business that really cares."</p><div class="reviewer">— Priya K., Verified Buyer</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="si">
+    <div class="nl-box">
+      <h2>Get 10% off your first order</h2>
+      <p>Sign up to our newsletter for your welcome discount, plus early access to new scents and seasonal collections.</p>
+      <div class="nl-form">
+        <input type="email" class="nl-input" placeholder="your@email.com"/>
+        <button class="nl-btn">Claim 10% Off</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="f-brand"><a href="#" class="logo">Bloom <span style="color:var(--burnt)">&</span> Ember</a><p>Handpoured soy candles made in small batches. Premium fragrance oils. Clean burn. Made with love in the UK.</p></div>
+    <div class="f-col"><h4>Shop</h4><ul><li><a href="#">All Candles</a></li><li><a href="#">Gift Sets</a></li><li><a href="#">New In</a></li><li><a href="#">Bestsellers</a></li></ul></div>
+    <div class="f-col"><h4>Info</h4><ul><li><a href="#">Our Story</a></li><li><a href="#">Ingredients</a></li><li><a href="#">Shipping</a></li><li><a href="#">Instagram</a></li></ul></div>
+  </div>
+  <div class="footer-btm"><span>© 2026 Bloom & Ember. All rights reserved.</span><span>Handpoured with 🕯️ in the UK</span></div>
+</footer>
+<div class="sc-credit">Website built by <a href="https://vaelariss.github.io/portfolio/" target="_blank">StoreCraft</a> — Shopify stores & business websites for small UK brands · 7-day delivery from £350</div>
+</body>
+</html>

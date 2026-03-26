@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fade District — Sharp Cuts. Clean Fades. Birmingham.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#0a0a0a;--bg2:#111111;--bg3:#1a1a1a;--white:#f5f5f0;--gold:#d4a832;--gold2:#f0c84a;--muted:#888880;--border:#2a2a2a;--card:#141414;--red:#c42a2a;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;}
+h1,h2,h3{font-family:'Bebas Neue',sans-serif;letter-spacing:2px;line-height:1;}
+.demo-bar{background:var(--gold);color:#0a0a0a;text-align:center;padding:10px;font-size:0.78rem;font-weight:700;letter-spacing:1px;}
+.demo-bar span{font-weight:400;opacity:0.7;margin-left:6px;}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 6%;background:rgba(10,10,10,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:4px;color:var(--white);text-decoration:none;}
+.logo span{color:var(--gold);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--white);}
+.nav-btn{background:var(--gold);color:#0a0a0a;font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:1px;text-transform:uppercase;padding:11px 24px;text-decoration:none;transition:background 0.2s;}
+.nav-btn:hover{background:var(--gold2);}
+
+/* HERO */
+.hero{min-height:95vh;display:flex;align-items:center;padding:80px 6%;position:relative;overflow:hidden;background:linear-gradient(135deg,#0a0a0a 50%,#141208 100%);}
+.hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,transparent,rgba(212,168,50,0.04));pointer-events:none;}
+.hero-content{max-width:700px;position:relative;z-index:1;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--gold);}
+.hero h1{font-size:clamp(4rem,10vw,8rem);color:var(--white);margin-bottom:0;line-height:0.95;}
+.hero h1 .gold{color:var(--gold);}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:480px;margin:28px 0 40px;line-height:1.7;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:#0a0a0a;font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;padding:14px 28px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s,transform 0.2s;}
+.btn-gold:hover{background:var(--gold2);transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--white);font-family:'DM Sans',sans-serif;font-weight:500;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase;padding:14px 28px;text-decoration:none;border:1px solid var(--border);transition:border-color 0.2s;}
+.btn-outline:hover{border-color:var(--muted);}
+.hero-stats{display:flex;gap:0;margin-top:56px;border-top:1px solid var(--border);}
+.h-stat{flex:1;padding:24px 0;border-right:1px solid var(--border);}
+.h-stat:last-child{border-right:none;}
+.h-stat .n{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--gold);line-height:1;}
+.h-stat .l{font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+
+/* SERVICES */
+.services{padding:90px 6%;background:var(--bg2);}
+.si{max-width:1200px;margin:0 auto;}
+.sec-eyebrow{font-size:0.68rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);color:var(--white);margin-bottom:16px;letter-spacing:2px;}
+.sec-sub{font-size:0.9rem;color:var(--muted);max-width:480px;line-height:1.75;margin-bottom:52px;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+.svc-card{background:var(--card);padding:36px 28px;transition:background 0.2s;}
+.svc-card:hover{background:var(--bg3);}
+.svc-icon{font-size:2rem;margin-bottom:20px;display:block;}
+.svc-card h3{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;color:var(--white);margin-bottom:8px;}
+.svc-card .svc-price{font-size:1.2rem;color:var(--gold);font-weight:600;margin-bottom:12px;}
+.svc-card p{font-size:0.83rem;color:var(--muted);line-height:1.65;}
+
+/* PRICE LIST */
+.pricelist{padding:90px 6%;}
+.price-table{max-width:800px;border:1px solid var(--border);}
+.price-row{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;border-bottom:1px solid var(--border);transition:background 0.15s;}
+.price-row:last-child{border-bottom:none;}
+.price-row:hover{background:var(--bg2);}
+.price-row.header{background:var(--gold);cursor:default;}
+.price-row.header span{color:#0a0a0a;font-weight:700;font-size:0.8rem;letter-spacing:1.5px;text-transform:uppercase;}
+.price-row .name{font-size:0.95rem;color:var(--white);}
+.price-row .time{font-size:0.78rem;color:var(--muted);}
+.price-row .cost{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--gold);letter-spacing:1px;}
+
+/* GALLERY */
+.gallery{padding:90px 6%;background:var(--bg2);}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1200px;margin:0 auto;}
+.gallery-item{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:4rem;background:var(--bg3);transition:background 0.2s;cursor:pointer;}
+.gallery-item:hover{background:var(--card);}
+.gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2;font-size:7rem;background:var(--card);}
+
+/* BOOKING */
+.booking{padding:90px 6%;}
+.booking-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.booking-text h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);color:var(--white);margin-bottom:20px;letter-spacing:2px;}
+.booking-text h2 span{color:var(--gold);}
+.booking-text p{font-size:0.9rem;color:var(--muted);line-height:1.75;margin-bottom:28px;}
+.booking-info{display:flex;flex-direction:column;gap:16px;margin-bottom:32px;}
+.b-info-item{display:flex;align-items:center;gap:14px;padding:14px 20px;background:var(--card);border:1px solid var(--border);}
+.b-info-item .icon{font-size:1.3rem;flex-shrink:0;}
+.b-info-item .label{font-size:0.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
+.b-info-item .value{font-size:0.92rem;color:var(--white);font-weight:500;}
+.booking-cta{background:var(--bg2);border:1px solid var(--border);padding:40px;text-align:center;}
+.booking-cta h3{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:2px;color:var(--white);margin-bottom:8px;}
+.booking-cta p{font-size:0.85rem;color:var(--muted);margin-bottom:24px;}
+.booking-cta .phone{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--gold);letter-spacing:2px;display:block;margin-bottom:16px;}
+
+/* REVIEWS */
+.reviews{padding:90px 6%;background:var(--bg2);}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto;}
+.rev-card{background:var(--card);border:1px solid var(--border);padding:28px;}
+.stars{color:var(--gold);font-size:0.85rem;margin-bottom:14px;letter-spacing:2px;}
+.rev-card p{font-size:0.87rem;color:var(--muted);line-height:1.7;font-style:italic;margin-bottom:14px;}
+.reviewer{font-size:0.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:52px 6%;background:var(--bg);}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;}
+.f-brand .logo-f{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:3px;color:var(--white);display:inline-block;margin-bottom:12px;}
+.f-brand .logo-f span{color:var(--gold);}
+.f-brand p{font-size:0.82rem;color:var(--muted);max-width:240px;line-height:1.65;}
+.f-col h4{font-size:0.65rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.f-col ul a{color:var(--muted);text-decoration:none;font-size:0.84rem;transition:color 0.2s;}
+.f-col ul a:hover{color:var(--white);}
+.footer-btm{max-width:1200px;margin:28px auto 0;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:0.74rem;color:var(--muted);}
+.sc-credit{text-align:center;padding:14px;background:var(--bg2);border-top:1px solid var(--border);font-size:0.76rem;color:var(--muted);}
+.sc-credit a{color:var(--gold);text-decoration:none;font-weight:600;}
+
+@media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}.gallery-grid{grid-template-columns:1fr 1fr;}.gallery-item:nth-child(1){grid-column:span 1;grid-row:span 1;font-size:4rem;}.booking-inner{grid-template-columns:1fr;}.reviews-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr 1fr;}.nav-links{display:none;}.hero h1{font-size:5rem;}}
+@media(max-width:600px){.services-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr;}section{padding:60px 5%;}.hero h1{font-size:4rem;}.hero-stats{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">✦ Demo site built by StoreCraft — <span>this is what your website could look like · storecraftbuilds.co.uk</span></div>
+
+<nav>
+  <a href="#" class="logo">Fade <span>District</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricelist">Prices</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#booking">Find Us</a></li>
+  </ul>
+  <a href="#booking" class="nav-btn">Book Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Birmingham's Premier Barbershop</div>
+    <h1>Sharp Cuts.<br/><span class="gold">Clean Fades.</span><br/>Real Confidence.</h1>
+    <p class="hero-sub">Walk in looking good. Walk out looking unreal. No appointments needed — but booking ahead means no waiting.</p>
+    <div class="hero-btns">
+      <a href="tel:01214960000" class="btn-gold">📞 Book by Phone</a>
+      <a href="#pricelist" class="btn-outline">View Prices</a>
+    </div>
+    <div class="hero-stats">
+      <div class="h-stat"><div class="n">500+</div><div class="l">Clients Served</div></div>
+      <div class="h-stat"><div class="n">5★</div><div class="l">Google Rating</div></div>
+      <div class="h-stat"><div class="n">10+</div><div class="l">Years Combined Exp</div></div>
+      <div class="h-stat"><div class="n">Walk-in</div><div class="l">Always Welcome</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="si">
+    <div class="sec-eyebrow">What We Do</div>
+    <h2 class="sec-title">Every cut.<br/>Every time.</h2>
+    <p class="sec-sub">Whether you're in for a fresh fade or a full beard shape-up — we do it right, every single time.</p>
+    <div class="services-grid">
+      <div class="svc-card"><span class="svc-icon">✂️</span><h3>Haircut & Style</h3><div class="svc-price">From £18</div><p>Classic cut, contemporary style, or something completely bespoke. Tell us what you want and we'll deliver.</p></div>
+      <div class="svc-card"><span class="svc-icon">⚡</span><h3>Skin Fade</h3><div class="svc-price">From £22</div><p>Zero to whatever you want. Our fades are clean, sharp, and built to last. The signature Fade District finish.</p></div>
+      <div class="svc-card"><span class="svc-icon">🧔</span><h3>Beard Trim & Line Up</h3><div class="svc-price">From £12</div><p>Tidy up, shape up, or full beard sculpting. Paired with a hot towel finish for the cleanest result possible.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricelist" id="pricelist">
+  <div class="si">
+    <div class="sec-eyebrow">Price List</div>
+    <h2 class="sec-title" style="margin-bottom:12px;">No hidden<br/>charges.</h2>
+    <p class="sec-sub" style="margin-bottom:48px;">What you see is what you pay. Always.</p>
+    <div class="price-table">
+      <div class="price-row header"><span>Service</span><span>Time</span><span>Price</span></div>
+      <div class="price-row"><div><div class="name">Haircut & Style</div><div class="time">~30 mins</div></div><div class="cost">£18</div></div>
+      <div class="price-row"><div><div class="name">Skin Fade</div><div class="time">~35 mins</div></div><div class="cost">£22</div></div>
+      <div class="price-row"><div><div class="name">Cut & Fade Combo</div><div class="time">~45 mins</div></div><div class="cost">£28</div></div>
+      <div class="price-row"><div><div class="name">Beard Trim</div><div class="time">~20 mins</div></div><div class="cost">£12</div></div>
+      <div class="price-row"><div><div class="name">Beard Line Up</div><div class="time">~15 mins</div></div><div class="cost">£10</div></div>
+      <div class="price-row"><div><div class="name">Full Groom (Cut + Beard)</div><div class="time">~60 mins</div></div><div class="cost">£35</div></div>
+      <div class="price-row"><div><div class="name">Kid's Cut (Under 12)</div><div class="time">~25 mins</div></div><div class="cost">£14</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="sec-eyebrow" style="padding:0 6%;max-width:1200px;margin:0 auto 20px;">Our Work</div>
+  <h2 class="sec-title" style="padding:0 6%;max-width:1200px;margin:0 auto 48px;font-family:'Bebas Neue',sans-serif;letter-spacing:2px;font-size:clamp(2.5rem,5vw,4rem);">Sharp results.<br/><span style="color:var(--gold);">Every time.</span></h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">✂️</div>
+    <div class="gallery-item">💈</div>
+    <div class="gallery-item">🧔</div>
+    <div class="gallery-item">⚡</div>
+    <div class="gallery-item">✨</div>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="booking-inner">
+    <div class="booking-text">
+      <h2>Come find <span>us.</span></h2>
+      <p>Walk-ins are always welcome — but book ahead to skip the queue. We're open 7 days a week in the heart of Birmingham.</p>
+      <div class="booking-info">
+        <div class="b-info-item"><div class="icon">📍</div><div><div class="label">Address</div><div class="value">42 Broad Street, Birmingham, B1 2HP</div></div></div>
+        <div class="b-info-item"><div class="icon">🕐</div><div><div class="label">Opening Hours</div><div class="value">Mon–Sat 9am–7pm · Sun 10am–5pm</div></div></div>
+        <div class="b-info-item"><div class="icon">📞</div><div><div class="label">Phone</div><div class="value">0121 496 0000</div></div></div>
+        <div class="b-info-item"><div class="icon">📸</div><div><div class="label">Instagram</div><div class="value">@fadedistrict</div></div></div>
+      </div>
+      <a href="tel:01214960000" class="btn-gold" style="width:fit-content;">📞 Call to Book</a>
+    </div>
+    <div class="booking-cta">
+      <h3>Ready for your fresh cut?</h3>
+      <p>Call us now or walk in — we'll get you sorted.</p>
+      <span class="phone">0121 496 0000</span>
+      <a href="tel:01214960000" class="btn-gold" style="width:100%;justify-content:center;">Call Now →</a>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="si">
+    <div class="sec-eyebrow">Reviews</div>
+    <h2 class="sec-title" style="margin-bottom:40px;font-family:'Bebas Neue',sans-serif;letter-spacing:2px;font-size:clamp(2.5rem,5vw,4rem);">What they're saying.</h2>
+    <div class="reviews-grid">
+      <div class="rev-card"><div class="stars">★★★★★</div><p>"Best fade I've ever had. Clean, sharp, and the guy actually listened to what I wanted. Won't be going anywhere else."</p><div class="reviewer">— Marcus T.</div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>"Walked in on a Saturday without booking and was seen within 20 minutes. The cut was immaculate. Great vibe in there too."</p><div class="reviewer">— Jordan H.</div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>"Took my son for his first proper fade and he left looking amazing. Very patient with him and the result was perfect. Brilliant shop."</p><div class="reviewer">— Dave K.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="f-brand"><span class="logo-f">Fade <span>District</span></span><p>Sharp cuts, clean fades, real confidence. Birmingham's premier barbershop. Walk-ins welcome, 7 days a week.</p></div>
+    <div class="f-col"><h4>Services</h4><ul><li><a href="#">Haircuts</a></li><li><a href="#">Skin Fades</a></li><li><a href="#">Beard Trims</a></li><li><a href="#">Kids Cuts</a></li></ul></div>
+    <div class="f-col"><h4>Visit Us</h4><ul><li><a href="#">42 Broad Street, Birmingham</a></li><li><a href="#">Mon–Sat: 9am–7pm</a></li><li><a href="#">Sun: 10am–5pm</a></li><li><a href="#">0121 496 0000</a></li></ul></div>
+  </div>
+  <div class="footer-btm"><span>© 2026 Fade District. All rights reserved.</span><span>Walk-ins Welcome · Birmingham</span></div>
+</footer>
+<div class="sc-credit">Website built by <a href="https://vaelariss.github.io/portfolio/" target="_blank">StoreCraft</a> — Shopify stores & business websites for small UK brands · 7-day delivery from £350</div>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Aurum — Handcrafted Jewellery | London</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#faf8f4;--bg2:#f3eeE6;--bg3:#ece5d8;--gold:#b8903a;--gold2:#d4a84a;--dark:#1a1508;--muted:#8a7a5c;--border:#e4d8c4;--card:#ffffff;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--dark);font-family:'Jost',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;line-height:1.1;}
+.demo-bar{background:var(--dark);color:rgba(255,255,255,0.85);text-align:center;padding:10px;font-size:0.78rem;letter-spacing:0.5px;}
+.demo-bar span{color:var(--gold2);margin-left:6px;}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:22px 7%;background:rgba(250,248,244,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;letter-spacing:8px;text-transform:uppercase;color:var(--dark);text-decoration:none;}
+.nav-links{display:flex;gap:40px;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.78rem;font-weight:400;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--dark);}
+.nav-btn{border:1px solid var(--dark);color:var(--dark);font-family:'Jost',sans-serif;font-weight:400;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;padding:10px 24px;text-decoration:none;transition:background 0.2s,color 0.2s;}
+.nav-btn:hover{background:var(--dark);color:#fff;}
+
+/* HERO */
+.hero{min-height:94vh;display:grid;grid-template-columns:1fr 1fr;align-items:stretch;}
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:80px 7%;background:var(--bg);}
+.hero-text .eyebrow{font-size:0.68rem;font-weight:400;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:28px;}
+.hero-text h1{font-size:clamp(3rem,5vw,5rem);font-weight:300;color:var(--dark);margin-bottom:24px;letter-spacing:-0.5px;line-height:1.05;}
+.hero-text h1 em{font-style:italic;color:var(--gold);}
+.hero-text p{font-size:0.95rem;color:var(--muted);max-width:380px;line-height:1.8;margin-bottom:40px;font-weight:300;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-dark{background:var(--dark);color:#fff;font-family:'Jost',sans-serif;font-weight:400;font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;padding:14px 32px;text-decoration:none;transition:background 0.2s;display:inline-block;}
+.btn-dark:hover{background:var(--gold);}
+.btn-ghost{background:transparent;color:var(--dark);font-family:'Jost',sans-serif;font-weight:400;font-size:0.78rem;letter-spacing:2px;text-transform:uppercase;padding:14px 32px;text-decoration:none;border:1px solid var(--border);transition:border-color 0.2s;}
+.btn-ghost:hover{border-color:var(--muted);}
+.hero-visual{background:var(--bg2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.hero-visual::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(184,144,58,0.08),transparent 70%);}
+.jewel-display{text-align:center;position:relative;z-index:1;}
+.jewel-emoji{font-size:8rem;display:block;margin-bottom:24px;filter:drop-shadow(0 8px 24px rgba(184,144,58,0.3));}
+.jewel-label{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;letter-spacing:3px;text-transform:uppercase;color:var(--dark);margin-bottom:8px;}
+.jewel-price{font-size:0.85rem;color:var(--gold);letter-spacing:2px;}
+
+/* STRIP */
+.strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:14px 0;overflow:hidden;background:var(--bg2);}
+.strip-inner{display:flex;gap:48px;animation:scroll 25s linear infinite;white-space:nowrap;}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.s-item{font-size:0.68rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:16px;}
+.s-dot{color:var(--gold);}
+
+/* COLLECTIONS */
+.collections{padding:100px 7%;}
+.si{max-width:1200px;margin:0 auto;}
+.sec-eyebrow{font-size:0.65rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.sec-title{font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--dark);margin-bottom:16px;letter-spacing:-0.5px;}
+.sec-title em{font-style:italic;color:var(--gold);}
+.sec-sub{font-size:0.9rem;color:var(--muted);max-width:460px;line-height:1.8;margin-bottom:56px;font-weight:300;}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);}
+.pcard{background:var(--bg);transition:background 0.25s;}
+.pcard:hover{background:var(--card);}
+.pcard-img{height:280px;display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative;background:var(--bg2);}
+.pcard-label{position:absolute;top:16px;left:16px;font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:var(--bg);padding:4px 10px;border:1px solid var(--border);}
+.pcard-info{padding:24px;}
+.pcard-info h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;margin-bottom:4px;}
+.pcard-info .metal{font-size:0.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.pcard-info p{font-size:0.82rem;color:var(--muted);line-height:1.6;margin-bottom:16px;font-weight:300;}
+.pcard-footer{display:flex;align-items:center;justify-content:space-between;}
+.price{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--dark);}
+.buy-btn{font-family:'Jost',sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--dark);background:none;border:1px solid var(--dark);padding:8px 16px;cursor:pointer;transition:background 0.2s,color 0.2s;}
+.buy-btn:hover{background:var(--dark);color:#fff;}
+
+/* MATERIALS */
+.materials{padding:80px 7%;background:var(--dark);}
+.materials-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);}
+.mat-card{padding:40px 32px;text-align:center;background:var(--dark);}
+.mat-icon{font-size:2.5rem;margin-bottom:16px;display:block;}
+.mat-card h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;letter-spacing:1px;color:#f5f0e8;margin-bottom:8px;}
+.mat-card p{font-size:0.8rem;color:rgba(255,255,255,0.45);line-height:1.65;font-weight:300;}
+
+/* LOOKBOOK */
+.lookbook{padding:100px 7%;}
+.lookbook-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--border);max-width:1200px;margin:0 auto;}
+.lb-card{background:var(--bg2);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;font-size:6rem;position:relative;overflow:hidden;transition:background 0.2s;}
+.lb-card:hover{background:var(--bg3);}
+.lb-card:first-child{grid-row:span 2;aspect-ratio:unset;}
+.lb-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,rgba(26,21,8,0.6));}
+.lb-label{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:300;color:#fff;letter-spacing:1px;}
+.lb-sub{font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.6);}
+
+/* PERSONALISE */
+.personalise{padding:80px 7%;background:var(--bg2);}
+.pers-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.pers-text h2{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:300;margin-bottom:20px;}
+.pers-text p{font-size:0.9rem;color:var(--muted);line-height:1.8;margin-bottom:28px;font-weight:300;}
+.pers-steps{display:flex;flex-direction:column;gap:16px;margin-bottom:32px;}
+.step{display:flex;align-items:flex-start;gap:16px;}
+.step-n{width:28px;height:28px;border:1px solid var(--gold);color:var(--gold);font-size:0.78rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step p{font-size:0.85rem;color:var(--muted);line-height:1.6;margin:0;font-weight:300;}
+.pers-visual{background:var(--card);border:1px solid var(--border);padding:48px;text-align:center;}
+.pers-visual .ring{font-size:6rem;margin-bottom:20px;display:block;}
+.pers-visual h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;margin-bottom:8px;}
+.pers-visual p{font-size:0.83rem;color:var(--muted);font-weight:300;}
+
+/* REVIEWS */
+.reviews{padding:100px 7%;}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto;}
+.rev-card{border:1px solid var(--border);padding:32px;}
+.stars{color:var(--gold);font-size:0.85rem;margin-bottom:16px;letter-spacing:3px;}
+.rev-card p{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;font-style:italic;line-height:1.65;color:var(--dark);margin-bottom:16px;}
+.reviewer{font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:60px 7%;background:var(--bg);}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;}
+.f-brand .logo-f{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;letter-spacing:6px;text-transform:uppercase;color:var(--dark);display:inline-block;margin-bottom:14px;}
+.f-brand p{font-size:0.82rem;color:var(--muted);max-width:240px;line-height:1.7;font-weight:300;}
+.f-col h4{font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.f-col ul a{color:var(--muted);text-decoration:none;font-size:0.83rem;font-weight:300;transition:color 0.2s;}
+.f-col ul a:hover{color:var(--dark);}
+.footer-btm{max-width:1200px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-size:0.74rem;color:var(--muted);font-weight:300;}
+.sc-credit{text-align:center;padding:14px;background:var(--bg2);border-top:1px solid var(--border);font-size:0.76rem;color:var(--muted);}
+.sc-credit a{color:var(--gold);text-decoration:none;font-weight:500;}
+
+@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto;}.hero-visual{min-height:400px;}.products-grid{grid-template-columns:1fr 1fr;gap:1px;}.materials-inner{grid-template-columns:1fr 1fr;}.lookbook-grid{grid-template-columns:1fr;}.lookbook-grid .lb-card:first-child{grid-row:span 1;}.pers-inner{grid-template-columns:1fr;}.reviews-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr 1fr;}.nav-links{display:none;}}
+@media(max-width:600px){.products-grid{grid-template-columns:1fr;}.materials-inner{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr;}section{padding:60px 5%;}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar">✦ Demo site built by StoreCraft — <span>this is what your website could look like · storecraftbuilds.co.uk</span></div>
+
+<nav>
+  <a href="#" class="logo">Aurum</a>
+  <ul class="nav-links">
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#lookbook">Lookbook</a></li>
+    <li><a href="#personalise">Personalise</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+  </ul>
+  <a href="#collections" class="nav-btn">Shop Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="eyebrow">✦ Handcrafted Jewellery · London</div>
+    <h1>Worn close.<br/>Made to <em>last.</em></h1>
+    <p>Every piece is handcrafted using ethically sourced metals and stones. Jewellery that tells your story — designed to be worn every day.</p>
+    <div class="hero-btns">
+      <a href="#collections" class="btn-dark">Shop Collections</a>
+      <a href="#personalise" class="btn-ghost">Personalise</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="jewel-display">
+      <span class="jewel-emoji">💍</span>
+      <div class="jewel-label">The Signature Ring</div>
+      <div class="jewel-price">From £68.00</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-inner">
+    <span class="s-item">Ethically Sourced Materials <span class="s-dot">◆</span></span>
+    <span class="s-item">Handcrafted in London <span class="s-dot">◆</span></span>
+    <span class="s-item">Free UK Shipping <span class="s-dot">◆</span></span>
+    <span class="s-item">Personalisation Available <span class="s-dot">◆</span></span>
+    <span class="s-item">30-Day Returns <span class="s-dot">◆</span></span>
+    <span class="s-item">Gift Packaging Included <span class="s-dot">◆</span></span>
+    <span class="s-item">Ethically Sourced Materials <span class="s-dot">◆</span></span>
+    <span class="s-item">Handcrafted in London <span class="s-dot">◆</span></span>
+    <span class="s-item">Free UK Shipping <span class="s-dot">◆</span></span>
+    <span class="s-item">Personalisation Available <span class="s-dot">◆</span></span>
+    <span class="s-item">30-Day Returns <span class="s-dot">◆</span></span>
+    <span class="s-item">Gift Packaging Included <span class="s-dot">◆</span></span>
+  </div>
+</div>
+
+<section class="collections" id="collections">
+  <div class="si">
+    <div class="sec-eyebrow">Collections</div>
+    <h2 class="sec-title">Pieces made to <em>be worn.</em></h2>
+    <p class="sec-sub">Handcrafted using ethically sourced sterling silver and 18k gold-fill. Each piece is designed for everyday wear — timeless, not trendy.</p>
+    <div class="products-grid">
+      <div class="pcard">
+        <div class="pcard-img"><span>💍</span><span class="pcard-label">Bestseller</span></div>
+        <div class="pcard-info">
+          <h3>Crescent Ring</h3>
+          <div class="metal">Sterling Silver · 18k Gold Fill</div>
+          <p>A delicate crescent-shaped band with a polished finish. Available in full and half sizes. Stackable.</p>
+          <div class="pcard-footer"><span class="price">£68.00</span><button class="buy-btn">Add to Bag</button></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><span>📿</span><span class="pcard-label">New In</span></div>
+        <div class="pcard-info">
+          <h3>Layered Necklace Set</h3>
+          <div class="metal">18k Gold Fill</div>
+          <p>Three delicate chain necklaces at varying lengths. Designed to be worn together or separately.</p>
+          <div class="pcard-footer"><span class="price">£94.00</span><button class="buy-btn">Add to Bag</button></div>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><span>✨</span></div>
+        <div class="pcard-info">
+          <h3>Stud Earring Trio</h3>
+          <div class="metal">Sterling Silver</div>
+          <p>Three pairs of minimal stud earrings — circle, square, and teardrop. Perfect for everyday wear.</p>
+          <div class="pcard-footer"><span class="price">£52.00</span><button class="buy-btn">Add to Bag</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="materials">
+  <div class="materials-inner">
+    <div class="mat-card"><span class="mat-icon">⚗️</span><h3>Ethically Sourced</h3><p>Every metal and stone is sourced from certified ethical suppliers. We know where everything comes from.</p></div>
+    <div class="mat-card"><span class="mat-icon">✋</span><h3>Handcrafted</h3><p>Each piece is made by hand in our London studio. No mass production, no shortcuts.</p></div>
+    <div class="mat-card"><span class="mat-icon">♾️</span><h3>Made to Last</h3><p>Premium sterling silver and 18k gold fill that won't tarnish or fade with everyday wear.</p></div>
+    <div class="mat-card"><span class="mat-icon">🎁</span><h3>Gift Ready</h3><p>Every order arrives in a branded jewellery box with a ribbon and a handwritten note.</p></div>
+  </div>
+</section>
+
+<section class="lookbook" id="lookbook">
+  <div class="si">
+    <div class="sec-eyebrow">Lookbook</div>
+    <h2 class="sec-title" style="margin-bottom:48px;">Worn <em>every day.</em></h2>
+  </div>
+  <div class="lookbook-grid" style="max-width:1200px;margin:0 auto;">
+    <div class="lb-card"><span>💍</span><div class="lb-overlay"><div class="lb-label">The Ring Collection</div><div class="lb-sub">From £68</div></div></div>
+    <div class="lb-card"><span>📿</span><div class="lb-overlay"><div class="lb-label">Layered Necklaces</div><div class="lb-sub">From £94</div></div></div>
+    <div class="lb-card"><span>✨</span><div class="lb-overlay"><div class="lb-label">Everyday Earrings</div><div class="lb-sub">From £52</div></div></div>
+  </div>
+</section>
+
+<section class="personalise" id="personalise">
+  <div class="pers-inner">
+    <div class="pers-text">
+      <div class="sec-eyebrow">Personalisation</div>
+      <h2 class="sec-title">Make it <em>yours.</em></h2>
+      <p>Every piece can be personalised with initials, names, dates, or a short message. Perfect for gifts or marking moments that matter.</p>
+      <div class="pers-steps">
+        <div class="step"><div class="step-n">1</div><p>Choose your piece from the collection</p></div>
+        <div class="step"><div class="step-n">2</div><p>Select your metal and add your personalisation in the notes</p></div>
+        <div class="step"><div class="step-n">3</div><p>Allow 3–5 extra days for engraving — we'll notify you when it's ready</p></div>
+      </div>
+      <a href="#collections" class="btn-dark">Shop & Personalise</a>
+    </div>
+    <div class="pers-visual">
+      <span class="ring">💌</span>
+      <h3>Personalised Pieces</h3>
+      <p>Initials · Names · Dates · Short Messages</p>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="si">
+    <div class="sec-eyebrow">Reviews</div>
+    <h2 class="sec-title" style="margin-bottom:48px;">Worn and <em>loved.</em></h2>
+    <div class="reviews-grid">
+      <div class="rev-card"><div class="stars">★★★★★</div><p>"The crescent ring is the most beautiful thing I own. I haven't taken it off since it arrived. The quality is extraordinary for the price."</p><div class="reviewer">— Isabelle M.</div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>"I ordered the layered necklace set as a birthday gift for my sister. She was absolutely speechless. The packaging alone is worth it."</p><div class="reviewer">— Charlotte W.</div></div>
+      <div class="rev-card"><div class="stars">★★★★★</div><p>"Finally found a jewellery brand that actually cares about quality. I've ordered three times now and every piece has been perfect."</p><div class="reviewer">— Sasha R.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="f-brand"><span class="logo-f">Aurum</span><p>Handcrafted jewellery made to be worn every day. Ethically sourced. Made in London. Designed to last.</p></div>
+    <div class="f-col"><h4>Shop</h4><ul><li><a href="#">Rings</a></li><li><a href="#">Necklaces</a></li><li><a href="#">Earrings</a></li><li><a href="#">Personalised</a></li></ul></div>
+    <div class="f-col"><h4>Info</h4><ul><li><a href="#">Our Story</a></li><li><a href="#">Materials</a></li><li><a href="#">Shipping & Returns</a></li><li><a href="#">Instagram</a></li></ul></div>
+  </div>
+  <div class="footer-btm"><span>© 2026 Aurum. All rights reserved.</span><span>Handcrafted with ✦ in London</span></div>
+</footer>
+<div class="sc-credit">Website built by <a href="https://vaelariss.github.io/portfolio/" target="_blank">StoreCraft</a> — Shopify stores & business websites for small UK brands · 7-day delivery from £350</div>
+</body>
+</html>
