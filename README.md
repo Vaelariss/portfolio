@@ -35,5 +35,5 @@ A few things you may want to personalise later:
 - **Instagram handle** — links point to `@storecraftbuilds`; update if it changes.
 - **Testimonials** — none are shown (a real-reviews section can be added once you
   have genuine client feedback).
-- **Founder section** — currently shows an "SC" monogram and a generic founder
-  note; send a name + photo to personalise it.
+- **Founder section** — signed as "Safa, Founder" with an "S" monogram; add a
+  photo any time to personalise it further.
