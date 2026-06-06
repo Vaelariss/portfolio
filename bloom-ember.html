@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'none'; form-action 'none'; upgrade-insecure-requests"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Bloom & Ember — Handmade Candles | UK Small Brand</title>
+<meta name="theme-color" content="#c25c2a"/>
+<title>Bloom & Ember — Handmade Candles | StoreCraft Demo</title>
+<meta name="description" content="Demo Shopify concept by StoreCraft for a UK handmade candle brand — scent collections, gift bundles and email capture. This is an example build, not a real shop."/>
+<link rel="canonical" href="https://vaelariss.github.io/portfolio/bloom-ember.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Bloom & Ember — Demo Candle Brand by StoreCraft"/>
+<meta property="og:description" content="An example Shopify build by StoreCraft. See what your store could look like."/>
+<meta property="og:url" content="https://vaelariss.github.io/portfolio/bloom-ember.html"/>
+<meta property="og:image" content="https://vaelariss.github.io/portfolio/og-cover.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://vaelariss.github.io/portfolio/og-cover.png"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 :root{--bg:#fdf8f2;--bg2:#f7efe4;--bg3:#f0e4d4;--burnt:#c25c2a;--burnt2:#e07040;--cream:#3d2a1a;--muted:#9a7d68;--border:#e8d8c8;--card:#ffffff;}
@@ -133,14 +148,15 @@ footer{border-top:1px solid var(--border);padding:48px 6%;background:var(--bg);}
 
 @media(max-width:900px){.hero{grid-template-columns:1fr;}.about-grid{grid-template-columns:1fr;}.products-grid{grid-template-columns:1fr 1fr;}.bundles-grid{grid-template-columns:1fr;}.reviews-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr 1fr;}.nav-links{display:none;}}
 @media(max-width:600px){.products-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr;}section{padding:60px 5%;}.nl-form{flex-direction:column;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-<div class="demo-bar">✦ Demo site built by StoreCraft — <span>this is what your website could look like · storecraftbuilds.co.uk</span></div>
+<div class="demo-bar" id="top">✦ Demo site built by StoreCraft — <span>this is what your website could look like · vaelariss.github.io/portfolio</span></div>
 
 <nav>
-  <a href="#" class="logo">Bloom <span>&</span> Ember</a>
+  <a href="#top" class="logo">Bloom <span>&</span> Ember</a>
   <ul class="nav-links">
     <li><a href="#collections">Shop</a></li>
     <li><a href="#bundles">Bundles</a></li>
@@ -271,9 +287,9 @@ footer{border-top:1px solid var(--border);padding:48px 6%;background:var(--bg);}
     <div class="sec-eyebrow">Customer Reviews</div>
     <h2 class="sec-title" style="margin-bottom:40px;">What people are <em>saying.</em></h2>
     <div class="reviews-grid">
-      <div class="review-card"><div class="stars">★★★★★</div><p>"The Amber & Sandalwood candle is absolutely stunning. The scent lasts for hours and the burn is so clean. I've already ordered three more for gifts!"</p><div class="reviewer">— Emily R., Verified Buyer</div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><p>"I bought the duo gift set for my mum's birthday and she absolutely loved it. The packaging is beautiful and the candles smell incredible. Will definitely order again."</p><div class="reviewer">— Jade S., Verified Buyer</div></div>
-      <div class="review-card"><div class="stars">★★★★★</div><p>"Finally found candles that actually smell like they're supposed to! The Rose & Oud is my favourite. So luxurious. A small business that really cares."</p><div class="reviewer">— Priya K., Verified Buyer</div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p>"The Amber & Sandalwood candle is absolutely stunning. The scent lasts for hours and the burn is so clean. I've already ordered three more for gifts!"</p><div class="reviewer">— Emily R.</div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p>"I bought the duo gift set for my mum's birthday and she absolutely loved it. The packaging is beautiful and the candles smell incredible. Will definitely order again."</p><div class="reviewer">— Jade S.</div></div>
+      <div class="review-card"><div class="stars">★★★★★</div><p>"Finally found candles that actually smell like they're supposed to! The Rose & Oud is my favourite. So luxurious. A small business that really cares."</p><div class="reviewer">— Priya K.</div></div>
     </div>
   </div>
 </section>
@@ -284,7 +300,8 @@ footer{border-top:1px solid var(--border);padding:48px 6%;background:var(--bg);}
       <h2>Get 10% off your first order</h2>
       <p>Sign up to our newsletter for your welcome discount, plus early access to new scents and seasonal collections.</p>
       <div class="nl-form">
-        <input type="email" class="nl-input" placeholder="your@email.com"/>
+        <label for="nl-bloom" class="sr-only" style="position:absolute;left:-9999px">Email address</label>
+        <input id="nl-bloom" type="email" class="nl-input" placeholder="your@email.com" aria-label="Email address"/>
         <button class="nl-btn">Claim 10% Off</button>
       </div>
     </div>
@@ -293,12 +310,12 @@ footer{border-top:1px solid var(--border);padding:48px 6%;background:var(--bg);}
 
 <footer>
   <div class="footer-inner">
-    <div class="f-brand"><a href="#" class="logo">Bloom <span style="color:var(--burnt)">&</span> Ember</a><p>Handpoured soy candles made in small batches. Premium fragrance oils. Clean burn. Made with love in the UK.</p></div>
+    <div class="f-brand"><a href="#top" class="logo">Bloom <span style="color:var(--burnt)">&</span> Ember</a><p>Handpoured soy candles made in small batches. Premium fragrance oils. Clean burn. Made with love in the UK.</p></div>
     <div class="f-col"><h4>Shop</h4><ul><li><a href="#">All Candles</a></li><li><a href="#">Gift Sets</a></li><li><a href="#">New In</a></li><li><a href="#">Bestsellers</a></li></ul></div>
     <div class="f-col"><h4>Info</h4><ul><li><a href="#">Our Story</a></li><li><a href="#">Ingredients</a></li><li><a href="#">Shipping</a></li><li><a href="#">Instagram</a></li></ul></div>
   </div>
   <div class="footer-btm"><span>© 2026 Bloom & Ember. All rights reserved.</span><span>Handpoured with 🕯️ in the UK</span></div>
 </footer>
-<div class="sc-credit">Website built by <a href="https://vaelariss.github.io/portfolio/" target="_blank">StoreCraft</a> — Shopify stores & business websites for small UK brands · 7-day delivery from £350</div>
+<div class="sc-credit">Website built by <a href="https://vaelariss.github.io/portfolio/" target="_blank" rel="noopener noreferrer">StoreCraft</a> — Shopify stores & business websites for small UK brands · 7-day delivery from £350</div>
 </body>
 </html>

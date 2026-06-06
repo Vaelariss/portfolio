@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="StoreCraft">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8ca8e"/>
+      <stop offset="1" stop-color="#b8893a"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#g)"/>
+  <g fill="#16120b">
+    <path d="M18 17 H46 L51 29 H13 Z"/>
+    <path d="M13 29 l6.4 4 l6.4 -4 l6.4 4 l6.4 -4 l6.4 4 l6.4 -4 v0 H13 Z"/>
+    <rect x="18" y="33" width="28" height="18" rx="2"/>
+  </g>
+  <rect x="29" y="38" width="6" height="13" rx="1.4" fill="#c49646"/>
+</svg>

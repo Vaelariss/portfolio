@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'none'; form-action 'none'; upgrade-insecure-requests"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Aurum — Handcrafted Jewellery | London</title>
+<meta name="theme-color" content="#b8903a"/>
+<title>Aurum — Handcrafted Jewellery | StoreCraft Demo</title>
+<meta name="description" content="Demo Shopify concept by StoreCraft for a handcrafted jewellery brand — lookbook, personalisation upsell and a premium checkout. This is an example build, not a real shop."/>
+<link rel="canonical" href="https://vaelariss.github.io/portfolio/aurum-jewels.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Aurum — Demo Jewellery Brand by StoreCraft"/>
+<meta property="og:description" content="An example Shopify build by StoreCraft. See what your store could look like."/>
+<meta property="og:url" content="https://vaelariss.github.io/portfolio/aurum-jewels.html"/>
+<meta property="og:image" content="https://vaelariss.github.io/portfolio/og-cover.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://vaelariss.github.io/portfolio/og-cover.png"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root{--bg:#faf8f4;--bg2:#f3eeE6;--bg3:#ece5d8;--gold:#b8903a;--gold2:#d4a84a;--dark:#1a1508;--muted:#8a7a5c;--border:#e4d8c4;--card:#ffffff;}
@@ -124,14 +139,15 @@ footer{border-top:1px solid var(--border);padding:60px 7%;background:var(--bg);}
 
 @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto;}.hero-visual{min-height:400px;}.products-grid{grid-template-columns:1fr 1fr;gap:1px;}.materials-inner{grid-template-columns:1fr 1fr;}.lookbook-grid{grid-template-columns:1fr;}.lookbook-grid .lb-card:first-child{grid-row:span 1;}.pers-inner{grid-template-columns:1fr;}.reviews-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr 1fr;}.nav-links{display:none;}}
 @media(max-width:600px){.products-grid{grid-template-columns:1fr;}.materials-inner{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr;}section{padding:60px 5%;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-<div class="demo-bar">✦ Demo site built by StoreCraft — <span>this is what your website could look like · storecraftbuilds.co.uk</span></div>
+<div class="demo-bar" id="top">✦ Demo site built by StoreCraft — <span>this is what your website could look like · vaelariss.github.io/portfolio</span></div>
 
 <nav>
-  <a href="#" class="logo">Aurum</a>
+  <a href="#top" class="logo">Aurum</a>
   <ul class="nav-links">
     <li><a href="#collections">Collections</a></li>
     <li><a href="#lookbook">Lookbook</a></li>
@@ -276,6 +292,6 @@ footer{border-top:1px solid var(--border);padding:60px 7%;background:var(--bg);}
   </div>
   <div class="footer-btm"><span>© 2026 Aurum. All rights reserved.</span><span>Handcrafted with ✦ in London</span></div>
 </footer>
-<div class="sc-credit">Website built by <a href="https://vaelariss.github.io/portfolio/" target="_blank">StoreCraft</a> — Shopify stores & business websites for small UK brands · 7-day delivery from £350</div>
+<div class="sc-credit">Website built by <a href="https://vaelariss.github.io/portfolio/" target="_blank" rel="noopener noreferrer">StoreCraft</a> — Shopify stores & business websites for small UK brands · 7-day delivery from £350</div>
 </body>
 </html>

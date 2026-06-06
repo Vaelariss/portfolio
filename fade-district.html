@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <meta charset="UTF-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'none'; form-action 'none'; upgrade-insecure-requests"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Fade District — Sharp Cuts. Clean Fades. Birmingham.</title>
+<meta name="theme-color" content="#0a0a0a"/>
+<title>Fade District — Barbershop | StoreCraft Demo</title>
+<meta name="description" content="Demo brochure-site concept by StoreCraft for a barbershop — price list, gallery, opening hours and click-to-call booking. This is an example build, not a real shop."/>
+<link rel="canonical" href="https://vaelariss.github.io/portfolio/fade-district.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Fade District — Demo Barbershop Site by StoreCraft"/>
+<meta property="og:description" content="An example brochure-site build by StoreCraft. See what your site could look like."/>
+<meta property="og:url" content="https://vaelariss.github.io/portfolio/fade-district.html"/>
+<meta property="og:image" content="https://vaelariss.github.io/portfolio/og-cover.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://vaelariss.github.io/portfolio/og-cover.png"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 :root{--bg:#0a0a0a;--bg2:#111111;--bg3:#1a1a1a;--white:#f5f5f0;--gold:#d4a832;--gold2:#f0c84a;--muted:#888880;--border:#2a2a2a;--card:#141414;--red:#c42a2a;}
@@ -116,14 +131,15 @@ footer{border-top:1px solid var(--border);padding:52px 6%;background:var(--bg);}
 
 @media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr;}.gallery-grid{grid-template-columns:1fr 1fr;}.gallery-item:nth-child(1){grid-column:span 1;grid-row:span 1;font-size:4rem;}.booking-inner{grid-template-columns:1fr;}.reviews-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr 1fr;}.nav-links{display:none;}.hero h1{font-size:5rem;}}
 @media(max-width:600px){.services-grid{grid-template-columns:1fr;}.footer-inner{grid-template-columns:1fr;}section{padding:60px 5%;}.hero h1{font-size:4rem;}.hero-stats{display:none;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-<div class="demo-bar">✦ Demo site built by StoreCraft — <span>this is what your website could look like · storecraftbuilds.co.uk</span></div>
+<div class="demo-bar" id="top">✦ Demo site built by StoreCraft — <span>this is what your website could look like · vaelariss.github.io/portfolio</span></div>
 
 <nav>
-  <a href="#" class="logo">Fade <span>District</span></a>
+  <a href="#top" class="logo">Fade <span>District</span></a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#pricelist">Prices</a></li>
@@ -236,6 +252,6 @@ footer{border-top:1px solid var(--border);padding:52px 6%;background:var(--bg);}
   </div>
   <div class="footer-btm"><span>© 2026 Fade District. All rights reserved.</span><span>Walk-ins Welcome · Birmingham</span></div>
 </footer>
-<div class="sc-credit">Website built by <a href="https://vaelariss.github.io/portfolio/" target="_blank">StoreCraft</a> — Shopify stores & business websites for small UK brands · 7-day delivery from £350</div>
+<div class="sc-credit">Website built by <a href="https://vaelariss.github.io/portfolio/" target="_blank" rel="noopener noreferrer">StoreCraft</a> — Shopify stores & business websites for small UK brands · 7-day delivery from £350</div>
 </body>
 </html>
