@@ -1,9 +1,13 @@
 # Netlify redirects — first match wins, so order matters.
 # Keep the analytics proxy at the top: it must resolve before any catch-all.
 
-# ---- Analytics proxy (added in Deploy 4; same-origin so the CSP stays 'self') ----
-# /js/script.js   https://cloud.umami.is/script.js   200
-# /api/send       https://cloud.umami.is/api/send    200
+# ---- Analytics proxy ----
+# Umami is served from our own domain so script-src can stay 'self' (no CSP
+# change in the six files that carry it) and ad-blockers filtering the vendor
+# domain don't strip it. Harmless until the <script> tag in index.html is
+# enabled — nothing requests these paths before then.
+/js/script.js   https://cloud.umami.is/script.js   200
+/api/send       https://cloud.umami.is/api/send    200
 
 # ---- Demo relocation: both previously indexed forms ----
 /aurum-jewels          /demo/aurum-jewels    301

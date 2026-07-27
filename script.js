@@ -1,6 +1,19 @@
 /* Brickwork — behaviour. No inline handlers (CSP: script-src 'self'). */
 document.documentElement.classList.add('js'); // gate reveal/brick so content shows if JS fails
 
+/* Analytics event helper.
+   Umami is loaded same-origin via the /js/script.js proxy in _redirects, so
+   script-src stays 'self' and ad-blockers that filter the vendor domain don't
+   strip it. Every call is guarded: if the script is missing, blocked, or not
+   yet configured, this is a no-op and nothing here can throw. */
+function bwTrack(name, props) {
+  try {
+    if (window.umami && typeof window.umami.track === 'function') {
+      window.umami.track(name, props || {});
+    }
+  } catch (e) { /* analytics must never break the page */ }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   'use strict';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -120,8 +133,65 @@ document.addEventListener('DOMContentLoaded', function () {
   var form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', function () {
+      var svc = form.querySelector('[name="service"]');
+      bwTrack('form_submit', { service: svc ? svc.value : '' });
       var btn = form.querySelector('button[type="submit"]');
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    });
+
+    /* form_start — fires once, on the first real interaction with any field.
+       The gap between form_view and form_start is "saw it, didn't try";
+       between form_start and the /thanks pageview is "tried, gave up". */
+    var started = false;
+    form.addEventListener('input', function (e) {
+      if (started) return;
+      started = true;
+      bwTrack('form_start', { field: e.target.name || '' });
+    });
+
+    /* form_view — did anyone actually reach the form? */
+    if ('IntersectionObserver' in window) {
+      var fo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { bwTrack('form_view'); fo.disconnect(); }
+        });
+      }, { threshold: 0.3 });
+      fo.observe(form);
+    }
+  }
+
+  /* Delegated click tracking — one listener covers every CTA, including the
+     14 niche links, without touching any markup. */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a');
+    if (!a) return;
+    var href = a.getAttribute('href') || '';
+    var label = (a.textContent || '').trim().slice(0, 60);
+
+    if (href.indexOf('#contact') > -1) {
+      var sec = a.closest('section[id]');
+      var chrome = a.closest('.nav, .mobile, .mbar, .announce, .footer');
+      bwTrack('cta_click', {
+        location: sec ? sec.id : (chrome ? chrome.className.split(' ')[0] : 'page'),
+        label: label
+      });
+    } else if (href.indexOf('wa.me') > -1) {
+      bwTrack('contact_alt_click', { channel: 'whatsapp' });
+    } else if (href.indexOf('mailto:') === 0) {
+      bwTrack('contact_alt_click', { channel: 'email' });
+    } else if (href.indexOf('instagram.com') > -1) {
+      bwTrack('contact_alt_click', { channel: 'instagram' });
+    } else if (href.indexOf('/demo/') === 0) {
+      bwTrack('demo_click', { demo: href.replace('/demo/', '') });
+    }
+  });
+
+  /* 404_view — which dead URL did they hit, and where from? Tells us whether
+     a cold-email recipient landed on a broken link. */
+  if (document.body.getAttribute('data-page') === '404') {
+    bwTrack('404_view', {
+      path: location.pathname,
+      ref: document.referrer || 'direct'
     });
   }
 
@@ -155,7 +225,14 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.cur-note').forEach(function (n) { n.hidden = (cur === 'gbp'); });
     try { localStorage.setItem('bw_cur', cur); } catch (e) {}
   }
-  sw.forEach(function (b) { b.addEventListener('click', function () { render(b.getAttribute('data-cur')); }); });
+  sw.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var cur = b.getAttribute('data-cur');
+      render(cur);
+      /* only on a deliberate click, not the initial render */
+      bwTrack('currency_switch', { cur: cur });
+    });
+  });
   /* default is always GBP so the rendered page matches the GBP prices in our
      JSON-LD — crawlers arrive with no stored preference and must not see $ */
   var pref; try { pref = localStorage.getItem('bw_cur'); } catch (e) {}
