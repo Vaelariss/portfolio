@@ -12,7 +12,13 @@
 /bloom-ember.html      /demo/bloom-ember     301
 /fade-district         /demo/fade-district   301
 /fade-district.html    /demo/fade-district   301
-/demo/:slug.html       /demo/:slug           301!
+
+# Canonicalise the .html form of the new paths. These must be explicit and
+# forced: a ":param.html" pattern does NOT work (Netlify params match a whole
+# path segment, so it captured every /demo/* URL and emitted a literal ":slug").
+/demo/aurum-jewels.html   /demo/aurum-jewels    301!
+/demo/bloom-ember.html    /demo/bloom-ember     301!
+/demo/fade-district.html  /demo/fade-district   301!
 
 # ---- Service pages that never shipped: send to the services section ----
 /shopify-store-design         /#services   301
