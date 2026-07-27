@@ -1,0 +1,6 @@
+# Netlify CLI state — machine-specific absolute paths, regenerated on deploy
+.netlify/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
