@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     err.className = 'form-err';
     err.setAttribute('role', 'alert');
     err.hidden = true;
-    err.innerHTML = 'That didn’t send — sorry. Please try again in a minute, or DM us at <a href="https://www.instagram.com/brickworkstudio_" target="_blank" rel="noopener">@brickworkstudio_</a> and we’ll pick it up there.';
+    err.innerHTML = 'That didn’t send — sorry. Please try again in a minute, or reach us directly: <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%27d%20like%20a%20free%20mockup" target="_blank" rel="noopener">WhatsApp 07735 785911</a>, <a href="mailto:robinmarwa44@gmail.com?subject=Free%20mockup%20request">email us</a>, or DM <a href="https://www.instagram.com/brickworkstudio_" target="_blank" rel="noopener">@brickworkstudio_</a>.';
     form.appendChild(err);
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -170,9 +170,8 @@ document.addEventListener('DOMContentLoaded', function () {
     try { localStorage.setItem('bw_cur', cur); } catch (e) {}
   }
   sw.forEach(function (b) { b.addEventListener('click', function () { render(b.getAttribute('data-cur')); }); });
+  /* default is always GBP so the rendered page matches the GBP prices in our
+     JSON-LD — crawlers arrive with no stored preference and must not see $ */
   var pref; try { pref = localStorage.getItem('bw_cur'); } catch (e) {}
-  if (!pref) { try { var l = (navigator.language || '').toLowerCase();
-    if (l.indexOf('-us') > -1) pref = 'usd';
-    else if (/-(de|fr|es|it|nl|ie|pt|at|be|fi|gr)/.test(l)) pref = 'eur'; } catch (e) {} }
   render(pref || 'gbp');
 });

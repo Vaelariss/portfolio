@@ -1,0 +1,39 @@
+# Netlify redirects — first match wins, so order matters.
+# Keep the analytics proxy at the top: it must resolve before any catch-all.
+
+# ---- Analytics proxy (added in Deploy 4; same-origin so the CSP stays 'self') ----
+# /js/script.js   https://cloud.umami.is/script.js   200
+# /api/send       https://cloud.umami.is/api/send    200
+
+# ---- Demo relocation: both previously indexed forms ----
+/aurum-jewels          /demo/aurum-jewels    301
+/aurum-jewels.html     /demo/aurum-jewels    301
+/bloom-ember           /demo/bloom-ember     301
+/bloom-ember.html      /demo/bloom-ember     301
+/fade-district         /demo/fade-district   301
+/fade-district.html    /demo/fade-district   301
+/demo/:slug.html       /demo/:slug           301!
+
+# ---- Service pages that never shipped: send to the services section ----
+/shopify-store-design         /#services   301
+/shopify-store-design.html    /#services   301
+/local-business-websites      /#services   301
+/local-business-websites.html /#services   301
+/ai-receptionist              /#services   301
+/ai-receptionist.html         /#services   301
+/custom-built-systems         /#services   301
+/custom-built-systems.html    /#services   301
+
+# ---- Guides that never shipped. These still have live GSC impressions,
+#      so they must redirect rather than 404. ----
+/guides                        /            301
+/guides.html                   /            301
+/guide-website-cost            /#pricing    301
+/guide-website-cost.html       /#pricing    301
+/guide-shopify-or-website      /#services   301
+/guide-shopify-or-website.html /#services   301
+/guide-ai-receptionist         /#services   301
+/guide-ai-receptionist.html    /#services   301
+
+# ---- Short link for cold outreach, so the channel is attributable ----
+/hi   /?utm_source=coldemail&utm_medium=email&utm_campaign=outreach   301

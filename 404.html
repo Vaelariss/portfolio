@@ -1,124 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page not found</title>
-    <style>
-      :root {
-        --colorRgbFacetsTeal600: 2 128 125;
-        --colorTealAction: var(--colorRgbFacetsTeal600);
-        --colorRgbFacetsNeutralLight200: 233 235 237;
-        --colorHr: var(--colorRgbFacetsNeutralLight200);
-        --colorRgbFacetsNeutralLight700: 53 58 62;
-        --colorGrayDarkest: var(--colorRgbFacetsNeutralLight700);
-        --colorGrayLighter: var(--colorRgbFacetsNeutralLight200);
-        --colorText: var(--colorGrayDarkest);
-        --effectShadowLightShallow: 0 1px 10px 0 rgb(53 58 62 / 6%),
-          0 2px 4px 0 rgb(53 58 62 / 8%);
-        --colorRgbFacetsNeutralDark900: 6 11 16;
-      }
-      body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-          "Segoe UI Emoji", "Segoe UI Symbol";
-        background: white;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        line-height: 1.5;
-        color: rgb(var(--colorText));
-      }
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17130E">
+<meta name="robots" content="noindex, follow">
 
-      @media (prefers-color-scheme: dark) {
-        body {
-          background: rgb(var(--colorRgbFacetsNeutralDark900));
-        }
-      }
+<title>Page not found | Brickwork</title>
+<meta name="description" content="That page has moved. Find services, work, pricing — or get a free mockup of your site in 48 hours.">
 
-      h1 {
-        margin: 0;
-        font-size: 1.375rem;
-        line-height: 1;
-      }
+<!-- Absolute paths: a 404 can be served at any depth (e.g. /demo/nope), so
+     relative asset paths would break the styling on nested URLs. -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-      h1 + p {
-        margin-top: 8px;
-      }
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/styles.css">
+<script src="/script.js" defer></script>
+</head>
+<body>
 
-      .main {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        width: 100vw;
-      }
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+</svg>
 
-      .card {
-        position: relative;
-        width: 75%;
-        max-width: 364px;
-        padding: 24px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: var(--effectShadowLightShallow);
-        border: 1px solid rgb(var(--colorGrayLighter));
-      }
+<header class="nav">
+  <div class="container nav__in">
+    <a href="/" class="brand"><img src="/favicon.svg" alt="" width="30" height="30"><b>Brick<span>work</span></b></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="/#services">Services</a>
+      <a href="/#work">Work</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <div class="nav__right">
+      <span class="nav__status">Booking now</span>
+      <a href="/#contact" class="btn">Free mockup <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+    </div>
+  </div>
+</header>
 
-      a {
-        margin: 0;
-        font-weight: 600;
-        color: rgb(var(--colorTealAction));
-        text-decoration-skip-ink: all;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 2px;
-        text-decoration-color: rgb(var(--colorTealAction) / 0.5);
-        transition: text-decoration-color 0.15s ease-in-out;
-      }
+<main id="main">
+  <section class="section">
+    <div class="container" style="max-width:720px;text-align:center">
+      <p class="speclabel">Error 404</p>
+      <h1 style="margin-top:14px">That page moved. The studio didn't.</h1>
+      <p class="lead" style="margin-top:16px">The link you followed doesn't exist any more — but everything you were probably looking for is one tap away.</p>
 
-      a:hover,
-      a:focus-visible {
-        text-decoration-color: rgb(var(--colorTealAction));
-      }
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px">
+        <a href="/#contact" class="btn btn--lg">Get a free mockup <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        <a href="/#services" class="btn btn--ghost">Services</a>
+        <a href="/#work" class="btn btn--ghost">Work</a>
+        <a href="/#pricing" class="btn btn--ghost">Pricing</a>
+      </div>
 
-      p:last-of-type {
-        margin-bottom: 0;
-      }
-
-      hr {
-        border: 0;
-        height: 1px;
-        background: rgb(var(--colorHr));
-        margin-top: 16px;
-        margin-bottom: 16px;
-      }
-
-      .your-site {
-        font-size: 0.875rem;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="main">
-      <div class="card">
-        <h1>Page not found</h1>
-        <p>
-          Looks like you’ve followed a broken link or entered a URL that doesn’t
-          exist on this site.
-        </p>
-        <hr />
-        <p class="your-site">
-          If this is your site, and you weren’t expecting a 404 for this path,
-          please visit Netlify’s
-          <a
-            href="https://answers.netlify.com/t/support-guide-i-ve-deployed-my-site-but-i-still-see-page-not-found/125?utm_source=404page&utm_campaign=community_tracking"
-            >“page not found” support guide</a
-          >
-          for troubleshooting tips.
-        </p>
+      <div class="guars" style="margin-top:36px;justify-content:center">
+        <div class="guar"><svg class="ic"><use href="#i-phone"/></svg>WhatsApp <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%27d%20like%20a%20free%20mockup" target="_blank" rel="noopener">07735 785911</a></div>
+        <div class="guar"><svg class="ic"><use href="#i-message"/></svg>Email <a href="mailto:robinmarwa44@gmail.com?subject=Free%20mockup%20request">robinmarwa44@gmail.com</a></div>
       </div>
     </div>
-  </body>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> Brickwork · Independent studio · worldwide</span>
+      <span>7-day delivery · free mockup · Stripe protected</span>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>

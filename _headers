@@ -8,3 +8,11 @@
 
 /fonts/*
   Cache-Control: public, max-age=31536000, immutable
+
+# Demo builds are portfolio pieces for fictional brands. They must stay
+# reachable but must not compete in search — they were pulling ~86% of all
+# impressions for queries like "bloom candles" that can never convert.
+# Do NOT add a robots.txt Disallow here: blocking the crawl would stop Google
+# ever seeing the noindex, and the indexed URLs would linger indefinitely.
+/demo/*
+  X-Robots-Tag: noindex, follow
