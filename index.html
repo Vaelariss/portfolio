@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self' https://formspree.io; form-action https://formspree.io 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#17130E">
@@ -493,7 +493,8 @@
       </div>
     </div>
     <div class="reveal rd1">
-      <form id="contact-form" class="form" action="https://formspree.io/f/xpwzkwva" method="POST">
+      <form id="contact-form" class="form" name="contact" method="POST" action="/thanks" data-netlify="true" data-netlify-honeypot="_gotcha">
+        <input type="hidden" name="form-name" value="contact">
         <div class="f-row">
           <div class="fg"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="First name" required></div>
           <div class="fg"><label for="business">Business name <span class="opt">(optional)</span></label><input id="business" name="business" type="text" autocomplete="organization" placeholder="Your business"></div>
@@ -515,12 +516,6 @@
         <button type="submit" class="btn btn--block btn--lg">Request free mockup <svg class="ic"><use href="#i-arrow-right"/></svg></button>
         <p class="form__note">Replies within a few hours · no card required · Stripe when you're ready</p>
       </form>
-      <div class="form-ok" id="form-ok">
-        <svg class="ic"><use href="#i-check"/></svg>
-        <h3>Message received</h3>
-        <p style="color:var(--muted)">You'll hear back within a few hours to confirm your free mockup. Check your inbox — and your spam folder, just in case.</p>
-        <p style="color:var(--muted)">No reply within 24 hours? <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%20submitted%20the%20form" target="_blank" rel="noopener">WhatsApp us</a> or <a href="mailto:robinmarwa44@gmail.com?subject=Free%20mockup%20request">email us</a> directly.</p>
-      </div>
     </div>
   </div>
 </section>

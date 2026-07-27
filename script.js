@@ -111,31 +111,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  /* contact form → Formspree (AJAX, honeypot, graceful fallback) */
+  /* The contact form posts natively to Netlify Forms and lands on /thanks.
+     Deliberately NOT intercepted: an AJAX submit can fail invisibly, and a
+     real navigation to /thanks gives us a pageview we can count as the
+     conversion. Do not add a submit handler that calls preventDefault here —
+     that would silently break the form. The honeypot is handled by Netlify
+     via data-netlify-honeypot. */
   var form = document.getElementById('contact-form');
   if (form) {
-    var err = document.createElement('p');
-    err.className = 'form-err';
-    err.setAttribute('role', 'alert');
-    err.hidden = true;
-    err.innerHTML = 'That didn’t send — sorry. Please try again in a minute, or reach us directly: <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%27d%20like%20a%20free%20mockup" target="_blank" rel="noopener">WhatsApp 07735 785911</a>, <a href="mailto:robinmarwa44@gmail.com?subject=Free%20mockup%20request">email us</a>, or DM <a href="https://www.instagram.com/brickworkstudio_" target="_blank" rel="noopener">@brickworkstudio_</a>.';
-    form.appendChild(err);
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var hp = form.querySelector('[name="_gotcha"]');
+    form.addEventListener('submit', function () {
       var btn = form.querySelector('button[type="submit"]');
-      var ok = document.getElementById('form-ok');
-      if (hp && hp.value) { form.style.display = 'none'; if (ok) ok.classList.add('show'); return; }
-      var label = btn.textContent;
-      err.hidden = true;
-      btn.textContent = 'Sending…'; btn.disabled = true;
-      var fail = function () { err.hidden = false; btn.textContent = label; btn.disabled = false; };
-      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
-        .then(function (res) {
-          if (res.ok) { form.style.display = 'none'; if (ok) ok.classList.add('show'); }
-          else fail();
-        })
-        .catch(fail);
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
     });
   }
 
