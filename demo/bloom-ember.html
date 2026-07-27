@@ -25,8 +25,9 @@
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--cream);font-family:'Jost',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;}
 h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.15;}
-.demo-bar{background:var(--burnt);color:#fff;text-align:center;padding:10px;font-size:0.8rem;font-weight:600;}
+.demo-bar{position:sticky;top:0;z-index:60;background:var(--burnt);color:#fff;text-align:center;padding:10px;font-size:0.8rem;font-weight:600;}
 .demo-bar span{font-weight:400;opacity:0.85;margin-left:6px;}
+.demo-bar a{color:#fff;font-weight:700;text-decoration:underline;margin-left:8px;white-space:nowrap;}
 nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 6%;background:rgba(253,248,242,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
 .logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--cream);text-decoration:none;letter-spacing:0.5px;}
 .logo span{color:var(--burnt);}
@@ -151,7 +152,7 @@ footer{border-top:1px solid var(--border);padding:48px 6%;background:var(--bg);}
 </head>
 <body>
 
-<div class="demo-bar" id="top">✦ Demo site built by Brickwork — <span>this is what your website could look like · brickworkstudio.net</span></div>
+<div class="demo-bar" id="top">✦ Demo site built by Brickwork — <span>this is what your website could look like</span> <a href="https://brickworkstudio.net/#contact">Get one like this →</a></div>
 
 <nav>
   <a href="#top" class="logo">Bloom <span>&</span> Ember</a>
@@ -314,6 +315,6 @@ footer{border-top:1px solid var(--border);padding:48px 6%;background:var(--bg);}
   </div>
   <div class="footer-btm"><span>© 2026 Bloom & Ember. All rights reserved.</span><span>Handpoured with 🕯️ in the UK</span></div>
 </footer>
-<div class="sc-credit">Website built by <a href="https://brickworkstudio.net/" target="_blank" rel="noopener noreferrer">Brickwork</a> — Shopify stores & business websites for small brands · 7-day delivery from £450</div>
+<div class="sc-credit">Website built by <a href="https://brickworkstudio.net/" target="_blank" rel="noopener noreferrer">Brickwork</a> — Shopify stores & business websites for small brands · 7-day delivery from £595</div>
 </body>
 </html>
