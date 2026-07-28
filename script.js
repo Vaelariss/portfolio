@@ -218,7 +218,10 @@ document.addEventListener('DOMContentLoaded', function () {
       if (isNaN(amt)) return;
       var nat = el.getAttribute('data-cur') || 'gbp';
       var v = amt * (rate[cur] / rate[nat]);
-      v = v >= 100 ? Math.round(v / 5) * 5 : Math.round(v);
+      /* Rounding to the nearest 5 exists so converted amounts don't read as
+         false precision ($1,264.65). It must not touch the native currency —
+         that was silently turning £119/mo into £120/mo on every load. */
+      if (cur !== nat) v = v >= 100 ? Math.round(v / 5) * 5 : Math.round(v);
       el.textContent = sym[cur] + v.toLocaleString('en-US') + (el.getAttribute('data-suffix') || '');
     });
     sw.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-cur') === cur ? 'true' : 'false'); });

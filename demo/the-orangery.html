@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'none'; form-action 'none'; upgrade-insecure-requests"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#F7F4ED"/>
+<title>The Orangery at Hartwell — Wedding Venue | Brickwork Demo</title>
+<meta name="description" content="Demo wedding venue site by Brickwork — spaces, capacities, the day itself and enquiry details. This is an example build, not a real venue."/>
+<link rel="canonical" href="https://brickworkstudio.net/demo/the-orangery"/>
+<meta name="robots" content="noindex, follow"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="The Orangery at Hartwell — Demo Wedding Venue Site by Brickwork"/>
+<meta property="og:description" content="An example wedding venue build by Brickwork. See what your site could look like."/>
+<meta property="og:url" content="https://brickworkstudio.net/demo/the-orangery"/>
+<meta property="og:image" content="https://brickworkstudio.net/og-cover.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://brickworkstudio.net/og-cover.png"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<style>
+/* ============================================================
+   THE ORANGERY AT HARTWELL — "airy romantic"
+   Warm off-white and sage with muted brass. High-contrast serif
+   display over wide-tracked sans caps. Very generous rhythm,
+   2px radii, thin borders, no fills. Slow gentle motion.
+============================================================ */
+:root{
+  --paper:#F7F4ED;
+  --paper-2:#EFE9DC;
+  --paper-3:#E6DFD0;
+  --ink:#2B2B24;
+  --ink-2:#5A594C;
+  --ink-3:#8A8878;
+  --sage:#7C8B72;
+  --sage-deep:#5A6952;
+  --brass:#A5854C;
+  --brass-text:#7A5E2E;   /* AA-safe on paper; --brass is for rules only */
+  --line:rgba(43,43,36,.15);
+  --line-2:rgba(43,43,36,.28);
+
+  --f-d:'Prata',Georgia,serif;
+  --f-b:'Karla',system-ui,sans-serif;
+
+  --pad:clamp(20px,6vw,80px);
+  --sect:clamp(80px,10vw,150px);
+  --max:1200px;
+  --r:2px;
+
+  --dur:460ms;
+  --dur-l:620ms;
+  --ease:cubic-bezier(.25,.8,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-b);
+  font-size:clamp(15.5px,1.05vw,16.8px);line-height:1.72;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::selection{background:var(--sage);color:var(--paper)}
+:focus-visible{outline:2px solid var(--sage-deep);outline-offset:3px}
+
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:var(--sect)}
+.center{text-align:center;margin-inline:auto}
+
+h1,h2,h3{font-family:var(--f-d);font-weight:400;line-height:1.14;
+  letter-spacing:-.005em}
+.d1{font-size:clamp(2.6rem,6.2vw,5.2rem);line-height:1.06}
+.d2{font-size:clamp(2rem,4vw,3.4rem)}
+.d3{font-size:clamp(1.25rem,1.9vw,1.6rem)}
+.lede{font-size:clamp(1.02rem,1.35vw,1.18rem);line-height:1.78;color:var(--ink-2)}
+
+.eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--sage-deep)}
+.eyebrow--brass{color:var(--brass-text)}
+
+.btn{display:inline-flex;align-items:center;gap:.6em;font-size:.72rem;
+  font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  padding:16px 32px;border:1px solid var(--line-2);border-radius:var(--r);
+  color:var(--ink);
+  transition:background var(--dur) var(--ease),color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease)}
+.btn:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn:active{background:var(--ink-2);border-color:var(--ink-2)}
+.btn--sage{background:var(--sage-deep);border-color:var(--sage-deep);color:var(--paper)}
+.btn--sage:hover{background:var(--ink);border-color:var(--ink)}
+.btn--ghost-light{border-color:rgba(247,244,237,.78);color:var(--paper)}
+.btn--ghost-light:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+
+.hr{height:1px;background:var(--line);border:0}
+.hr--short{width:64px;background:var(--brass);height:2px;margin-inline:auto}
+
+/* ---------- demo bar ---------- */
+.demo-bar{position:relative;z-index:120;background:var(--sage-deep);
+  color:var(--paper);text-align:center;padding:11px 16px;font-size:.78rem;
+  letter-spacing:.03em;font-weight:500}
+.demo-bar span{opacity:.8}
+.demo-bar a{font-weight:700;text-decoration:underline;text-underline-offset:3px;
+  white-space:nowrap;margin-left:6px}
+.demo-bar a:hover{color:var(--paper-3)}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;
+  justify-content:space-between;gap:24px;padding:20px var(--pad);
+  background:rgba(247,244,237,.9);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)}
+.logo{font-family:var(--f-d);padding:6px 0;font-size:1.24rem;letter-spacing:.06em;
+  text-transform:uppercase}
+.logo small{display:block;font-family:var(--f-b);font-size:.62rem;
+  letter-spacing:.3em;color:var(--ink-2);margin-top:3px;font-weight:700}
+.nav-links{display:flex;gap:34px}
+.nav-links a{font-size:.72rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--ink-2);
+  transition:color var(--dur) var(--ease)}
+.nav-links a:hover{color:var(--sage-deep)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:min(92vh,860px);display:flex;
+  align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero__img{position:absolute;inset:0}
+.hero__img img{width:100%;height:100%;object-fit:cover}
+.hero__scrim{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(28,30,24,.52),rgba(28,30,24,.56) 46%,rgba(28,30,24,.72))}
+.hero__in{position:relative;color:var(--paper);padding:clamp(60px,9vw,120px) var(--pad);
+  max-width:900px}
+.hero .eyebrow{color:rgba(247,244,237,.86)}
+.hero h1{margin-top:26px;text-wrap:balance}
+.hero p{margin-top:26px;font-size:1.06rem;color:rgba(247,244,237,.96);
+  max-width:46ch;margin-inline:auto;line-height:1.75}
+.hero .btn{margin-top:38px}
+
+/* ---------- intro ---------- */
+.intro{max-width:760px}
+.intro h2{margin-top:22px;text-wrap:balance}
+.intro .lede{margin-top:28px}
+.intro .hr--short{margin-block:44px}
+
+/* ---------- spaces ---------- */
+.spaces{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.6vw,34px)}
+.space{position:relative;overflow:hidden;border-radius:var(--r);
+  background:var(--paper-2)}
+.space img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.space__veil{position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 42%,rgba(28,30,24,.78));
+  opacity:.88;transition:opacity var(--dur-l) var(--ease)}
+.space:hover .space__veil{opacity:1}
+.space__cap{position:absolute;left:0;right:0;bottom:0;padding:26px;
+  color:var(--paper);transition:transform var(--dur-l) var(--ease)}
+.space:hover .space__cap{transform:translateY(-4px)}
+.space__cap h3{font-size:1.5rem}
+.space__cap p{margin-top:7px;font-size:.8rem;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(247,244,237,.76);font-weight:700}
+
+/* ---------- the day ---------- */
+.day{background:var(--paper-2)}
+.day__grid{display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(34px,6vw,86px);align-items:center}
+.day__img{border-radius:var(--r);overflow:hidden}
+.day__img img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.steps{margin-top:36px}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:22px;
+  padding:22px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps b{font-family:var(--f-d);font-size:1.05rem;color:var(--brass-text);
+  white-space:nowrap;padding-top:2px}
+.steps h3{font-size:1.16rem;font-family:var(--f-b);font-weight:700;
+  letter-spacing:.01em}
+.steps p{margin-top:5px;font-size:.94rem;color:var(--ink-2);line-height:1.68}
+
+/* ---------- numbers ---------- */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px);
+  text-align:center}
+.num b{display:block;font-family:var(--f-d);font-size:clamp(2.4rem,4.4vw,3.6rem);
+  line-height:1;color:var(--ink)}
+.num span{display:block;margin-top:12px;font-size:.68rem;font-weight:700;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2)}
+
+/* ---------- gallery ---------- */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,18px)}
+.gal figure{overflow:hidden;border-radius:var(--r);background:var(--paper-2)}
+.gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;
+  transition:opacity var(--dur-l) var(--ease)}
+.gal figure:hover img{opacity:.86}
+.gal figure:nth-child(1),.gal figure:nth-child(6){grid-column:span 2;grid-row:span 2}
+.gal figure:nth-child(1) img,.gal figure:nth-child(6) img{aspect-ratio:1/1}
+
+/* ---------- enquire ---------- */
+.enq{position:relative;overflow:hidden;color:var(--paper);text-align:center}
+.enq__img{position:absolute;inset:0}
+.enq__img img{width:100%;height:100%;object-fit:cover}
+.enq__scrim{position:absolute;inset:0;background:rgba(30,32,26,.68)}
+.enq__in{position:relative;padding-block:var(--sect);max-width:720px;
+  margin-inline:auto;padding-inline:var(--pad)}
+.enq h2{margin-top:22px}
+.enq p{margin-top:24px;color:rgba(247,244,237,.88);line-height:1.78}
+.enq .eyebrow{color:rgba(247,244,237,.8)}
+.enq__contact{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;
+  margin-top:38px}
+.enq__line{display:block;margin-top:30px;font-family:var(--f-d);
+  font-size:clamp(1.5rem,2.6vw,2.1rem);
+  transition:color var(--dur) var(--ease)}
+.enq__line:hover{color:var(--paper-3)}
+
+/* ---------- footer ---------- */
+footer{padding:46px var(--pad);display:flex;flex-wrap:wrap;gap:18px 30px;
+  align-items:center;justify-content:space-between;font-size:.8rem;
+  color:var(--ink-3);border-top:1px solid var(--line)}
+footer a{color:var(--ink-2);text-decoration:underline;text-underline-offset:3px}
+footer a:hover{color:var(--sage-deep)}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .reveal{animation:rise linear both;animation-timeline:view();
+      animation-range:entry 2% entry 66%}
+    .stagger>*{animation:rise linear both;animation-timeline:view();
+      animation-range:entry 2% entry 74%}
+    .stagger>*:nth-child(2){animation-range:entry 6% entry 78%}
+    .stagger>*:nth-child(3){animation-range:entry 10% entry 82%}
+    .stagger>*:nth-child(4){animation-range:entry 14% entry 86%}
+  }
+}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .spaces{grid-template-columns:1fr 1fr}
+  .day__grid{grid-template-columns:1fr}
+  .nums{grid-template-columns:1fr 1fr;gap:34px}
+  .nav-links{display:none}
+}
+@media (max-width:600px){
+  .spaces,.gal{grid-template-columns:1fr 1fr}
+  .gal figure:nth-child(1),.gal figure:nth-child(6){grid-column:span 2;grid-row:auto}
+  .hero{min-height:78vh}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" id="top">Demo site built by Brickwork <span>— this is what your website could look like</span> <a href="https://brickworkstudio.net/#contact">Get one like this →</a></div>
+
+<nav>
+  <a href="#top" class="logo">The Orangery<small>At Hartwell</small></a>
+  <ul class="nav-links">
+    <li><a href="#spaces">Spaces</a></li>
+    <li><a href="#day">The Day</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#enquire">Enquire</a></li>
+  </ul>
+  <a href="#enquire" class="btn">Check a date</a>
+</nav>
+
+<header class="hero">
+  <div class="hero__img"><img src="img/wedding/hero-1b.jpg" alt="Hartwell House seen across the lawn through mature trees" fetchpriority="high"/></div>
+  <div class="hero__scrim"></div>
+  <div class="hero__in">
+    <p class="eyebrow">Private estate · Twelve acres · Oxfordshire</p>
+    <h1 class="d1">One wedding at a time, from Friday to Sunday.</h1>
+    <p>You take the whole house, the walled garden and the orangery for a full weekend — and there is nobody else on the estate while you are here.</p>
+    <a href="#enquire" class="btn btn--ghost-light">Check your date</a>
+  </div>
+</header>
+
+<section class="section wrap center intro reveal">
+  <p class="eyebrow eyebrow--brass">Hartwell</p>
+  <h2 class="d2">A house that was never converted into a venue — it simply started hosting weddings.</h2>
+  <hr class="hr hr--short"/>
+  <p class="lede">The orangery was built in 1834 to overwinter citrus trees, and it still has the original glass. We have added heating, a licence and a great many chairs, and left almost everything else alone.</p>
+</section>
+
+<section class="section wrap" id="spaces">
+  <div class="center" style="max-width:620px;margin-bottom:clamp(40px,5vw,64px)">
+    <p class="eyebrow eyebrow--brass">The spaces</p>
+    <h2 class="d2" style="margin-top:18px">Three rooms, one weekend</h2>
+  </div>
+  <div class="spaces stagger">
+    <article class="space">
+      <img src="img/wedding/detail-3.jpg" alt="Inside the timber-framed barn set for a wedding breakfast" loading="lazy"/>
+      <div class="space__veil"></div>
+      <div class="space__cap"><h3>The Barn</h3><p>Seats 140 · Dining</p></div>
+    </article>
+    <article class="space">
+      <img src="img/wedding/dish-2.jpg" alt="A ceremony arch dressed with white fabric on the lawn" loading="lazy"/>
+      <div class="space__veil"></div>
+      <div class="space__cap"><h3>The Walled Garden</h3><p>Ceremony · Up to 160</p></div>
+    </article>
+    <article class="space">
+      <img src="img/wedding/detail-1b.jpg" alt="Guests at an outdoor reception in late afternoon light" loading="lazy"/>
+      <div class="space__veil"></div>
+      <div class="space__cap"><h3>The Orangery</h3><p>Drinks · Dancing till 1am</p></div>
+    </article>
+  </div>
+</section>
+
+<section class="section day" id="day">
+  <div class="wrap day__grid">
+    <div class="day__img reveal"><img src="img/wedding/dish-1b.jpg" alt="A long table laid with candles and foliage for the wedding breakfast" loading="lazy"/></div>
+    <div class="reveal">
+      <p class="eyebrow eyebrow--brass">The day</p>
+      <h2 class="d2" style="margin-top:18px">How a weekend here runs</h2>
+      <ul class="steps">
+        <li><b>Fri</b><div><h3>You move in</h3><p>Arrive from 2pm. Rehearsal, then supper for up to thirty in the kitchen. Sixteen bedrooms across the house and coach house.</p></div></li>
+        <li><b>Sat</b><div><h3>The wedding</h3><p>Ceremony in the walled garden or the orangery. Drinks on the lawn, dining in the barn, dancing until 1am.</p></div></li>
+        <li><b>Sun</b><div><h3>Breakfast, slowly</h3><p>Long breakfast in the orangery. Check-out at 11am — no rush, and no other couple waiting.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="nums stagger">
+    <div class="num"><b>160</b><span>Seated guests</span></div>
+    <div class="num"><b>16</b><span>Bedrooms</span></div>
+    <div class="num"><b>12</b><span>Acres, private</span></div>
+    <div class="num"><b>1</b><span>Wedding a weekend</span></div>
+  </div>
+</section>
+
+<section class="section wrap" id="gallery">
+  <div class="center" style="max-width:620px;margin-bottom:clamp(40px,5vw,64px)">
+    <p class="eyebrow eyebrow--brass">Gallery</p>
+    <h2 class="d2" style="margin-top:18px">Recent weekends</h2>
+  </div>
+  <div class="gal">
+    <figure><img src="img/wedding/detail-1b.jpg" alt="Couple walking through the reception as guests applaud" loading="lazy"/></figure>
+    <figure><img src="img/wedding/dish-1.jpg" alt="Round table laid with white flowers and linen" loading="lazy"/></figure>
+    <figure><img src="img/wedding/detail-2b.jpg" alt="Festoon lights strung above the courtyard at dusk" loading="lazy"/></figure>
+    <figure><img src="img/wedding/dish-3.jpg" alt="Tiered wedding cake dressed with berries" loading="lazy"/></figure>
+    <figure><img src="img/wedding/hero-1.jpg" alt="Garden path lined with white blossom in early summer" loading="lazy"/></figure>
+    <figure><img src="img/wedding/detail-1.jpg" alt="Bride walking arm in arm before the ceremony" loading="lazy"/></figure>
+    <figure><img src="img/wedding/dish-2b.jpg" alt="Guests seated for an outdoor ceremony" loading="lazy"/></figure>
+    <figure><img src="img/wedding/dish-1b.jpg" alt="Candlelit table detail at dusk" loading="lazy"/></figure>
+  </div>
+</section>
+
+<section class="enq" id="enquire">
+  <div class="enq__img"><img src="img/wedding/detail-2b.jpg" alt="Festoon lights above the garden in the evening" loading="lazy"/></div>
+  <div class="enq__scrim"></div>
+  <div class="enq__in reveal">
+    <p class="eyebrow">Enquire</p>
+    <h2 class="d2">Tell us your date and we will tell you honestly whether it is free.</h2>
+    <p>We hold twenty-two weekends a year and they go about eighteen months out. Ring the house — Rachel or Tom will pick up, and you will get a straight answer rather than a brochure.</p>
+    <a href="tel:+441865960480" class="enq__line">01865 960 480</a>
+    <div class="enq__contact">
+      <a href="tel:+441865960480" class="btn btn--ghost-light">Call the house</a>
+      <a href="mailto:weddings@hartwell.example" class="btn btn--ghost-light">Email us</a>
+    </div>
+    <p style="margin-top:30px;font-size:.86rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:rgba(247,244,237,.66)">Hartwell · Oxfordshire OX9 2LT</p>
+  </div>
+</section>
+
+<footer>
+  <span>The Orangery at Hartwell — a demo build. Not a real venue.</span>
+  <span>Site by <a href="https://brickworkstudio.net">Brickwork Studio</a> — <a href="https://brickworkstudio.net/#contact">get one like this</a></span>
+</footer>
+
+</body>
+</html>

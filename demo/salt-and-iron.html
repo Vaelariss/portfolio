@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'none'; form-action 'none'; upgrade-insecure-requests"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#0F0E0C"/>
+<title>Salt &amp; Iron — Fire-Cooked Restaurant | Brickwork Demo</title>
+<meta name="description" content="Demo restaurant site by Brickwork — menu, private dining, opening hours and one-tap table booking. This is an example build, not a real restaurant."/>
+<link rel="canonical" href="https://brickworkstudio.net/demo/salt-and-iron"/>
+<meta name="robots" content="noindex, follow"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Salt &amp; Iron — Demo Restaurant Site by Brickwork"/>
+<meta property="og:description" content="An example restaurant build by Brickwork. See what your site could look like."/>
+<meta property="og:url" content="https://brickworkstudio.net/demo/salt-and-iron"/>
+<meta property="og:image" content="https://brickworkstudio.net/og-cover.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://brickworkstudio.net/og-cover.png"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<link rel="stylesheet" href="/fonts/fonts.css"/>
+<link rel="stylesheet" href="fonts/fonts.css"/>
+<style>
+/* ============================================================
+   SALT & IRON — "dark editorial"
+   Near-black warm charcoal, ember accent, cream text.
+   High-contrast display serif over plain sans. Square corners,
+   hairline rules, no shadows. Slow cinematic motion.
+============================================================ */
+:root{
+  --ink:#0F0E0C;
+  --ink-2:#16140F;
+  --ink-3:#1E1B15;
+  --cream:#F2EDE3;
+  --cream-2:rgba(242,237,227,.66);
+  --cream-3:rgba(242,237,227,.58);
+  --ember:#C4522A;
+  --ember-lift:#DA6238;
+  --line:rgba(242,237,227,.13);
+  --line-2:rgba(242,237,227,.26);
+
+  --f-d:'Instrument Serif',Georgia,serif;
+  --f-b:'Inter',system-ui,sans-serif;
+  --f-m:'JetBrains Mono',ui-monospace,monospace;
+
+  --pad:clamp(20px,6vw,72px);
+  --sect:clamp(68px,8.5vw,124px);
+  --max:1240px;
+
+  --dur:640ms;
+  --dur-s:420ms;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--ink);color:var(--cream);font-family:var(--f-b);
+  font-size:clamp(15.5px,1.05vw,17px);line-height:1.65;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+::selection{background:var(--ember);color:var(--cream)}
+:focus-visible{outline:2px solid var(--ember-lift);outline-offset:3px}
+
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--pad)}
+.section{padding-block:var(--sect)}
+
+h1,h2,h3{font-family:var(--f-d);font-weight:400;line-height:1.02;
+  letter-spacing:-.012em}
+.d1{font-size:clamp(3.2rem,9vw,7.4rem)}
+.d2{font-size:clamp(2.4rem,5.4vw,4.6rem)}
+.d3{font-size:clamp(1.5rem,2.4vw,2.1rem)}
+.lede{font-size:clamp(1.05rem,1.5vw,1.28rem);line-height:1.62;color:var(--cream-2)}
+
+.eyebrow{font-family:var(--f-m);font-size:.72rem;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--ember-lift);
+  display:flex;align-items:center;gap:.85em}
+.eyebrow::before{content:'';width:26px;height:1px;background:var(--ember)}
+
+/* ---------- demo bar ---------- */
+.demo-bar{position:relative;z-index:120;background:var(--ember);color:#fff;
+  text-align:center;padding:11px 16px;font-size:.79rem;letter-spacing:.02em;
+  font-weight:500}
+.demo-bar span{opacity:.82;font-weight:400}
+.demo-bar a{font-weight:600;text-decoration:underline;text-underline-offset:3px;
+  white-space:nowrap;margin-left:6px}
+.demo-bar a:hover{color:var(--ink)}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;
+  justify-content:space-between;gap:24px;padding:18px var(--pad);
+  background:rgba(15,14,12,.86);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)}
+.logo{font-family:var(--f-d);font-size:1.42rem;letter-spacing:.02em}
+.logo em{font-style:italic;color:var(--ember-lift)}
+.nav-links{display:flex;gap:30px}
+.nav-links a{font-size:.82rem;letter-spacing:.04em;color:var(--cream-2);
+  transition:color var(--dur-s) var(--ease)}
+.nav-links a:hover{color:var(--cream)}
+.btn{display:inline-flex;align-items:center;gap:.6em;font-family:var(--f-m);
+  font-size:.74rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;
+  padding:13px 24px;border:1px solid var(--line-2);color:var(--cream);
+  transition:background var(--dur-s) var(--ease),color var(--dur-s) var(--ease),
+    border-color var(--dur-s) var(--ease)}
+.btn:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+.btn:active{background:var(--cream-2)}
+.btn--fill{background:var(--ember);border-color:var(--ember);color:#fff}
+.btn--fill:hover{background:var(--ember-lift);border-color:var(--ember-lift);color:#fff}
+
+/* ---------- image frame: hover scale inside a fixed crop ---------- */
+.frame{position:relative;overflow:hidden;background:var(--ink-2)}
+.frame img{width:100%;height:100%;object-fit:cover;
+  transition:transform 900ms var(--ease)}
+.frame:hover img,a:hover .frame img{transform:scale(1.045)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:min(94vh,880px);display:flex;align-items:flex-end;
+  overflow:hidden}
+.hero__img{position:absolute;inset:0}
+.hero__img img{width:100%;height:100%;object-fit:cover}
+.hero__scrim{position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(15,14,12,.72) 0%,rgba(15,14,12,.28) 38%,rgba(15,14,12,.94) 100%)}
+.hero__in{position:relative;width:100%;padding-block:clamp(48px,8vw,96px)}
+.hero h1{max-width:15ch;margin-top:22px}
+.hero h1 em{font-style:italic;color:var(--ember-lift)}
+.hero__meta{display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:32px;
+  font-family:var(--f-m);font-size:.75rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--cream-2)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+
+/* ---------- statement ---------- */
+.statement{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px);
+  align-items:start}
+.statement h2{max-width:16ch}
+.statement .col p+p{margin-top:1.1em}
+.rule{height:1px;background:var(--line);margin-block:clamp(28px,4vw,44px)}
+
+/* ---------- menu ---------- */
+.menu-head{display:flex;align-items:flex-end;justify-content:space-between;
+  gap:24px;flex-wrap:wrap;margin-bottom:clamp(36px,5vw,64px)}
+.dishes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,30px)}
+.dish .frame{aspect-ratio:4/5}
+.dish__row{display:flex;align-items:baseline;justify-content:space-between;
+  gap:16px;margin-top:20px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.dish__row h3{font-size:1.32rem}
+.dish__price{font-family:var(--f-m);font-size:.92rem;color:var(--ember-lift);
+  white-space:nowrap}
+.dish p{margin-top:12px;font-size:.9rem;color:var(--cream-2);line-height:1.6}
+
+/* ---------- kitchen: asymmetric split ---------- */
+.kitchen{display:grid;grid-template-columns:1.05fr .95fr;
+  gap:clamp(28px,5vw,72px);align-items:center}
+.kitchen .frame{aspect-ratio:4/5}
+.kitchen .frame img{filter:grayscale(1) contrast(1.06)}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:40px}
+.fact{border-top:1px solid var(--line-2);padding-top:16px}
+.fact b{display:block;font-family:var(--f-d);font-size:2.3rem;line-height:1;
+  color:var(--cream)}
+.fact span{display:block;margin-top:8px;font-family:var(--f-m);font-size:.7rem;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--cream-3)}
+
+/* ---------- room strip ---------- */
+.strip{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:clamp(12px,1.6vw,20px)}
+.strip .frame{aspect-ratio:1/1}
+.strip .frame:first-child{aspect-ratio:auto}
+
+/* ---------- booking ---------- */
+.book{background:var(--ink-2);border-top:1px solid var(--line)}
+.book__grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(32px,6vw,90px)}
+.hours{margin-top:34px}
+.hours li{display:flex;justify-content:space-between;gap:20px;
+  padding:13px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.hours li span:first-child{color:var(--cream-2)}
+.hours li span:last-child{font-family:var(--f-m);font-size:.84rem;
+  letter-spacing:.04em}
+.hours li.closed span:last-child{color:var(--cream-2)}
+.contact-line{display:block;font-family:var(--f-d);font-size:clamp(1.6rem,3vw,2.4rem);
+  margin-top:6px;transition:color var(--dur-s) var(--ease)}
+.contact-line:hover{color:var(--ember-lift)}
+.addr{margin-top:30px;font-size:.94rem;color:var(--cream-2);line-height:1.75}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:44px var(--pad);
+  display:flex;flex-wrap:wrap;gap:18px 30px;align-items:center;
+  justify-content:space-between;font-size:.82rem;color:var(--cream-3)}
+footer a{color:var(--cream-2);text-decoration:underline;text-underline-offset:3px}
+footer a:hover{color:var(--ember-lift)}
+
+/* ---------- motion: scroll-driven, progressively enhanced ----------
+   Default state is fully visible, so any browser without
+   animation-timeline support simply shows the content. ------------- */
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .reveal{animation:rise linear both;animation-timeline:view();
+      animation-range:entry 2% entry 62%}
+    .reveal-s{animation:fade linear both;animation-timeline:view();
+      animation-range:entry 0% entry 55%}
+    .hero__img img{animation:drift linear both;animation-timeline:view();
+      animation-range:cover 0% cover 100%}
+  }
+}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes drift{from{transform:scale(1.1) translateY(0)}to{transform:scale(1.1) translateY(-4%)}}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .statement,.kitchen,.book__grid{grid-template-columns:1fr}
+  .dishes{grid-template-columns:1fr 1fr}
+  .strip{grid-template-columns:1fr 1fr}
+  .kitchen .frame{aspect-ratio:16/11}
+  .nav-links{display:none}
+}
+@media (max-width:560px){
+  .dishes,.strip{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr}
+  .hero{min-height:82vh}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" id="top">Demo site built by Brickwork <span>— this is what your website could look like</span> <a href="https://brickworkstudio.net/#contact">Get one like this →</a></div>
+
+<nav>
+  <a href="#top" class="logo">Salt &amp; <em>Iron</em></a>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#kitchen">The Kitchen</a></li>
+    <li><a href="#room">The Room</a></li>
+    <li><a href="#book">Find Us</a></li>
+  </ul>
+  <a href="#book" class="btn btn--fill">Book a table</a>
+</nav>
+
+<header class="hero">
+  <div class="hero__img"><img src="img/restaurant/hero-1.jpg" alt="The dining room at Salt &amp; Iron in the evening, lit by low hanging lamps" fetchpriority="high"/></div>
+  <div class="hero__scrim"></div>
+  <div class="hero__in wrap">
+    <p class="eyebrow">Wood fire · Seasonal · Est. 2019</p>
+    <h1 class="d1">Everything here meets <em>fire</em> before it meets you.</h1>
+    <div class="hero__meta">
+      <span>Dinner Tue–Sat</span>
+      <span>Sunday lunch</span>
+      <span>28 covers</span>
+    </div>
+    <div class="hero__cta">
+      <a href="#book" class="btn btn--fill">Book a table</a>
+      <a href="#menu" class="btn">See the menu</a>
+    </div>
+  </div>
+</header>
+
+<section class="section wrap statement">
+  <div class="col reveal">
+    <p class="eyebrow">What we do</p>
+    <h2 class="d2" style="margin-top:20px">One fire. One menu. Whatever the farms sent us that week.</h2>
+  </div>
+  <div class="col reveal">
+    <p class="lede">There is no gas in this kitchen. Every plate that leaves the pass has been over embers, in ash, or beside the flame — and the menu is rewritten whenever the delivery changes it.</p>
+    <div class="rule"></div>
+    <p>We seat twenty-eight people. That is deliberate. It means the person who cooked your dinner can see your table from where they are standing, and it means we buy small and buy well.</p>
+    <p>Most nights the whole room eats the same four courses. If that sounds like a risk, it is meant to — we would rather cook one thing properly than nine things adequately.</p>
+  </div>
+</section>
+
+<section class="section wrap" id="menu">
+  <div class="menu-head">
+    <div class="reveal">
+      <p class="eyebrow">This week</p>
+      <h2 class="d2" style="margin-top:18px">On the fire</h2>
+    </div>
+    <p class="lede" style="max-width:34ch">Four courses, £68 per person. The menu changes most weeks — this is what is on it right now.</p>
+  </div>
+
+  <div class="dishes">
+    <article class="dish reveal">
+      <div class="frame"><img src="img/restaurant/dish-3b.jpg" alt="Aged beef sirloin plated with charred onion and herb oil" loading="lazy"/></div>
+      <div class="dish__row"><h3>Aged sirloin, ash onion</h3><span class="dish__price">£34</span></div>
+      <p>Thirty-five day dry-aged, cooked over oak, rested in beef fat. Onions buried in the embers until they collapse.</p>
+    </article>
+    <article class="dish reveal">
+      <div class="frame"><img src="img/restaurant/dish-1.jpg" alt="Cured fish course plated with herbs and burnt citrus" loading="lazy"/></div>
+      <div class="dish__row"><h3>Day boat fish, burnt lemon</h3><span class="dish__price">£26</span></div>
+      <p>Whatever came off the boat that morning, grilled whole on the bone with lemon blackened in the fire.</p>
+    </article>
+    <article class="dish reveal">
+      <div class="frame"><img src="img/restaurant/dish-1b.jpg" alt="Slow cooked meat with roasted root vegetables" loading="lazy"/></div>
+      <div class="dish__row"><h3>Ember roots, whipped curd</h3><span class="dish__price">£18</span></div>
+      <p>Roots from the farm two miles up the road, cooked directly in the coals. The vegetarian course, and nobody's consolation prize.</p>
+    </article>
+  </div>
+
+  <div class="rule"></div>
+  <p class="lede reveal-s" style="max-width:52ch">Allergies and anything you would rather not eat — tell us when you book and the kitchen will work around it.</p>
+</section>
+
+<section class="section wrap kitchen" id="kitchen">
+  <div class="frame reveal"><img src="img/restaurant/detail-1b.jpg" alt="A chef working the pass in the open kitchen" loading="lazy"/></div>
+  <div class="reveal">
+    <p class="eyebrow">The kitchen</p>
+    <h2 class="d2" style="margin-top:20px">You can watch the whole thing happen.</h2>
+    <p class="lede" style="margin-top:26px">The pass is open to the room on purpose. No shouting, no theatre — just five people working a single fire in front of the people eating from it.</p>
+    <div class="facts">
+      <div class="fact"><b>28</b><span>Covers a service</span></div>
+      <div class="fact"><b>4</b><span>Courses, set menu</span></div>
+      <div class="fact"><b>2mi</b><span>To the farm</span></div>
+      <div class="fact"><b>0</b><span>Gas burners</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="room">
+  <div class="menu-head">
+    <div class="reveal">
+      <p class="eyebrow">The room</p>
+      <h2 class="d2" style="margin-top:18px">Low light, hard chairs, good wine.</h2>
+    </div>
+    <p class="lede" style="max-width:32ch">Private dining for up to fourteen in the back room. Ask when you book.</p>
+  </div>
+  <div class="strip">
+    <div class="frame reveal"><img src="img/restaurant/detail-3.jpg" alt="The bar at Salt and Iron, dark wood and bottle shelves" loading="lazy"/></div>
+    <div class="frame reveal"><img src="img/restaurant/detail-2.jpg" alt="Wine glasses set on a table before service" loading="lazy"/></div>
+    <div class="frame reveal"><img src="img/restaurant/hero-2b.jpg" alt="Tables laid in the dining room by the windows" loading="lazy"/></div>
+  </div>
+</section>
+
+<section class="section book" id="book">
+  <div class="wrap book__grid">
+    <div class="reveal">
+      <p class="eyebrow">Book a table</p>
+      <h2 class="d2" style="margin-top:20px">Call the restaurant.</h2>
+      <p class="lede" style="margin-top:22px;max-width:40ch">We take bookings by phone so we can talk to you about the menu, the room, and anything you cannot eat.</p>
+      <a href="tel:+441134960123" class="contact-line">0113 496 0123</a>
+      <div class="addr">
+        14 Kirkgate Yard<br/>
+        Leeds LS2 7DJ<br/>
+        <a href="mailto:table@saltandiron.example" style="color:var(--cream-2);text-decoration:underline;text-underline-offset:3px">table@saltandiron.example</a>
+      </div>
+      <div class="hero__cta">
+        <a href="tel:+441134960123" class="btn btn--fill">Call to book</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="eyebrow">Hours</p>
+      <ul class="hours">
+        <li><span>Monday</span><span>Closed</span></li>
+        <li><span>Tuesday – Thursday</span><span>18:00 – 22:30</span></li>
+        <li><span>Friday – Saturday</span><span>17:30 – 23:00</span></li>
+        <li><span>Sunday</span><span>12:00 – 16:00</span></li>
+        <li class="closed"><span>Bank holidays</span><span>Closed</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Salt &amp; Iron — a demo build. Not a real restaurant.</span>
+  <span>Site by <a href="https://brickworkstudio.net">Brickwork Studio</a> — <a href="https://brickworkstudio.net/#contact">get one like this</a></span>
+</footer>
+
+</body>
+</html>

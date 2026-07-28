@@ -1,0 +1,382 @@
+{
+  "cafe": [
+    {
+      "file": "cafe/hero-1.jpg",
+      "query": "specialty coffee shop interior",
+      "source": "https://unsplash.com/photos/woman-standing-on-food-counter-F2eHfMwIOxA",
+      "alt": "woman standing on food counter"
+    },
+    {
+      "file": "cafe/hero-1b.jpg",
+      "query": "specialty coffee shop interior",
+      "source": "https://unsplash.com/photos/a-coffee-shop-with-lots-of-coffee-machines-AYdJM-HiSUM",
+      "alt": "a coffee shop with lots of coffee machines"
+    },
+    {
+      "file": "cafe/hero-2.jpg",
+      "query": "cafe window seat morning",
+      "source": "https://unsplash.com/photos/a-cup-of-coffee-sitting-on-top-of-a-wooden-table-mMJ5rSr7GW8",
+      "alt": "a cup of coffee sitting on top of a wooden table"
+    },
+    {
+      "file": "cafe/hero-2b.jpg",
+      "query": "cafe window seat morning",
+      "source": "https://unsplash.com/photos/chairs-and-table-by-a-large-window-overlooking-city-P-sHG7PI97g",
+      "alt": "Chairs and table by a large window overlooking city"
+    },
+    {
+      "file": "cafe/dish-1.jpg",
+      "query": "latte art coffee cup",
+      "source": "https://unsplash.com/photos/cappuccino-gURxlcD9I0U",
+      "alt": "cappuccino"
+    },
+    {
+      "file": "cafe/dish-1b.jpg",
+      "query": "latte art coffee cup",
+      "source": "https://unsplash.com/photos/a-cappuccino-with-a-leaf-on-top-of-it-wB62PLxvQ3Y",
+      "alt": "a cappuccino with a leaf on top of it"
+    },
+    {
+      "file": "cafe/dish-2.jpg",
+      "query": "pastry display counter bakery",
+      "source": "https://unsplash.com/photos/a-bakery-filled-with-lots-of-baked-goods-IYjXGUpJH74",
+      "alt": "a bakery filled with lots of baked goods"
+    },
+    {
+      "file": "cafe/dish-2b.jpg",
+      "query": "pastry display counter bakery",
+      "source": "https://unsplash.com/photos/brown-and-white-doughnuts-on-white-wooden-rack-qwzhT20ohOM",
+      "alt": "brown and white doughnuts on white wooden rack"
+    },
+    {
+      "file": "cafe/dish-3.jpg",
+      "query": "breakfast plate cafe",
+      "source": "https://unsplash.com/photos/a-cup-of-coffee-sits-on-a-table-with-silverware-b5Z_OOZxZ7c",
+      "alt": "a cup of coffee sits on a table with silverware"
+    },
+    {
+      "file": "cafe/dish-3b.jpg",
+      "query": "breakfast plate cafe",
+      "source": "https://unsplash.com/photos/brown-bread-on-white-ceramic-plate-P_E6kRv5CsY",
+      "alt": "brown bread on white ceramic plate"
+    },
+    {
+      "file": "cafe/detail-1.jpg",
+      "query": "barista espresso machine",
+      "source": "https://unsplash.com/photos/an-espresso-machine-sitting-on-top-of-a-counter-kLfAST5nqjM",
+      "alt": "an espresso machine sitting on top of a counter"
+    },
+    {
+      "file": "cafe/detail-1b.jpg",
+      "query": "barista espresso machine",
+      "source": "https://unsplash.com/photos/man-in-white-and-black-stripe-shirt-pouring-water-on-clear-drinking-glass-kMTusH6a_Rg",
+      "alt": "man in white and black stripe shirt pouring water on clear drinking glass"
+    },
+    {
+      "file": "cafe/detail-2.jpg",
+      "query": "coffee beans roastery",
+      "source": "https://unsplash.com/photos/brown-coffee-beans-on-brown-wooden-table-lcfH0p6emhw",
+      "alt": "brown coffee beans on brown wooden table"
+    },
+    {
+      "file": "cafe/detail-2b.jpg",
+      "query": "coffee beans roastery",
+      "source": "https://unsplash.com/photos/brown-coffee-beans-REqK8jIAtv8",
+      "alt": "brown coffee beans"
+    },
+    {
+      "file": "cafe/detail-3.jpg",
+      "query": "cafe counter people",
+      "source": "https://unsplash.com/photos/a-restaurant-with-a-bar-and-a-television-on-the-wall-KnlrwWYoW0s",
+      "alt": "a restaurant with a bar and a television on the wall"
+    },
+    {
+      "file": "cafe/detail-3b.jpg",
+      "query": "cafe counter people",
+      "source": "https://unsplash.com/photos/waitresses-are-working-together-in-a-cafe-MTiXPXy16Fs",
+      "alt": "Waitresses are working together in a cafe."
+    }
+  ],
+  "restaurant": [
+    {
+      "file": "restaurant/hero-1.jpg",
+      "query": "moody restaurant interior evening",
+      "source": "https://unsplash.com/photos/brown-wooden-table-and-chairs-near-brown-wooden-table-ViMHdAuMVJs",
+      "alt": "brown wooden table and chairs near brown wooden table"
+    },
+    {
+      "file": "restaurant/hero-1b.jpg",
+      "query": "moody restaurant interior evening",
+      "source": "https://unsplash.com/photos/a-building-illuminated-at-night-with-reflections-in-water-uHzPXgiU2nk",
+      "alt": "A building illuminated at night with reflections in water."
+    },
+    {
+      "file": "restaurant/hero-2.jpg",
+      "query": "restaurant dining room warm light",
+      "source": "https://unsplash.com/photos/restaurant-interior-with-red-chairs-and-wooden-beams-GuZahiETYg0",
+      "alt": "Restaurant interior with red chairs and wooden beams."
+    },
+    {
+      "file": "restaurant/hero-2b.jpg",
+      "query": "restaurant dining room warm light",
+      "source": "https://unsplash.com/photos/cozy-rustic-restaurant-interior-with-large-windows-Q73XXHcIsa8",
+      "alt": "Cozy rustic restaurant interior with large windows."
+    },
+    {
+      "file": "restaurant/dish-1.jpg",
+      "query": "plated fine dining dish dark",
+      "source": "https://unsplash.com/photos/a-plate-of-food-2LXuRH4JCEM",
+      "alt": "a plate of food"
+    },
+    {
+      "file": "restaurant/dish-1b.jpg",
+      "query": "plated fine dining dish dark",
+      "source": "https://unsplash.com/photos/a-plate-of-food-on-a-wooden-table-w8fsiimhh9A",
+      "alt": "a plate of food on a wooden table"
+    },
+    {
+      "file": "restaurant/dish-2.jpg",
+      "query": "pasta dish restaurant overhead",
+      "source": "https://unsplash.com/photos/green-vegetable-on-white-ceramic-plate-1snfkHQKjUQ",
+      "alt": "green vegetable on white ceramic plate"
+    },
+    {
+      "file": "restaurant/dish-2b.jpg",
+      "query": "pasta dish restaurant overhead",
+      "source": "https://unsplash.com/photos/white-ceramic-plate-with-stainless-steel-fork-and-bread-knife-AwmZYJVESFc",
+      "alt": "white ceramic plate with stainless steel fork and bread knife"
+    },
+    {
+      "file": "restaurant/dish-3.jpg",
+      "query": "steak plated restaurant",
+      "source": "https://unsplash.com/photos/person-eating-food-rheOvfxOlOA",
+      "alt": "person eating food"
+    },
+    {
+      "file": "restaurant/dish-3b.jpg",
+      "query": "steak plated restaurant",
+      "source": "https://unsplash.com/photos/brown-bread-with-cheese-on-white-ceramic-plate-fimM6mgqv6M",
+      "alt": "brown bread with cheese on white ceramic plate"
+    },
+    {
+      "file": "restaurant/detail-1.jpg",
+      "query": "restaurant kitchen chef plating",
+      "source": "https://unsplash.com/photos/a-group-of-chefs-preparing-food-in-a-kitchen-80GJUuOhXgA",
+      "alt": "A group of chefs preparing food in a kitchen"
+    },
+    {
+      "file": "restaurant/detail-1b.jpg",
+      "query": "restaurant kitchen chef plating",
+      "source": "https://unsplash.com/photos/grayscale-photo-of-man-cooking-9p6pFEwq-wI",
+      "alt": "grayscale photo of man cooking"
+    },
+    {
+      "file": "restaurant/detail-2.jpg",
+      "query": "wine glasses set table restaurant",
+      "source": "https://unsplash.com/photos/clear-long-stem-wine-glasses-on-table--SFs8RmpnHQ",
+      "alt": "clear long-stem wine glasses on table"
+    },
+    {
+      "file": "restaurant/detail-2b.jpg",
+      "query": "wine glasses set table restaurant",
+      "source": "https://unsplash.com/photos/clear-wine-glasses-xkoiWx2S9_o",
+      "alt": "clear wine glasses"
+    },
+    {
+      "file": "restaurant/detail-3.jpg",
+      "query": "restaurant bar counter",
+      "source": "https://unsplash.com/photos/a-bar-with-a-large-window-FU4Egyl8o2k",
+      "alt": "a bar with a large window"
+    },
+    {
+      "file": "restaurant/detail-3b.jpg",
+      "query": "restaurant bar counter",
+      "source": "https://unsplash.com/photos/people-sitting-at-a-bar-with-bottles-behind-the-bar-m-7ioVtOiCM",
+      "alt": "People sitting at a bar with bottles behind the bar."
+    }
+  ],
+  "wedding": [
+    {
+      "file": "wedding/hero-1.jpg",
+      "query": "wedding venue country house garden",
+      "source": "https://unsplash.com/photos/country-house-on-a-hill-with-white-wildflowers-in-foreground-OZcUpXiy3Zo",
+      "alt": "Country house on a hill with white wildflowers in foreground."
+    },
+    {
+      "file": "wedding/hero-1b.jpg",
+      "query": "wedding venue country house garden",
+      "source": "https://unsplash.com/photos/historic-stone-mansion-framed-by-green-tree-branches-F7yQZRcfkSw",
+      "alt": "Historic stone mansion framed by green tree branches"
+    },
+    {
+      "file": "wedding/dish-1.jpg",
+      "query": "wedding table setting flowers",
+      "source": "https://unsplash.com/photos/a-table-set-up-for-a-formal-dinner-PO56PwADoFU",
+      "alt": "a table set up for a formal dinner"
+    },
+    {
+      "file": "wedding/dish-1b.jpg",
+      "query": "wedding table setting flowers",
+      "source": "https://unsplash.com/photos/red-roses-in-clear-glass-vase-on-table-divZsHxB0m4",
+      "alt": "red roses in clear glass vase on table"
+    },
+    {
+      "file": "wedding/dish-2.jpg",
+      "query": "wedding ceremony aisle outdoor",
+      "source": "https://unsplash.com/photos/a-rustic-wedding-arch-with-flowers-and-fabric-outdoors-YBlUmBy8X2Q",
+      "alt": "A rustic wedding arch with flowers and fabric outdoors."
+    },
+    {
+      "file": "wedding/dish-2b.jpg",
+      "query": "wedding ceremony aisle outdoor",
+      "source": "https://unsplash.com/photos/wedding-ceremony-with-guests-seated-outdoors-R93xrxFUsbU",
+      "alt": "Wedding ceremony with guests seated outdoors."
+    },
+    {
+      "file": "wedding/dish-3.jpg",
+      "query": "wedding cake table",
+      "source": "https://unsplash.com/photos/a-three-tiered-wedding-cake-on-a-table-gT-6atvGlFU",
+      "alt": "a three tiered wedding cake on a table"
+    },
+    {
+      "file": "wedding/dish-3b.jpg",
+      "query": "wedding cake table",
+      "source": "https://unsplash.com/photos/white-and-red-ceramic-house-figurine-on-white-table-OzHWsXP833A",
+      "alt": "white and red ceramic house figurine on white table"
+    },
+    {
+      "file": "wedding/detail-1.jpg",
+      "query": "bride groom walking venue",
+      "source": "https://unsplash.com/photos/grayscale-photography-of-wedding-couple-SljsxQcjZl0",
+      "alt": "grayscale photography of wedding couple"
+    },
+    {
+      "file": "wedding/detail-1b.jpg",
+      "query": "bride groom walking venue",
+      "source": "https://unsplash.com/photos/a-bride-and-groom-walking-down-the-aisle-nAQ1XDAJpWE",
+      "alt": "A bride and groom walking down the aisle"
+    },
+    {
+      "file": "wedding/detail-2.jpg",
+      "query": "wedding string lights evening",
+      "source": "https://unsplash.com/photos/yellow-light-bokeh-on-black-background-gpFAEiBchKI",
+      "alt": "yellow light bokeh on black background"
+    },
+    {
+      "file": "wedding/detail-2b.jpg",
+      "query": "wedding string lights evening",
+      "source": "https://unsplash.com/photos/macro-view-of-lights-in-a-party-in-gettysburg-gG6yehL64fo",
+      "alt": "Macro view of lights in a party in Gettysburg"
+    },
+    {
+      "file": "wedding/detail-3.jpg",
+      "query": "wedding venue barn interior",
+      "source": "https://unsplash.com/photos/interior-of-an-old-wooden-barn-with-exposed-beams-uC3IiS86Mlo",
+      "alt": "Interior of an old wooden barn with exposed beams."
+    },
+    {
+      "file": "wedding/detail-3b.jpg",
+      "query": "wedding venue barn interior",
+      "source": "https://unsplash.com/photos/a-view-of-a-covered-area-with-trees-in-the-background-Xu76HbeLSnM",
+      "alt": "a view of a covered area with trees in the background"
+    }
+  ],
+  "hotel": [
+    {
+      "file": "hotel/hero-1.jpg",
+      "query": "boutique hotel room interior",
+      "source": "https://unsplash.com/photos/a-living-area-with-a-couch-chair-table-and-windows-Gi5uI8uZJjg",
+      "alt": "a living area with a couch, chair, table, and windows"
+    },
+    {
+      "file": "hotel/hero-1b.jpg",
+      "query": "boutique hotel room interior",
+      "source": "https://unsplash.com/photos/wine-bottle-near-glass-on-end-table-beside-closed-window-tJXkQ3Borlc",
+      "alt": "wine bottle near glass on end table beside closed window"
+    },
+    {
+      "file": "hotel/hero-2.jpg",
+      "query": "hotel lobby modern design",
+      "source": "https://unsplash.com/photos/modern-lobby-with-contemporary-art-installation-and-seating-area-KR4u_ejqQGw",
+      "alt": "Modern lobby with contemporary art installation and seating area"
+    },
+    {
+      "file": "hotel/hero-2b.jpg",
+      "query": "hotel lobby modern design",
+      "source": "https://unsplash.com/photos/modern-hotel-lobby-with-elevator-doors-and-artwork-hV1myjiP9yI",
+      "alt": "Modern hotel lobby with elevator doors and artwork"
+    },
+    {
+      "file": "hotel/dish-1.jpg",
+      "query": "hotel bedroom natural light",
+      "source": "https://unsplash.com/photos/vacant-white-bed-near-the-window-B4rEJ09-Puo",
+      "alt": "vacant white bed near the window"
+    },
+    {
+      "file": "hotel/dish-1b.jpg",
+      "query": "hotel bedroom natural light",
+      "source": "https://unsplash.com/photos/a-bedroom-with-a-large-bed-and-a-red-rug-q4SrQzYYoVU",
+      "alt": "A bedroom with a large bed and a red rug"
+    },
+    {
+      "file": "hotel/dish-2.jpg",
+      "query": "hotel bathroom marble",
+      "source": "https://unsplash.com/photos/modern-bathroom-with-multiple-sinks-and-mirrors-hgPtOHE82Ec",
+      "alt": "Modern bathroom with multiple sinks and mirrors."
+    },
+    {
+      "file": "hotel/dish-2b.jpg",
+      "query": "hotel bathroom marble",
+      "source": "https://unsplash.com/photos/gray-stainless-steel-faucet-near-mirror-jdq_FOLmkU0",
+      "alt": "gray stainless steel faucet near mirror"
+    },
+    {
+      "file": "hotel/dish-3.jpg",
+      "query": "hotel terrace view",
+      "source": "https://unsplash.com/photos/a-group-of-people-sitting-on-top-of-a-blue-couch-5oHO054ZJSM",
+      "alt": "a group of people sitting on top of a blue couch"
+    },
+    {
+      "file": "hotel/dish-3b.jpg",
+      "query": "hotel terrace view",
+      "source": "https://unsplash.com/photos/outdoor-seating-area-at-sunset-with-ocean-view-FbA6KxAuHhM",
+      "alt": "Outdoor seating area at sunset with ocean view"
+    },
+    {
+      "file": "hotel/detail-1.jpg",
+      "query": "hotel breakfast table",
+      "source": "https://unsplash.com/photos/a-table-topped-with-plates-of-food-and-drinks-xyel_GFkqh4",
+      "alt": "A table topped with plates of food and drinks"
+    },
+    {
+      "file": "hotel/detail-1b.jpg",
+      "query": "hotel breakfast table",
+      "source": "https://unsplash.com/photos/white-ceramic-mugs-on-table-eGX9jifHjko",
+      "alt": "white ceramic mugs on table"
+    },
+    {
+      "file": "hotel/detail-2.jpg",
+      "query": "hotel pool evening",
+      "source": "https://unsplash.com/photos/a-swimming-pool-surrounded-by-palm-trees-in-front-of-a-building-puGBv2fsl-c",
+      "alt": "a swimming pool surrounded by palm trees in front of a building"
+    },
+    {
+      "file": "hotel/detail-2b.jpg",
+      "query": "hotel pool evening",
+      "source": "https://unsplash.com/photos/blue-lit-swimming-pool-at-a-mediterranean-resort-at-night-NFfaQdy9D7E",
+      "alt": "Blue lit swimming pool at a mediterranean resort at night."
+    },
+    {
+      "file": "hotel/detail-3.jpg",
+      "query": "hotel reception desk",
+      "source": "https://unsplash.com/photos/a-sign-that-is-on-the-side-of-a-building-T8rO5Pp_4Ig",
+      "alt": "a sign that is on the side of a building"
+    },
+    {
+      "file": "hotel/detail-3b.jpg",
+      "query": "hotel reception desk",
+      "source": "https://unsplash.com/photos/modern-lounge-area-with-contemporary-furniture-and-large-windows-yGEohCLnrl0",
+      "alt": "Modern lounge area with contemporary furniture and large windows."
+    }
+  ]
+}

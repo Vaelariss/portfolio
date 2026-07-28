@@ -274,10 +274,6 @@ section{position:relative}
 .pv__badge{position:absolute;top:10px;right:10px;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px;border-radius:2px}
 .b-demo{background:var(--paper);color:var(--brick-deep);border:1px solid var(--line-2)}
 .b-live{background:var(--paper);color:#1F6B42;border:1px solid var(--line-2)}
-.pv-bloom{background:linear-gradient(135deg,#f3e2cf,#e7c9a6);color:#5a3a1f}
-.pv-aurum{background:linear-gradient(135deg,#1a1508,#2c2412);color:#e9d9a8}
-.pv-fade{background:linear-gradient(135deg,#0c0c0c,#1c160c);color:#e8c558}
-.pv-parallax{background:radial-gradient(ellipse at 30% 0%,#15233a,#0a0e16);color:#bcd3f5}
 .proj__b{padding:20px 22px}
 .proj__type{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brick-deep);margin-bottom:8px}
 .proj__b h3{font-size:1.2rem;margin-bottom:8px}
@@ -427,3 +423,50 @@ section{position:relative}
 .curswitch button:last-child{border-right:none}
 .curswitch button[aria-pressed="true"]{background:var(--ink);color:var(--on-dark)}
 .cur-note{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.03em;text-transform:uppercase;color:var(--faint)}
+
+/* ---------- founding rates ----------
+   Current prices are introductory and rise as the client list fills.
+   Saying so on the page turns a low number into scarcity rather than
+   into a signal that the work is cheap. */
+.risenote{
+  display:flex;align-items:flex-start;gap:14px;
+  max-width:72ch;margin:0 auto clamp(30px,3.6vw,42px);
+  padding:16px 20px;
+  background:rgba(var(--amber-rgb),.11);
+  border:1px solid rgba(var(--amber-rgb),.42);
+  border-radius:var(--r);
+}
+.risenote__dot{
+  flex:none;width:9px;height:9px;margin-top:7px;border-radius:50%;
+  background:var(--amber);box-shadow:0 0 0 4px rgba(var(--amber-rgb),.22);
+}
+.risenote p{font-size:.92rem;line-height:1.6;color:var(--ink)}
+.risenote b{font-weight:700}
+/* Scoped to its own class on purpose — a bare `.risenote span` also matched
+   the inline .price spans and broke them onto their own lines. */
+.risenote__sub{
+  display:block;margin-top:6px;font-family:var(--f-mono);font-size:.72rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+}
+.plan__then{
+  font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--faint);margin:-10px 0 16px;
+}
+.plan__then s{text-decoration:line-through;text-decoration-thickness:1px}
+.plan__then b{color:var(--brick-deep);font-weight:500}
+@media (max-width:560px){
+  .risenote{flex-direction:row;padding:14px 16px}
+}
+
+/* ---------- work previews: real screenshots ----------
+   These were CSS gradients with the brand name set in type. Now that the
+   demos are photographic they carry themselves, so the card shows an actual
+   screenshot and the name lives in the body below. */
+.pv--shot{display:block;padding:0;overflow:hidden;background:var(--concrete);gap:0}
+.pv--shot img{width:100%;height:100%;object-fit:cover;object-position:top center;
+  transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.proj:hover .pv--shot img{transform:scale(1.035)}
+@media (prefers-reduced-motion:reduce){
+  .pv--shot img{transition:none}
+  .proj:hover .pv--shot img{transform:none}
+}

@@ -9,20 +9,31 @@
 /js/script.js   https://cloud.umami.is/script.js   200
 /api/send       https://cloud.umami.is/api/send    200
 
-# ---- Demo relocation: both previously indexed forms ----
-/aurum-jewels          /demo/aurum-jewels    301
-/aurum-jewels.html     /demo/aurum-jewels    301
-/bloom-ember           /demo/bloom-ember     301
-/bloom-ember.html      /demo/bloom-ember     301
-/fade-district         /demo/fade-district   301
-/fade-district.html    /demo/fade-district   301
+# ---- Retired demos (2026-07-28) ----
+# The three emoji-illustrated demos were replaced by four photographic builds.
+# Every previously indexed form goes to the work section rather than 404 — these
+# URLs still carry GSC impressions for the fake brand names, and a dead page is
+# the one outcome worse than the wrong visitor.
+/aurum-jewels             /#work   301
+/aurum-jewels.html        /#work   301
+/demo/aurum-jewels        /#work   301
+/demo/aurum-jewels.html   /#work   301
+/bloom-ember              /#work   301
+/bloom-ember.html         /#work   301
+/demo/bloom-ember         /#work   301
+/demo/bloom-ember.html    /#work   301
+/fade-district            /#work   301
+/fade-district.html       /#work   301
+/demo/fade-district       /#work   301
+/demo/fade-district.html  /#work   301
 
-# Canonicalise the .html form of the new paths. These must be explicit and
+# Canonicalise the .html form of the current demos. These must be explicit and
 # forced: a ":param.html" pattern does NOT work (Netlify params match a whole
 # path segment, so it captured every /demo/* URL and emitted a literal ":slug").
-/demo/aurum-jewels.html   /demo/aurum-jewels    301!
-/demo/bloom-ember.html    /demo/bloom-ember     301!
-/demo/fade-district.html  /demo/fade-district   301!
+/demo/salt-and-iron.html  /demo/salt-and-iron   301!
+/demo/the-orangery.html   /demo/the-orangery    301!
+/demo/the-alder.html      /demo/the-alder       301!
+/demo/kiln-coffee.html    /demo/kiln-coffee     301!
 
 # ---- Service pages that never shipped: send to the services section ----
 /shopify-store-design         /#services   301
