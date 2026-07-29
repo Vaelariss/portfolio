@@ -56,8 +56,13 @@
 /guide-ai-receptionist         /#services   301
 /guide-ai-receptionist.html    /#services   301
 
-# ---- Short link for cold outreach, so the channel is attributable ----
-/hi   /?utm_source=coldemail&utm_medium=email&utm_campaign=outreach   301
+# ---- Short link for cold outreach ----
+# /hi used to 301 to the homepage with UTM tags. It is now a real landing page
+# (hi.html) that continues the conversation the email started, so the redirect
+# is gone. Attribution no longer needs UTM params either: Umami records the
+# /hi pathname directly, and the form carries a hidden source field.
+# Emails already sent link to /hi, so they keep working and land somewhere better.
+/hi.html   /hi   301!
 
 # ---- Booking ----
 # Every "book a call" CTA on the site points at /book, so switching the

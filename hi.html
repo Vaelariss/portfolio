@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17130E">
+<!-- Campaign landing page: deliberately noindex so it never competes with the
+     homepage in search. "follow" so the links out still pass value. -->
+<meta name="robots" content="noindex, follow">
+
+<title>Your free mockup | Brickwork Studio</title>
+<meta name="description" content="You got an email from Brickwork. Here's the free mockup offer in full — a real design of your site within 48 hours, no payment and no commitment.">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/styles.css">
+<script src="/script.js"></script>
+
+<!-- Analytics: Umami, proxied same-origin via _redirects so script-src stays
+     'self' and no cookie banner is needed.
+     data-host-url MUST be set and MUST be our own absolute origin. The
+     vendor script hardcodes gateway.umami.is as its default, so without
+     this the beacon goes cross-origin and connect-src 'self' blocks it. -->
+<script defer src="/js/script.js" data-website-id="5f25a793-3b67-4489-96e3-d85529420a03" data-host-url="https://brickworkstudio.net"></script>
+</head>
+<body>
+
+<a class="skip" href="#start">Skip to the offer</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M12 15l-3-3c1-5 4.5-8.5 10-9-.5 5.5-4 9-9 10z"/><circle cx="14.5" cy="9.5" r="1.2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3v-7a8 8 0 0 1 8-8h2a8 8 0 0 1 8 4z"/></symbol>
+</svg>
+
+<!-- Stripped nav: brand only. A campaign page has one job, and every extra
+     nav link is an exit. The logo still links home for anyone checking us out. -->
+<header class="nav">
+  <div class="container nav__in">
+    <a href="/" class="brand"><img src="/favicon.svg" alt="" width="30" height="30"><b>Brick<span>work</span></b></a>
+    <div class="nav__right">
+      <span class="nav__status">Booking now</span>
+      <a href="#start" class="btn">Claim my free mockup <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="section shero">
+  <div class="container">
+    <p class="speclabel">You got an email from us</p>
+    <h1>Here's the free mockup, in full.</h1>
+    <p class="lead">We'll design a real homepage for your business and send it within 48 hours. No payment, no card, no commitment. If you don't like it, you say so and we go away — you've lost nothing but the ten minutes it took to tell us what you do.</p>
+    <div class="hero__cta" style="margin-top:26px">
+      <a href="#start" class="btn btn--lg">Claim my free mockup <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+      <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%20got%20your%20email%20-%20I%27d%20like%20the%20free%20mockup" target="_blank" rel="noopener" class="btn btn--ghost btn--lg">WhatsApp instead</a>
+    </div>
+  </div>
+</section>
+
+<!-- The single biggest objection to a cold email is "who are you and how did
+     you get my address". Answering it plainly, early, beats ignoring it. -->
+<section class="section" style="background:var(--concrete-2)">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">Straight answers</p>
+      <h2>Why you got that email.</h2>
+      <p style="margin-bottom:14px">Fair question, so here's the honest version rather than a marketing one.</p>
+    </div>
+    <ul class="checklist reveal">
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>We found you the same way a customer would</b><p>Searching for businesses like yours in your area, publicly listed. Your email came from your own website, listing or social profile — nowhere else, and it isn't on a list we bought or sold.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>We looked at your site before writing</b><p>Every email we send is about that specific business. If we said something about your site, we'd actually opened it. If we got something wrong, tell us — we'd rather know.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>One email, and we stop if you say so</b><p>Reply "no thanks" and you're removed permanently, no follow-ups. We'd rather have a clean list than a big one.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Brickwork is a new studio, and we're not hiding it</b><p>That's exactly why the mockup is free and why the rates are what they are. You're getting founding pricing because we're building a client list, not because the work is cheap.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">What "free mockup" actually means</p>
+      <h2>A real design. Not a template with your name on it.</h2>
+    </div>
+    <div class="steps">
+      <article class="step reveal">
+        <div class="step__n">1</div>
+        <h3>Tell us what you do</h3>
+        <p>Your business name, what you offer, and anything you like or hate in a website. Ten minutes, no technical questions.</p>
+      </article>
+      <article class="step reveal rd1">
+        <div class="step__n">2</div>
+        <h3>We design it</h3>
+        <p>Within 48 hours you get a real homepage design built around your business — your services, your trade, your customers.</p>
+      </article>
+      <article class="step reveal rd2">
+        <div class="step__n">3</div>
+        <h3>You decide</h3>
+        <p>Like it? We build the full site in 7 days, 50% up front and the rest only when you're happy. Don't like it? Nothing owed, and that's genuinely the end of it.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section stats">
+  <div class="container">
+    <div class="stats__g">
+      <div><div class="n">48h</div><div class="l">To your free mockup</div></div>
+      <div><div class="n">7 days</div><div class="l">Brief to live site</div></div>
+      <div><div class="n">£0</div><div class="l">To see it first</div></div>
+      <div><div class="n">50%</div><div class="l">Only after you're happy</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--concrete-2)">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">What it costs, before you ask</p>
+      <h2>Flat prices, published. No "request a quote".</h2>
+      <p>Billed in GBP through Stripe. Founding rates while the client list is still being built — whatever you agree is locked for the life of your project.</p>
+    </div>
+    <ul class="checklist reveal">
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Local business website — <span class="price" data-amt="895" data-cur="gbp">£895</span></b><p>Custom brochure site for shops, salons, barbers, trades and restaurants. No monthly fees. <a href="/local-business-websites">What's included</a></p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Shopify store — from <span class="price" data-amt="1450" data-cur="gbp">£1,450</span></b><p>Full ecommerce store built from scratch, ready to take orders. <a href="/shopify-store-design">What's included</a></p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>AI receptionist — <span class="price" data-amt="1250" data-cur="gbp">£1,250</span> + <span class="price" data-amt="79" data-cur="gbp" data-suffix="/mo">£79/mo</span></b><p>Answers your phone 24/7 and books appointments while you're working. <a href="/ai-receptionist">What's included</a></p></div></li>
+    </ul>
+    <p class="anchor reveal" style="margin-top:26px">For comparison, most agencies quote <b><span class="price" data-amt="1500" data-cur="gbp">£1,500</span>–<span class="price" data-amt="4000" data-cur="gbp">£4,000</span>+</b> and take 6–12 weeks.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">See it before you believe it</p>
+      <h2>Four builds you can click through right now.</h2>
+      <p>Real pages, not screenshots. Open them on your phone — that's where your customers will be. They're labelled demos because they're concepts for imaginary businesses, not client work we're passing off as ours.</p>
+    </div>
+    <div class="serve__grid reveal">
+      <a href="/demo/salt-and-iron">Salt &amp; Iron — restaurant</a>
+      <a href="/demo/the-orangery">The Orangery — wedding venue</a>
+      <a href="/demo/the-alder">The Alder — boutique hotel</a>
+      <a href="/demo/kiln-coffee">Kiln — café</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="start" style="background:var(--concrete-2)">
+  <div class="container contact__grid">
+    <div class="reveal">
+      <p class="speclabel">Claim it</p>
+      <h2>Two fields. That's the whole commitment.</h2>
+      <p class="lead" style="margin-top:14px">Tell us your name, your email and roughly what you do. We'll come back to confirm, then send the mockup within 48 hours.</p>
+
+      <p class="speclabel" style="margin-top:26px">The free mockup guarantee</p>
+      <div class="guars">
+        <div class="guar"><svg class="ic"><use href="#i-eye"/></svg><span><b>See it before you pay a penny.</b> A real design of your site within 48 hours</span></div>
+        <div class="guar"><svg class="ic"><use href="#i-shield"/></svg>Don't love it? You owe nothing and we part as friends</div>
+        <div class="guar"><svg class="ic"><use href="#i-lock"/></svg>50% deposit · the balance only once you're happy, via Stripe</div>
+        <div class="guar"><svg class="ic"><use href="#i-rocket"/></svg>Live in 7 days from brief</div>
+      </div>
+
+      <p class="speclabel" style="margin-top:30px">Prefer to talk first?</p>
+      <div class="hero__cta" style="margin-top:14px">
+        <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%20got%20your%20email%20-%20I%27d%20like%20the%20free%20mockup" target="_blank" rel="noopener" class="btn btn--ghost">WhatsApp — usually fastest <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        <a href="/book" class="btn btn--ghost">Book a 15-min call <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+
+    <div class="reveal rd1">
+      <!-- Same form NAME as the homepage on purpose. The site's email
+           notification is configured with form_id: null (all forms), but this
+           project has already lost submissions once to a misconfigured form,
+           so reusing the verified path beats a cleaner-looking separate form.
+           Attribution comes from the hidden source field and from Umami
+           recording the /hi pathname. -->
+      <form id="contact-form" class="form" name="contact" method="POST" action="/thanks" data-netlify="true" data-netlify-honeypot="_gotcha">
+        <input type="hidden" name="form-name" value="contact">
+        <input type="hidden" name="source" value="cold-email-hi">
+        <div class="f-row">
+          <div class="fg"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="First name" required></div>
+          <div class="fg"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required></div>
+        </div>
+        <div class="fg"><label for="message">What do you sell or offer?</label><textarea id="message" name="message" placeholder="A sentence is plenty — it's all we need to start your mockup."></textarea></div>
+        <details class="fg more">
+          <summary>Add more detail <span class="opt">(optional)</span></summary>
+          <div class="fg" style="margin-top:14px"><label for="business">Business name</label><input id="business" name="business" type="text" autocomplete="organization" placeholder="Your business"></div>
+          <div class="fg"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number"></div>
+          <div class="fg"><label for="service">What do you need?</label>
+            <select id="service" name="service">
+              <option selected>Not sure — just send me a free mockup</option>
+              <option>Shopify Store</option>
+              <option>Local Business Website</option>
+              <option>Monthly Website Care</option>
+              <option>AI Receptionist</option>
+              <option>Custom-Built System</option>
+            </select>
+          </div>
+        </details>
+        <div class="hp" aria-hidden="true"><label for="_gotcha">Leave this empty</label><input id="_gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
+        <button type="submit" class="btn btn--block btn--lg">Send me the free mockup <svg class="ic"><use href="#i-arrow-right"/></svg></button>
+        <p class="form__note">No card required · Stripe when you're ready · <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%20got%20your%20email" target="_blank" rel="noopener">WhatsApp for a faster reply</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom">
+      <span>&copy; <span id="year">2026</span> Brickwork &middot; Independent studio &middot; worldwide</span>
+      <span><a href="/">Full site</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn--ghost" href="/demo/kiln-coffee">See a build</a>
+  <a class="btn" href="#start">Free mockup &rarr;</a>
+</div>
+
+</body>
+</html>
