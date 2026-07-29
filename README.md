@@ -1,8 +1,12 @@
 # Brickwork Studio
 
-Marketing site for **Brickwork Studio** — an independent UK studio building
-Shopify stores, local-business websites and AI receptionists for small
-businesses.
+Marketing site for **Brickwork Studio** — an independent, one-person web design
+studio based in the UK and working with small businesses worldwide. Builds custom
+local business websites, Shopify stores, AI phone receptionists and bespoke
+business software.
+
+Free design mockup within 48 hours before any payment, site live in 7 days, fixed
+prices published openly from £895.
 
 🔗 **Live:** https://brickworkstudio.net
 📸 **Instagram:** [@brickworkstudio_](https://www.instagram.com/brickworkstudio_)
