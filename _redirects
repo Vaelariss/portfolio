@@ -35,15 +35,15 @@
 /demo/the-alder.html      /demo/the-alder       301!
 /demo/kiln-coffee.html    /demo/kiln-coffee     301!
 
-# ---- Service pages that never shipped: send to the services section ----
-/shopify-store-design         /#services   301
-/shopify-store-design.html    /#services   301
-/local-business-websites      /#services   301
-/local-business-websites.html /#services   301
-/ai-receptionist              /#services   301
-/ai-receptionist.html         /#services   301
-/custom-built-systems         /#services   301
-/custom-built-systems.html    /#services   301
+# ---- Service pages (shipped 2026-07-29) ----
+# These four used to 301 to /#services because the pages did not exist. They do
+# now, so the redirects are gone and only the .html canonicalisation remains.
+# Forced (301!) for the same reason as the demos above: without the bang a
+# static file at that path wins and both URL forms stay reachable.
+/shopify-store-design.html    /shopify-store-design    301!
+/local-business-websites.html /local-business-websites 301!
+/ai-receptionist.html         /ai-receptionist         301!
+/custom-built-systems.html    /custom-built-systems    301!
 
 # ---- Guides that never shipped. These still have live GSC impressions,
 #      so they must redirect rather than 404. ----
@@ -58,3 +58,16 @@
 
 # ---- Short link for cold outreach, so the channel is attributable ----
 /hi   /?utm_source=coldemail&utm_medium=email&utm_campaign=outreach   301
+
+# ---- Booking ----
+# Every "book a call" CTA on the site points at /book, so switching the
+# destination on is a ONE-LINE change here rather than an edit in five files.
+#
+# TO ENABLE: create a free Cal.com account with a 15-minute event, then replace
+# the target below with the booking URL and change 302 -> 301, e.g.
+#   /book   https://cal.com/brickwork/15min   301
+#
+# Until then it falls back to the contact form, so the CTA is never broken.
+# Deliberately 302 while it is a fallback: a 301 would be cached by browsers
+# and would keep sending people to the form after the real link goes live.
+/book   /#contact   302

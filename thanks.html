@@ -19,10 +19,10 @@
 <link rel="stylesheet" href="/styles.css">
 <script src="/script.js" defer></script>
 
-<!-- ANALYTICS: keep in sync with index.html — uncomment once the Website ID is set.
-     A pageview on THIS page is the conversion metric; it needs no custom event.
-<script defer src="/js/script.js" data-website-id="PASTE-WEBSITE-ID-HERE" data-host-url="https://brickworkstudio.net"></script>
--->
+<!-- Analytics: Umami, proxied same-origin via _redirects so script-src stays
+     'self' and no cookie banner is needed. Enabled 2026-07-29. -->
+<script defer src="/js/script.js" data-website-id="5f25a793-3b67-4489-96e3-d85529420a03" data-host-url="https://brickworkstudio.net"></script>
+
 </head>
 <body>
 
@@ -56,22 +56,19 @@
       <p class="lead" style="margin-top:16px">Thanks — your request is in. Here's exactly what happens now.</p>
 
       <div class="guars" style="margin-top:32px;justify-content:center;text-align:left">
-        <div class="guar"><svg class="ic"><use href="#i-check"/></svg><b>Within a few hours</b> — a reply confirming your brief</div>
+        <div class="guar"><svg class="ic"><use href="#i-check"/></svg><b>Same day, usually sooner</b> — a reply confirming your brief</div>
         <div class="guar"><svg class="ic"><use href="#i-check"/></svg><b>Within 48 hours</b> — your free mockup, built around your brand</div>
         <div class="guar"><svg class="ic"><use href="#i-check"/></svg><b>Only if you love it</b> — 50% deposit, rest when you're happy</div>
       </div>
 
-      <p class="lead" style="margin-top:34px">Check your spam folder just in case — replies occasionally land there.</p>
+      <p class="lead" style="margin-top:34px">Want an answer in the next few minutes instead? Message us directly — it's the fastest way to reach a real person.</p>
 
-      <p style="margin-top:8px;color:var(--muted)">No reply within 24 hours? Chase us, we'd rather you did:</p>
-      <div class="guars" style="margin-top:16px;justify-content:center">
-        <div class="guar"><svg class="ic"><use href="#i-phone"/></svg>WhatsApp <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%20just%20submitted%20the%20form" target="_blank" rel="noopener">07735 785911</a></div>
-        <div class="guar"><svg class="ic"><use href="#i-message"/></svg>Email <a href="mailto:robinmarwa44@gmail.com?subject=Free%20mockup%20request">robinmarwa44@gmail.com</a></div>
+      <div class="hero__cta" style="margin-top:18px;justify-content:center">
+        <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%20just%20submitted%20the%20form" target="_blank" rel="noopener" class="btn btn--lg">WhatsApp us now <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        <a href="/#work" class="btn btn--ghost btn--lg">See the work while you wait</a>
       </div>
 
-      <div style="margin-top:36px">
-        <a href="/#work" class="btn btn--lg">See the work while you wait <svg class="ic"><use href="#i-arrow-right"/></svg></a>
-      </div>
+      <p style="margin-top:30px;color:var(--muted)">Check your spam folder just in case — replies occasionally land there. Still nothing after 24 hours? Chase us, we'd rather you did: <a href="mailto:robinmarwa44@gmail.com?subject=Free%20mockup%20request">robinmarwa44@gmail.com</a></p>
     </div>
   </section>
 </main>

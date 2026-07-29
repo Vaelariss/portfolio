@@ -407,6 +407,15 @@ section{position:relative}
 .checklist b{font-weight:700}.checklist p{font-size:.88rem;color:var(--muted);margin:3px 0 0}
 @media(max-width:920px){.split{grid-template-columns:1fr}}
 
+/* optional-fields disclosure in the contact form. Native <details> so it needs
+   no JS and costs nothing against script-src 'self'; the fields stay in the DOM
+   either way, so Netlify Forms still captures them when collapsed. */
+.form details.more{border-top:1px solid var(--line);padding-top:14px}
+.form details.more summary{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--brick-deep);cursor:pointer;list-style:none}
+.form details.more summary::-webkit-details-marker{display:none}
+.form details.more summary::before{content:"+ ";font-weight:700}
+.form details.more[open] summary::before{content:"\2212 "}
+
 /* legal / prose */
 .legal{max-width:760px;margin-inline:auto}
 .legal h1{font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:8px}

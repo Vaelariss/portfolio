@@ -35,12 +35,9 @@
 <link rel="stylesheet" href="styles.css">
 <script src="script.js"></script>
 
-<!-- ANALYTICS: paste the Website ID from Umami (Settings → Websites) into
-     data-website-id below, then uncomment this line and redeploy. The
-     /js/script.js and /api/send proxy rules in _redirects are already live,
-     and every bwTrack() call in script.js is a no-op until this loads.
-<script defer src="/js/script.js" data-website-id="PASTE-WEBSITE-ID-HERE" data-host-url="https://brickworkstudio.net"></script>
--->
+<!-- Analytics: Umami, proxied same-origin via _redirects so script-src stays
+     'self' and no cookie banner is needed. Enabled 2026-07-29. -->
+<script defer src="/js/script.js" data-website-id="5f25a793-3b67-4489-96e3-d85529420a03" data-host-url="https://brickworkstudio.net"></script>
 
 <script type="application/ld+json">
 {
@@ -165,6 +162,10 @@
         <a href="#contact" class="btn btn--lg">Get a free mockup <svg class="ic"><use href="#i-arrow-right"/></svg></a>
         <a href="#work" class="btn btn--ghost btn--lg">See the work <svg class="ic"><use href="#i-arrow-down"/></svg></a>
       </div>
+      <!-- Kept as a text link rather than a third button: a third hero CTA
+           dilutes the primary. This serves the buyer who wants to talk first.
+           NB: not .hero__spec — that class is a 4-column grid for the spec strip. -->
+      <p class="reveal rd3" style="margin-top:18px;color:var(--muted);font-size:.95rem">Rather talk it through? <a href="/book">Book a free 15-minute call</a></p>
       <ul class="hero__spec reveal rd4">
         <li><span class="k">48h</span><span class="v">free mockup</span></li>
         <li><span class="k">7 days</span><span class="v">to live</span></li>
@@ -233,7 +234,7 @@
           <li><svg class="ic"><use href="#i-check"/></svg>Up to 20 products uploaded</li>
           <li><svg class="ic"><use href="#i-check"/></svg>Payments &amp; shipping configured</li>
         </ul>
-        <a class='arrowlink' href="#contact">Get a free mockup<svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        <a class='arrowlink' href="/shopify-store-design">What's included<svg class="ic"><use href="#i-arrow-right"/></svg></a>
       </article>
       <article class="block reveal rd1">
         <div class="blk__ic"><svg class="ic"><use href="#i-bolt"/></svg></div>
@@ -245,7 +246,7 @@
           <li><svg class="ic"><use href="#i-check"/></svg>Click-to-call &amp; Google Maps</li>
           <li><svg class="ic"><use href="#i-check"/></svg>Found on Google, fast on mobile</li>
         </ul>
-        <a class='arrowlink' href="#contact">Get a free mockup<svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        <a class='arrowlink' href="/local-business-websites">What's included<svg class="ic"><use href="#i-arrow-right"/></svg></a>
       </article>
       <article class="block reveal rd2">
         <div class="blk__ic"><svg class="ic"><use href="#i-chart"/></svg></div>
@@ -268,7 +269,7 @@
           <li><svg class="ic"><use href="#i-check"/></svg>Takes bookings &amp; follows up leads</li>
           <li><svg class="ic"><use href="#i-check"/></svg>Custom voice for your business</li>
         </ul>
-        <a class='arrowlink' href="#contact">Get a free mockup<svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        <a class='arrowlink' href="/ai-receptionist">What's included<svg class="ic"><use href="#i-arrow-right"/></svg></a>
       </article>
       <article class="block block--wide reveal">
         <div class="blk__ic"><svg class="ic"><use href="#i-rocket"/></svg></div>
@@ -276,7 +277,7 @@
           <h3>Custom-Built Systems for Your Business</h3>
           <span class="tag-price">From <span class="price" data-amt="2950" data-cur="gbp">£2,950</span> · fixed quote before you pay</span>
           <p>Booking systems, client portals, quoting tools, dashboards and automations — bespoke software built around how your business actually runs, instead of squeezing your business into someone else's software.</p>
-          <a class='arrowlink' href="#contact">Get a free mockup<svg class="ic"><use href="#i-arrow-right"/></svg></a>
+          <a class='arrowlink' href="/custom-built-systems">What's included<svg class="ic"><use href="#i-arrow-right"/></svg></a>
         </div>
         <ul class="ticks">
           <li><svg class="ic"><use href="#i-check"/></svg>Scoped free around your exact workflow</li>
@@ -351,6 +352,38 @@
   </div>
 </section>
 
+<!-- PROOF — deliberately built on facts a visitor can verify themselves rather
+     than testimonials. Every number here is a fixed property of the page
+     (bytes, request counts), NOT a timing, because timings vary with the
+     tester's connection and throttling — a number someone can't reproduce
+     does the opposite of building trust. Re-measure before changing these. -->
+<section class="section stats">
+  <div class="container">
+    <div class="stats__g">
+      <div><div class="n">3.5 KB</div><div class="l">JavaScript on this page</div></div>
+      <div><div class="n">0</div><div class="l">Third-party scripts</div></div>
+      <div><div class="n">0</div><div class="l">Cookie banners</div></div>
+      <div><div class="n">262 KB</div><div class="l">Whole page, fonts included</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">Proof you can check yourself</p>
+      <h2>We can't show you client logos yet. So check the work instead.</h2>
+      <p>Brickwork is new, and we're not going to pretend otherwise with stock photos of people in a meeting room. What we can do is let you measure the thing you're actually buying — run this page through <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fbrickworkstudio.net" target="_blank" rel="noopener">Google PageSpeed Insights</a> yourself, then run your current site.</p>
+    </div>
+    <ul class="checklist reveal">
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>We benchmarked against the best in hospitality, honestly</b><p>Noma, Heckfield Place, Elmore Court and Origin Coffee — sites with budgets ours can't touch. They load 26, 26, and 67 scripts respectively. This page loads none it doesn't own.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Three of those four bury the page behind a cookie banner</b><p>Yours won't have one, because we don't load anything that needs consent. The first thing a customer sees is your business, not a dialog.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Every demo build below is explorable, not a screenshot</b><p>Click into them. Scroll them on your phone. They're real pages, built the way yours would be — labelled as demos because they're concepts, not client work we're passing off as ours.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Where we're genuinely behind, we'll say so</b><p>Commissioned photography and licensed typefaces are what real budgets buy, and they're the gap. Your own photos close most of it — that's a conversation we'd rather have upfront than after you've paid.</p></div></li>
+    </ul>
+  </div>
+</section>
+
 <!-- WHY -->
 <section class="section">
   <div class="container">
@@ -411,8 +444,8 @@
     <p class="anchor reveal">Most agencies quote <b><span class="price" data-amt="1500" data-cur="gbp">£1,500</span>–<span class="price" data-amt="4000" data-cur="gbp">£4,000</span>+</b> and take 6–12 weeks. Brickwork charges a fraction — and the mockup is free. Prices shown in your currency, billed in GBP via Stripe; we work with clients worldwide.</p>
     <div class="risenote reveal">
       <span class="risenote__dot" aria-hidden="true"></span>
-      <p><b>These are founding rates.</b> They hold for our first ten builds — after that a Local Business Site is <span class="price" data-amt="1295" data-cur="gbp">£1,295</span> and a Shopify store is <span class="price" data-amt="1950" data-cur="gbp">£1,950</span>. Whatever you agree today is locked for the life of your project.
-      <span class="risenote__sub">Prices go up as the client list fills — yours never does</span></p>
+      <p><b>These are founding rates.</b> They hold while the studio is still building its client list — after that a Local Business Site is <span class="price" data-amt="1295" data-cur="gbp">£1,295</span> and a Shopify store is <span class="price" data-amt="1950" data-cur="gbp">£1,950</span>. Whatever you agree today is locked for the life of your project.
+      <span class="risenote__sub">One project at a time, so slots are genuinely limited — and your price never rises</span></p>
     </div>
     <div class="price-bar" style="justify-content:center"><div class="curswitch" role="group" aria-label="Currency"><button type="button" data-cur="gbp" aria-pressed="true">£ GBP</button><button type="button" data-cur="usd" aria-pressed="false">$ USD</button><button type="button" data-cur="eur" aria-pressed="false">€ EUR</button></div> <span class="cur-note" hidden>Approx. conversion — you're billed in GBP via Stripe</span></div>
     <div class="prices">
@@ -500,12 +533,24 @@
     <div class="reveal">
       <p class="speclabel">Get in touch</p>
       <h2>Ready to build? Start here.</h2>
-      <p class="lead" style="margin-top:14px">Fill in the form and you'll hear back within a few hours to confirm your free mockup. No card, no commitment — just your business name and what you do.</p>
+      <p class="lead" style="margin-top:14px">Fill in the form and you'll hear back to confirm your free mockup. No card, no commitment — just your business name and what you do.</p>
+
+      <p class="speclabel" style="margin-top:26px">The free mockup guarantee</p>
       <div class="guars">
-        <div class="guar"><svg class="ic"><use href="#i-bolt"/></svg>Free mockup back within 48 hours</div>
-        <div class="guar"><svg class="ic"><use href="#i-shield"/></svg>50% deposit · rest only when you're happy</div>
+        <!-- .guar is display:flex, so a bare <b> becomes its own flex column.
+             Keep the whole sentence in one <span> so it flows as one block. -->
+        <div class="guar"><svg class="ic"><use href="#i-eye"/></svg><span><b>See it before you pay a penny.</b> A real design of your site within 48 hours — not a template preview</span></div>
+        <div class="guar"><svg class="ic"><use href="#i-shield"/></svg>Don't love it? You owe nothing and we part as friends</div>
+        <div class="guar"><svg class="ic"><use href="#i-lock"/></svg>50% deposit · the balance only once you're happy, via Stripe</div>
         <div class="guar"><svg class="ic"><use href="#i-rocket"/></svg>Live in 7 days from brief</div>
-        <div class="guar"><svg class="ic"><use href="#i-phone"/></svg>WhatsApp us on <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%27d%20like%20a%20free%20mockup" target="_blank" rel="noopener">07735 785911</a></div>
+      </div>
+
+      <p class="speclabel" style="margin-top:30px">Prefer to talk first?</p>
+      <div class="hero__cta" style="margin-top:14px">
+        <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%27d%20like%20a%20free%20mockup" target="_blank" rel="noopener" class="btn btn--ghost">WhatsApp — usually fastest <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        <a href="/book" class="btn btn--ghost">Book a 15-min call <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+      </div>
+      <div class="guars" style="margin-top:18px">
         <div class="guar"><svg class="ic"><use href="#i-message"/></svg>Email <a href="mailto:robinmarwa44@gmail.com?subject=Free%20mockup%20request">robinmarwa44@gmail.com</a></div>
         <div class="guar"><svg class="ic"><use href="#i-instagram"/></svg>Or DM <a href="https://www.instagram.com/brickworkstudio_" target="_blank" rel="noopener">@brickworkstudio_</a></div>
       </div>
@@ -515,24 +560,30 @@
         <input type="hidden" name="form-name" value="contact">
         <div class="f-row">
           <div class="fg"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="First name" required></div>
-          <div class="fg"><label for="business">Business name <span class="opt">(optional)</span></label><input id="business" name="business" type="text" autocomplete="organization" placeholder="Your business"></div>
+          <div class="fg"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required></div>
         </div>
-        <div class="fg"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required></div>
-        <div class="fg"><label for="phone">Phone <span class="opt">(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number"></div>
-        <div class="fg"><label for="service">What do you need?</label>
-          <select id="service" name="service">
-            <option selected>Not sure — just send me a free mockup</option>
-            <option>Shopify Store</option>
-            <option>Local Business Website</option>
-            <option>Monthly Website Care</option>
-            <option>AI Receptionist</option>
-            <option>Custom-Built System</option>
-          </select>
-        </div>
-        <div class="fg"><label for="message">Tell us about your project</label><textarea id="message" name="message" placeholder="What do you sell or offer? Any colours, inspiration or important details?"></textarea></div>
+        <div class="fg"><label for="message">What do you sell or offer?</label><textarea id="message" name="message" placeholder="A sentence is plenty — it's all we need to start your mockup."></textarea></div>
+        <!-- Optional fields stay in the DOM so Netlify Forms still captures them;
+             the <details> only reduces perceived length. Native element, no JS,
+             so it costs nothing against script-src 'self'. -->
+        <details class="fg more">
+          <summary>Add more detail <span class="opt">(optional)</span></summary>
+          <div class="fg" style="margin-top:14px"><label for="business">Business name</label><input id="business" name="business" type="text" autocomplete="organization" placeholder="Your business"></div>
+          <div class="fg"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number"></div>
+          <div class="fg"><label for="service">What do you need?</label>
+            <select id="service" name="service">
+              <option selected>Not sure — just send me a free mockup</option>
+              <option>Shopify Store</option>
+              <option>Local Business Website</option>
+              <option>Monthly Website Care</option>
+              <option>AI Receptionist</option>
+              <option>Custom-Built System</option>
+            </select>
+          </div>
+        </details>
         <div class="hp" aria-hidden="true"><label for="_gotcha">Leave this empty</label><input id="_gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
         <button type="submit" class="btn btn--block btn--lg">Request free mockup <svg class="ic"><use href="#i-arrow-right"/></svg></button>
-        <p class="form__note">Replies within a few hours · no card required · Stripe when you're ready</p>
+        <p class="form__note">No card required · Stripe when you're ready · <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%27d%20like%20a%20free%20mockup" target="_blank" rel="noopener">WhatsApp for a faster reply</a></p>
       </form>
     </div>
   </div>
@@ -554,10 +605,10 @@
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="#services">Shopify store build</a></li>
-          <li><a href="#services">Local business site</a></li>
-          <li><a href="#services">Custom-built systems</a></li>
-          <li><a href="#services">AI receptionist</a></li>
+          <li><a href="/shopify-store-design">Shopify store build</a></li>
+          <li><a href="/local-business-websites">Local business site</a></li>
+          <li><a href="/custom-built-systems">Custom-built systems</a></li>
+          <li><a href="/ai-receptionist">AI receptionist</a></li>
           <li><a href="#services">Monthly website care</a></li>
         </ul>
       </div>

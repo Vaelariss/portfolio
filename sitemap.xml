@@ -3,12 +3,40 @@
   Only URLs that exist and are meant to rank belong here.
   This file previously submitted 13 URLs: 8 returned 404, 2 (privacy, terms)
   carry noindex, and 3 (the demo builds) are now noindex by design.
+
+  2026-07-29: the four service pages shipped, taking the site from one
+  indexable page to five. Each targets a distinct intent rather than all of
+  them competing on the homepage. Demo builds stay out — they are noindex.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://brickworkstudio.net/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://brickworkstudio.net/local-business-websites</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://brickworkstudio.net/shopify-store-design</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://brickworkstudio.net/ai-receptionist</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://brickworkstudio.net/custom-built-systems</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
