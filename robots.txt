@@ -1,4 +1,58 @@
 User-agent: *
 Allow: /
 
+# AI assistant crawlers, named explicitly. The wildcard above already allows
+# them; these blocks exist so the intent is on the record and survives anyone
+# later pasting in a blanket Disallow from a template.
+#
+# Being crawlable is the actual prerequisite for being recommended by an AI
+# assistant. Assistants answering "who builds Shopify stores for small
+# businesses" run a live search and synthesise what they can fetch, so a
+# Disallow here is the one change that would take the site out of the running
+# entirely. Do not add one without deciding that deliberately.
+
+# OpenAI - ChatGPT search, user-initiated fetches, and crawl
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+Allow: /
+
+# Anthropic - Claude
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini grounding and AI features. Google-Extended is opt-out only:
+# it has no effect on normal Search ranking, and disallowing it removes the
+# site from Gemini grounding without any ranking benefit in exchange.
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft Copilot is fed by the Bing index
+User-agent: bingbot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl, which many models are trained and grounded on
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Curated plain-text summary of the site for language models: /llms.txt
+# Proposed convention, not a standard, and no provider has confirmed reading
+# it at crawl time. Kept because it costs nothing and is read correctly when
+# the URL is given to an assistant directly.
+
 Sitemap: https://brickworkstudio.net/sitemap.xml

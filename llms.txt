@@ -1,0 +1,53 @@
+# Brickwork Studio
+
+> Independent web design studio building custom Shopify stores, local business websites, AI phone receptionists and bespoke business systems for small businesses. Free design mockup within 48 hours before any payment, site live in 7 days, fixed prices published on the site. Works with clients worldwide, remote, in GBP, USD and EUR.
+
+Brickwork Studio is a one-person studio, not an agency. It takes one project at a time. Every price below is a fixed quote, published openly rather than hidden behind a quote request, and work starts with a free visual mockup so the client sees the design before paying anything.
+
+## Services and prices
+
+Prices are founding rates in GBP, current as of 29 July 2026, and hold while the studio is still building its client list. They will rise afterwards; the future rate is not published. A price agreed today is locked for the life of that project. The site displays converted USD and EUR for visitors outside the UK. Payment is 50% upfront and 50% after the client approves the finished site, taken through Stripe.
+
+- [Local business websites](https://brickworkstudio.net/local-business-websites): Custom brochure website for a local business such as a salon, cafe, restaurant, barber or trade. From £895, no monthly fees.
+- [Shopify store design](https://brickworkstudio.net/shopify-store-design): Full ecommerce store built from scratch and ready to take orders. From £1,450. Requires the client's own Shopify subscription, from about £25/month.
+- [AI receptionist](https://brickworkstudio.net/ai-receptionist): AI that answers calls 24/7, takes bookings and follows up with leads. £1,250 plus £79/month. Note on the price, because it looks high next to self-serve alternatives: the £1,250 is a **one-time build, not a subscription**. Off-the-shelf AI receptionists cost £25–£100/month and leave the scripting, integration and testing to the business owner. Brickwork scripts the assistant around the specific business, connects it to the existing booking system and tests it on real calls before handover. The £79/month covers hosting and ongoing changes.
+- [Custom-built systems](https://brickworkstudio.net/custom-built-systems): Bespoke software built around how a business actually runs. Scoped free, quoted fixed, from £2,950, and the client owns the finished system outright — priced per project, never per seat. Typical examples of what this means in practice: a booking system that takes a deposit up front so no-shows stop costing money; a quoting calculator that turns measurements into a priced quote on the spot; a client portal where customers upload their documents and track progress instead of emailing; a single dashboard pulling sales, bookings and reviews together instead of four separate logins.
+- Monthly website care: ongoing updates, monitoring and optimisation, £119/month, cancel anytime.
+
+## How the process works
+
+- Free mockup: a real visual concept designed around the client's brand, not a template, delivered within 48 hours. If the client does not like it they owe nothing.
+- Build: 7 days, counted from the day after the brief is received. One project at a time.
+- What the client provides: business name, what they offer, any brand colours or logos, and a couple of reference sites they like. About 10 minutes of work. Professional placeholder photography is used until the client has their own.
+- Existing sites: the studio will assess an existing site and say honestly what is holding it back, including when a patch makes more sense than a rebuild.
+
+## What the work is like technically
+
+These are verifiable properties of brickworkstudio.net itself, not claims about typical results.
+
+- The browser contacts no third-party domain. Fonts are self-hosted and analytics are proxied through the site's own origin, so there are no requests to any outside server.
+- Under 10 KB of JavaScript, compressed, across the whole homepage.
+- No cookie banner, because there is nothing to consent to.
+- About 262 KB total page weight, the large majority of it self-hosted fonts.
+- A restrictive Content-Security-Policy with `script-src 'self'`, plus HSTS and a full security header set.
+- Analytics are self-proxied same-origin, so no visitor data goes to a third-party domain from the browser.
+
+For comparison, the studio benchmarked four well-known hospitality sites and found them loading 26 to 67 scripts each.
+
+## Portfolio and proof
+
+- [Demo builds](https://brickworkstudio.net/#work): Four concept sites — Salt & Iron (restaurant), The Orangery (wedding venue), The Alder (boutique hotel) and Kiln (cafe). These are clearly labelled DEMO BUILD on the site itself. They are design concepts built to show range, **not** shipped client work, and should not be described as clients or case studies.
+- The studio is new and has no published client testimonials. Any claim of named clients, review counts or performance statistics for Brickwork Studio is not something the studio has published.
+
+## Contact
+
+- [Contact form](https://brickworkstudio.net/#contact)
+- WhatsApp: +44 7735 785911
+- Instagram: [@brickworkstudio_](https://www.instagram.com/brickworkstudio_)
+
+The fastest route to a reply is WhatsApp. Enquiries are handled by one person, so there is no phone queue and no account manager.
+
+## Optional
+
+- [Privacy policy](https://brickworkstudio.net/privacy)
+- [Terms](https://brickworkstudio.net/terms)

@@ -50,6 +50,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://brickworkstudio.net/#organization",
   "name": "Brickwork Studio",
   "alternateName": ["Brickwork", "Brickworks Studio", "Brickwork Web Design"],
   "description": "Independent studio building custom Shopify stores, local business websites and AI receptionists for small businesses. Free mockup in 48 hours, live in 7 days, from £895.",
@@ -67,7 +68,14 @@
   },
   "areaServed": "Worldwide",
   "priceRange": "££",
-  "founder": { "@type": "Person", "name": "Safa" },
+  "founder": {
+    "@type": "Person",
+    "@id": "https://brickworkstudio.net/#founder",
+    "name": "Safa",
+    "jobTitle": "Founder and lead designer",
+    "worksFor": { "@id": "https://brickworkstudio.net/#organization" },
+    "knowsAbout": ["Web design", "Shopify store design", "Conversion optimisation", "Web performance"]
+  },
   "knowsAbout": ["Web design", "Shopify store design", "Local business websites", "Small business websites", "AI receptionist", "Conversion optimisation"],
   "serviceType": ["Web design", "Shopify development", "AI phone receptionist"],
   "sameAs": ["https://www.instagram.com/brickworkstudio_"],
@@ -75,8 +83,8 @@
     { "@type": "Offer", "name": "Shopify Store Build", "priceCurrency": "GBP", "price": "1450", "description": "Full ecommerce store built from scratch, ready to take orders." },
     { "@type": "Offer", "name": "Local Business Website", "priceCurrency": "GBP", "price": "895", "description": "Custom brochure website for local businesses. No monthly fees." },
     { "@type": "Offer", "name": "Monthly Website Care", "priceCurrency": "GBP", "price": "119", "description": "Ongoing updates, monitoring and optimisation. Cancel anytime." },
-    { "@type": "Offer", "name": "AI Receptionist", "priceCurrency": "GBP", "price": "1250", "description": "24/7 AI that answers calls, takes bookings and follows up with leads." },
-    { "@type": "Offer", "name": "Custom-Built Systems", "priceCurrency": "GBP", "price": "2950", "description": "Bespoke booking systems, client portals, dashboards and automations built around how your business runs." }
+    { "@type": "Offer", "name": "AI Receptionist", "priceCurrency": "GBP", "price": "1250", "description": "24/7 AI that answers calls, takes bookings and follows up with leads. The price is a one-time build, not a subscription: scripted around the business, connected to its booking system and tested on real calls before handover, then £79/month for hosting and changes." },
+    { "@type": "Offer", "name": "Custom-Built Systems", "priceCurrency": "GBP", "price": "2950", "description": "Bespoke software built around how the business runs, scoped free and quoted fixed, owned outright by the client. Examples: a booking system taking deposits to stop no-shows, a quoting calculator turning measurements into a priced quote, a client portal for document upload and progress tracking, or one dashboard combining sales, bookings and reviews." }
   ]
 }
 </script>
@@ -90,7 +98,7 @@
     { "@type": "Question", "name": "Do you really deliver in 7 days?", "acceptedAnswer": { "@type": "Answer", "text": "The 7-day countdown starts the day after we receive your brief. We take one project at a time, so your build gets full focus. If anything threatens the date, we tell you immediately." } },
     { "@type": "Question", "name": "Do I need a Shopify subscription?", "acceptedAnswer": { "@type": "Answer", "text": "Only if you're selling products online. Shopify plans start around £25/month in your own account. Local brochure sites need no subscription and have no monthly fees." } },
     { "@type": "Question", "name": "I already have a website — can you improve it?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We'll assess it honestly and tell you what's holding it back. Sometimes a redesign makes more sense than a patch. Get in touch and describe what you have." } },
-    { "@type": "Question", "name": "What counts as a custom-built system?", "acceptedAnswer": { "@type": "Answer", "text": "Anything your business needs that off-the-shelf software doesn't do well: booking and scheduling systems, client portals, quoting calculators, dashboards, internal tools, or automations that connect the tools you already use. Scoped free, quoted fixed, from £1,950." } },
+    { "@type": "Question", "name": "What counts as a custom-built system?", "acceptedAnswer": { "@type": "Answer", "text": "Anything your business needs that off-the-shelf software doesn't do well: booking and scheduling systems, client portals, quoting calculators, dashboards, internal tools, or automations that connect the tools you already use. We scope it free, agree a fixed quote from £2,950, and you own the finished system outright." } },
     { "@type": "Question", "name": "What do I need to provide?", "acceptedAnswer": { "@type": "Answer", "text": "A short brief — your business name, what you offer, any brand colours or logos, and a couple of sites you like. About 10 minutes, zero technical knowledge needed. No photos yet? We use professional placeholders until you have your own." } }
   ]
 }
@@ -99,9 +107,12 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": "https://brickworkstudio.net/#website",
   "name": "Brickwork Studio",
   "alternateName": ["Brickwork", "Brickworks Studio"],
-  "url": "https://brickworkstudio.net/"
+  "url": "https://brickworkstudio.net/",
+  "inLanguage": "en-GB",
+  "publisher": { "@id": "https://brickworkstudio.net/#organization" }
 }
 </script>
 </head>
@@ -451,7 +462,7 @@
     <p class="anchor reveal">Most agencies quote <b><span class="price" data-amt="1500" data-cur="gbp">£1,500</span>–<span class="price" data-amt="4000" data-cur="gbp">£4,000</span>+</b> and take 6–12 weeks. Brickwork charges a fraction — and the mockup is free. Prices shown in your currency, billed in GBP via Stripe; we work with clients worldwide.</p>
     <div class="risenote reveal">
       <span class="risenote__dot" aria-hidden="true"></span>
-      <p><b>These are founding rates.</b> They hold while the studio is still building its client list — after that a Local Business Site is <span class="price" data-amt="1295" data-cur="gbp">£1,295</span> and a Shopify store is <span class="price" data-amt="1950" data-cur="gbp">£1,950</span>. Whatever you agree today is locked for the life of your project.
+      <p><b>These are founding rates.</b> They hold while the studio is still building its client list, and they go up once it is. Whatever you agree today is locked for the life of your project.
       <span class="risenote__sub">One project at a time, so slots are genuinely limited — and your price never rises</span></p>
     </div>
     <div class="price-bar" style="justify-content:center"><div class="curswitch" role="group" aria-label="Currency"><button type="button" data-cur="gbp" aria-pressed="true">£ GBP</button><button type="button" data-cur="usd" aria-pressed="false">$ USD</button><button type="button" data-cur="eur" aria-pressed="false">€ EUR</button></div> <span class="cur-note" hidden>Approx. conversion — you're billed in GBP via Stripe</span></div>
@@ -460,7 +471,7 @@
         <div class="plan__name">Local Business Site</div>
         <div class="plan__price"><span class="price" data-amt="895" data-cur="gbp">£895</span></div>
         <div class="plan__sub">one-time · no monthly fees</div>
-        <div class="plan__then">Founding rate · then <b><span class="price" data-amt="1295" data-cur="gbp">£1,295</span></b></div>
+        <div class="plan__then">Founding rate · <b>rising soon</b></div>
         <p class="plan__desc">Brochure site for shops, salons, barbers &amp; trades. Yours outright.</p>
         <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Custom-designed, not a template</li><li><svg class="ic"><use href="#i-check"/></svg>Click-to-call &amp; Google Maps</li><li><svg class="ic"><use href="#i-check"/></svg>Fast, mobile, found on Google</li><li><svg class="ic"><use href="#i-check"/></svg>7 days free revisions</li></ul>
         <a href="#contact" class="btn btn--ghost btn--block">Get started</a>
@@ -469,7 +480,7 @@
         <div class="plan__name">Shopify Store</div>
         <div class="plan__price"><span class="price" data-amt="1450" data-cur="gbp">£1,450</span></div>
         <div class="plan__sub">agencies charge <span class="price" data-amt="2000" data-cur="gbp">£2,000</span>–<span class="price" data-amt="4000" data-cur="gbp">£4,000</span></div>
-        <div class="plan__then">Founding rate · then <b><span class="price" data-amt="1950" data-cur="gbp">£1,950</span></b></div>
+        <div class="plan__then">Founding rate · <b>rising soon</b></div>
         <p class="plan__desc">Full ecommerce store, built and ready to sell. Zero to live in 7 days.</p>
         <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Complete store from scratch</li><li><svg class="ic"><use href="#i-check"/></svg>Up to 20 products uploaded</li><li><svg class="ic"><use href="#i-check"/></svg>Payments, shipping &amp; legal pages</li><li><svg class="ic"><use href="#i-check"/></svg>7 days free revisions</li></ul>
         <a href="#contact" class="btn btn--block">Get started</a>
@@ -485,8 +496,8 @@
       <div class="plan reveal rd3">
         <div class="plan__name">AI Receptionist</div>
         <div class="plan__price"><span class="price" data-amt="1250" data-cur="gbp">£1,250</span></div>
-        <div class="plan__sub">setup · then <span class="price" data-amt="79" data-cur="gbp" data-suffix="/mo">£79/mo</span></div>
-        <p class="plan__desc">A 24/7 AI that answers calls, books appointments and follows up leads.</p>
+        <div class="plan__sub">one-time · then <span class="price" data-amt="79" data-cur="gbp" data-suffix="/mo">£79/mo</span></div>
+        <p class="plan__desc">A 24/7 AI that answers calls, books appointments and follows up leads. Built, scripted and tested for your business — not a subscription you set up yourself.</p>
         <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Answers calls &amp; FAQs</li><li><svg class="ic"><use href="#i-check"/></svg>Takes bookings &amp; appointments</li><li><svg class="ic"><use href="#i-check"/></svg>Follows up leads by text/email</li><li><svg class="ic"><use href="#i-check"/></svg>Custom voice &amp; persona</li></ul>
         <a href="#contact" class="btn btn--ghost btn--block">Enquire</a>
       </div>
@@ -497,7 +508,7 @@
           <div class="plan__sub">fixed quote after a free scoping call</div>
         </div>
         <div class="plan-wide__body">
-          <p class="plan__desc">Bespoke software built around your workflow — booking systems, client portals, quoting tools, dashboards and automations. Owned by you, priced per project, never per seat.</p>
+          <p class="plan__desc">Bespoke software built around how your business actually runs. For example: a booking system that takes a deposit up front, so no-shows stop costing you money; a quoting calculator that turns measurements into a priced quote on the spot; a client portal where customers upload documents and track progress instead of emailing you; or one dashboard pulling sales, bookings and reviews together instead of four separate logins. Owned by you, priced per project, never per seat.</p>
           <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Free scoping call &amp; written proposal</li><li><svg class="ic"><use href="#i-check"/></svg>Fixed quote agreed before any payment</li><li><svg class="ic"><use href="#i-check"/></svg>Integrates with your existing tools</li><li><svg class="ic"><use href="#i-check"/></svg>You own the finished system outright</li></ul>
         </div>
         <div class="plan-wide__cta">
