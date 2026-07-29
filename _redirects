@@ -7,7 +7,7 @@
 # domain don't strip it. Harmless until the <script> tag in index.html is
 # enabled — nothing requests these paths before then.
 /js/script.js   https://cloud.umami.is/script.js   200
-/api/send       https://cloud.umami.is/api/send    200
+/api/send       https://gateway.umami.is/api/send  200
 
 # ---- Retired demos (2026-07-28) ----
 # The three emoji-illustrated demos were replaced by four photographic builds.

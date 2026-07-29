@@ -22,7 +22,14 @@
 <script src="/script.js" defer></script>
 
 <!-- Analytics: Umami, proxied same-origin via _redirects so script-src stays
-     'self' and no cookie banner is needed. Enabled 2026-07-29. -->
+     'self' and no cookie banner is needed. Enabled 2026-07-29.
+     data-host-url MUST be set and MUST be our own absolute origin. The
+     vendor script hardcodes gateway.umami.is as its default, so without
+     this the beacon goes cross-origin and connect-src 'self' blocks it.
+     With it, the browser posts same-origin to /api/send and _redirects
+     proxies that on to gateway.umami.is.
+     Side effect, and a desirable one: draft/preview deploys do NOT track,
+     because there the absolute host is cross-origin. -->
 <script defer src="/js/script.js" data-website-id="5f25a793-3b67-4489-96e3-d85529420a03" data-host-url="https://brickworkstudio.net"></script>
 
 </head>
