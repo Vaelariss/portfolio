@@ -8,3 +8,6 @@ node_modules/
 # OS / editor noise
 .DS_Store
 Thumbs.db
+
+# netlify dev edge-function artifact, regenerated on every run
+deno.lock
