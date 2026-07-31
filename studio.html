@@ -46,6 +46,11 @@
   .st__gate{max-width:420px;margin:60px auto;text-align:center}
   .st__gate input{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:var(--r);font:inherit;margin:14px 0}
   .st__empty{color:var(--muted);font-size:.92rem}
+  .st__partners{margin-top:36px}
+  .st__partners h2{font-size:1.15rem;margin-bottom:6px}
+  .st__hint{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);margin-bottom:12px}
+  .st__del{border:1px solid var(--line-2);background:none;border-radius:2px;padding:4px 9px;font:inherit;font-size:.78rem;color:var(--muted);cursor:pointer;white-space:nowrap}
+  .st__del:hover{border-color:var(--brick);color:var(--brick-deep)}
 </style>
 </head>
 <body>
@@ -74,6 +79,17 @@
           <button type="submit" class="btn">Send reply</button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <div id="st-partners" class="st__partners" hidden>
+    <h2>Partners</h2>
+    <p class="st__hint" id="st-pcount">&nbsp;</p>
+    <div class="tablewrap">
+      <table class="ptable">
+        <thead><tr><th>Code</th><th>Name</th><th>Email</th><th>Joined</th><th>Said</th><th></th></tr></thead>
+        <tbody id="st-plist"></tbody>
+      </table>
     </div>
   </div>
 </div>

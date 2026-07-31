@@ -143,9 +143,58 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* Partners are near-static — loaded once per unlock rather than polled, so
+     the inbox poll stays a single request. */
+  function loadPartners() {
+    var wrap = document.getElementById('st-partners');
+    var list = document.getElementById('st-plist');
+    var count = document.getElementById('st-pcount');
+    if (!wrap || !list) return;
+
+    fetch('/api/partner', { headers: { 'x-studio-key': key } })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        var partners = (d && d.partners) || [];
+        list.textContent = '';
+        count.textContent = partners.length
+          ? partners.length + (partners.length === 1 ? ' partner' : ' partners')
+          : 'Nobody has signed up yet. The link to send is /partners';
+        partners.forEach(function (p) {
+          var tr = document.createElement('tr');
+          [p.code, p.name, p.email, when(p.at), p.note || '—'].forEach(function (v) {
+            var td = document.createElement('td');
+            td.appendChild(document.createTextNode(String(v)));
+            tr.appendChild(td);
+          });
+          var actions = document.createElement('td');
+          var del = document.createElement('button');
+          del.type = 'button';
+          del.className = 'st__del';
+          del.textContent = 'Remove';
+          del.addEventListener('click', function () {
+            /* Irreversible and the row is the only record of who owns the
+               code, so make it deliberate. */
+            if (!window.confirm('Remove partner "' + p.name + '" (' + p.code + ')?\n\nThis deletes the record of who owns that code. Anyone already using the link stays tagged, but there would be nobody to pay.')) return;
+            fetch('/api/partner', {
+              method: 'DELETE',
+              headers: { 'content-type': 'application/json', 'x-studio-key': key },
+              body: JSON.stringify({ code: p.code }),
+            }).then(loadPartners).catch(function () {});
+          });
+          actions.appendChild(del);
+          tr.appendChild(actions);
+          list.appendChild(tr);
+        });
+        wrap.hidden = false;
+      })
+      .catch(function () { /* the inbox is the priority; partners can wait */ });
+  }
+
   function showGate() {
     gate.hidden = false;
     app.hidden = true;
+    var wrap = document.getElementById('st-partners');
+    if (wrap) wrap.hidden = true;
     if (timer) { clearInterval(timer); timer = null; }
   }
 
@@ -153,6 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
     gate.hidden = true;
     app.hidden = false;
     load();
+    loadPartners();
     if (timer) clearInterval(timer);
     /* Pause while the tab is hidden — no reason to poll a screen nobody is on. */
     timer = setInterval(function () { if (!document.hidden) load(); }, POLL_MS);

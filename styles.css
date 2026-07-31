@@ -425,6 +425,20 @@ section{position:relative}
 .ptable__na{color:var(--faint);font-style:italic}
 .ptable__note{margin-top:14px;font-size:.88rem;color:var(--muted);max-width:74ch}
 code{font-family:var(--f-mono);font-size:.9em;background:var(--concrete-2);border:1px solid var(--line);border-radius:2px;padding:1px 5px;word-break:break-all}
+
+/* Partner self-signup (partners.html). Deliberately plain — this page is sent
+   to people one at a time, not optimised for cold traffic. */
+.pform{margin-top:22px;max-width:520px;display:flex;flex-direction:column;gap:16px}
+.pform__row{display:flex;flex-direction:column;gap:5px}
+.pform__row label{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.pform__row input{padding:11px 13px;border:1px solid var(--line-2);border-radius:var(--r);font:inherit;font-size:.95rem;background:var(--paper);color:var(--ink)}
+.pform__row input:focus{outline:2px solid var(--brick);outline-offset:1px}
+.pform__hint{font-size:.82rem;color:var(--muted)}
+.pform__opt{text-transform:none;letter-spacing:0;font-style:italic}
+.pform__hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.pform__err{margin:0;padding:10px 12px;background:rgba(181,70,42,.09);border:1px solid rgba(181,70,42,.35);border-radius:var(--r);font-size:.9rem}
+.pdone{margin-top:22px;max-width:560px;padding:18px;border:1px solid var(--line);background:var(--paper)}
+.pdone__link{font-family:var(--f-mono);font-size:1rem;word-break:break-all;margin:8px 0 16px;color:var(--brick-deep)}
 @media(max-width:920px){.split{grid-template-columns:1fr}}
 
 /* optional-fields disclosure in the contact form. Native <details> so it needs

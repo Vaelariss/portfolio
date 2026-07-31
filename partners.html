@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="styles.css">
 <script src="script.js"></script>
+<script src="partners.js"></script>
 
 <!-- Analytics: Umami, proxied same-origin via _redirects. data-host-url MUST
      stay our own absolute origin: the vendor script defaults to
@@ -178,12 +179,40 @@
 <section class="section" style="background:var(--concrete-2)">
   <div class="container">
     <div class="head reveal">
-      <h2>Know someone?</h2>
-      <p style="margin-top:14px">Message us and we will set up your code. It takes about a minute.</p>
-      <div class="hero__cta" style="margin-top:20px">
-        <a class="btn btn--lg" href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%27d%20like%20a%20partner%20link" target="_blank" rel="noopener">Get your link <svg class="ic"><use href="#i-arrow-right"/></svg></a>
-        <a class="btn btn--ghost btn--lg" href="/#contact">Use the form instead</a>
+      <h2>Get your link.</h2>
+      <p style="margin-top:14px">Fill this in and your link appears on this page straight away. No waiting, no approval step.</p>
+
+      <form class="pform" id="p-form" novalidate>
+        <div class="pform__row">
+          <label for="p-name">Your name</label>
+          <input id="p-name" name="name" type="text" maxlength="80" placeholder="Dan Smith" required autocomplete="name">
+          <span class="pform__hint">This becomes your link, so <code>Dan Smith</code> gives you <code>?ref=dan-smith</code>.</span>
+        </div>
+        <div class="pform__row">
+          <label for="p-email">Email</label>
+          <input id="p-email" name="email" type="email" maxlength="120" placeholder="you@email.com" required autocomplete="email">
+          <span class="pform__hint">Only used to reach you about commission. Nothing else, ever.</span>
+        </div>
+        <div class="pform__row">
+          <label for="p-note">Who might you introduce? <span class="pform__opt">optional</span></label>
+          <input id="p-note" name="note" type="text" maxlength="400" placeholder="I know a few salon and cafe owners">
+        </div>
+        <div class="pform__hp" aria-hidden="true">
+          <label for="p-company">Leave this empty</label>
+          <input id="p-company" name="company" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn--lg" id="p-submit">Create my link</button>
+        <p class="pform__err" id="p-err" hidden></p>
+      </form>
+
+      <div class="pdone" id="p-done" hidden>
+        <p class="speclabel">Your link</p>
+        <p class="pdone__link" id="p-link"></p>
+        <button type="button" class="btn" id="p-copy">Copy link</button>
+        <p class="pform__hint" style="margin-top:14px">Send that to anyone, or put it wherever you post. Anyone who arrives through it is credited to you for 90 days. Save it somewhere &mdash; this page won&rsquo;t show it again.</p>
       </div>
+
+      <p style="margin-top:22px;color:var(--muted);font-size:.92rem">Rather sort it by hand? <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%27d%20like%20a%20partner%20link" target="_blank" rel="noopener">Message us on WhatsApp</a>.</p>
     </div>
   </div>
 </section>

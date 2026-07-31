@@ -599,6 +599,15 @@
         <input type="text" name="link">
       </form>
 
+      <!-- Same trick for partner signups: partner.mjs posts here server-side so
+           a new partner triggers the existing form-email notification. -->
+      <form name="partner" data-netlify="true" hidden>
+        <input type="text" name="partner">
+        <input type="text" name="code">
+        <input type="text" name="email">
+        <input type="text" name="note">
+      </form>
+
       <form id="contact-form" class="form" name="contact" method="POST" action="/thanks" data-netlify="true" data-netlify-honeypot="_gotcha">
         <input type="hidden" name="form-name" value="contact">
         <!-- Filled by script.js from ?ref=CODE. Must exist in the deployed HTML:
