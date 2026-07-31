@@ -1,0 +1,6 @@
+# The site is plain static files deployed from the repo root via the Netlify
+# CLI (not git-linked — see the vault note before changing that assumption).
+# This file exists so the CLI also picks up the serverless functions.
+[build]
+  publish = "."
+  functions = "netlify/functions"

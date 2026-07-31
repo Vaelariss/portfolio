@@ -132,9 +132,9 @@
       <p>Billed in GBP through Stripe. Founding rates while the client list is still being built — whatever you agree is locked for the life of your project.</p>
     </div>
     <ul class="checklist reveal">
-      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Local business website — <span class="price" data-amt="895" data-cur="gbp">£895</span></b><p>Custom brochure site for shops, salons, barbers, trades and restaurants. No monthly fees. <a href="/local-business-websites">What's included</a></p></div></li>
-      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Shopify store — from <span class="price" data-amt="1450" data-cur="gbp">£1,450</span></b><p>Full ecommerce store built from scratch, ready to take orders. <a href="/shopify-store-design">What's included</a></p></div></li>
-      <li><svg class="ic"><use href="#i-check"/></svg><div><b>AI receptionist — <span class="price" data-amt="1250" data-cur="gbp">£1,250</span> + <span class="price" data-amt="79" data-cur="gbp" data-suffix="/mo">£79/mo</span></b><p>Answers your phone 24/7 and books appointments while you're working. <a href="/ai-receptionist">What's included</a></p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Local business website — <span class="price" data-amt="895" data-cur="gbp" data-usd="1195">£895</span></b><p>Custom brochure site for shops, salons, barbers, trades and restaurants. No monthly fees. <a href="/local-business-websites">What's included</a></p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Shopify store — from <span class="price" data-amt="1450" data-cur="gbp" data-usd="1950">£1,450</span></b><p>Full ecommerce store built from scratch, ready to take orders. <a href="/shopify-store-design">What's included</a></p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>AI receptionist — <span class="price" data-amt="750" data-cur="gbp" data-usd="995">£750</span> + <span class="price" data-amt="79" data-cur="gbp" data-usd="109" data-suffix="/mo">£79/mo</span></b><p>Answers your phone 24/7 and books appointments while you're working. In build — three founding places at the reduced rate, <span class="price" data-amt="1250" data-cur="gbp" data-usd="1650">£1,250</span> after. <a href="/ai-receptionist">What's included</a></p></div></li>
     </ul>
     <p class="anchor reveal" style="margin-top:26px">For comparison, most agencies quote <b><span class="price" data-amt="1500" data-cur="gbp">£1,500</span>–<span class="price" data-amt="4000" data-cur="gbp">£4,000</span>+</b> and take 6–12 weeks.</p>
   </div>
@@ -168,7 +168,8 @@
         <div class="guar"><svg class="ic"><use href="#i-eye"/></svg><span><b>See it before you pay a penny.</b> A real design of your site within 48 hours</span></div>
         <div class="guar"><svg class="ic"><use href="#i-shield"/></svg>Don't love it? You owe nothing and we part as friends</div>
         <div class="guar"><svg class="ic"><use href="#i-lock"/></svg>50% deposit · the balance only once you're happy, via Stripe</div>
-        <div class="guar"><svg class="ic"><use href="#i-rocket"/></svg>Live in 7 days from brief</div>
+        <div class="guar"><svg class="ic"><use href="#i-rocket"/></svg>Live in 7 working days from the day you send your content</div>
+        <div class="guar"><svg class="ic"><use href="#i-wrench"/></svg>Two rounds of revisions, plus a 14-day snag list after launch</div>
       </div>
 
       <p class="speclabel" style="margin-top:30px">Prefer to talk first?</p>
@@ -187,6 +188,9 @@
            recording the /hi pathname. -->
       <form id="contact-form" class="form" name="contact" method="POST" action="/thanks" data-netlify="true" data-netlify-honeypot="_gotcha">
         <input type="hidden" name="form-name" value="contact">
+        <!-- Same "contact" form as index.html; keep this field on both or a
+             submission from whichever page lacks it loses the attribution. -->
+        <input type="hidden" id="referred-by" name="referred-by">
         <input type="hidden" name="source" value="cold-email-hi">
         <div class="f-row">
           <div class="fg"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="First name" required></div>
@@ -210,6 +214,7 @@
         </details>
         <div class="hp" aria-hidden="true"><label for="_gotcha">Leave this empty</label><input id="_gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
         <button type="submit" class="btn btn--block btn--lg">Send me the free mockup <svg class="ic"><use href="#i-arrow-right"/></svg></button>
+        <p class="form__note ref-note" id="ref-note" hidden></p>
         <p class="form__note">No card required · Stripe when you're ready · <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%20got%20your%20email" target="_blank" rel="noopener">WhatsApp for a faster reply</a></p>
       </form>
     </div>

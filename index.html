@@ -33,7 +33,14 @@
 
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="assistant.css">
 <script src="script.js"></script>
+
+<!-- Assistant: self-hosted chat widget. Browser talks only to /api/assistant
+     on our own origin (connect-src 'self'); the AI call happens server-side
+     in a Netlify Function. No cookies, no storage, conversation not persisted
+     — the widget is itself the demo of the private-AI build we sell. -->
+<script defer src="assistant.js"></script>
 
 <!-- Analytics: Umami, proxied same-origin via _redirects so script-src stays
      'self' and no cookie banner is needed. Enabled 2026-07-29.
@@ -84,8 +91,8 @@
     { "@type": "Offer", "name": "Shopify Store Build", "priceCurrency": "GBP", "price": "1450", "description": "Full ecommerce store built from scratch, ready to take orders." },
     { "@type": "Offer", "name": "Local Business Website", "priceCurrency": "GBP", "price": "895", "description": "Custom brochure website for local businesses. No monthly fees." },
     { "@type": "Offer", "name": "Monthly Website Care", "priceCurrency": "GBP", "price": "119", "description": "Ongoing updates, monitoring and optimisation. Cancel anytime." },
-    { "@type": "Offer", "name": "AI Receptionist", "priceCurrency": "GBP", "price": "1250", "description": "24/7 AI that answers calls, takes bookings and follows up with leads. A one-time build, not a subscription: scripted around the business, connected to its booking system and tested on real calls before handover, then £79/month for hosting and changes. Self-serve tools start near £25/month but leave setup to the owner; agencies building one bespoke typically quote £8,000–£10,000 over six to eight weeks. This is the agency job in days, for £1,250." },
-    { "@type": "Offer", "name": "Custom-Built Systems", "priceCurrency": "GBP", "price": "2950", "description": "Bespoke software built around how the business runs, scoped free and quoted fixed, owned outright by the client including its code and documentation. Examples: a booking system taking deposits to stop no-shows, a quoting calculator turning measurements into a priced quote, a client portal for document upload and progress tracking, or one dashboard combining sales, bookings and reviews. A comparable agency build usually runs £6,000–£40,000, first working version commonly from £12,000; the gap is overhead rather than scope. The fixed quote follows a free scoping call rather than preceding it, so it is not a guess the client pays for later." }
+    { "@type": "Offer", "name": "AI Receptionist (founding places)", "priceCurrency": "GBP", "price": "750", "availability": "https://schema.org/PreOrder", "description": "24/7 AI that answers calls, takes bookings and follows up with leads. Currently in build: three founding places are open at £750 so the assistant can be shaped around real call volume before it opens properly, and founding clients keep that rate for life. The standard price is £1,250 once the three places are gone. Either way it is a one-time build, not a subscription: scripted around the business, connected to its booking system and tested on real calls before handover, then £79/month for hosting and changes. Self-serve tools start near £25/month but leave setup to the owner; agencies building one bespoke typically quote £8,000–£10,000 over six to eight weeks. Calls are answered by an AI and callers are told so at the start of the call." },
+    { "@type": "Offer", "name": "Custom-Built Systems", "priceCurrency": "GBP", "price": "3950", "description": "Bespoke software built around how the business runs, scoped free and quoted fixed, owned outright by the client including its code and documentation. Examples: a booking system taking deposits to stop no-shows, a quoting calculator turning measurements into a priced quote, a client portal for document upload and progress tracking, or one dashboard combining sales, bookings and reviews. A comparable agency build usually runs £6,000–£40,000, first working version commonly from £12,000; the gap is overhead rather than scope. The fixed quote follows a free scoping call rather than preceding it, so it is not a guess the client pays for later." }
   ]
 }
 </script>
@@ -94,12 +101,12 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What exactly is the free mockup?", "acceptedAnswer": { "@type": "Answer", "text": "Before you pay anything, we design a real visual concept of your site and send it within 48 hours — a custom design built around your brand, not a template. If you don't love it, you owe nothing." } },
+    { "@type": "Question", "name": "What exactly is the free mockup?", "acceptedAnswer": { "@type": "Answer", "text": "Before you pay anything, we design a real visual concept of your site and send it within 48 hours of our call — a custom design built around your brand, not a template. It's one free mockup per business, and if you don't love it you owe nothing." } },
     { "@type": "Question", "name": "How does the 50/50 payment work?", "acceptedAnswer": { "@type": "Answer", "text": "You pay 50% upfront to secure your build slot. The remaining 50% is only due after you've reviewed the finished site and you're happy. Payments go through Stripe." } },
-    { "@type": "Question", "name": "Do you really deliver in 7 days?", "acceptedAnswer": { "@type": "Answer", "text": "The 7-day countdown starts the day after we receive your brief. We take one project at a time, so your build gets full focus. If anything threatens the date, we tell you immediately." } },
+    { "@type": "Question", "name": "Do you really deliver in 7 days?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, with the clock started on something we control: it is 7 working days from the day you send your content, not from first contact. Waiting on photos and copy is the single most common reason a small build slips, so the countdown begins once they land. We take one project at a time, so your build gets full focus, and if anything threatens the date we tell you immediately." } },
     { "@type": "Question", "name": "Do I need a Shopify subscription?", "acceptedAnswer": { "@type": "Answer", "text": "Only if you're selling products online. Shopify plans start around £25/month in your own account. Local brochure sites need no subscription and have no monthly fees." } },
     { "@type": "Question", "name": "I already have a website — can you improve it?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We'll assess it honestly and tell you what's holding it back. Sometimes a redesign makes more sense than a patch. Get in touch and describe what you have." } },
-    { "@type": "Question", "name": "What counts as a custom-built system?", "acceptedAnswer": { "@type": "Answer", "text": "Anything your business needs that off-the-shelf software doesn't do well: booking and scheduling systems, client portals, quoting calculators, dashboards, internal tools, or automations that connect the tools you already use. We scope it free, agree a fixed quote from £2,950, and you own the finished system outright." } },
+    { "@type": "Question", "name": "What counts as a custom-built system?", "acceptedAnswer": { "@type": "Answer", "text": "Anything your business needs that off-the-shelf software doesn't do well: booking and scheduling systems, client portals, quoting calculators, dashboards, internal tools, or automations that connect the tools you already use. We scope it free, agree a fixed quote from £3,950, and you own the finished system outright." } },
     { "@type": "Question", "name": "What do I need to provide?", "acceptedAnswer": { "@type": "Answer", "text": "A short brief — your business name, what you offer, any brand colours or logos, and a couple of sites you like. About 10 minutes, zero technical knowledge needed. No photos yet? We use professional placeholders until you have your own." } }
   ]
 }
@@ -246,7 +253,7 @@
       <article class="block reveal">
         <div class="blk__ic"><svg class="ic"><use href="#i-store"/></svg></div>
         <h3>Shopify Store</h3>
-        <span class="tag-price">From <span class="price" data-amt="1450" data-cur="gbp">£1,450</span> · one-time</span>
+        <span class="tag-price">From <span class="price" data-amt="1450" data-cur="gbp" data-usd="1950">£1,450</span> · one-time</span>
         <p>A full ecommerce store built from scratch — theme, homepage, product pages, cart, checkout. Ready to take real orders on day one.</p>
         <ul class="ticks">
           <li><svg class="ic"><use href="#i-check"/></svg>Built to turn visitors into buyers</li>
@@ -258,7 +265,7 @@
       <article class="block reveal rd1">
         <div class="blk__ic"><svg class="ic"><use href="#i-bolt"/></svg></div>
         <h3>Local Business Site</h3>
-        <span class="tag-price"><span class="price" data-amt="895" data-cur="gbp">£895</span> · no monthly fees</span>
+        <span class="tag-price"><span class="price" data-amt="895" data-cur="gbp" data-usd="1195">£895</span> · no monthly fees</span>
         <p>A brochure site for shops, salons, barbers, trades and restaurants — built to make the phone ring and the diary fill.</p>
         <ul class="ticks">
           <li><svg class="ic"><use href="#i-check"/></svg>Custom design, not a template</li>
@@ -270,7 +277,7 @@
       <article class="block reveal rd2">
         <div class="blk__ic"><svg class="ic"><use href="#i-chart"/></svg></div>
         <h3>Monthly Care</h3>
-        <span class="tag-price"><span class="price" data-amt="119" data-cur="gbp" data-suffix="/mo">£119/mo</span> · cancel anytime</span>
+        <span class="tag-price"><span class="price" data-amt="119" data-cur="gbp" data-usd="159" data-suffix="/mo">£119/mo</span> · cancel anytime</span>
         <p>Keep your site fast, current and improving every month without lifting a finger — what a <span class="price" data-amt="300" data-cur="gbp" data-suffix="/mo">£300/mo</span> agency does, for a fraction.</p>
         <ul class="ticks">
           <li><svg class="ic"><use href="#i-check"/></svg>Unlimited content updates</li>
@@ -281,20 +288,23 @@
       <article class="block reveal rd3">
         <div class="blk__ic"><svg class="ic"><use href="#i-phone"/></svg></div>
         <h3>AI Receptionist</h3>
-        <span class="tag-price"><span class="price" data-amt="1250" data-cur="gbp">£1,250</span> setup · <span class="price" data-amt="79" data-cur="gbp" data-suffix="/mo">£79/mo</span></span>
-        <p>A 24/7 AI that answers calls, handles enquiries and books appointments — so you never miss a customer, even when you're busy or closed.</p>
+        <span class="badge-build">In build — 3 founding places</span>
+        <span class="tag-price"><span class="price" data-amt="750" data-cur="gbp" data-usd="995">£750</span> setup · <span class="price" data-amt="79" data-cur="gbp" data-usd="109" data-suffix="/mo">£79/mo</span></span>
+        <span class="price-note">Founding rate, first three only · <span class="price" data-amt="1250" data-cur="gbp" data-usd="1650">£1,250</span> after that</span>
+        <p>A 24/7 AI that answers calls, handles enquiries and books appointments — so you never miss a customer, even when you're busy or closed. Being built now: three founding clients get it shaped around their real call volume before it opens properly.</p>
         <ul class="ticks">
           <li><svg class="ic"><use href="#i-check"/></svg>Answers calls &amp; FAQs</li>
           <li><svg class="ic"><use href="#i-check"/></svg>Takes bookings &amp; follows up leads</li>
           <li><svg class="ic"><use href="#i-check"/></svg>Custom voice for your business</li>
+          <li><svg class="ic"><use href="#i-check"/></svg>Founding clients keep the launch rate for life</li>
         </ul>
-        <a class='arrowlink' href="/ai-receptionist">What's included<svg class="ic"><use href="#i-arrow-right"/></svg></a>
+        <a class='arrowlink' href="/ai-receptionist">Apply as a founding client<svg class="ic"><use href="#i-arrow-right"/></svg></a>
       </article>
       <article class="block block--wide reveal">
         <div class="blk__ic"><svg class="ic"><use href="#i-rocket"/></svg></div>
         <div class="wide__body">
           <h3>Custom-Built Systems for Your Business</h3>
-          <span class="tag-price">From <span class="price" data-amt="2950" data-cur="gbp">£2,950</span> · fixed quote before you pay</span>
+          <span class="tag-price">From <span class="price" data-amt="3950" data-cur="gbp" data-usd="5250">£3,950</span> · fixed quote before you pay</span>
           <p>Booking systems, client portals, quoting tools, dashboards and automations — bespoke software built around how your business actually runs, instead of squeezing your business into someone else's software.</p>
           <a class='arrowlink' href="/custom-built-systems">What's included<svg class="ic"><use href="#i-arrow-right"/></svg></a>
         </div>
@@ -331,8 +341,8 @@
       <p>No jargon, no chasing, no surprises. You only ever do the easy parts.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="step__n">1</div><h3>Free mockup</h3><p>Tell us your business name and what you do. We design a real visual of your site within 48 hours — no deposit, no commitment.</p><span class="when">// within 48 hours</span></div>
-      <div class="step reveal rd1"><div class="step__n">2</div><h3>Brief &amp; build</h3><p>Fill a 10-minute questionnaire and pay 50% to lock your slot. We build the full site in 7 days — one project at a time, full focus.</p><span class="when">// live in 7 days</span></div>
+      <div class="step reveal"><div class="step__n">1</div><h3>Free mockup</h3><p>Tell us your business name and what you do. We design a real visual of your site within 48 hours of our call — no deposit, no commitment. One free mockup per business.</p><span class="when">// within 48 hours</span></div>
+      <div class="step reveal rd1"><div class="step__n">2</div><h3>Brief &amp; build</h3><p>Fill a 10-minute questionnaire and pay 50% to lock your slot. We build the full site in 7 working days from the day your content lands — one project at a time, full focus.</p><span class="when">// live in 7 working days</span></div>
       <div class="step reveal rd2"><div class="step__n">3</div><h3>Review &amp; launch</h3><p>Review the finished site, request tweaks, then go live. The final 50% is only due once you're genuinely happy.</p><span class="when">// you approve first</span></div>
     </div>
   </div>
@@ -415,7 +425,7 @@
       <div class="block reveal"><div class="blk__ic"><svg class="ic"><use href="#i-bolt"/></svg></div><h3>Done in 7 days</h3><p>Agencies take 6–8 weeks across ten clients. One at a time here — brief Monday, live the following Friday.</p></div>
       <div class="block reveal rd1"><div class="blk__ic"><svg class="ic"><use href="#i-chart"/></svg></div><h3>Agency quality, no agency bill</h3><p>A properly designed, conversion-focused site without the <span class="price" data-amt="2000" data-cur="gbp">£2,000</span> invoice and the eight-week wait.</p></div>
       <div class="block reveal rd2"><div class="blk__ic"><svg class="ic"><use href="#i-lock"/></svg></div><h3>Pay as you're happy</h3><p>50% to lock your slot, 50% only once you've approved the finished site. Stripe-protected.</p></div>
-      <div class="block reveal rd3"><div class="blk__ic"><svg class="ic"><use href="#i-wrench"/></svg></div><h3>Aftercare included</h3><p>Something off after launch? Message us — usually fixed the same day, free for 7 days.</p></div>
+      <div class="block reveal rd3"><div class="blk__ic"><svg class="ic"><use href="#i-wrench"/></svg></div><h3>Aftercare included</h3><p>Something off after launch? Message us — usually fixed the same day, and the snag list stays open free for 14 days.</p></div>
     </div>
   </div>
 </section>
@@ -448,7 +458,7 @@
       <div class="block reveal"><div class="blk__ic"><svg class="ic"><use href="#i-eye"/></svg></div><h3>See it first</h3><p>We design a real mockup before you pay anything. Don't like it? Walk away, owe nothing.</p></div>
       <div class="block reveal rd1"><div class="blk__ic"><svg class="ic"><use href="#i-shield"/></svg></div><h3>Only half upfront</h3><p>50% to start, 50% once you're happy. Payments via Stripe for buyer protection.</p></div>
       <div class="block reveal rd2"><div class="blk__ic"><svg class="ic"><use href="#i-store"/></svg></div><h3>Real, explorable work</h3><p>The builds above are full, clickable sites — not flat screenshots. Judge for yourself.</p></div>
-      <div class="block reveal rd3"><div class="blk__ic"><svg class="ic"><use href="#i-wrench"/></svg></div><h3>We stay on it</h3><p>7 days of free changes after launch. You're never handed a site and left alone.</p></div>
+      <div class="block reveal rd3"><div class="blk__ic"><svg class="ic"><use href="#i-wrench"/></svg></div><h3>We stay on it</h3><p>Two rounds of revisions during the build, then a 14-day snag list after launch. You're never handed a site and left alone.</p></div>
     </div>
   </div>
 </section>
@@ -470,25 +480,25 @@
     <div class="prices">
       <div class="plan reveal">
         <div class="plan__name">Local Business Site</div>
-        <div class="plan__price"><span class="price" data-amt="895" data-cur="gbp">£895</span></div>
+        <div class="plan__price"><span class="price" data-amt="895" data-cur="gbp" data-usd="1195">£895</span></div>
         <div class="plan__sub">one-time · no monthly fees</div>
         <div class="plan__then">Founding rate · <b>rising soon</b></div>
         <p class="plan__desc">Brochure site for shops, salons, barbers &amp; trades. Yours outright.</p>
-        <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Custom-designed, not a template</li><li><svg class="ic"><use href="#i-check"/></svg>Click-to-call &amp; Google Maps</li><li><svg class="ic"><use href="#i-check"/></svg>Fast, mobile, found on Google</li><li><svg class="ic"><use href="#i-check"/></svg>7 days free revisions</li></ul>
+        <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Custom-designed, not a template</li><li><svg class="ic"><use href="#i-check"/></svg>Click-to-call &amp; Google Maps</li><li><svg class="ic"><use href="#i-check"/></svg>Fast, mobile, found on Google</li><li><svg class="ic"><use href="#i-check"/></svg>Two rounds of revisions + 14-day snag list</li></ul>
         <a href="#contact" class="btn btn--ghost btn--block">Get started</a>
       </div>
       <div class="plan plan--feat reveal rd1">
         <div class="plan__name">Shopify Store</div>
-        <div class="plan__price"><span class="price" data-amt="1450" data-cur="gbp">£1,450</span></div>
+        <div class="plan__price"><span class="price" data-amt="1450" data-cur="gbp" data-usd="1950">£1,450</span></div>
         <div class="plan__sub">agencies charge <span class="price" data-amt="2000" data-cur="gbp">£2,000</span>–<span class="price" data-amt="4000" data-cur="gbp">£4,000</span></div>
         <div class="plan__then">Founding rate · <b>rising soon</b></div>
         <p class="plan__desc">Full ecommerce store, built and ready to sell. Zero to live in 7 days.</p>
-        <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Complete store from scratch</li><li><svg class="ic"><use href="#i-check"/></svg>Up to 20 products uploaded</li><li><svg class="ic"><use href="#i-check"/></svg>Payments, shipping &amp; legal pages</li><li><svg class="ic"><use href="#i-check"/></svg>7 days free revisions</li></ul>
+        <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Complete store from scratch</li><li><svg class="ic"><use href="#i-check"/></svg>Up to 20 products uploaded</li><li><svg class="ic"><use href="#i-check"/></svg>Payments, shipping &amp; legal pages</li><li><svg class="ic"><use href="#i-check"/></svg>Two rounds of revisions + 14-day snag list</li></ul>
         <a href="#contact" class="btn btn--block">Get started</a>
       </div>
       <div class="plan reveal rd2">
         <div class="plan__name">Monthly Care</div>
-        <div class="plan__price"><span class="price" data-amt="119" data-cur="gbp" data-suffix="/mo">£119/mo</span></div>
+        <div class="plan__price"><span class="price" data-amt="119" data-cur="gbp" data-usd="159" data-suffix="/mo">£119/mo</span></div>
         <div class="plan__sub">cancel anytime</div>
         <p class="plan__desc">Keep it updated, fast and growing. Add-on to any build.</p>
         <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Unlimited content updates</li><li><svg class="ic"><use href="#i-check"/></svg>Speed &amp; mobile monitoring</li><li><svg class="ic"><use href="#i-check"/></svg>New sections as you grow</li><li><svg class="ic"><use href="#i-check"/></svg>Monthly marketing advice</li></ul>
@@ -496,17 +506,18 @@
       </div>
       <div class="plan reveal rd3">
         <div class="plan__name">AI Receptionist</div>
-        <div class="plan__price"><span class="price" data-amt="1250" data-cur="gbp">£1,250</span></div>
-        <div class="plan__sub">one-time · then <span class="price" data-amt="79" data-cur="gbp" data-suffix="/mo">£79/mo</span></div>
-        <p class="plan__desc">A 24/7 AI that answers calls, books appointments and follows up leads. Built, scripted and tested for your business — not a subscription you set up yourself.</p>
-        <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Answers calls &amp; FAQs</li><li><svg class="ic"><use href="#i-check"/></svg>Takes bookings &amp; appointments</li><li><svg class="ic"><use href="#i-check"/></svg>Follows up leads by text/email</li><li><svg class="ic"><use href="#i-check"/></svg>Custom voice &amp; persona</li></ul>
-        <a href="#contact" class="btn btn--ghost btn--block">Enquire</a>
+        <span class="badge-build">In build — 3 founding places</span>
+        <div class="plan__price"><span class="price" data-amt="750" data-cur="gbp" data-usd="995">£750</span></div>
+        <div class="plan__sub">founding rate, one-time · then <span class="price" data-amt="79" data-cur="gbp" data-usd="109" data-suffix="/mo">£79/mo</span> · <span class="price" data-amt="1250" data-cur="gbp" data-usd="1650">£1,250</span> once the three places are gone</div>
+        <p class="plan__desc">A 24/7 AI that answers calls, books appointments and follows up leads. Built, scripted and tested for your business — not a subscription you set up yourself. It is being built now, and the first three clients shape it around their real call volume and keep the launch rate for life.</p>
+        <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Answers calls &amp; FAQs</li><li><svg class="ic"><use href="#i-check"/></svg>Takes bookings &amp; appointments</li><li><svg class="ic"><use href="#i-check"/></svg>Follows up leads by text/email</li><li><svg class="ic"><use href="#i-check"/></svg>Custom voice &amp; persona</li><li><svg class="ic"><use href="#i-check"/></svg>Founding clients keep the launch rate for life</li></ul>
+        <a href="#contact" class="btn btn--ghost btn--block">Apply as a founding client</a>
       </div>
       <div class="plan plan--wide reveal">
         <div class="plan-wide__intro">
           <div class="plan__name">Custom-Built Systems</div>
-          <div class="plan__price"><span class="from">from</span> <span class="price" data-amt="2950" data-cur="gbp">£2,950</span></div>
-          <div class="plan__sub">fixed quote after a free scoping call</div>
+          <div class="plan__price"><span class="from">from</span> <span class="price" data-amt="3950" data-cur="gbp" data-usd="5250">£3,950</span></div>
+          <div class="plan__sub">fixed quote after a free scoping call · most projects <span class="price" data-amt="3950" data-cur="gbp" data-usd="5250">£3,950</span>&ndash;<span class="price" data-amt="6450" data-cur="gbp" data-usd="8550">£6,450</span></div>
         </div>
         <div class="plan-wide__body">
           <p class="plan__desc">Bespoke software built around how your business actually runs. For example: a booking system that takes a deposit up front, so no-shows stop costing you money; a quoting calculator that turns measurements into a priced quote on the spot; a client portal where customers upload documents and track progress instead of emailing you; or one dashboard pulling sales, bookings and reviews together instead of four separate logins. Owned by you, priced per project, never per seat.</p>
@@ -526,7 +537,7 @@
   <div class="container">
     <p class="speclabel speclabel--dark reveal" style="justify-content:center">The maths</p>
     <h2 class="reveal rd1" style="margin-top:16px">One extra client a week pays for your site <span class="hl">in a month.</span></h2>
-    <p class="reveal rd2">A <span class="price" data-amt="895" data-cur="gbp">£895</span> website that brings one extra enquiry a week has paid for itself inside a month — and every booking after that is free. For most local businesses, that's not a stretch.</p>
+    <p class="reveal rd2">A <span class="price" data-amt="895" data-cur="gbp" data-usd="1195">£895</span> website that brings one extra enquiry a week has paid for itself inside a month — and every booking after that is free. For most local businesses, that's not a stretch.</p>
   </div>
 </section>
 
@@ -535,13 +546,13 @@
   <div class="container">
     <div class="head center reveal"><p class="speclabel">FAQ</p><h2>Every question, answered.</h2></div>
     <div class="faq__list reveal">
-      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What exactly is the free mockup?</span><span class="pm">+</span></button><div class="faq__a"><p>Before you pay anything, we design a real visual concept of your site and send it within 48 hours — a custom design built around your brand, services and style, not a template. If you don't love it, you owe nothing.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What exactly is the free mockup?</span><span class="pm">+</span></button><div class="faq__a"><p>Before you pay anything, we design a real visual concept of your site and send it within 48 hours of our call — a custom design built around your brand, services and style, not a template. It's one free mockup per business, and if you don't love it you owe nothing.</p></div></div>
       <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>How does the 50/50 payment work?</span><span class="pm">+</span></button><div class="faq__a"><p>You pay 50% upfront to secure your build slot and start. The remaining 50% is only due once you've reviewed the finished site and you're happy. All payments go through Stripe, so you're protected.</p></div></div>
-      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Do you really deliver in 7 days?</span><span class="pm">+</span></button><div class="faq__a"><p>The 7-day countdown starts the day after we receive your completed brief. We take one project at a time, so yours gets full focus. If anything outside our control threatens the date, we tell you immediately.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Do you really deliver in 7 days?</span><span class="pm">+</span></button><div class="faq__a"><p>Yes, with the clock started on something we control: it's 7 working days from the day you send your content, not from first contact. Waiting on photos and copy is the single most common reason a small build slips, so the countdown begins once they land. We take one project at a time, so yours gets full focus, and if anything threatens the date we tell you immediately.</p></div></div>
       <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What do I need to provide?</span><span class="pm">+</span></button><div class="faq__a"><p>A short brief — your business name, what you offer, any brand colours or logos, and a couple of sites you like. About 10 minutes, zero technical knowledge needed. No photos yet? We use professional placeholders until you have your own.</p></div></div>
-      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Do I need a Shopify subscription?</span><span class="pm">+</span></button><div class="faq__a"><p>Only if you're selling products online. Shopify plans start around <span class="price" data-amt="25" data-cur="gbp" data-suffix="/month">£25/month</span> in your own account, and you keep full ownership. Local businesses that just need enquiries and bookings don't need Shopify at all — the <span class="price" data-amt="895" data-cur="gbp">£895</span> brochure site has zero monthly fees.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Do I need a Shopify subscription?</span><span class="pm">+</span></button><div class="faq__a"><p>Only if you're selling products online. Shopify plans start around <span class="price" data-amt="25" data-cur="gbp" data-suffix="/month">£25/month</span> in your own account, and you keep full ownership. Local businesses that just need enquiries and bookings don't need Shopify at all — the <span class="price" data-amt="895" data-cur="gbp" data-usd="1195">£895</span> brochure site has zero monthly fees.</p></div></div>
       <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>I already have a website — can you improve it?</span><span class="pm">+</span></button><div class="faq__a"><p>Yes. We'll assess it honestly and tell you exactly what's holding it back. Sometimes a redesign makes more sense than a patch — either way, you'll get a straight answer. Get in touch and describe what you have.</p></div></div>
-      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What counts as a custom-built system?</span><span class="pm">+</span></button><div class="faq__a"><p>Anything your business needs that off-the-shelf software doesn't do well: booking and scheduling systems, client portals, quoting calculators, dashboards, internal tools, or automations that connect the tools you already use. We scope it free, agree a fixed quote from <span class="price" data-amt="2950" data-cur="gbp">£2,950</span>, and you own the finished system outright.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What counts as a custom-built system?</span><span class="pm">+</span></button><div class="faq__a"><p>Anything your business needs that off-the-shelf software doesn't do well: booking and scheduling systems, client portals, quoting calculators, dashboards, internal tools, or automations that connect the tools you already use. We scope it free, agree a fixed quote from <span class="price" data-amt="3950" data-cur="gbp" data-usd="5250">£3,950</span>, and you own the finished system outright.</p></div></div>
     </div>
   </div>
 </section>
@@ -558,10 +569,11 @@
       <div class="guars">
         <!-- .guar is display:flex, so a bare <b> becomes its own flex column.
              Keep the whole sentence in one <span> so it flows as one block. -->
-        <div class="guar"><svg class="ic"><use href="#i-eye"/></svg><span><b>See it before you pay a penny.</b> A real design of your site within 48 hours — not a template preview</span></div>
+        <div class="guar"><svg class="ic"><use href="#i-eye"/></svg><span><b>See it before you pay a penny.</b> One free mockup per business, within 48 hours of our call — a real design, not a template preview</span></div>
         <div class="guar"><svg class="ic"><use href="#i-shield"/></svg>Don't love it? You owe nothing and we part as friends</div>
         <div class="guar"><svg class="ic"><use href="#i-lock"/></svg>50% deposit · the balance only once you're happy, via Stripe</div>
-        <div class="guar"><svg class="ic"><use href="#i-rocket"/></svg>Live in 7 days from brief</div>
+        <div class="guar"><svg class="ic"><use href="#i-rocket"/></svg>Live in 7 working days from the day you send your content</div>
+        <div class="guar"><svg class="ic"><use href="#i-wrench"/></svg>Two rounds of revisions, plus a 14-day snag list after launch</div>
       </div>
 
       <p class="speclabel" style="margin-top:30px">Prefer to talk first?</p>
@@ -577,6 +589,10 @@
     <div class="reveal rd1">
       <form id="contact-form" class="form" name="contact" method="POST" action="/thanks" data-netlify="true" data-netlify-honeypot="_gotcha">
         <input type="hidden" name="form-name" value="contact">
+        <!-- Filled by script.js from ?ref=CODE. Must exist in the deployed HTML:
+             Netlify Forms builds its field list from the static markup, so a
+             field created at runtime is silently dropped from submissions. -->
+        <input type="hidden" id="referred-by" name="referred-by">
         <div class="f-row">
           <div class="fg"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="First name" required></div>
           <div class="fg"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required></div>
@@ -602,6 +618,7 @@
         </details>
         <div class="hp" aria-hidden="true"><label for="_gotcha">Leave this empty</label><input id="_gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></div>
         <button type="submit" class="btn btn--block btn--lg">Request free mockup <svg class="ic"><use href="#i-arrow-right"/></svg></button>
+        <p class="form__note ref-note" id="ref-note" hidden></p>
         <p class="form__note">No card required · Stripe when you're ready · <a href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%27d%20like%20a%20free%20mockup" target="_blank" rel="noopener">WhatsApp for a faster reply</a></p>
       </form>
     </div>
@@ -616,7 +633,7 @@
     <div class="footer__g">
       <div class="footer__brand">
         <a href="#top" class="brand"><img src="favicon.svg" alt="" width="30" height="30"><b>Brick<span>work</span></b></a>
-        <p>Custom Shopify stores, local business websites and AI receptionists for small businesses. Live in 7 days, from <span class="price" data-amt="895" data-cur="gbp">£895</span>. Free mockup first.</p>
+        <p>Custom Shopify stores, local business websites and AI receptionists for small businesses. Live in 7 days, from <span class="price" data-amt="895" data-cur="gbp" data-usd="1195">£895</span>. Free mockup first.</p>
         <a class="ig" href="https://www.instagram.com/brickworkstudio_" target="_blank" rel="noopener"><svg class="ic"><use href="#i-instagram"/></svg>@brickworkstudio_</a>
         <a class="ig" href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%27d%20like%20a%20free%20mockup" target="_blank" rel="noopener"><svg class="ic"><use href="#i-phone"/></svg>07735 785911</a>
         <a class="ig" href="mailto:robinmarwa44@gmail.com?subject=Free%20mockup%20request"><svg class="ic"><use href="#i-message"/></svg>robinmarwa44@gmail.com</a>

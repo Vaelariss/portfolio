@@ -1,6 +1,50 @@
 /* Brickwork — behaviour. No inline handlers (CSP: script-src 'self'). */
 document.documentElement.classList.add('js'); // gate reveal/brick so content shows if JS fails
 
+/* Referral attribution — brickworkstudio.net/?ref=CODE
+   ------------------------------------------------------------------
+   There is no database and no affiliate platform here on purpose. All this
+   does is remember who sent a visitor and stamp that onto the enquiry, so the
+   lead arrives already labelled. Matching a payout to a sale is done by hand
+   against the partner ledger — at this volume a spreadsheet beats $49/mo of
+   SaaS built for subscription products we don't sell.
+
+   FIRST-touch, not last: the person being paid is whoever made the
+   introduction, and a later visit from a different link shouldn't quietly
+   reassign their commission. A stored code is only replaced once it expires.
+
+   The 90-day window is what stops a referrer claiming someone who wandered
+   back a year later off a Google search. */
+var BW_REF = (function () {
+  var KEY = 'bw_ref', STAMP = 'bw_ref_at', DAYS = 90;
+  var VALID = /^[a-z0-9][a-z0-9_-]{1,23}$/; /* also blocks anything HTML-ish reaching the form */
+
+  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* private mode */ } }
+  function drop(k) { try { localStorage.removeItem(k); } catch (e) {} }
+
+  function stored() {
+    var code = get(KEY), at = parseInt(get(STAMP), 10);
+    if (!code) return null;
+    if (!at || (Date.now() - at) > DAYS * 864e5) { drop(KEY); drop(STAMP); return null; }
+    return code;
+  }
+
+  function capture() {
+    var code;
+    try { code = (new URL(window.location.href)).searchParams.get('ref'); } catch (e) { return stored(); }
+    if (!code) return stored();
+    code = code.trim().toLowerCase();
+    if (!VALID.test(code)) return stored();
+    var existing = stored();
+    if (existing) return existing;          /* first touch wins */
+    set(KEY, code); set(STAMP, String(Date.now()));
+    return code;
+  }
+
+  return { code: capture() };
+})();
+
 /* Analytics event helper.
    Umami is loaded same-origin via the /js/script.js proxy in _redirects, so
    script-src stays 'self' and ad-blockers that filter the vendor domain don't
@@ -210,18 +254,31 @@ document.addEventListener('DOMContentLoaded', function () {
   var prices = document.querySelectorAll('.price');
   var sw = document.querySelectorAll('.curswitch button');
   if (!prices.length || !sw.length) return;
-  var rate = { gbp: 1, usd: 1.27, eur: 1.17 }, sym = { gbp: '£', usd: '$', eur: '€' };
+  /* Fallback conversion rates. REVIEW DATE: 2026-10-31 — a rate set months ago
+     silently misprices every package, so check these quarterly. GBP/USD checked
+     against mid-market 2026-07-31; EUR is inherited and unverified.
+     These only apply to figures with no explicit data-usd / data-eur override,
+     i.e. the market-comparison numbers where precision doesn't matter. Every
+     headline package price carries its own charm-priced value instead. */
+  var rate = { gbp: 1, usd: 1.323, eur: 1.17 }, sym = { gbp: '£', usd: '$', eur: '€' };
   function render(cur) {
     if (!rate[cur]) cur = 'gbp';
     prices.forEach(function (el) {
       var amt = parseFloat(el.getAttribute('data-amt'));
       if (isNaN(amt)) return;
       var nat = el.getAttribute('data-cur') || 'gbp';
-      var v = amt * (rate[cur] / rate[nat]);
-      /* Rounding to the nearest 5 exists so converted amounts don't read as
-         false precision ($1,264.65). It must not touch the native currency —
-         that was silently turning £119/mo into £120/mo on every load. */
-      if (cur !== nat) v = v >= 100 ? Math.round(v / 5) * 5 : Math.round(v);
+      var v, set = el.getAttribute('data-' + cur);
+      if (cur !== nat && set !== null && set !== '') {
+        /* A price someone chose, not a conversion artefact: $1,195 rather than
+           the $1,184 a straight multiply produces. */
+        v = parseFloat(set);
+      } else {
+        v = amt * (rate[cur] / rate[nat]);
+        /* Rounding to the nearest 5 exists so converted amounts don't read as
+           false precision ($1,264.65). It must not touch the native currency —
+           that was silently turning £119/mo into £120/mo on every load. */
+        if (cur !== nat) v = v >= 100 ? Math.round(v / 5) * 5 : Math.round(v);
+      }
       el.textContent = sym[cur] + v.toLocaleString('en-US') + (el.getAttribute('data-suffix') || '');
     });
     sw.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-cur') === cur ? 'true' : 'false'); });
@@ -236,8 +293,65 @@ document.addEventListener('DOMContentLoaded', function () {
       bwTrack('currency_switch', { cur: cur });
     });
   });
-  /* default is always GBP so the rendered page matches the GBP prices in our
-     JSON-LD — crawlers arrive with no stored preference and must not see $ */
+  /* A US visitor landing on £ is converting currency in their head at the exact
+     moment they're deciding whether to trust an unknown brand. So default by
+     locale rather than always GBP.
+
+     Timezone, not geo-IP: it needs no third-party service and no edge function,
+     and it fails safe. Headless crawlers run in UTC, so Googlebot still resolves
+     to GBP and the rendered price keeps matching the GBP prices in our JSON-LD —
+     which was the original reason this defaulted to GBP at all.
+
+     A stored preference always wins: the switcher must not be overruled. */
+  function localeCur() {
+    var tz;
+    try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) { return 'gbp'; }
+    if (/^America\//.test(tz)) return 'usd';
+    if (/^Europe\//.test(tz) && !/^Europe\/(London|Dublin|Belfast|Guernsey|Isle_of_Man|Jersey)$/.test(tz)) return 'eur';
+    return 'gbp';
+  }
   var pref; try { pref = localStorage.getItem('bw_cur'); } catch (e) {}
-  render(pref || 'gbp');
+  render(pref || localeCur());
+});
+
+/* Referral — stamp the code onto every route a lead can actually arrive by.
+   The form is the obvious one; WhatsApp matters more, because the only inbound
+   lead this business has ever had came through WhatsApp and would have carried
+   no attribution at all. */
+document.addEventListener('DOMContentLoaded', function () {
+  var code = BW_REF.code;
+  if (!code) return;
+
+  /* Netlify Forms reads the hidden input from the deployed HTML, so the field
+     must exist in the markup — it cannot be created here. This only fills it. */
+  var field = document.getElementById('referred-by');
+  if (field) field.value = code;
+
+  /* Shown, not hidden. The client can see who gets credited, which is both the
+     honest version and the thing that settles a "who introduced them" dispute
+     before it starts. */
+  var note = document.getElementById('ref-note');
+  if (note) {
+    note.textContent = 'Referred by ' + code + ' — they will be credited for this enquiry.';
+    note.hidden = false;
+  }
+
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(function (a) {
+    try {
+      var u = new URL(a.href);
+      var txt = u.searchParams.get('text') || '';
+      if (/\(ref:/.test(txt)) return;
+      u.searchParams.set('text', txt + ' (ref: ' + code + ')');
+      a.href = u.toString();
+    } catch (e) { /* leave the link exactly as authored */ }
+  });
+
+  /* Once per session, so a referrer's traffic is visible in analytics without
+     every page view inflating the count. */
+  try {
+    if (!sessionStorage.getItem('bw_ref_seen')) {
+      sessionStorage.setItem('bw_ref_seen', '1');
+      bwTrack('referral_visit', { ref: code });
+    }
+  } catch (e) {}
 });

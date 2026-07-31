@@ -9,6 +9,13 @@
 /js/script.js   https://cloud.umami.is/script.js   200
 /api/send       https://gateway.umami.is/api/send  200
 
+# ---- Function source must not be publicly readable ----
+# publish is the repo root, so without this rule the raw function source at
+# /netlify/functions/*.mjs would be served as a static file. The live endpoint
+# is unaffected: it routes via /api/assistant (config.path) and /.netlify/…,
+# neither of which this pattern matches.
+/netlify/*  /404.html  404!
+
 # ---- Retired demos (2026-07-28) ----
 # The three emoji-illustrated demos were replaced by four photographic builds.
 # Every previously indexed form goes to the work section rather than 404 — these

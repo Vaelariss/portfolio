@@ -214,6 +214,11 @@ section{position:relative}
 .blk__ic .ic{width:22px;height:22px}
 .block h3{font-size:1.25rem;margin-bottom:8px}
 .tag-price{display:inline-block;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.03em;color:var(--brick-deep);background:rgba(var(--brick-rgb),.09);padding:4px 10px;border-radius:2px;margin-bottom:14px}
+/* "in build" flag for pre-sold services. Deliberately louder than .tag-price:
+   it has to be read before the price, not after it. */
+.badge-build{display:block;width:fit-content;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brick-deep);background:rgba(var(--brick-rgb),.12);border:1px solid rgba(var(--brick-rgb),.34);padding:3px 9px;border-radius:2px;margin-bottom:10px}
+.block--wide .badge-build{color:var(--amber);background:rgba(var(--amber-rgb),.16);border-color:rgba(var(--amber-rgb),.4)}
+.price-note{display:block;font-family:var(--f-mono);font-size:.72rem;color:var(--muted);margin:-8px 0 14px}
 .block>p{color:var(--muted);font-size:.92rem;margin-bottom:16px}
 .ticks{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
 .ticks li{display:flex;gap:9px;font-size:.88rem;color:var(--muted)}
@@ -334,6 +339,9 @@ section{position:relative}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .hp{position:absolute;left:-9999px}
 .form__note{font-family:var(--f-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.03em;color:var(--faint);text-align:center;margin-top:12px}
+/* Referral credit line. Reads as a confirmation, not a warning — brick tint
+   rather than the error red, and it sits above the payment note. */
+.ref-note{color:var(--brick-deep);text-transform:none;letter-spacing:0;font-size:.74rem}
 .form-err{margin-top:12px;padding:12px 14px;background:rgba(181,70,42,.09);border:1px solid rgba(181,70,42,.35);border-radius:var(--r);font-size:.88rem;color:var(--ink)}
 .form-err a{color:var(--brick-deep);font-weight:600;text-decoration:underline}
 .form-ok{display:none;text-align:center;padding:34px 14px}
@@ -405,6 +413,18 @@ section{position:relative}
 .checklist li{display:flex;gap:11px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--brick);padding:15px 18px}
 .checklist .ic{width:18px;height:18px;color:var(--go);flex:none;margin-top:2px}
 .checklist b{font-weight:700}.checklist p{font-size:.88rem;color:var(--muted);margin:3px 0 0}
+/* Partner commission table (partners.html).
+   The wrapper is the scroll container, not the page: a five-column table has a
+   floor width no phone can meet, and the body must never scroll sideways. */
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);background:var(--paper)}
+.ptable{width:100%;min-width:520px;border-collapse:collapse;font-size:.92rem}
+.ptable th,.ptable td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line)}
+.ptable thead th{font-family:var(--f-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--concrete-2);white-space:nowrap}
+.ptable tbody tr:last-child td{border-bottom:0}
+.ptable td:nth-child(3){color:var(--brick-deep)}
+.ptable__na{color:var(--faint);font-style:italic}
+.ptable__note{margin-top:14px;font-size:.88rem;color:var(--muted);max-width:74ch}
+code{font-family:var(--f-mono);font-size:.9em;background:var(--concrete-2);border:1px solid var(--line);border-radius:2px;padding:1px 5px;word-break:break-all}
 @media(max-width:920px){.split{grid-template-columns:1fr}}
 
 /* optional-fields disclosure in the contact form. Native <details> so it needs
