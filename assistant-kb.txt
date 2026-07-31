@@ -19,7 +19,8 @@ with a free visual mockup, so the client sees the design before paying anything.
   Then £79/month either way. Answers calls 24/7, takes bookings, follows up leads. Founding
   clients keep the launch rate for life. Self-serve tools start near £25/month but leave setup to
   the owner; agencies quote £8,000–£10,000 over six to eight weeks. Calls are answered by an AI
-  and callers are told so.
+  and callers are told so. The £79/month covers hosting, call handling and
+  ongoing tuning, and can be cancelled any time.
 - Custom-built systems — from £3,950; most projects land between £3,950 and £6,450. Bespoke
   software: booking systems, client portals, quoting calculators, dashboards, automations. Scoped
   free, quoted fixed after a scoping call, and the client owns the system, code and documentation
