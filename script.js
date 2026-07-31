@@ -355,3 +355,76 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   } catch (e) {}
 });
+
+/* Referral prompt — invites a visitor to introduce someone.
+
+   Who it is NOT shown to, which is most of the point:
+   - anyone who arrived through a referral link (they are the referred
+     customer, not a prospective referrer)
+   - anyone who has already dismissed it, ever
+   - anyone on /partners, /studio or /thanks, which handle this themselves
+   - anyone who has not both read most of the page and stayed a while
+
+   That last rule is the important one. Someone still deciding whether to buy
+   should not be asked to sell; this waits for a visitor who has read the whole
+   thing and not enquired. It also keeps the commission rate off the page — the
+   copy says you get paid, not how much, so a customer who sees it learns
+   nothing about the margin in their own quote. */
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+
+  var SEEN = 'bw_refer_dismissed';
+  var path = location.pathname.replace(/\/$/, '');
+  if (/\/(partners|studio|thanks)$/.test(path)) return;
+
+  try {
+    if (localStorage.getItem(SEEN)) return;
+    if (localStorage.getItem('bw_ref')) return; /* they were referred here */
+  } catch (e) { return; } /* no storage means no way to honour a dismissal */
+
+  var el = document.createElement('aside');
+  el.className = 'refer';
+  el.setAttribute('aria-label', 'Refer a business');
+  el.innerHTML =
+    '<b>Know a business that needs a website?</b>' +
+    '<p>Introduce them and you get paid when they buy. Setting up your link takes a minute.</p>' +
+    '<div class="refer__row">' +
+      '<a class="btn" href="/partners">How it works</a>' +
+      '<button type="button" class="refer__no">Not for me</button>' +
+    '</div>';
+
+  var shown = false;
+  var start = Date.now();
+
+  function dismiss() {
+    el.classList.remove('in');
+    try { localStorage.setItem(SEEN, '1'); } catch (e) {}
+    setTimeout(function () { if (el.parentNode) el.remove(); }, 320);
+  }
+
+  function maybeShow() {
+    if (shown) return;
+    /* Don't spend the one-and-only showing on a tab nobody is looking at.
+       This also sidesteps requestAnimationFrame being paused while hidden,
+       which would leave the card mounted at opacity 0 until they returned. */
+    if (document.hidden) return;
+    var scrolled = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+    if (scrolled < 0.6 || Date.now() - start < 30000) return;
+    shown = true;
+    document.body.appendChild(el);
+    /* A timer rather than requestAnimationFrame: timers still fire if the tab
+       is backgrounded between mount and reveal, rAF does not. */
+    setTimeout(function () { el.classList.add('in'); }, 20);
+    el.querySelector('.refer__no').addEventListener('click', dismiss);
+    el.querySelector('.btn').addEventListener('click', function () {
+      try { localStorage.setItem(SEEN, '1'); } catch (e) {}
+      if (typeof bwTrack === 'function') bwTrack('refer_prompt_click');
+    });
+    if (typeof bwTrack === 'function') bwTrack('refer_prompt_shown');
+    window.removeEventListener('scroll', maybeShow);
+  }
+
+  window.addEventListener('scroll', maybeShow, { passive: true });
+  document.addEventListener('visibilitychange', maybeShow);
+  setTimeout(maybeShow, 30500);
+});

@@ -439,6 +439,32 @@ code{font-family:var(--f-mono);font-size:.9em;background:var(--concrete-2);borde
 .pform__err{margin:0;padding:10px 12px;background:rgba(181,70,42,.09);border:1px solid rgba(181,70,42,.35);border-radius:var(--r);font-size:.9rem}
 .pdone{margin-top:22px;max-width:560px;padding:18px;border:1px solid var(--line);background:var(--paper)}
 .pdone__link{font-family:var(--f-mono);font-size:1rem;word-break:break-all;margin:8px 0 16px;color:var(--brick-deep)}
+
+/* Referral prompt. Bottom-LEFT deliberately: bottom-right is the chat
+   launcher, and on mobile the bottom edge is .mbar — hence the offsets in the
+   media query, which clear both rather than stacking on top of them.
+   Shown once, only to someone who has read the page and not enquired. */
+.refer{
+  position:fixed;left:20px;bottom:20px;z-index:80;max-width:330px;
+  background:var(--paper);border:1px solid var(--line-2);border-radius:var(--r);
+  box-shadow:0 8px 28px rgba(23,19,14,.14);padding:16px 16px 14px;
+  transform:translateY(18px);opacity:0;pointer-events:none;
+  transition:opacity .3s ease-out,transform .3s ease-out;
+}
+.refer.in{transform:translateY(0);opacity:1;pointer-events:auto}
+.refer b{display:block;font-size:.98rem;margin-bottom:5px}
+.refer p{font-size:.86rem;color:var(--muted);margin:0 0 12px;line-height:1.5}
+.refer__row{display:flex;gap:8px;align-items:center}
+.refer__row .btn{padding:8px 14px;font-size:.82rem}
+.refer__no{background:none;border:0;font:inherit;font-size:.82rem;color:var(--muted);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.refer__no:hover{color:var(--ink)}
+@media(max-width:900px){
+  /* Sit ABOVE the chat launcher rather than beside it. Squeezing it into the
+     space to the left was measured overlapping the launcher at ~715px wide —
+     stacking has no width to get wrong. .mbar is 0-56px, the launcher sits at
+     86px, so this clears both. */
+  .refer{left:12px;right:12px;bottom:148px;max-width:none}
+}
 @media(max-width:920px){.split{grid-template-columns:1fr}}
 
 /* optional-fields disclosure in the contact form. Native <details> so it needs
