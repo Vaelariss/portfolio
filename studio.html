@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17130E">
+
+<!-- Internal tool. Never indexed, never linked from the site. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Studio inbox</title>
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script src="studio.js"></script>
+
+<style>
+  .st{max-width:1100px;margin:0 auto;padding:26px 20px 60px}
+  .st__head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+  .st__head h1{font-size:1.4rem;margin:0}
+  .st__status{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+  .st__grid{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:start}
+  @media(max-width:820px){.st__grid{grid-template-columns:1fr}}
+
+  .st__list{border:1px solid var(--line);background:var(--paper);max-height:70vh;overflow-y:auto}
+  .st__item{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;padding:12px 14px;cursor:pointer;font:inherit}
+  .st__item:last-child{border-bottom:0}
+  .st__item[aria-current="true"]{background:rgba(var(--brick-rgb),.08)}
+  .st__item b{display:block;font-size:.9rem;margin-bottom:3px}
+  .st__item span{display:block;font-size:.8rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .st__dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--brick);margin-right:6px;vertical-align:middle}
+
+  .st__thread{border:1px solid var(--line);background:var(--paper);padding:16px;min-height:320px}
+  .st__meta{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--line);word-break:break-word}
+  .st__msgs{display:flex;flex-direction:column;gap:10px;max-height:46vh;overflow-y:auto;margin-bottom:14px}
+  .st__m{max-width:80%;padding:9px 12px;border-radius:var(--r);font-size:.92rem;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+  .st__m--visitor{align-self:flex-start;background:var(--concrete-2)}
+  .st__m--studio{align-self:flex-end;background:rgba(var(--brick-rgb),.12)}
+  .st__m time{display:block;font-family:var(--f-mono);font-size:.64rem;color:var(--muted);margin-top:4px}
+
+  .st__reply{display:flex;flex-direction:column;gap:8px}
+  .st__reply textarea{width:100%;min-height:84px;padding:10px 12px;border:1px solid var(--line);border-radius:var(--r);font:inherit;font-size:.92rem;resize:vertical;background:var(--paper);color:var(--ink)}
+  .st__row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .st__hint{font-family:var(--f-mono);font-size:.68rem;color:var(--muted)}
+  .st__gate{max-width:420px;margin:60px auto;text-align:center}
+  .st__gate input{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:var(--r);font:inherit;margin:14px 0}
+  .st__empty{color:var(--muted);font-size:.92rem}
+</style>
+</head>
+<body>
+
+<div class="st">
+  <div class="st__head">
+    <h1>Studio inbox</h1>
+    <div class="st__status" id="st-status">&nbsp;</div>
+  </div>
+
+  <div id="st-gate" class="st__gate" hidden>
+    <p class="st__empty">Paste the studio key to read the inbox. It is kept in this browser only.</p>
+    <input type="password" id="st-key" placeholder="studio key" autocomplete="current-password">
+    <button class="btn btn--block" id="st-unlock">Unlock</button>
+  </div>
+
+  <div id="st-app" class="st__grid" hidden>
+    <div class="st__list" id="st-list"></div>
+    <div class="st__thread">
+      <div class="st__meta" id="st-meta">Pick a conversation.</div>
+      <div class="st__msgs" id="st-msgs"></div>
+      <form class="st__reply" id="st-reply" hidden>
+        <textarea id="st-text" maxlength="4000" placeholder="Write your reply&hellip;"></textarea>
+        <div class="st__row">
+          <span class="st__hint">Ctrl+Enter sends &middot; the visitor sees it within a few seconds if their tab is open</span>
+          <button type="submit" class="btn">Send reply</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

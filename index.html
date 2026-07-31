@@ -587,6 +587,18 @@
       </div>
     </div>
     <div class="reveal rd1">
+      <!-- Netlify builds its form list from the static markup at deploy time, so
+           this stub has to exist even though nothing ever submits it from the
+           page: chat.mjs posts to it server-side when a live-chat conversation
+           starts, which is how the studio gets its email notification. Enable
+           notifications for the "chat" form in the Netlify UI once. -->
+      <form name="chat" data-netlify="true" hidden>
+        <input type="text" name="conversation">
+        <input type="text" name="message">
+        <input type="text" name="contact">
+        <input type="text" name="link">
+      </form>
+
       <form id="contact-form" class="form" name="contact" method="POST" action="/thanks" data-netlify="true" data-netlify-honeypot="_gotcha">
         <input type="hidden" name="form-name" value="contact">
         <!-- Filled by script.js from ?ref=CODE. Must exist in the deployed HTML:

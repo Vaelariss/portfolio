@@ -1,6 +1,10 @@
 # Netlify CLI state — machine-specific absolute paths, regenerated on deploy
 .netlify/
 
+# Function dependencies. The pages still have no build step — node_modules
+# exists only so the CLI can bundle @netlify/blobs into the functions.
+node_modules/
+
 # OS / editor noise
 .DS_Store
 Thumbs.db

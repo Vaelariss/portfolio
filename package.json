@@ -1,0 +1,9 @@
+{
+  "name": "brickworkstudio",
+  "private": true,
+  "type": "module",
+  "description": "Static site plus Netlify Functions. No build step for the pages; this file exists so the CLI bundles function dependencies.",
+  "dependencies": {
+    "@netlify/blobs": "^10.7.11"
+  }
+}

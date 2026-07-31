@@ -82,6 +82,17 @@
 }
 .bwa__chips button:hover{background:var(--brick-deep);color:var(--paper)}
 
+/* Switch to the human lane. Understated on purpose: the AI answers most
+   questions instantly and for a fraction of a penny, so this is the escape
+   hatch rather than the headline. It hides itself once taken. */
+.bwa__human{
+  flex:none;display:block;width:100%;text-align:left;
+  padding:0 14px 12px;background:var(--concrete);border:0;cursor:pointer;
+  font-family:var(--f-mono);font-size:.68rem;letter-spacing:.04em;
+  color:var(--muted);text-decoration:underline;text-underline-offset:3px;
+}
+.bwa__human:hover{color:var(--brick-deep)}
+
 /* input row */
 .bwa__form{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line-2);background:var(--paper);flex:none}
 .bwa__form input{
