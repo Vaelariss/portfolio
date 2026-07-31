@@ -9,16 +9,21 @@
    - Nothing is logged or stored. The conversation exists only in the
      request/response; do not add logging of message content here.
 
-   Provider is chosen by which key is present, so switching never needs a code
-   change or a redeploy:
-     GROQ_API_KEY      -> Groq (free tier; contractually does not train on
-                          inputs, which is why it was chosen over free tiers
-                          that do — see privacy.html)
-     ANTHROPIC_API_KEY -> Anthropic
+   Provider is chosen by which keys are present, so changing it never needs a
+   code change or a redeploy:
+     ANTHROPIC_API_KEY -> tried first. Better model, no daily cap, so prepaid
+                          credit gets spent before anything else.
+     GROQ_API_KEY      -> used when Anthropic is absent OR fails. Free tier,
+                          and contractually barred from training on inputs,
+                          which is why it beat the free tiers that aren't
+                          (see privacy.html).
      neither           -> honest "assistant offline, use WhatsApp" reply
-   Deliberately no cross-provider retry: falling back from Groq to Anthropic
-   would silently spend the money the free tier exists to avoid, on what is a
-   routine 429 path once the daily token budget runs out.
+   Set both and the endpoint burns the Anthropic credit, then falls through to
+   free automatically instead of going quietly offline when it runs out.
+
+   ⚠️ The fallback is one-directional on purpose. Paid -> free costs nothing.
+   Free -> paid would silently spend money on what becomes a routine 429 once
+   Groq's daily token budget is gone. Do not make this symmetric.
 
    Knowledge base: assistant-kb.txt, NOT llms.txt. The two are separate on
    purpose — llms.txt is long because it is the public file for AI crawlers,
@@ -241,8 +246,6 @@ export default async function handler(req, context) {
     return json({ error: "no message" }, 400);
   }
 
-  /* Groq wins when both are present, so adding a Groq key is the switch and
-     removing it is the rollback — neither needs a deploy. */
   const groqKey = process.env.GROQ_API_KEY;
   const anthropicKey = process.env.ANTHROPIC_API_KEY;
   if (!groqKey && !anthropicKey) return json({ reply: OFFLINE_REPLY, offline: true });
@@ -252,9 +255,27 @@ export default async function handler(req, context) {
 
   try {
     const sys = systemPrompt(kb.text);
-    const reply = groqKey
-      ? await callGroq(groqKey, process.env.GROQ_MODEL || "llama-3.3-70b-versatile", sys, messages)
-      : await callAnthropic(anthropicKey, process.env.ANTHROPIC_MODEL || "claude-haiku-4-5-20251001", sys, messages);
+
+    /* Paid first, free as the safety net. Anthropic is the better model and
+       has no daily cap, so prepaid credit should be spent before falling back
+       — and when that credit finally runs out the endpoint keeps working
+       instead of going quietly offline.
+
+       Note the direction. Falling back TO the free tier costs nothing and is
+       always the right move; falling back to the PAID one would silently spend
+       money on what is a routine 429 once Groq's daily token budget is gone.
+       Do not make this symmetric. */
+    let reply = "";
+    if (anthropicKey) {
+      reply = await callAnthropic(
+        anthropicKey, process.env.ANTHROPIC_MODEL || "claude-haiku-4-5-20251001", sys, messages
+      );
+    }
+    if (!reply && groqKey) {
+      reply = await callGroq(
+        groqKey, process.env.GROQ_MODEL || "llama-3.3-70b-versatile", sys, messages
+      );
+    }
 
     if (!reply) return json({ reply: OFFLINE_REPLY, offline: true });
 
