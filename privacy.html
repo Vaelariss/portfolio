@@ -97,7 +97,7 @@
 
     <h2>The chat on our site</h2>
     <p>The "Ask us" chat is built and hosted by us, not bought in from a chat company. It has two modes, and they handle your messages differently.</p>
-    <p><b>Talking to the AI assistant.</b> This needs no account, sets no cookies and does not store your conversation — it exists only in your browser tab and is gone when you close it. To generate each reply, what you type is sent to our own server, which passes it to <b>Anthropic</b> (our AI provider) for processing. Under Anthropic's commercial API terms that data is not used to train AI models. We keep no copy and no log of it.</p>
+    <p><b>Talking to the AI assistant.</b> This needs no account, sets no cookies and does not store your conversation — it exists only in your browser tab and is gone when you close it. To generate each reply, what you type is sent to our own server, which passes it to <b>Groq</b> (our AI provider) for processing. Groq's service agreement bars it from using what is sent to train or fine-tune AI models, and it does not retain the content of inference requests by default. We keep no copy and no log of it either. That choice was deliberate: several AI providers offer free access on the explicit condition that they may train on what you type, and we would not put your messages through one of those.</p>
     <p><b>Talking to a person.</b> If you choose "Talk to a person instead", the conversation has to be stored so that we can actually reply to it later — there is no way around that, and the chat window tells you at the moment you switch. Your messages and our replies are kept on our own server (Netlify, our hosting provider) for <b>up to 7 days</b> and then become unreachable. Your browser stores a reference to your conversation so that you can close the tab and still find our reply when you come back; clearing your browser data removes it. We are sent an email when a conversation starts. Nothing is shared with any third party beyond our hosting provider, and none of it is used for advertising.</p>
     <p>Either way, please don't put sensitive personal details into the chat — for anything private, use WhatsApp or the contact form.</p>
 
@@ -114,11 +114,11 @@
     <ul>
       <li><b>Netlify</b> — hosts this website, and receives, stores and forwards your contact-form submissions to us.</li>
       <li><b>Stripe</b> — handles payments if you engage us (Stripe collects payment details directly; we never see your full card number).</li>
-      <li><b>Anthropic</b> — processes messages you type into the on-page AI chat, solely to generate the reply. Nothing else you do on this site is sent there.</li>
+      <li><b>Groq</b> — processes messages you type into the on-page AI chat, solely to generate the reply. Nothing else you do on this site is sent there. We chose a provider whose terms bar it from training on what is sent; some free AI services do the opposite.</li>
     </ul>
 
     <h2>International transfers</h2>
-    <p>The providers above (Netlify, Stripe, Anthropic) are based in the United States, so form submissions and payment records may be processed there. These transfers rely on safeguards recognised under UK GDPR — the UK Extension to the EU-US Data Privacy Framework and/or the UK International Data Transfer Agreement / standard contractual clauses — and each provider publishes its own GDPR commitments.</p>
+    <p>The providers above (Netlify, Stripe, Groq) are based in the United States, so form submissions and payment records may be processed there. These transfers rely on safeguards recognised under UK GDPR — the UK Extension to the EU-US Data Privacy Framework and/or the UK International Data Transfer Agreement / standard contractual clauses — and each provider publishes its own GDPR commitments.</p>
 
     <h2>How long we keep it</h2>
     <p>Enquiries that don't become projects are kept for up to 12 months, then deleted. Records relating to actual projects and payments are kept for up to 6 years to meet UK tax and accounting requirements.</p>
