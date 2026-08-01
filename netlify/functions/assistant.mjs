@@ -45,17 +45,23 @@ const PRICE_DEFLECT =
    in their own pages and burn the API budget. No header at all is allowed —
    that's curl and server-side checks, which the rate limit still covers. */
 function originAllowed(origin) {
-  if (!origin) return true;
+  /* ⚠️ This used to `return true` for a missing Origin header, on the reasoning
+     that curl "is still covered by the rate limit". It was not: the rate limit
+     below was in-memory and reset on every cold start, so no-Origin + curl was
+     an unmetered path straight to a paid AI API. On 2026-08-01 the Netlify team
+     hit its credit limit and every project was paused. Browsers always send
+     Origin on a cross-origin-capable POST, so refusing the empty case costs a
+     real visitor nothing. Do not loosen this again. */
+  if (!origin) return false;
   if (origin === PROD_ORIGIN) return true;
   if (/^https:\/\/([a-z0-9-]+--)?glittering-elf-6e046e\.netlify\.app$/.test(origin)) return true; // draft deploys
   if (/^https?:\/\/localhost(:\d+)?$/.test(origin)) return true; // netlify dev
   return false;
 }
 
-/* Naive per-IP rate limit. In-memory, so it only counts within one warm
-   instance — that is fine: its job is stopping a runaway loop or a bored
-   script kiddie, not surviving a DDoS. Real cost control is max_tokens plus
-   the history caps below. */
+/* Per-IP rate limit, first line only. In-memory, so it resets on a cold start —
+   which is exactly why it cannot be the only control. See the durable global
+   cap below, which is the one that actually bounds spend. */
 const hits = new Map();
 function limited(ip) {
   const now = Date.now();
@@ -65,6 +71,34 @@ function limited(ip) {
   if (hits.size > 500) hits.clear(); // bound memory; resets are harmless
   hits.set(ip, recent);
   return false;
+}
+
+/* ---- Durable global daily cap ----------------------------------------------
+   The lesson of 2026-08-01: an in-memory counter bounds nothing, because every
+   cold start hands the caller a fresh allowance. This counter lives in Netlify
+   Blobs, so it survives cold starts and is shared across every concurrent
+   instance. It is a spend ceiling, not a fairness mechanism.
+
+   Sized deliberately low. This widget exists to answer questions from real
+   visitors on a site that sees a few hundred a month; anything above this is
+   not a visitor. Raise it only with a reason written down here. */
+const DAILY_CAP = Number(process.env.ASSISTANT_DAILY_CAP || 300);
+
+async function overDailyCap() {
+  try {
+    const { getStore } = await import("@netlify/blobs");
+    const store = getStore("assistant-usage");
+    const key = "count-" + new Date().toISOString().slice(0, 10); // UTC day
+    const current = Number((await store.get(key)) || 0);
+    if (current >= DAILY_CAP) return true;
+    await store.set(key, String(current + 1));
+    return false;
+  } catch (e) {
+    /* Fail OPEN, deliberately. A blob outage should degrade the widget, not
+       break it — the per-IP limit and the token caps still apply, and the kill
+       switch is the backstop if this ever proves to be the wrong call. */
+    return false;
+  }
 }
 
 /* ---- Price guard -----------------------------------------------------------
@@ -226,11 +260,21 @@ function json(body, status) {
 }
 
 export default async function handler(req, context) {
+  /* Kill switch. Set ASSISTANT_ENABLED=false in the Netlify dashboard and the
+     widget goes quiet within seconds — no deploy, no git, no CLI. That matters
+     because the day this is needed is the day deploys are likely to be the
+     thing that is broken. Any value other than "false" leaves it on, so a typo
+     cannot silently disable the widget. */
+  if (String(process.env.ASSISTANT_ENABLED || "true").toLowerCase() === "false") {
+    return json({ reply: BUSY_REPLY, offline: true });
+  }
+
   if (req.method !== "POST") return json({ error: "POST only" }, 405);
   if (!originAllowed(req.headers.get("origin"))) return json({ error: "forbidden" }, 403);
 
   const ip = (context && context.ip) || req.headers.get("x-nf-client-connection-ip") || "unknown";
   if (limited(ip)) return json({ reply: BUSY_REPLY, offline: true });
+  if (await overDailyCap()) return json({ reply: BUSY_REPLY, offline: true });
 
   let body;
   try { body = await req.json(); } catch (e) { return json({ error: "bad json" }, 400); }
