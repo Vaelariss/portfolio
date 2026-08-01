@@ -37,14 +37,14 @@
 <script src="script.js"></script>
 
 <!-- Assistant: self-hosted chat widget. Browser talks only to /api/assistant
-     on our own origin (connect-src 'self'); the AI call happens server-side
+     on my own origin (connect-src 'self'); the AI call happens server-side
      in a Netlify Function. No cookies, no storage, conversation not persisted
-     — the widget is itself the demo of the private-AI build we sell. -->
+     — the widget is itself the demo of the private-AI build I sell. -->
 <script defer src="assistant.js"></script>
 
 <!-- Analytics: Umami, proxied same-origin via _redirects so script-src stays
      'self' and no cookie banner is needed. Enabled 2026-07-29.
-     data-host-url MUST be set and MUST be our own absolute origin. The
+     data-host-url MUST be set and MUST be my own absolute origin. The
      vendor script hardcodes gateway.umami.is as its default, so without
      this the beacon goes cross-origin and connect-src 'self' blocks it.
      With it, the browser posts same-origin to /api/send and _redirects
@@ -64,12 +64,12 @@
   "disambiguatingDescription": "Brickwork Studio is an independent web design studio that builds websites, Shopify stores, AI phone receptionists and custom business software for small businesses. It is a remote, online-only service business with no showroom or physical premises, founded and run by one designer. It is unrelated to similarly named businesses in brick manufacturing and building products, architecture, or film and photography production.",
   "url": "https://brickworkstudio.net/",
   "image": "https://brickworkstudio.net/og-cover.png",
-  "email": "robinmarwa44@gmail.com",
+  "email": "hello@brickworkstudio.net",
   "telephone": "+447735785911",
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "sales",
-    "email": "robinmarwa44@gmail.com",
+    "email": "hello@brickworkstudio.net",
     "telephone": "+447735785911",
     "availableLanguage": "English",
     "areaServed": "Worldwide"
@@ -91,8 +91,8 @@
     { "@type": "Offer", "name": "Shopify Store Build", "priceCurrency": "GBP", "price": "1450", "description": "Full ecommerce store built from scratch, ready to take orders." },
     { "@type": "Offer", "name": "Local Business Website", "priceCurrency": "GBP", "price": "895", "description": "Custom brochure website for local businesses. No monthly fees." },
     { "@type": "Offer", "name": "Monthly Website Care", "priceCurrency": "GBP", "price": "119", "description": "Ongoing updates, monitoring and optimisation. Cancel anytime." },
-    { "@type": "Offer", "name": "AI Receptionist (founding places)", "priceCurrency": "GBP", "price": "750", "availability": "https://schema.org/PreOrder", "description": "24/7 AI that answers calls, takes bookings and follows up with leads. Currently in build: three founding places are open at £750 so the assistant can be shaped around real call volume before it opens properly, and founding clients keep that rate for life. The standard price is £1,250 once the three places are gone. Either way it is a one-time build, not a subscription: scripted around the business, connected to its booking system and tested on real calls before handover, then £79/month for hosting and changes. Self-serve tools start near £25/month but leave setup to the owner; agencies building one bespoke typically quote £8,000–£10,000 over six to eight weeks. Calls are answered by an AI and callers are told so at the start of the call." },
-    { "@type": "Offer", "name": "Custom-Built Systems", "priceCurrency": "GBP", "price": "3950", "description": "Bespoke software built around how the business runs, scoped free and quoted fixed, owned outright by the client including its code and documentation. Examples: a booking system taking deposits to stop no-shows, a quoting calculator turning measurements into a priced quote, a client portal for document upload and progress tracking, or one dashboard combining sales, bookings and reviews. A comparable agency build usually runs £6,000–£40,000, first working version commonly from £12,000; the gap is overhead rather than scope. The fixed quote follows a free scoping call rather than preceding it, so it is not a guess the client pays for later." }
+    { "@type": "Offer", "name": "AI Receptionist (founding places)", "priceCurrency": "GBP", "price": "750", "availability": "https://schema.org/PreOrder", "description": "24/7 AI that answers calls, takes bookings and follows up with leads. Currently in build: three founding places are open at £750 so the assistant can be shaped around real call volume before it opens properly, and founding clients keep that rate for life. The standard price is £1,250 once the three places are gone. Either way it is a one-time build, not a subscription: scripted around the business, connected to its booking system and tested on real calls before handover, then £79/month for hosting and changes. Self-serve tools start near £25/month but leave setup to the owner; agencies building one bespoke charge several times this and usually take six to eight weeks. No figure is published for what an agency charges because there is no sourced one. Calls are answered by an AI and callers are told so at the start of the call." },
+    { "@type": "Offer", "name": "Custom-Built Systems", "priceCurrency": "GBP", "price": "3950", "description": "Bespoke software built around how the business runs, scoped free and quoted fixed, owned outright by the client including its code and documentation. Examples: a booking system taking deposits to stop no-shows, a quoting calculator turning measurements into a priced quote, a client portal for document upload and progress tracking, or one dashboard combining sales, bookings and reviews. A comparable agency build costs substantially more; the gap is overhead rather than scope. No figure is published for the agency price because there is no sourced one. The fixed quote follows a free scoping call rather than preceding it, so it is not a guess the client pays for later." }
   ]
 }
 </script>
@@ -101,13 +101,13 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What exactly is the free mockup?", "acceptedAnswer": { "@type": "Answer", "text": "Before you pay anything, we design a real visual concept of your site and send it within 48 hours of our call — a custom design built around your brand, not a template. It's one free mockup per business, and if you don't love it you owe nothing." } },
+    { "@type": "Question", "name": "What exactly is the free mockup?", "acceptedAnswer": { "@type": "Answer", "text": "Before you pay anything, I design a real visual concept of your site and send it within 48 hours of our call — a custom design built around your brand, not a template. It's one free mockup per business, and if you don't love it you owe nothing." } },
     { "@type": "Question", "name": "How does the 50/50 payment work?", "acceptedAnswer": { "@type": "Answer", "text": "You pay 50% upfront to secure your build slot. The remaining 50% is only due after you've reviewed the finished site and you're happy. Payments go through Stripe." } },
-    { "@type": "Question", "name": "Do you really deliver in 7 days?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, with the clock started on something we control: it is 7 working days from the day you send your content, not from first contact. Waiting on photos and copy is the single most common reason a small build slips, so the countdown begins once they land. We take one project at a time, so your build gets full focus, and if anything threatens the date we tell you immediately." } },
+    { "@type": "Question", "name": "Do you really deliver in 7 days?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, with the clock started on something I control: it is 7 working days from the day you send your content, not from first contact. Waiting on photos and copy is the single most common reason a small build slips, so the countdown begins once they land. I take one project at a time, so your build gets full focus, and if anything threatens the date I tell you immediately." } },
     { "@type": "Question", "name": "Do I need a Shopify subscription?", "acceptedAnswer": { "@type": "Answer", "text": "Only if you're selling products online. Shopify plans start around £25/month in your own account. Local brochure sites need no subscription and have no monthly fees." } },
-    { "@type": "Question", "name": "I already have a website — can you improve it?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. We'll assess it honestly and tell you what's holding it back. Sometimes a redesign makes more sense than a patch. Get in touch and describe what you have." } },
-    { "@type": "Question", "name": "What counts as a custom-built system?", "acceptedAnswer": { "@type": "Answer", "text": "Anything your business needs that off-the-shelf software doesn't do well: booking and scheduling systems, client portals, quoting calculators, dashboards, internal tools, or automations that connect the tools you already use. We scope it free, agree a fixed quote from £3,950, and you own the finished system outright." } },
-    { "@type": "Question", "name": "What do I need to provide?", "acceptedAnswer": { "@type": "Answer", "text": "A short brief — your business name, what you offer, any brand colours or logos, and a couple of sites you like. About 10 minutes, zero technical knowledge needed. No photos yet? We use professional placeholders until you have your own." } }
+    { "@type": "Question", "name": "I already have a website — can you improve it?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. I'll assess it honestly and tell you what's holding it back. Sometimes a redesign makes more sense than a patch. Get in touch and describe what you have." } },
+    { "@type": "Question", "name": "What counts as a custom-built system?", "acceptedAnswer": { "@type": "Answer", "text": "Anything your business needs that off-the-shelf software doesn't do well: booking and scheduling systems, client portals, quoting calculators, dashboards, internal tools, or automations that connect the tools you already use. I scope it free, agree a fixed quote from £3,950, and you own the finished system outright." } },
+    { "@type": "Question", "name": "What do I need to provide?", "acceptedAnswer": { "@type": "Answer", "text": "A short brief — your business name, what you offer, any brand colours or logos, and a couple of sites you like. About 10 minutes, zero technical knowledge needed. No photos yet? I use professional placeholders until you have your own." } }
   ]
 }
 </script>
@@ -229,14 +229,14 @@
       <p class="speclabel">The problem</p>
       <h2>Instagram gets you noticed. A website gets you <span class="hl">paid.</span></h2>
       <p>Most small businesses are brilliant at the actual work — and invisible online. No site means people can't find you, can't trust you at a glance, and book whoever was easier to reach instead.</p>
-      <p>Every week without one is bookings walking to a competitor with a tidier shopfront. We fix that in seven days.</p>
+      <p>Every week without one is bookings walking to a competitor with a tidier shopfront. I fix that in seven days.</p>
       <a href="#contact" class="btn" style="margin-top:8px">Fix it in 7 days <svg class="ic"><use href="#i-arrow-right"/></svg></a>
     </div>
     <div class="pains">
       <div class="pain reveal"><svg class="ic"><use href="#i-search"/></svg><div><h4>"I couldn't find you on Google"</h4><p>People search before they book. No site, or a bad one, and they find someone who has one.</p></div></div>
       <div class="pain reveal rd1"><svg class="ic"><use href="#i-message"/></svg><div><h4>Bookings stuck in your DMs</h4><p>Every enquiry is a manual back-and-forth. A real site (or an AI receptionist) handles it at 2am.</p></div></div>
       <div class="pain reveal rd2"><svg class="ic"><use href="#i-chart"/></svg><div><h4>Competitors look more legit</h4><p>A professional site signals a professional business — and tends to win the booking first.</p></div></div>
-      <div class="pain reveal rd3"><svg class="ic"><use href="#i-clock"/></svg><div><h4>No time to build it yourself</h4><p>DIY builders eat weeks and still look amateur. Brief us once; it's done for you.</p></div></div>
+      <div class="pain reveal rd3"><svg class="ic"><use href="#i-clock"/></svg><div><h4>No time to build it yourself</h4><p>DIY builders eat weeks and still look amateur. Brief me once; it's done for you.</p></div></div>
     </div>
   </div>
 </section>
@@ -245,9 +245,9 @@
 <section class="section" id="services">
   <div class="container">
     <div class="head center reveal">
-      <p class="speclabel">What we build</p>
+      <p class="speclabel">What I build</p>
       <h2>Five ways to put your business on the map.</h2>
-      <p>Every build is done for you, start to finish. You brief it, we build it, you launch — no technical knowledge needed.</p>
+      <p>Every build is done for you, start to finish. You brief it, I build it, you launch — no technical knowledge needed.</p>
     </div>
     <div class="blocks blocks--4">
       <article class="block reveal">
@@ -278,7 +278,7 @@
         <div class="blk__ic"><svg class="ic"><use href="#i-chart"/></svg></div>
         <h3>Monthly Care</h3>
         <span class="tag-price"><span class="price" data-amt="119" data-cur="gbp" data-usd="159" data-suffix="/mo">£119/mo</span> · cancel anytime</span>
-        <p>Keep your site fast, current and improving every month without lifting a finger — what a <span class="price" data-amt="300" data-cur="gbp" data-suffix="/mo">£300/mo</span> agency does, for a fraction.</p>
+        <p>Keep your site fast, current and improving every month without lifting a finger — the hosting, updates and content changes that published UK guides price at <span class="price" data-amt="50" data-cur="gbp" data-suffix="">£50</span>–<span class="price" data-amt="200" data-cur="gbp" data-suffix="/mo">£200/mo</span> (checked 1 August 2026).</p>
         <ul class="ticks">
           <li><svg class="ic"><use href="#i-check"/></svg>Unlimited content updates</li>
           <li><svg class="ic"><use href="#i-check"/></svg>Speed &amp; mobile monitoring</li>
@@ -322,7 +322,7 @@
 <section class="section" style="background:var(--concrete-2)">
   <div class="container">
     <div class="head reveal">
-      <p class="speclabel">Who we build for</p>
+      <p class="speclabel">Who I build for</p>
       <h2>Made for bricks-and-mortar &amp; local trade.</h2>
       <p>If your customers find you locally and book by phone, DM or walk-in, a Brickwork site turns that into a steady, searchable pipeline — wherever you're based.</p>
     </div>
@@ -341,8 +341,8 @@
       <p>No jargon, no chasing, no surprises. You only ever do the easy parts.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="step__n">1</div><h3>Free mockup</h3><p>Tell us your business name and what you do. We design a real visual of your site within 48 hours of our call — no deposit, no commitment. One free mockup per business.</p><span class="when">// within 48 hours</span></div>
-      <div class="step reveal rd1"><div class="step__n">2</div><h3>Brief &amp; build</h3><p>Fill a 10-minute questionnaire and pay 50% to lock your slot. We build the full site in 7 working days from the day your content lands — one project at a time, full focus.</p><span class="when">// live in 7 working days</span></div>
+      <div class="step reveal"><div class="step__n">1</div><h3>Free mockup</h3><p>Tell me your business name and what you do. I design a real visual of your site within 48 hours of our call — no deposit, no commitment. One free mockup per business.</p><span class="when">// within 48 hours</span></div>
+      <div class="step reveal rd1"><div class="step__n">2</div><h3>Brief &amp; build</h3><p>Fill a 10-minute questionnaire and pay 50% to lock your slot. I build the full site in 7 working days from the day your content lands — one project at a time, full focus.</p><span class="when">// live in 7 working days</span></div>
       <div class="step reveal rd2"><div class="step__n">3</div><h3>Review &amp; launch</h3><p>Review the finished site, request tweaks, then go live. The final 50% is only due once you're genuinely happy.</p><span class="when">// you approve first</span></div>
     </div>
   </div>
@@ -354,7 +354,7 @@
     <div class="head center reveal">
       <p class="speclabel">The work</p>
       <h2>Real, clickable builds.</h2>
-      <p>Four demo builds across the trades we work in most, plus a live store. Every one is a real site — open them.</p>
+      <p>Four demo builds across the trades I work in most, plus a live store. Every one is a real site — open them.</p>
     </div>
     <div class="work__grid">
       <article class="proj reveal">
@@ -389,11 +389,12 @@
 <section class="section stats">
   <div class="container">
     <div class="stats__g">
-      <div><div class="n">3.5 KB</div><div class="l">JavaScript on this page</div></div>
-      <div><div class="n">0</div><div class="l">Third-party scripts</div></div>
+      <div><div class="n">15 KB</div><div class="l">JavaScript on this page</div></div>
+      <div><div class="n">0</div><div class="l">Third-party domains contacted</div></div>
       <div><div class="n">0</div><div class="l">Cookie banners</div></div>
-      <div><div class="n">262 KB</div><div class="l">Whole page, fonts included</div></div>
+      <div><div class="n">283 KB</div><div class="l">Whole page, fonts included</div></div>
     </div>
+    <p class="stats__note">Measured 1 August 2026 with Google Lighthouse, mobile. Re-run it yourself and you should get the same numbers — they're properties of the page, not of your connection.</p>
   </div>
 </section>
 
@@ -401,14 +402,14 @@
   <div class="container">
     <div class="head reveal">
       <p class="speclabel">Proof you can check yourself</p>
-      <h2>We can't show you client logos yet. So check the work instead.</h2>
-      <p>Brickwork is new, and we're not going to pretend otherwise with stock photos of people in a meeting room. What we can do is let you measure the thing you're actually buying — run this page through <a href="https://pagespeed.web.dev/analysis?url=https%3A%2F%2Fbrickworkstudio.net" target="_blank" rel="noopener">Google PageSpeed Insights</a> yourself, then run your current site.</p>
+      <h2>I can't show you client logos yet. So check the work instead.</h2>
+      <p>Brickwork is new, and I'm not going to pretend otherwise with stock photos of people in a meeting room. What I can do is let you measure the thing you're actually buying. Every number on this page is a fixed property of the page — bytes and request counts, not load times — so you can reproduce it and get the same answer.</p>
     </div>
     <ul class="checklist reveal">
-      <li><svg class="ic"><use href="#i-check"/></svg><div><b>We benchmarked against the best in hospitality, honestly</b><p>Noma, Heckfield Place, Elmore Court and Origin Coffee — sites with budgets ours can't touch. They load 26, 26, and 67 scripts respectively. This page loads none it doesn't own.</p></div></li>
-      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Three of those four bury the page behind a cookie banner</b><p>Yours won't have one, because we don't load anything that needs consent. The first thing a customer sees is your business, not a dialog.</p></div></li>
-      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Every demo build below is explorable, not a screenshot</b><p>Click into them. Scroll them on your phone. They're real pages, built the way yours would be — labelled as demos because they're concepts, not client work we're passing off as ours.</p></div></li>
-      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Where we're genuinely behind, we'll say so</b><p>Commissioned photography and licensed typefaces are what real budgets buy, and they're the gap. Your own photos close most of it — that's a conversation we'd rather have upfront than after you've paid.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Benchmarked against the best in hospitality, honestly</b><p>Measured 1 August 2026, mobile: Noma loads 48 scripts and 31 MB, Origin Coffee 147 scripts and 26 MB, Heckfield Place 30 scripts and 6 MB, Elmore Court 21 scripts and 18 MB. These are sites with budgets mine can't touch. This page loads 3 scripts, 283 KB, and contacts no domain other than its own.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>No cookie banner, because there's nothing to consent to</b><p>This site sets no cookies and loads nothing from a third-party domain. The first thing a customer sees is your business, not a dialog. Analytics are self-hosted and count page views without identifying anyone — it's all written out in the <a href="/privacy">privacy notice</a>.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Every demo build below is explorable, not a screenshot</b><p>Click into them. Scroll them on your phone. They're real pages, built the way yours would be — labelled as demos because they're concepts, not client work I'm passing off as mine.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Where I'm genuinely behind, I'll say so</b><p>Commissioned photography and licensed typefaces are what real budgets buy, and they're the gap. Your own photos close most of it — that's a conversation I'd rather have upfront than after you've paid.</p></div></li>
     </ul>
   </div>
 </section>
@@ -424,8 +425,8 @@
     <div class="blocks blocks--4">
       <div class="block reveal"><div class="blk__ic"><svg class="ic"><use href="#i-bolt"/></svg></div><h3>Done in 7 days</h3><p>Agencies take 6–8 weeks across ten clients. One at a time here — brief Monday, live the following Friday.</p></div>
       <div class="block reveal rd1"><div class="blk__ic"><svg class="ic"><use href="#i-chart"/></svg></div><h3>Agency quality, no agency bill</h3><p>A properly designed, conversion-focused site without the <span class="price" data-amt="2000" data-cur="gbp">£2,000</span> invoice and the eight-week wait.</p></div>
-      <div class="block reveal rd2"><div class="blk__ic"><svg class="ic"><use href="#i-lock"/></svg></div><h3>Pay as you're happy</h3><p>50% to lock your slot, 50% only once you've approved the finished site. Stripe-protected.</p></div>
-      <div class="block reveal rd3"><div class="blk__ic"><svg class="ic"><use href="#i-wrench"/></svg></div><h3>Aftercare included</h3><p>Something off after launch? Message us — usually fixed the same day, and the snag list stays open free for 14 days.</p></div>
+      <div class="block reveal rd2"><div class="blk__ic"><svg class="ic"><use href="#i-lock"/></svg></div><h3>Pay as you're happy</h3><p>50% to lock your slot, 50% only once you've approved the finished site. Card payments are handled by Stripe, so your card details never reach me.</p></div>
+      <div class="block reveal rd3"><div class="blk__ic"><svg class="ic"><use href="#i-wrench"/></svg></div><h3>Aftercare included</h3><p>Something off after launch? Message me — usually fixed the same day, and the snag list stays open free for 14 days.</p></div>
     </div>
   </div>
 </section>
@@ -452,13 +453,13 @@
     <div class="head center reveal">
       <p class="speclabel">No-risk promise</p>
       <h2>A new studio — with an honest deal.</h2>
-      <p>Instead of asking you to trust a wall of reviews we don't have yet, the whole offer is built so the risk sits with us, not you.</p>
+      <p>Instead of asking you to trust a wall of reviews I don't have yet, the whole offer is built so the risk sits with me, not you.</p>
     </div>
     <div class="blocks blocks--4">
-      <div class="block reveal"><div class="blk__ic"><svg class="ic"><use href="#i-eye"/></svg></div><h3>See it first</h3><p>We design a real mockup before you pay anything. Don't like it? Walk away, owe nothing.</p></div>
-      <div class="block reveal rd1"><div class="blk__ic"><svg class="ic"><use href="#i-shield"/></svg></div><h3>Only half upfront</h3><p>50% to start, 50% once you're happy. Payments via Stripe for buyer protection.</p></div>
+      <div class="block reveal"><div class="blk__ic"><svg class="ic"><use href="#i-eye"/></svg></div><h3>See it first</h3><p>I design a real mockup before you pay anything. Don't like it? Walk away, owe nothing.</p></div>
+      <div class="block reveal rd1"><div class="blk__ic"><svg class="ic"><use href="#i-shield"/></svg></div><h3>Only half upfront</h3><p>50% to start, 50% once you're happy. Card payments are handled by Stripe — I never see or store your card details.</p></div>
       <div class="block reveal rd2"><div class="blk__ic"><svg class="ic"><use href="#i-store"/></svg></div><h3>Real, explorable work</h3><p>The builds above are full, clickable sites — not flat screenshots. Judge for yourself.</p></div>
-      <div class="block reveal rd3"><div class="blk__ic"><svg class="ic"><use href="#i-wrench"/></svg></div><h3>We stay on it</h3><p>Two rounds of revisions during the build, then a 14-day snag list after launch. You're never handed a site and left alone.</p></div>
+      <div class="block reveal rd3"><div class="blk__ic"><svg class="ic"><use href="#i-wrench"/></svg></div><h3>I stay on it</h3><p>Two rounds of revisions during the build, then a 14-day snag list after launch. You're never handed a site and left alone.</p></div>
     </div>
   </div>
 </section>
@@ -470,10 +471,10 @@
       <p class="speclabel">Pricing</p>
       <h2>Flat pricing. No surprises.</h2>
     </div>
-    <p class="anchor reveal">Most agencies quote <b><span class="price" data-amt="1500" data-cur="gbp">£1,500</span>–<span class="price" data-amt="4000" data-cur="gbp">£4,000</span>+</b> and take 6–12 weeks. Brickwork charges a fraction — and the mockup is free. Prices shown in your currency, billed in GBP via Stripe; we work with clients worldwide.</p>
+    <p class="anchor reveal">Published UK price guides put an agency-built brochure site at <b><span class="price" data-amt="1500" data-cur="gbp">£1,500</span>–<span class="price" data-amt="5000" data-cur="gbp">£5,000</span></b>, taking 6–12 weeks (checked 1 August 2026). Brickwork charges a fraction — and the mockup is free. Prices shown in your currency, billed in GBP via Stripe; I work with clients worldwide.</p>
     <div class="risenote reveal">
       <span class="risenote__dot" aria-hidden="true"></span>
-      <p><b>These are founding rates.</b> They hold while the studio is still building its client list, and they go up once it is. Whatever you agree today is locked for the life of your project.
+      <p><b>These are founding rates, and they hold until 1 October 2026.</b> They go up after that. I've put a date on it because "rising soon" with no date is just pressure, and if I said it and never raised the price it wouldn't be true. Whatever you agree before then is locked for the life of your project.
       <span class="risenote__sub">One project at a time, so slots are genuinely limited — and your price never rises</span></p>
     </div>
     <div class="price-bar" style="justify-content:center"><div class="curswitch" role="group" aria-label="Currency"><button type="button" data-cur="gbp" aria-pressed="true">£ GBP</button><button type="button" data-cur="usd" aria-pressed="false">$ USD</button><button type="button" data-cur="eur" aria-pressed="false">€ EUR</button></div> <span class="cur-note" hidden>Approx. conversion — you're billed in GBP via Stripe</span></div>
@@ -482,7 +483,7 @@
         <div class="plan__name">Local Business Site</div>
         <div class="plan__price"><span class="price" data-amt="895" data-cur="gbp" data-usd="1195">£895</span></div>
         <div class="plan__sub">one-time · no monthly fees</div>
-        <div class="plan__then">Founding rate · <b>rising soon</b></div>
+        <div class="plan__then">Founding rate · <b>until 1 Oct 2026</b></div>
         <p class="plan__desc">Brochure site for shops, salons, barbers &amp; trades. Yours outright.</p>
         <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Custom-designed, not a template</li><li><svg class="ic"><use href="#i-check"/></svg>Click-to-call &amp; Google Maps</li><li><svg class="ic"><use href="#i-check"/></svg>Fast, mobile, found on Google</li><li><svg class="ic"><use href="#i-check"/></svg>Two rounds of revisions + 14-day snag list</li></ul>
         <a href="#contact" class="btn btn--ghost btn--block">Get started</a>
@@ -490,8 +491,8 @@
       <div class="plan plan--feat reveal rd1">
         <div class="plan__name">Shopify Store</div>
         <div class="plan__price"><span class="price" data-amt="1450" data-cur="gbp" data-usd="1950">£1,450</span></div>
-        <div class="plan__sub">agencies charge <span class="price" data-amt="2000" data-cur="gbp">£2,000</span>–<span class="price" data-amt="4000" data-cur="gbp">£4,000</span></div>
-        <div class="plan__then">Founding rate · <b>rising soon</b></div>
+        <div class="plan__sub">published guides: <span class="price" data-amt="4000" data-cur="gbp">£4,000</span>–<span class="price" data-amt="12000" data-cur="gbp">£12,000</span> for a basic store</div>
+        <div class="plan__then">Founding rate · <b>until 1 Oct 2026</b></div>
         <p class="plan__desc">Full ecommerce store, built and ready to sell. Zero to live in 7 days.</p>
         <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Complete store from scratch</li><li><svg class="ic"><use href="#i-check"/></svg>Up to 20 products uploaded</li><li><svg class="ic"><use href="#i-check"/></svg>Payments, shipping &amp; legal pages</li><li><svg class="ic"><use href="#i-check"/></svg>Two rounds of revisions + 14-day snag list</li></ul>
         <a href="#contact" class="btn btn--block">Get started</a>
@@ -502,6 +503,14 @@
         <div class="plan__sub">cancel anytime</div>
         <p class="plan__desc">Keep it updated, fast and growing. Add-on to any build.</p>
         <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Unlimited content updates</li><li><svg class="ic"><use href="#i-check"/></svg>Speed &amp; mobile monitoring</li><li><svg class="ic"><use href="#i-check"/></svg>New sections as you grow</li><li><svg class="ic"><use href="#i-check"/></svg>Monthly marketing advice</li></ul>
+        <!-- Recurring-charge disclosure. This must stay ABOVE the button and
+             above any payment step: ROSCA is a sequencing rule, and a
+             disclosure that appears after the card fields fails even when the
+             wording is perfect. -->
+        <div class="recur">
+          <p><b>This is a recurring subscription.</b> <span class="price" data-amt="119" data-cur="gbp" data-usd="159" data-suffix="/mo">£119/mo</span>, charged on the same date each month until you cancel. No minimum term, no cancellation fee.</p>
+          <p><b>Cancel in one form at <a href="/cancel">brickworkstudio.net/cancel</a></b>, or by replying "cancel" to any email from me. No phone call, no reason needed. Cancelling takes effect at the end of the month you've already paid for, and your website stays live and stays yours.</p>
+        </div>
         <a href="#contact" class="btn btn--ghost btn--block">Add to build</a>
       </div>
       <div class="plan reveal rd3">
@@ -511,6 +520,10 @@
         <div class="plan__sub">founding rate, one-time · then <span class="price" data-amt="79" data-cur="gbp" data-usd="109" data-suffix="/mo">£79/mo</span> · <span class="price" data-amt="1250" data-cur="gbp" data-usd="1650">£1,250</span> once the three places are gone</div>
         <p class="plan__desc">A 24/7 AI that answers calls, books appointments and follows up leads. Built, scripted and tested for your business — not a subscription you set up yourself. It is being built now, and the first three clients shape it around their real call volume and keep the launch rate for life.</p>
         <ul class="ticks"><li><svg class="ic"><use href="#i-check"/></svg>Answers calls &amp; FAQs</li><li><svg class="ic"><use href="#i-check"/></svg>Takes bookings &amp; appointments</li><li><svg class="ic"><use href="#i-check"/></svg>Follows up leads by text/email</li><li><svg class="ic"><use href="#i-check"/></svg>Custom voice &amp; persona</li><li><svg class="ic"><use href="#i-check"/></svg>Founding clients keep the launch rate for life</li></ul>
+        <div class="recur">
+          <p><b>The monthly part is a recurring subscription.</b> The build is one-time; after handover it's <span class="price" data-amt="79" data-cur="gbp" data-usd="109" data-suffix="/mo">£79/mo</span>, charged on the same date each month until you cancel. No minimum term, no cancellation fee.</p>
+          <p><b>Cancel in one form at <a href="/cancel">brickworkstudio.net/cancel</a></b>, or by replying "cancel" to any email from me. Nothing is charged at all until there's a working line you've heard answer your own number.</p>
+        </div>
         <a href="#contact" class="btn btn--ghost btn--block">Apply as a founding client</a>
       </div>
       <div class="plan plan--wide reveal">
@@ -532,12 +545,32 @@
   </div>
 </section>
 
-<!-- ROI -->
+<!-- ROI — break-even calculator.
+     DO NOT turn this back into a claim. The number must be computed from the
+     visitor's own inputs and framed as break-even, never as a predicted gain.
+     I am not allowed to tell a business owner what a website will earn them:
+     I have no data on what my clients achieve, so any such figure would be an
+     unsubstantiated earnings claim. This asks what it would TAKE to break even
+     and leaves the judgement with them. -->
 <section class="section roi">
   <div class="container">
     <p class="speclabel speclabel--dark reveal" style="justify-content:center">The maths</p>
-    <h2 class="reveal rd1" style="margin-top:16px">One extra client a week pays for your site <span class="hl">in a month.</span></h2>
-    <p class="reveal rd2">A <span class="price" data-amt="895" data-cur="gbp" data-usd="1195">£895</span> website that brings one extra enquiry a week has paid for itself inside a month — and every booking after that is free. For most local businesses, that's not a stretch.</p>
+    <h2 class="reveal rd1" style="margin-top:16px">Work out what it would <span class="hl">take to pay for itself.</span></h2>
+    <p class="reveal rd2">I'm not going to tell you what a website will earn you — I don't know your business and anyone who claims otherwise is guessing. So do it the other way round: put in your own numbers and see how much would have to change before the build breaks even.</p>
+
+    <div class="calc reveal rd3" id="calc">
+      <div class="calc__row">
+        <label for="calc-job">What's an average job worth to you?</label>
+        <div class="calc__field"><span class="calc__cur" id="calc-cur">£</span><input id="calc-job" type="number" inputmode="numeric" min="1" step="1" value="250"></div>
+      </div>
+      <div class="calc__row">
+        <label for="calc-margin">Roughly what's left after your costs?</label>
+        <div class="calc__field"><input id="calc-margin" type="number" inputmode="numeric" min="1" max="100" step="1" value="40"><span class="calc__cur">%</span></div>
+      </div>
+      <output class="calc__out" id="calc-out" for="calc-job calc-margin"></output>
+      <p class="calc__formula">How that's worked out: build price ÷ (average job × your margin) = jobs needed. Nothing else is assumed, and the answer is only as good as the two numbers you typed.</p>
+      <p class="calc__caveat">This is arithmetic, not a forecast. It says what would have to happen for the build to pay for itself — not that it will. A website can't make anyone call you, and I don't promise rankings, traffic, enquiries or sales. <strong>If the number above looks like a stretch for your business, don't buy the site.</strong> I'd rather tell you that now than after you've paid.</p>
+    </div>
   </div>
 </section>
 
@@ -546,13 +579,13 @@
   <div class="container">
     <div class="head center reveal"><p class="speclabel">FAQ</p><h2>Every question, answered.</h2></div>
     <div class="faq__list reveal">
-      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What exactly is the free mockup?</span><span class="pm">+</span></button><div class="faq__a"><p>Before you pay anything, we design a real visual concept of your site and send it within 48 hours of our call — a custom design built around your brand, services and style, not a template. It's one free mockup per business, and if you don't love it you owe nothing.</p></div></div>
-      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>How does the 50/50 payment work?</span><span class="pm">+</span></button><div class="faq__a"><p>You pay 50% upfront to secure your build slot and start. The remaining 50% is only due once you've reviewed the finished site and you're happy. All payments go through Stripe, so you're protected.</p></div></div>
-      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Do you really deliver in 7 days?</span><span class="pm">+</span></button><div class="faq__a"><p>Yes, with the clock started on something we control: it's 7 working days from the day you send your content, not from first contact. Waiting on photos and copy is the single most common reason a small build slips, so the countdown begins once they land. We take one project at a time, so yours gets full focus, and if anything threatens the date we tell you immediately.</p></div></div>
-      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What do I need to provide?</span><span class="pm">+</span></button><div class="faq__a"><p>A short brief — your business name, what you offer, any brand colours or logos, and a couple of sites you like. About 10 minutes, zero technical knowledge needed. No photos yet? We use professional placeholders until you have your own.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What exactly is the free mockup?</span><span class="pm">+</span></button><div class="faq__a"><p>Before you pay anything, I design a real visual concept of your site and send it within 48 hours of our call — a custom design built around your brand, services and style, not a template. It's one free mockup per business, and if you don't love it you owe nothing.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>How does the 50/50 payment work?</span><span class="pm">+</span></button><div class="faq__a"><p>You pay 50% upfront to secure your build slot and start. The remaining 50% is only due once you've reviewed the finished site and you're happy. All payments go through Stripe, so your card details never reach me. Paying by card also leaves you the dispute rights your card issuer gives you, which is worth knowing when you're buying from someone you haven't met.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Do you really deliver in 7 days?</span><span class="pm">+</span></button><div class="faq__a"><p>Yes, with the clock started on something I control: it's 7 working days from the day you send your content, not from first contact. Waiting on photos and copy is the single most common reason a small build slips, so the countdown begins once they land. I take one project at a time, so yours gets full focus, and if anything threatens the date I tell you immediately.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What do I need to provide?</span><span class="pm">+</span></button><div class="faq__a"><p>A short brief — your business name, what you offer, any brand colours or logos, and a couple of sites you like. About 10 minutes, zero technical knowledge needed. No photos yet? I use professional placeholders until you have your own.</p></div></div>
       <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Do I need a Shopify subscription?</span><span class="pm">+</span></button><div class="faq__a"><p>Only if you're selling products online. Shopify plans start around <span class="price" data-amt="25" data-cur="gbp" data-suffix="/month">£25/month</span> in your own account, and you keep full ownership. Local businesses that just need enquiries and bookings don't need Shopify at all — the <span class="price" data-amt="895" data-cur="gbp" data-usd="1195">£895</span> brochure site has zero monthly fees.</p></div></div>
-      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>I already have a website — can you improve it?</span><span class="pm">+</span></button><div class="faq__a"><p>Yes. We'll assess it honestly and tell you exactly what's holding it back. Sometimes a redesign makes more sense than a patch — either way, you'll get a straight answer. Get in touch and describe what you have.</p></div></div>
-      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What counts as a custom-built system?</span><span class="pm">+</span></button><div class="faq__a"><p>Anything your business needs that off-the-shelf software doesn't do well: booking and scheduling systems, client portals, quoting calculators, dashboards, internal tools, or automations that connect the tools you already use. We scope it free, agree a fixed quote from <span class="price" data-amt="3950" data-cur="gbp" data-usd="5250">£3,950</span>, and you own the finished system outright.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>I already have a website — can you improve it?</span><span class="pm">+</span></button><div class="faq__a"><p>Yes. I'll assess it honestly and tell you exactly what's holding it back. Sometimes a redesign makes more sense than a patch — either way, you'll get a straight answer. Get in touch and describe what you have.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What counts as a custom-built system?</span><span class="pm">+</span></button><div class="faq__a"><p>Anything your business needs that off-the-shelf software doesn't do well: booking and scheduling systems, client portals, quoting calculators, dashboards, internal tools, or automations that connect the tools you already use. I scope it free, agree a fixed quote from <span class="price" data-amt="3950" data-cur="gbp" data-usd="5250">£3,950</span>, and you own the finished system outright.</p></div></div>
     </div>
   </div>
 </section>
@@ -570,7 +603,7 @@
         <!-- .guar is display:flex, so a bare <b> becomes its own flex column.
              Keep the whole sentence in one <span> so it flows as one block. -->
         <div class="guar"><svg class="ic"><use href="#i-eye"/></svg><span><b>See it before you pay a penny.</b> One free mockup per business, within 48 hours of our call — a real design, not a template preview</span></div>
-        <div class="guar"><svg class="ic"><use href="#i-shield"/></svg>Don't love it? You owe nothing and we part as friends</div>
+        <div class="guar"><svg class="ic"><use href="#i-shield"/></svg>Don't love it? You owe nothing and I part as friends</div>
         <div class="guar"><svg class="ic"><use href="#i-lock"/></svg>50% deposit · the balance only once you're happy, via Stripe</div>
         <div class="guar"><svg class="ic"><use href="#i-rocket"/></svg>Live in 7 working days from the day you send your content</div>
         <div class="guar"><svg class="ic"><use href="#i-wrench"/></svg>Two rounds of revisions, plus a 14-day snag list after launch</div>
@@ -582,7 +615,7 @@
         <a href="/book" class="btn btn--ghost">Book a 15-min call <svg class="ic"><use href="#i-arrow-right"/></svg></a>
       </div>
       <div class="guars" style="margin-top:18px">
-        <div class="guar"><svg class="ic"><use href="#i-message"/></svg>Email <a href="mailto:robinmarwa44@gmail.com?subject=Free%20mockup%20request">robinmarwa44@gmail.com</a></div>
+        <div class="guar"><svg class="ic"><use href="#i-message"/></svg>Email <a href="mailto:hello@brickworkstudio.net?subject=Free%20mockup%20request">hello@brickworkstudio.net</a></div>
         <div class="guar"><svg class="ic"><use href="#i-instagram"/></svg>Or DM <a href="https://www.instagram.com/brickworkstudio_" target="_blank" rel="noopener">@brickworkstudio_</a></div>
       </div>
     </div>
@@ -618,7 +651,7 @@
           <div class="fg"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="First name" required></div>
           <div class="fg"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required></div>
         </div>
-        <div class="fg"><label for="message">What do you sell or offer?</label><textarea id="message" name="message" placeholder="A sentence is plenty — it's all we need to start your mockup."></textarea></div>
+        <div class="fg"><label for="message">What do you sell or offer?</label><textarea id="message" name="message" placeholder="A sentence is plenty — it's all I need to start your mockup."></textarea></div>
         <!-- Optional fields stay in the DOM so Netlify Forms still captures them;
              the <details> only reduces perceived length. Native element, no JS,
              so it costs nothing against script-src 'self'. -->
@@ -657,7 +690,7 @@
         <p>Custom Shopify stores, local business websites and AI receptionists for small businesses. Live in 7 days, from <span class="price" data-amt="895" data-cur="gbp" data-usd="1195">£895</span>. Free mockup first.</p>
         <a class="ig" href="https://www.instagram.com/brickworkstudio_" target="_blank" rel="noopener"><svg class="ic"><use href="#i-instagram"/></svg>@brickworkstudio_</a>
         <a class="ig" href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%27d%20like%20a%20free%20mockup" target="_blank" rel="noopener"><svg class="ic"><use href="#i-phone"/></svg>07735 785911</a>
-        <a class="ig" href="mailto:robinmarwa44@gmail.com?subject=Free%20mockup%20request"><svg class="ic"><use href="#i-message"/></svg>robinmarwa44@gmail.com</a>
+        <a class="ig" href="mailto:hello@brickworkstudio.net?subject=Free%20mockup%20request"><svg class="ic"><use href="#i-message"/></svg>hello@brickworkstudio.net</a>
       </div>
       <div>
         <h4>Services</h4>
@@ -678,12 +711,14 @@
           <li><a href="#contact">Contact</a></li>
           <li><a href='/privacy'>Privacy</a></li>
           <li><a href='/terms'>Terms</a></li>
+          <li><a href='/refunds'>Refunds</a></li>
+          <li><a href='/cancel'>Cancel a plan</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
       <span>© <span id="year">2026</span> Brickwork Studio · Independent studio · worldwide</span>
-      <span>7-day delivery · free mockup · Stripe protected</span>
+      <span>7-day delivery · free mockup · card payments via Stripe</span>
     </div>
   </div>
 </footer>

@@ -314,6 +314,61 @@ document.addEventListener('DOMContentLoaded', function () {
   render(pref || localeCur());
 });
 
+/* Break-even calculator.
+   The whole point of this block is that the persuasive number is computed from
+   the visitor's inputs, not asserted by me. I have no client outcome data, so
+   any figure I stated about what a site "brings in" would be an unsubstantiated
+   earnings claim — the most heavily enforced category there is. Break-even
+   claims nothing: it reports what would have to be true, and it is allowed to
+   come back with an answer that says don't buy.
+
+   Rules for anyone editing this later:
+     - never predict a gain, only what it takes to cover the price
+     - round the answer UP, so the number is never flattering by accident
+     - the caveat text stays the same size as the result
+     - if the inputs are missing or nonsense, say so; never fall back to a
+       default that produces a rosy number the visitor didn't type */
+document.addEventListener('DOMContentLoaded', function () {
+  var box = document.getElementById('calc');
+  if (!box) return;
+  var job = document.getElementById('calc-job');
+  var margin = document.getElementById('calc-margin');
+  var out = document.getElementById('calc-out');
+  var curEl = document.getElementById('calc-cur');
+  /* Same published prices as the pricing table, so the two can never disagree. */
+  var build = { gbp: 895, usd: 1195, eur: 1045 }, sym = { gbp: '£', usd: '$', eur: '€' };
+
+  function currentCur() {
+    var on = document.querySelector('.curswitch button[aria-pressed="true"]');
+    if (on && build[on.getAttribute('data-cur')]) return on.getAttribute('data-cur');
+    var pref; try { pref = localStorage.getItem('bw_cur'); } catch (e) {}
+    return build[pref] ? pref : 'gbp';
+  }
+
+  function calc() {
+    var cur = currentCur(), price = build[cur], s = sym[cur];
+    if (curEl) curEl.textContent = s;
+    var v = parseFloat(job.value), m = parseFloat(margin.value);
+    if (!(v > 0) || !(m > 0) || m > 100) {
+      out.textContent = 'Put in a job value and a rough margin and I’ll work out the rest.';
+      return;
+    }
+    var perJob = v * (m / 100);
+    /* Ceil, not round: 4.1 jobs is 5 jobs. Rounding down would quietly
+       understate what the visitor has to do. */
+    var jobs = Math.ceil(price / perJob);
+    /* Spread over a year only while that reads as reassurance rather than
+       spin. Past one a week it stops being a small ask and the sentence is
+       dropped rather than made to sound manageable. */
+    var spread = jobs <= 52 ? ' Across a year that\'s ' + (jobs <= 12 ? 'less than one a month.' : 'about ' + Math.ceil(jobs / 12) + ' a month.') : '';
+    out.textContent = 'At ' + s + v.toLocaleString('en-US') + ' a job and ' + m + '% margin, you keep about ' + s + Math.round(perJob).toLocaleString('en-US') + ' per job. The ' + s + price.toLocaleString('en-US') + ' build covers itself after ' + jobs + (jobs === 1 ? ' extra job.' : ' extra jobs.') + spread;
+  }
+
+  [job, margin].forEach(function (el) { if (el) el.addEventListener('input', calc); });
+  document.querySelectorAll('.curswitch button').forEach(function (b) { b.addEventListener('click', calc); });
+  calc();
+});
+
 /* Referral — stamp the code onto every route a lead can actually arrive by.
    The form is the obvious one; WhatsApp matters more, because the only inbound
    lead this business has ever had came through WhatsApp and would have carried

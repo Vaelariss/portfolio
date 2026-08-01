@@ -314,6 +314,30 @@ section{position:relative}
 .roi .container{position:relative;z-index:1}
 .roi h2{color:var(--on-dark)}.roi p{color:var(--on-dark-mut);max-width:58ch;margin:14px auto 0}
 
+/* break-even calculator. The caveat is deliberately the same size as the
+   result — an estimate dressed as a measurement is a legal problem, not a
+   taste one, and shrinking the qualifier is exactly how that happens. */
+.calc{max-width:560px;margin:32px auto 0;text-align:left;border:1px solid rgba(236,229,217,.22);border-radius:var(--r);padding:24px 22px;background:rgba(236,229,217,.04)}
+.calc__row{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.calc__row label{font-family:var(--f-mono);font-size:.82rem;letter-spacing:.02em;color:var(--on-dark);max-width:32ch}
+.calc__field{display:flex;align-items:center;gap:6px}
+.calc__cur{font-family:var(--f-mono);font-size:.9rem;color:var(--on-dark-mut)}
+.calc__field input{width:110px;background:transparent;border:1px solid rgba(236,229,217,.3);border-radius:var(--r);color:var(--on-dark);font-family:var(--f-mono);font-size:1rem;padding:9px 11px}
+.calc__field input:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.calc__out{display:block;margin:18px 0 0;padding-top:18px;border-top:1px solid rgba(236,229,217,.22);color:var(--on-dark);font-size:1.02rem;line-height:1.55}
+.roi .calc__formula,.roi .calc__caveat{max-width:none;margin:14px 0 0;font-size:.92rem;line-height:1.55;color:var(--on-dark-mut);text-align:left}
+.calc__caveat strong{color:var(--on-dark)}
+.stats__note{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.02em;color:var(--on-dark-mut);text-align:center;max-width:64ch;margin:0 auto;padding-bottom:30px}
+
+/* Recurring-charge disclosure. Same body size and colour as the surrounding
+   copy, in a bordered box, immediately above the call to action — the placement
+   is the compliance, not the wording. Do not shrink it, grey it out, collapse
+   it behind a toggle, or move it below the button. */
+.recur{border:1px solid var(--line-2);border-radius:var(--r);padding:14px 16px;margin:0 0 16px}
+.recur p{font-size:.92rem;line-height:1.5;margin:0}
+.recur p + p{margin-top:8px}
+@media (max-width:520px){.calc__row{flex-direction:column;align-items:flex-start;gap:8px}.calc__field,.calc__field input{width:100%}}
+
 /* faq */
 .faq__list{max-width:760px;margin-inline:auto;border-top:1px solid var(--line-2)}
 .faq__item{border-bottom:1px solid var(--line)}
@@ -479,7 +503,10 @@ code{font-family:var(--f-mono);font-size:.9em;background:var(--concrete-2);borde
 /* legal / prose */
 .legal{max-width:760px;margin-inline:auto}
 .legal h1{font-size:clamp(2.2rem,5vw,3.2rem);margin-bottom:8px}
-.legal .updated{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--faint);margin-bottom:26px}
+/* --faint (#8A8073) lands around 3.3:1 on paper, which fails WCAG AA for text
+   this size. --muted is the documented AA-safe secondary. Caught by Lighthouse
+   on the legal pages 2026-08-01; it was failing on terms and privacy too. */
+.legal .updated{font-family:var(--f-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:26px}
 .legal h2{font-size:1.35rem;margin:26px 0 8px;text-transform:none;letter-spacing:0}
 .legal p,.legal li{color:var(--muted);margin-bottom:11px;line-height:1.7}
 .legal ul{padding-left:20px;list-style:disc;margin-bottom:11px}

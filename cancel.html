@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17130E">
+<meta name="robots" content="noindex, follow">
+
+<title>Cancel your plan | Brickwork Studio</title>
+<meta name="description" content="Cancel a Monthly Website Care or AI Receptionist plan. One form, no phone call, no reason needed.">
+<link rel="canonical" href="https://brickworkstudio.net/cancel">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brickwork Studio">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="Cancel your plan | Brickwork Studio">
+<meta property="og:description" content="Cancel a Monthly Website Care or AI Receptionist plan. One form, no phone call, no reason needed.">
+<meta property="og:url" content="https://brickworkstudio.net/cancel">
+<meta property="og:image" content="https://brickworkstudio.net/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cancel your plan | Brickwork Studio">
+<meta name="twitter:description" content="Cancel a Monthly Website Care or AI Receptionist plan. One form, no phone call, no reason needed.">
+<meta name="twitter:image" content="https://brickworkstudio.net/og-cover.png">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+</head>
+<body>
+
+<!-- Cancellation page.
+
+     This exists because ROSCA (15 U.S.C. § 8403) requires a *simple mechanism*
+     to stop a recurring charge, and California's Automatic Renewal Law as
+     amended by AB 2863 requires cancellation to be at least as easy as signup
+     and in the same medium. Signup happens online, so cancellation happens
+     online, in one form, with no phone call and no reason required.
+
+     Rules for anyone editing this later:
+       - never add a step, a login, a phone number requirement or a "are you
+         sure?" chain. Two clicks from anywhere on the site to cancelled.
+       - one retention offer at most, and it must sit BELOW the cancel button
+         and must not gate it.
+       - a plain email saying "cancel" must always be honoured too, whether or
+         not this form was used. Never train a future assistant to refuse one.
+     Getting this wrong is the Amazon fact pattern, and it settled at $2.5bn. -->
+
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="container nav__in">
+    <a class='brand' href='/'><img src="favicon.svg" alt="" width="30" height="30"><b>Brick<span>work</span></b></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href='/#services'>Services</a>
+      <a href='/#work'>Work</a>
+      <a href='/#pricing'>Pricing</a>
+      <a href='/#faq'>FAQ</a>
+    </nav>
+    <div class="nav__right">
+      <a class='btn btn--ghost' href='/#contact'>Contact <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="section">
+  <div class="container legal">
+    <h1>Cancel your plan</h1>
+    <p class="updated">Monthly Website Care · AI Receptionist</p>
+
+    <p>Fill this in and your plan is cancelled. No phone call, no reason needed, no offer you have to sit through first.</p>
+
+    <p><b>What happens:</b> I stop the recurring charge and confirm by email, normally the same working day and always within one working day. You are not charged again. You keep access until the end of the month you have already paid for, and <b>your website stays live and stays yours</b> — cancelling a care plan does not take your site down.</p>
+
+    <form name="cancel" method="POST" action="/thanks" data-netlify="true" data-netlify-honeypot="_gotcha" class="form">
+      <input type="hidden" name="form-name" value="cancel">
+      <p hidden><label>Leave this empty <input name="_gotcha"></label></p>
+
+      <label for="c-name">Your name</label>
+      <input id="c-name" name="name" type="text" autocomplete="name" required>
+
+      <label for="c-email">Email you were billed on</label>
+      <input id="c-email" name="email" type="email" autocomplete="email" required>
+
+      <label for="c-plan">Which plan</label>
+      <select id="c-plan" name="plan" required>
+        <option value="care">Monthly Website Care</option>
+        <option value="receptionist">AI Receptionist monthly</option>
+        <option value="both">Both</option>
+      </select>
+
+      <label for="c-note">Anything you want to tell me (optional)</label>
+      <textarea id="c-note" name="note" rows="3"></textarea>
+
+      <button class="btn" type="submit">Cancel my plan</button>
+      <p class="form__note">You do not have to give a reason, and leaving the box empty will not slow anything down.</p>
+    </form>
+
+    <h2>Other ways to cancel, all of which work</h2>
+    <ul>
+      <li>Reply to any email from me with the word <b>cancel</b>.</li>
+      <li>Send a message on WhatsApp to <a href="https://wa.me/447735785911?text=Cancel%20my%20plan">+44 7735 785911</a>.</li>
+      <li>Email <a href="mailto:hello@brickworkstudio.net?subject=Cancel%20my%20plan">hello@brickworkstudio.net</a>.</li>
+    </ul>
+    <p>Any of those is enough. I will not ask you to use a different one, and I will not ask you to call.</p>
+
+    <h2>If you would rather pause than cancel</h2>
+    <p>You can pause a care plan for up to three months and pick it up where you left off — just say so in the box above or in your message. This is entirely optional and choosing it is not a condition of anything: if you asked to cancel, you are cancelled.</p>
+
+    <h2>Refunds</h2>
+    <p>If you were charged for a month you did not want, tell me and I will refund it. See the <a href="/refunds">refund policy</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> Brickwork Studio · Independent studio · worldwide</span>
+      <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/refunds">Refunds</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

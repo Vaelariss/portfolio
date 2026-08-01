@@ -16,3 +16,26 @@
 # ever seeing the noindex, and the indexed URLs would linger indefinitely.
 /demo/*
   X-Robots-Tag: noindex, follow
+
+# The internal inbox UI. publish is the repo root, so /studio is a public URL
+# whether or not it is linked from anywhere. The API behind it fails closed
+# without STUDIO_KEY, so the page is useless to a stranger — but it should not
+# be crawled or previewed either.
+#
+# ⚠️ This is not access control. The real fix is Netlify's password protection
+# or a role-based access rule on /studio, which has to be set in the Netlify
+# dashboard rather than in this repo. Do that before the inbox ever holds
+# anything that matters.
+/studio
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/studio.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+# Cancellation and refunds must never be cached stale — the cancellation route
+# is the one page where an out-of-date copy is a legal problem, not a UX one.
+/cancel
+  Cache-Control: no-store
+
+/refunds
+  Cache-Control: no-store

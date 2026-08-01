@@ -63,6 +63,16 @@
 /guide-ai-receptionist         /#services   301
 /guide-ai-receptionist.html    /#services   301
 
+# ---- Cancellation and refunds (shipped 2026-08-01) ----
+# /cancel must stay a short, guessable, permanent URL. It is the "simple
+# mechanism" ROSCA requires and it is quoted in the billing disclosure and in
+# the acknowledgement email, so it must never move or 404. Forced 301! on the
+# .html form for the same reason as the service pages.
+/cancel.html   /cancel   301!
+/refunds.html  /refunds  301!
+/refund        /refunds  301
+/cancellation  /cancel   301
+
 # ---- Short link for cold outreach ----
 # /hi used to 301 to the homepage with UTM tags. It is now a real landing page
 # (hi.html) that continues the conversation the email started, so the redirect
