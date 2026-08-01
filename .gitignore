@@ -11,3 +11,6 @@ Thumbs.db
 
 # netlify dev edge-function artifact, regenerated on every run
 deno.lock
+
+# Cloudflare Pages publish staging, rebuilt by stage-cf.ps1 on every deploy
+.cfdist/
