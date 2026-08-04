@@ -1,6 +1,16 @@
-# The site is plain static files deployed from the repo root via the Netlify
-# CLI (not git-linked — see the vault note before changing that assumption).
-# This file exists so the CLI also picks up the serverless functions.
+# Plain static files served from the repo root. No build step for the pages.
+#
+# Git-linked to Vaelariss/portfolio since 2026-08-05: a push to `main` builds
+# and publishes. `allowed_branches` is main only, so feature branches do not
+# produce deploy previews unless that is widened deliberately.
+#
+# The Netlify CLI still works and still deploys — but reach for it only to roll
+# forward past a broken build, and pin the directory when you do:
+#   npx.cmd netlify-cli deploy --prod --dir C:\dev\portfolio
+# A CLI deploy publishes the working tree, which is how the site spent months
+# with no relationship between what was live and what was committed.
+#
+# `functions` is here so both paths pick up the serverless functions.
 [build]
   publish = "."
   functions = "netlify/functions"
