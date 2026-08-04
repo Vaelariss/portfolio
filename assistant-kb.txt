@@ -5,11 +5,11 @@ llms.txt: every token here is re-sent on every single reply, and the free API ti
 day, so length here costs capacity directly. llms.txt stays long — it is the public file for AI
 crawlers and serves a different purpose. Keep prices identical in both.
 
-Brickwork Studio is a one-person web design studio at brickworkstudio.net. Remote, worldwide, no
+Brickwork Studio is a one-person web design studio at brickworkstudio.net. Remote from Wolverhampton, UK, working with clients in the US and UK, no
 agency, one project at a time. Prices are fixed and published, not quote-on-request. Work starts
 with a free visual mockup, so the client sees the design before paying anything.
 
-## Prices (GBP, founding rates, current 31 July 2026)
+## Prices (GBP unless stated, founding rates, hold until 1 January 2027 — checked 5 August 2026)
 
 - Local business website — £895 one-time, no monthly fees. Custom brochure site for a salon, cafe,
   restaurant, barber or trade.
@@ -27,6 +27,14 @@ with a free visual mockup, so the client sees the design before paying anything.
   outright. A comparable agency build costs substantially more; no sourced figure for the agency
   price is published, so none is claimed. Takes three to eight weeks — the one service the 7-day
   promise does not cover.
+- ADA accessibility compliance — $1,450 (£1,095) audit and remediation plan; remediation from
+  $9/page (£7); $199/month (£149) optional ongoing care; priced and invoiced in USD; free sample audit first. WCAG 2.1 AA for a website AND its PDF
+  library. For US local government and federally funded bodies. Deadlines: ADA Title II 26 Apr 2027
+  (serving 50,000+) and 26 Apr 2028 (smaller and special districts); HHS Section 504 11 May 2027
+  (15+ employees) and 10 May 2028 (smaller). Documents are in scope, not just web pages — that is
+  usually the bulk of the work. Overlay widgets do not fix documents and do not make content
+  conform. Not a law firm, no legal advice, no guarantee of any legal outcome — what is delivered is
+  remediation to a published technical standard. Purchase orders accepted.
 - Monthly website care — £119/month, cancel anytime. Updates, monitoring, optimisation.
 
 Payment is 50% upfront, 50% once the client approves. Taken through Stripe. Prices are founding

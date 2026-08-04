@@ -42,6 +42,10 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+# Amazon
+User-agent: Amzn-SearchBot
+Allow: /
+
 # Common Crawl, which many models are trained and grounded on
 User-agent: CCBot
 Allow: /
@@ -50,9 +54,11 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-# Curated plain-text summary of the site for language models: /llms.txt
-# Proposed convention, not a standard, and no provider has confirmed reading
-# it at crawl time. Kept because it costs nothing and is read correctly when
-# the URL is given to an assistant directly.
+# /llms.txt is no longer cited here. The file still exists and is still worth
+# pasting to an assistant directly, but it is not a retrieval channel: across
+# 137,000 domains, 97% of llms.txt files received zero requests, and 21.7% of
+# the requests that did arrive came from SEO audit tools checking whether the
+# file exists. Advertising it here implied a crawl path no provider has
+# confirmed reading.
 
 Sitemap: https://brickworkstudio.net/sitemap.xml

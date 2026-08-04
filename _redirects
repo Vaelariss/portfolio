@@ -51,6 +51,14 @@
 /local-business-websites.html /local-business-websites 301!
 /ai-receptionist.html         /ai-receptionist         301!
 /custom-built-systems.html    /custom-built-systems    301!
+/ada-accessibility-compliance.html /ada-accessibility-compliance 301!
+
+# ---- The crawler's identity page ----
+# The scanner's User-Agent string points at /bot, so this URL is load-bearing: a
+# sysadmin who finds the bot in their logs lands here, and whether it resolves is
+# the difference between "researcher" and "attacker" in their judgement.
+# Do not remove or redirect this while any scan is running.
+/bot.html /bot 301!
 
 # ---- Guides that never shipped. These still have live GSC impressions,
 #      so they must redirect rather than 404. ----

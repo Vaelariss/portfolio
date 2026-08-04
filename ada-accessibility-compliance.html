@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17130E">
+<meta name="robots" content="index, follow, max-image-preview:large">
+
+<title>ADA Website &amp; PDF Accessibility Compliance | Brickwork Studio</title>
+<meta name="description" content="WCAG 2.1 AA remediation for US local government and HHS-funded organisations. Free accessibility audit, fixed-price document remediation, deadlines April 2027 and April 2028.">
+<link rel="canonical" href="https://brickworkstudio.net/ada-accessibility-compliance">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brickwork Studio">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="ADA Website &amp; PDF Accessibility Compliance | Brickwork Studio">
+<meta property="og:description" content="WCAG 2.1 AA remediation for US local government and HHS-funded organisations. Free accessibility audit, fixed-price document remediation.">
+<meta property="og:url" content="https://brickworkstudio.net/ada-accessibility-compliance">
+<meta property="og:image" content="https://brickworkstudio.net/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Brickwork Studio — ADA and WCAG 2.1 AA accessibility compliance.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ADA Website &amp; PDF Accessibility Compliance | Brickwork Studio">
+<meta name="twitter:description" content="WCAG 2.1 AA remediation for US local government and HHS-funded organisations. Free accessibility audit, fixed-price document remediation.">
+<meta name="twitter:image" content="https://brickworkstudio.net/og-cover.png">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+
+<!-- Analytics: Umami, proxied same-origin via _redirects. data-host-url MUST
+     stay my own absolute origin: the vendor script defaults to
+     gateway.umami.is, which connect-src 'self' would block. -->
+<script defer src="/js/script.js" data-website-id="5f25a793-3b67-4489-96e3-d85529420a03" data-host-url="https://brickworkstudio.net"></script>
+
+<!-- Entity block. Must stay byte-identical to the copy in index.html: the name,
+     description and sameAs values are what tie the site, Instagram and any
+     directory profile to one entity. Change one, change all of them.
+     TODO(email): flips to accessibility@brickworkstudio.net the day the
+     mailbox receives mail. Until then it stays on the address that works. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://brickworkstudio.net/#organization",
+  "name": "Brickwork Studio",
+  "alternateName": ["Brickwork", "Brickwork Web Design", "Brickwork Studio Web Design"],
+  "description": "Independent web design studio building local business websites, Shopify stores, AI receptionists and WCAG 2.1 AA accessibility remediation for US public entities. Free mockup first, live in 7 days.",
+  "url": "https://brickworkstudio.net/",
+  "image": "https://brickworkstudio.net/og-cover.png",
+  "email": "robinmarwa44@gmail.com",
+  "telephone": "+447735785911",
+  "foundingDate": "2026",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Wolverhampton",
+    "addressRegion": "West Midlands",
+    "addressCountry": "GB"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "United Kingdom" }
+  ],
+  "priceRange": "££",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://brickworkstudio.net/#founder",
+    "name": "Safa",
+    "jobTitle": "Founder and lead designer",
+    "worksFor": { "@id": "https://brickworkstudio.net/#organization" }
+  },
+  "knowsAbout": ["Web design", "Shopify development", "WCAG 2.1 Level AA", "ADA Title II compliance", "PDF accessibility remediation", "Section 504 accessibility", "Local business websites", "AI phone receptionists"],
+  "sameAs": ["https://www.instagram.com/brickworkstudio_"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Brickwork Studio", "item": "https://brickworkstudio.net" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://brickworkstudio.net/#services" },
+    { "@type": "ListItem", "position": 3, "name": "ADA Accessibility Compliance", "item": "https://brickworkstudio.net/ada-accessibility-compliance" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://brickworkstudio.net/ada-accessibility-compliance#service",
+  "name": "ADA Website and Document Accessibility Compliance",
+  "serviceType": "WCAG 2.1 Level AA accessibility audit and remediation",
+  "description": "WCAG 2.1 Level AA audit and remediation for US local government and federally funded organisations, covering both the website and the public PDF document library. Free sample audit, fixed-price per-page document remediation, purchase orders accepted.",
+  "url": "https://brickworkstudio.net/ada-accessibility-compliance",
+  "provider": { "@id": "https://brickworkstudio.net/#organization" },
+  "areaServed": { "@type": "Country", "name": "United States" },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "US local government, counties, school districts, special districts, community health centres and federally funded nonprofits"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Sample accessibility audit",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free sample audit identifying specific WCAG 2.1 AA failures before anything is quoted."
+    },
+    {
+      "@type": "Offer",
+      "name": "Full audit and remediation plan",
+      "price": "1450",
+      "priceCurrency": "USD",
+      "description": "Full WCAG 2.1 AA audit of website and document library, document inventory, and a prioritised remediation plan."
+    },
+    {
+      "@type": "Offer",
+      "name": "Document remediation",
+      "priceCurrency": "USD",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "9",
+        "priceCurrency": "USD",
+        "unitText": "per page",
+        "description": "From $9 per page. Documents tagged for reading order, heading structure, table headers, alt text, language and bookmarks."
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Ongoing compliance care",
+      "price": "199",
+      "priceCurrency": "USD",
+      "description": "Monthly compliance monitoring and remediation of newly published documents.",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "199",
+        "priceCurrency": "USD",
+        "billingIncrement": 1,
+        "unitCode": "MON"
+      }
+    }
+  ],
+  "termsOfService": "https://brickworkstudio.net/terms",
+  "disambiguatingDescription": "Brickwork Studio is not a law firm and this service does not constitute legal advice. Compliance deadlines referenced are 26 April 2027 and 26 April 2028 under ADA Title II, and 11 May 2027 and 10 May 2028 under HHS Section 504."
+}
+</script>
+<!-- FAQ. Google restricted FAQ rich results to government and health-authority
+     sites in 2023, so this produces no rich snippet here. It ships anyway: it
+     feeds Copilot and entity understanding. The value is the answer copy, which
+     is answer-first at 75-150 words for passage retrieval — and it is
+     byte-identical to the visible FAQ below. Edit both or neither; divergence
+     between schema and page is a spam signal. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://brickworkstudio.net/ada-accessibility-compliance#faq",
+  "mainEntity": [
+    { "@type": "Question", "name": "Do PDFs count under ADA Title II, or is it just the website?", "acceptedAnswer": { "@type": "Answer", "text": "PDFs count. The ADA Title II web rule covers web content and electronic documents made available to the public, which includes budgets, meeting minutes, agendas, permit applications, forms and public notices. For most public entities the document library is far larger than the website and has never been assessed, which is why it is usually the expensive part of compliance. A screen reader cannot interpret an untagged PDF at all: it reads the file as a picture of text, with no headings, no table structure and no reading order. Tagging is the work that fixes this, and it is done per document." } },
+    { "@type": "Question", "name": "Does ADA Title II apply to school districts?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. School districts are public entities under ADA Title II and are covered by the same web and document accessibility rule as cities and counties. The deadline depends on the population of the district's jurisdiction, not the number of students: entities serving 50,000 people or more must conform to WCAG 2.1 Level AA by 26 April 2027, and entities serving fewer than 50,000 by 26 April 2028. All special district governments, including standalone school districts, fall under the later date regardless of population. District document libraries are typically large, because board packets, policy manuals and enrolment forms accumulate for years." } },
+    { "@type": "Question", "name": "How much does PDF accessibility remediation cost per page?", "acceptedAnswer": { "@type": "Answer", "text": "Brickwork Studio remediates documents from $9 per page, priced per page so the work can be scoped to an available budget and phased across fiscal years. A typical municipal document is 4 to 12 pages, putting most individual files between $36 and $108. The variable is not the page count but the complexity: a text-only notice is quick, while a budget document full of nested data tables takes considerably longer to tag correctly. Pricing is confirmed in writing after the free sample audit, so the number in the proposal is the number on the invoice." } },
+    { "@type": "Question", "name": "How long does it take to remediate 1,000 PDFs?", "acceptedAnswer": { "@type": "Answer", "text": "A library of roughly 1,000 documents typically takes four to eight months to remediate fully, which is why scoping needs to start well before a compliance deadline rather than in the quarter it falls. The work is phased: the audit and inventory take two to three weeks, then documents are remediated in priority order by public download volume and legal exposure. Because download traffic on a public document library is heavily concentrated, the files the public actually opens are usually done within the first six to eight weeks, and the long tail follows." } },
+    { "@type": "Question", "name": "Do we have to fix archived documents?", "acceptedAnswer": { "@type": "Answer", "text": "Not all of them, and this is where most budgets are saved. The rule provides exceptions, including for archived web content that is kept only for reference or recordkeeping, is not altered after archiving, and is stored in a clearly identified archived area. Applying that exception correctly means physically separating a genuine archive from live public content and labelling it, which is a structural change to the site rather than a document one. Deciding what qualifies is a legal question for your attorney; the audit tells you how many documents each decision would affect and what each option costs." } },
+    { "@type": "Question", "name": "Can we just install an accessibility widget or overlay?", "acceptedAnswer": { "@type": "Answer", "text": "No. An overlay does not touch your PDF documents at all, and it does not make non-conforming web content conform. Overlays have become a target of accessibility litigation rather than a defence against it: in 2025, 983 US website accessibility lawsuits were filed against sites that were already running an accessibility widget, roughly a quarter of all filings that year, and the Federal Trade Commission settled with overlay vendor accessiBe for $1 million in January 2025 over claims about compliance. Brickwork Studio tags documents and fixes underlying code. No overlay is installed on anything." } },
+    { "@type": "Question", "name": "What is the difference between WCAG 2.0 AA and WCAG 2.1 AA?", "acceptedAnswer": { "@type": "Answer", "text": "WCAG 2.1 Level AA adds twelve success criteria to WCAG 2.0 Level AA, most of them addressing mobile devices, low vision and cognitive disability. The additions that matter most in practice are reflow, so content works at 400% zoom without horizontal scrolling, non-text contrast for buttons and form fields, text spacing, orientation, and identifying the purpose of form inputs. The ADA Title II rule names WCAG 2.1 Level AA specifically, so conforming to the older 2.0 standard is not sufficient. Anything built or audited against 2.0 needs re-testing against the additional criteria." } },
+    { "@type": "Question", "name": "What happens if we miss the April 2027 deadline?", "acceptedAnswer": { "@type": "Answer", "text": "Missing the deadline means non-conforming web content and documents are out of compliance with a federal rule from that date, which exposes the entity to Department of Justice enforcement and to private complaints. What that means for any specific entity is a question for its attorney, not for a vendor, and any supplier who tells you they can guarantee you will not face a complaint is overselling. What can be documented is the work: an audit against the named standard, a dated remediation plan, and evidence of progress. Demonstrable good-faith progress is materially different from having done nothing." } },
+    { "@type": "Question", "name": "Can we do this in-house instead?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, and for some entities that is the right answer. If your document volume is low, your files are simple and text-based, and someone on staff has time to learn tagging in Adobe Acrobat Pro, in-house remediation is realistic and cheaper. It stops being realistic at scale: tagging complex data tables correctly is a skill, verification requires actual screen-reader testing rather than an automated checker, and a library in the thousands becomes a full-time job for months. The free sample audit gives you the document count and complexity profile you need to make that decision honestly, whichever way it goes." } },
+    { "@type": "Question", "name": "Can you guarantee we will not be sued?", "acceptedAnswer": { "@type": "Answer", "text": "No, and be careful with any vendor who says otherwise. No supplier can control whether a complaint is filed, and a guarantee of that kind is not a compliance service, it is a marketing claim. What can be delivered is content remediated to WCAG 2.1 Level AA, verified rather than auto-generated, plus documentation showing conformance level, known exceptions and how the public reports a barrier. Brickwork Studio is not a law firm and none of this is legal advice. Your exposure is a question for your attorney; the technical conformance is the part handled here." } },
+    { "@type": "Question", "name": "Who am I actually dealing with?", "acceptedAnswer": { "@type": "Answer", "text": "Brickwork Studio is an independent studio run by one person, working remotely from the United Kingdom with US public entities, taking one project at a time. That means no account manager, no bench and no handoff to a junior after the sales call: the person who audits your site is the person who remediates your documents and answers your emails. Purchase orders are accepted, invoicing is in USD, and a W-8BEN-E is supplied on request for vendor onboarding. Every report is itself delivered as a tagged, WCAG 2.1 AA conforming PDF." } },
+    { "@type": "Question", "name": "What if our deadline moves?", "acceptedAnswer": { "@type": "Answer", "text": "The work holds its value either way. The ADA Title II compliance date has already been adjusted once, so treating the current dates as immovable would be overconfident, but the underlying obligation does not disappear if a date shifts. A tagged document library remains tagged, remains usable by residents relying on screen readers, and remains evidence of good-faith progress regardless of which date applies. The one thing a date change would alter is urgency, not need, and remediation scheduled across fiscal years is easier to absorb than remediation compressed into a final quarter." } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 4 14h6l-1 7 9-11h-6z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M3 9l2-5h14l2 5"/><path d="M5 9.5V20h14V9.5"/><path d="M9.5 20v-5h5v5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 4v16h16"/><path d="M8 14l3-3 3 2 4-6"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M12 15l-3-3c1-5 4.5-8.5 10-9-.5 5.5-4 9-9 10z"/><circle cx="14.5" cy="9.5" r="1.2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3h3l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3v-7a8 8 0 0 1 8-8h2a8 8 0 0 1 8 4z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14 7a4 4 0 0 1 5 5l-7 7-5-5 7-7z"/><path d="M5 19l3-3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></symbol>
+</svg>
+
+<div class="announce" id="top">Free accessibility audit &mdash; see exactly what fails before you spend anything. <b>Taking new audits &middot;</b> <a href="/#contact">Start &rarr;</a></div>
+
+<header class="nav">
+  <div class="container nav__in">
+    <a href="/" class="brand"><img src="favicon.svg" alt="" width="30" height="30"><b>Brick<span>work</span></b></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="/#services">Services</a>
+      <a href="/#work">Work</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#faq">FAQ</a>
+    </nav>
+    <div class="nav__right">
+      <span class="nav__status">Booking now</span>
+      <a href="/#contact" class="btn">Free audit <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile" id="mobile">
+  <a href="/#services">Services</a>
+  <a href="/#work">Work</a>
+  <a href="/#pricing">Pricing</a>
+  <a href="/#faq">FAQ</a>
+  <a href="/#contact" class="cta">Get a free audit &rarr;</a>
+</div>
+
+<main id="main">
+
+<section class="section shero">
+  <div class="container">
+    <p class="crumb"><a href="/">Home</a> <span>/</span> ADA accessibility compliance</p>
+    <h1>Your documents have a federal deadline.</h1>
+    <p class="eyebrow">For US cities, counties, school districts, special districts, and HHS-funded health centres and nonprofits.</p>
+    <p class="lead">WCAG 2.1 AA remediation for US local government and federally funded organisations &mdash; the website, and the thousands of PDFs behind it. Audit first, so you know the size of the problem before you commit a budget to it.</p>
+    <!-- USD is primary on this page and it is not a conversion: a US city budgets
+         in USD and cuts a purchase order in USD. These are deliberately NOT
+         .price spans — the currency switcher does not run here (no .curswitch),
+         and a crawler must see the same USD figure the Service schema states. -->
+    <span class="tag-price">$1,450 <span class="alt-cur">(&pound;1,095)</span> audit &middot; remediation from $9/page <span class="alt-cur">(&pound;7)</span></span>
+    <div class="hero__cta">
+      <a class="btn btn--lg" href="/#contact">Get a free audit <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+      <a class="btn btn--ghost btn--lg" href="#deadlines">See the deadlines</a>
+    </div>
+    <!-- Under-button micro-line. It answers the highest-frequency anxiety at the
+         moment of decision, which for a public-sector buyer is not price — it is
+         whether asking obligates the entity to anything. -->
+    <p class="cta-note">Free, and you keep the findings either way. No purchase order, no procurement process, and no obligation to hire anyone.</p>
+    <p style="margin-top:18px;color:var(--muted);font-size:.95rem">Rather talk it through? <a href="/book">Book a free 15-minute call</a></p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--concrete-2)">
+  <div class="container">
+    <div class="head reveal">
+      <p style="margin-bottom:16px">A screen reader treats an ordinary PDF as a picture of text. It either reads nothing, or reads a budget table sideways &mdash; a cell, then a footer, then a headline. The fix is called tagging: marking up what is a heading, what is a table, what order to read it in, and what each image shows.</p>
+      <p>Almost no public document library has ever been tagged. Fifteen years of council minutes, budgets, agendas, permit applications and public notices, all of them technically unreadable to the people the rule exists to protect. That backlog is the work, and it is the part that takes months rather than weeks.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="deadlines">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">The rules</p>
+      <h2>Two federal rules, four dates.</h2>
+    </div>
+    <ul class="checklist reveal">
+        <li><svg class="ic"><use href="#i-clock"/></svg><div><b>26 April 2027 &mdash; ADA Title II, larger entities</b><p>Public entities serving 50,000 people or more. Standard is WCAG 2.1 Level AA, covering web content and electronic documents.</p></div></li>
+        <li><svg class="ic"><use href="#i-clock"/></svg><div><b>26 April 2028 &mdash; ADA Title II, smaller entities</b><p>Public entities serving fewer than 50,000, and all special district governments regardless of population.</p></div></li>
+        <li><svg class="ic"><use href="#i-clock"/></svg><div><b>11 May 2027 &mdash; HHS Section 504, 15+ employees</b><p>Recipients of HHS federal financial assistance. Community health centres, clinics, social service providers, universities.</p></div></li>
+        <li><svg class="ic"><use href="#i-clock"/></svg><div><b>10 May 2028 &mdash; HHS Section 504, smaller recipients</b><p>Recipients with fewer than 15 employees. Same standard, later date.</p></div></li>
+    </ul>
+    <!-- Static, deliberately. STALE-DATE: regenerate this sentence whenever the
+         page is touched — a countdown that has drifted is worse than none.
+         Written 2026-08-05. The urgency is the statute's, not a fake timer. -->
+    <p class="countdown reveal">26 April 2027 is <b>8 months away</b>. Document remediation on a library of 2,000+ files typically runs 4&ndash;8 months. Scoping in Q3 2026 leaves margin.</p>
+    <p class="reveal" style="margin-top:22px;color:var(--muted);font-size:.95rem;max-width:60ch">Brickwork Studio is not a law firm and none of this is legal advice. These are published compliance dates and a published technical standard. What your own exposure looks like is a question for your attorney.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--concrete-2)">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">What you get</p>
+      <h2>Findings you can hand to a budget committee.</h2>
+    </div>
+    <ul class="checklist reveal">
+        <li><svg class="ic"><use href="#i-check"/></svg><div><b>Full WCAG 2.1 AA audit</b><p>Website and document library, tested against the standard the rule actually names. Every failure recorded with its location and severity.</p></div></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><div><b>A counted document inventory</b><p>How many PDFs you actually have, which ones the public opens, and what each would cost to remediate. Most organisations have never had this number.</p></div></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><div><b>Prioritised remediation plan</b><p>Ordered by public traffic and legal exposure, not alphabetically. Designed so a partial budget still buys meaningful coverage.</p></div></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><div><b>Tagged, conforming documents</b><p>Reading order, heading structure, table headers, alt text, language and bookmarks. Verified, not auto-generated and shipped.</p></div></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><div><b>An accessibility statement</b><p>Published page describing your conformance level, known exceptions and how the public reports a barrier. The rules expect one.</p></div></li>
+        <li><svg class="ic"><use href="#i-check"/></svg><div><b>Website fixes, if you want them</b><p>Contrast, focus order, form labels, headings and keyboard navigation. Same standard, same audit, priced separately so you can stage it.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">Who it's for</p>
+      <h2>Built for organisations with a compliance date.</h2>
+    </div>
+    <div class="serve__grid reveal">
+        <a href="/#contact">Cities, towns and villages</a>
+        <a href="/#contact">Counties and townships</a>
+        <a href="/#contact">School districts</a>
+        <a href="/#contact">Special districts &mdash; water, fire, library, transit</a>
+        <a href="/#contact">Community health centres and clinics</a>
+        <a href="/#contact">Nonprofits receiving federal assistance</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="procurement">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">Procurement</p>
+      <!-- "How we handle" was the only corporate "we" on the site. One person
+           writing as a company is an implied claim about capacity, and it is
+           weaker positioning than the truth — the page already says the auditor
+           and the remediator are the same person. -->
+      <h2>How procurement works.</h2>
+      <p>Brickwork Studio is a UK-registered independent studio working remotely with US public entities. Everything below is standard and takes days, not weeks.</p>
+    </div>
+    <ul class="checklist reveal">
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Purchase orders accepted</b><p>Invoiced in USD against your PO number, net 30 or your standard terms.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>W-8BEN-E on file</b><p>Supplied on request for your vendor onboarding; no US tax withholding applies to services performed outside the US.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Vendor registration</b><p>I complete your registration portal, insurance disclosures and conflict-of-interest forms as part of onboarding at no charge.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Under most bid thresholds</b><p>A sample audit is free and the full audit is $1,450 &mdash; typically below the formal competitive-bidding threshold, so it can be authorised without an RFP. Confirm your own threshold with your purchasing officer.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Data handling</b><p>Only publicly published documents are processed. Nothing non-public is requested, stored or transmitted.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Accessibility of the deliverable itself</b><p>Every report is delivered as a tagged, WCAG 2.1 AA conforming PDF. The audit is not exempt from its own standard.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" style="background:var(--concrete-2)">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">Pricing</p>
+      <h2>Fixed audit, per-page remediation.</h2>
+    </div>
+    <ul class="checklist reveal">
+        <li><svg class="ic"><use href="#i-search"/></svg><div><b>Sample audit &mdash; free</b><p>I test a sample of your live site and documents and send back the specific failures, with the standard each one breaches. No commitment, and you keep the findings either way.</p></div></li>
+        <li><svg class="ic"><use href="#i-chart"/></svg><div><b>Full audit and remediation plan &mdash; $1,450 <span class="alt-cur">(&pound;1,095)</span></b><p>Complete site and document inventory, every failure catalogued, costed and prioritised. Written to be read by a board or a budget committee, not by a developer.</p></div></li>
+        <li><svg class="ic"><use href="#i-wrench"/></svg><div><b>Document remediation &mdash; from $9/page <span class="alt-cur">(&pound;7)</span></b><p>Priced per page so the backlog can be worked in phases against whatever budget exists. Complex tables and scanned originals are quoted separately and always before the work starts.</p></div></li>
+        <li><svg class="ic"><use href="#i-shield"/></svg><div><b>Ongoing compliance care &mdash; $199/month <span class="alt-cur">(&pound;149)</span></b><p>New documents remediated as you publish them, so the backlog never rebuilds. Cancels any time.</p></div></li>
+    </ul>
+    <p class="reveal" style="margin-top:18px;color:var(--muted);font-size:.9rem">Invoiced in USD. Sterling shown in brackets because that is where the studio is; it is not a conversion you have to do or a rate that moves on you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">How it works</p>
+      <h2>Three steps, no procurement theatre.</h2>
+    </div>
+    <div class="steps">
+      <article class="step reveal">
+        <div class="step__n">1</div>
+        <h3>Free sample audit</h3>
+        <p>Send me your website address. I test a sample of pages and documents and send back the actual failures &mdash; named, located, and mapped to the standard. You will know where you stand before any money is discussed.</p>
+      </article>
+      <article class="step reveal">
+        <div class="step__n">2</div>
+        <h3>Full audit and plan</h3>
+        <p>The complete inventory: every document counted, every failure catalogued, the whole thing costed and ordered by priority. This is the document you take to whoever approves the budget.</p>
+      </article>
+      <article class="step reveal">
+        <div class="step__n">3</div>
+        <h3>Remediate in phases</h3>
+        <p>Work the backlog highest-priority first, in batches you approve. Each batch is verified before delivery. Purchase orders and invoicing are fine &mdash; most of my public-sector work runs that way.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Answer copy is byte-identical to the FAQPage JSON-LD in <head>. Answer-first,
+     75-150 words, self-contained, no backward-referring pronoun in sentence one:
+     each block has to survive being extracted on its own. Edit both or neither. -->
+<section class="section" id="faq" style="background:var(--concrete-2)">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">Questions</p>
+      <h2>The things people actually ask.</h2>
+    </div>
+    <div class="faq__list reveal">
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Do PDFs count under ADA Title II, or is it just the website?</span><span class="pm">+</span></button><div class="faq__a"><p>PDFs count. The ADA Title II web rule covers web content and electronic documents made available to the public, which includes budgets, meeting minutes, agendas, permit applications, forms and public notices. For most public entities the document library is far larger than the website and has never been assessed, which is why it is usually the expensive part of compliance. A screen reader cannot interpret an untagged PDF at all: it reads the file as a picture of text, with no headings, no table structure and no reading order. Tagging is the work that fixes this, and it is done per document.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Does ADA Title II apply to school districts?</span><span class="pm">+</span></button><div class="faq__a"><p>Yes. School districts are public entities under ADA Title II and are covered by the same web and document accessibility rule as cities and counties. The deadline depends on the population of the district's jurisdiction, not the number of students: entities serving 50,000 people or more must conform to WCAG 2.1 Level AA by 26 April 2027, and entities serving fewer than 50,000 by 26 April 2028. All special district governments, including standalone school districts, fall under the later date regardless of population. District document libraries are typically large, because board packets, policy manuals and enrolment forms accumulate for years.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>How much does PDF accessibility remediation cost per page?</span><span class="pm">+</span></button><div class="faq__a"><p>Brickwork Studio remediates documents from $9 per page, priced per page so the work can be scoped to an available budget and phased across fiscal years. A typical municipal document is 4 to 12 pages, putting most individual files between $36 and $108. The variable is not the page count but the complexity: a text-only notice is quick, while a budget document full of nested data tables takes considerably longer to tag correctly. Pricing is confirmed in writing after the free sample audit, so the number in the proposal is the number on the invoice.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>How long does it take to remediate 1,000 PDFs?</span><span class="pm">+</span></button><div class="faq__a"><p>A library of roughly 1,000 documents typically takes four to eight months to remediate fully, which is why scoping needs to start well before a compliance deadline rather than in the quarter it falls. The work is phased: the audit and inventory take two to three weeks, then documents are remediated in priority order by public download volume and legal exposure. Because download traffic on a public document library is heavily concentrated, the files the public actually opens are usually done within the first six to eight weeks, and the long tail follows.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Do we have to fix archived documents?</span><span class="pm">+</span></button><div class="faq__a"><p>Not all of them, and this is where most budgets are saved. The rule provides exceptions, including for archived web content that is kept only for reference or recordkeeping, is not altered after archiving, and is stored in a clearly identified archived area. Applying that exception correctly means physically separating a genuine archive from live public content and labelling it, which is a structural change to the site rather than a document one. Deciding what qualifies is a legal question for your attorney; the audit tells you how many documents each decision would affect and what each option costs.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Can we just install an accessibility widget or overlay?</span><span class="pm">+</span></button><div class="faq__a"><p>No. An overlay does not touch your PDF documents at all, and it does not make non-conforming web content conform. Overlays have become a target of accessibility litigation rather than a defence against it: in 2025, 983 US website accessibility lawsuits were filed against sites that were already running an accessibility widget, roughly a quarter of all filings that year, and the Federal Trade Commission settled with overlay vendor accessiBe for $1 million in January 2025 over claims about compliance. Brickwork Studio tags documents and fixes underlying code. No overlay is installed on anything.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What is the difference between WCAG 2.0 AA and WCAG 2.1 AA?</span><span class="pm">+</span></button><div class="faq__a"><p>WCAG 2.1 Level AA adds twelve success criteria to WCAG 2.0 Level AA, most of them addressing mobile devices, low vision and cognitive disability. The additions that matter most in practice are reflow, so content works at 400% zoom without horizontal scrolling, non-text contrast for buttons and form fields, text spacing, orientation, and identifying the purpose of form inputs. The ADA Title II rule names WCAG 2.1 Level AA specifically, so conforming to the older 2.0 standard is not sufficient. Anything built or audited against 2.0 needs re-testing against the additional criteria.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What happens if we miss the April 2027 deadline?</span><span class="pm">+</span></button><div class="faq__a"><p>Missing the deadline means non-conforming web content and documents are out of compliance with a federal rule from that date, which exposes the entity to Department of Justice enforcement and to private complaints. What that means for any specific entity is a question for its attorney, not for a vendor, and any supplier who tells you they can guarantee you will not face a complaint is overselling. What can be documented is the work: an audit against the named standard, a dated remediation plan, and evidence of progress. Demonstrable good-faith progress is materially different from having done nothing.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Can we do this in-house instead?</span><span class="pm">+</span></button><div class="faq__a"><p>Yes, and for some entities that is the right answer. If your document volume is low, your files are simple and text-based, and someone on staff has time to learn tagging in Adobe Acrobat Pro, in-house remediation is realistic and cheaper. It stops being realistic at scale: tagging complex data tables correctly is a skill, verification requires actual screen-reader testing rather than an automated checker, and a library in the thousands becomes a full-time job for months. The free sample audit gives you the document count and complexity profile you need to make that decision honestly, whichever way it goes.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Can you guarantee we will not be sued?</span><span class="pm">+</span></button><div class="faq__a"><p>No, and be careful with any vendor who says otherwise. No supplier can control whether a complaint is filed, and a guarantee of that kind is not a compliance service, it is a marketing claim. What can be delivered is content remediated to WCAG 2.1 Level AA, verified rather than auto-generated, plus documentation showing conformance level, known exceptions and how the public reports a barrier. Brickwork Studio is not a law firm and none of this is legal advice. Your exposure is a question for your attorney; the technical conformance is the part handled here.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>Who am I actually dealing with?</span><span class="pm">+</span></button><div class="faq__a"><p>Brickwork Studio is an independent studio run by one person, working remotely from the United Kingdom with US public entities, taking one project at a time. That means no account manager, no bench and no handoff to a junior after the sales call: the person who audits your site is the person who remediates your documents and answers your emails. Purchase orders are accepted, invoicing is in USD, and a W-8BEN-E is supplied on request for vendor onboarding. Every report is itself delivered as a tagged, WCAG 2.1 AA conforming PDF.</p></div></div>
+      <div class="faq__item"><button class="faq__q" aria-expanded="false"><span>What if our deadline moves?</span><span class="pm">+</span></button><div class="faq__a"><p>The work holds its value either way. The ADA Title II compliance date has already been adjusted once, so treating the current dates as immovable would be overconfident, but the underlying obligation does not disappear if a date shifts. A tagged document library remains tagged, remains usable by residents relying on screen readers, and remains evidence of good-faith progress regardless of which date applies. The one thing a date change would alter is urgency, not need, and remediation scheduled across fiscal years is easier to absorb than remediation compressed into a final quarter.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">Also from Brickwork</p>
+      <h2>Other things I build.</h2>
+    </div>
+    <ul class="serve__grid reveal">
+        <li><a href="/local-business-websites">Local business websites</a></li>
+        <li><a href="/shopify-store-design">Shopify store design</a></li>
+        <li><a href="/custom-built-systems">Custom-built systems</a></li>
+        <li><a href="/ai-receptionist">AI receptionist</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section cta-band">
+  <div class="container">
+    <h2>Find out where you stand. It costs nothing.</h2>
+    <p>Send me your website address and I will send back the specific accessibility failures on your live site and documents &mdash; named, located, and mapped to the standard. Whether you hire me afterwards is a separate conversation.</p>
+    <div class="hero__cta" style="justify-content:center">
+      <a class="btn btn--amber btn--lg" href="/#contact">Get my free audit <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+      <a class="btn btn--ghost btn--lg btn--on-dark" href="/book">Book a 15-minute call</a>
+    </div>
+    <p class="cta-note cta-note--on-dark">Send a URL, get the failures back. Nothing to sign, nothing to pay, and the findings are yours to hand to whoever asks for them.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__g">
+      <div class="footer__brand">
+        <a href="/" class="brand"><img src="favicon.svg" alt="" width="30" height="30"><b>Brick<span>work</span></b></a>
+        <p>Custom Shopify stores, local business websites and AI receptionists for small businesses — plus WCAG 2.1 AA accessibility remediation for US public entities. Free audit or mockup first.</p>
+        <a class="ig" href="https://www.instagram.com/brickworkstudio_" target="_blank" rel="noopener"><svg class="ic"><use href="#i-instagram"/></svg>@brickworkstudio_</a>
+        <!-- TODO(phone): a UK mobile on a WhatsApp link reads as offshore to a US
+             public buyer, and a clerk will not use WhatsApp. Replace with the
+             Twilio US number (+1, forwards here) the moment it exists, and drop
+             the wa.me wrapper on this page only. Blocked on the number. -->
+        <a class="ig" href="https://wa.me/447735785911?text=Hi%20Brickwork%2C%20I%27d%20like%20a%20free%20accessibility%20audit" target="_blank" rel="noopener"><svg class="ic"><use href="#i-phone"/></svg>07735 785911</a>
+        <p class="footer-hours">Email and phone monitored 09:00&ndash;22:00 UK (04:00&ndash;17:00 ET).</p>
+        <!-- TODO(address): CAN-SPAM requires a valid postal address on cold email,
+             and every US vendor form asks for one. Fill from the virtual office
+             once it is registered. NOT the home address: this string goes public
+             and into every outbound email, and it will be scraped. -->
+        <address class="footer-address" hidden>Brickwork Studio &middot; [STREET] &middot; Wolverhampton &middot; [POSTCODE] &middot; United Kingdom</address>
+        <!-- ^ stays hidden until the real address replaces the placeholders.
+             Remove the `hidden` attribute in the same edit that fills them. -->
+
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="/ada-accessibility-compliance">ADA accessibility compliance</a></li>
+          <li><a href="/shopify-store-design">Shopify store build</a></li>
+          <li><a href="/local-business-websites">Local business site</a></li>
+          <li><a href="/custom-built-systems">Custom-built systems</a></li>
+          <li><a href="/ai-receptionist">AI receptionist</a></li>
+          <li><a href="/#services">Monthly website care</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Studio</h3>
+        <ul>
+          <li><a href="/#work">Work</a></li>
+          <li><a href="/#pricing">Pricing</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="/terms">Terms</a></li>
+          <li><a href="/refunds">Refunds</a></li>
+          <li><a href="/cancel">Cancel a plan</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span id="year">2026</span> Brickwork Studio &middot; Wolverhampton, UK &middot; working with clients in the US and UK</span>
+      <span>Free audit &middot; fixed-price remediation &middot; purchase orders accepted</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn--ghost" href="#deadlines">Deadlines</a>
+  <a class="btn" href="/#contact">Free audit &rarr;</a>
+</div>
+
+</body>
+</html>

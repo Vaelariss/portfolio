@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17130E">
+
+<!-- Indexable on purpose. A sysadmin who finds this crawler in their logs will
+     paste the User-Agent string into a search engine, and this page is what
+     should come back. That is the entire job of the page. -->
+<meta name="robots" content="index, follow">
+
+<title>About the Brickwork accessibility crawler | Brickwork Studio</title>
+<meta name="description" content="What the BrickworkAccessibilityBot crawler does, what it requests, how often, and how to block it. Published for site administrators who find it in their server logs.">
+<link rel="canonical" href="https://brickworkstudio.net/bot">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brickwork Studio">
+<meta property="og:title" content="About the Brickwork accessibility crawler">
+<meta property="og:description" content="What the crawler does, what it requests, how often, and how to block it.">
+<meta property="og:url" content="https://brickworkstudio.net/bot">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script src="script.js"></script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H7l-4 3v-7a8 8 0 0 1 8-8h2a8 8 0 0 1 8 4z"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="container nav__in">
+    <a href="/" class="brand"><img src="favicon.svg" alt="" width="30" height="30"><b>Brick<span>work</span></b></a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="/#services">Services</a>
+      <a href="/ada-accessibility-compliance">Accessibility</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="section shero">
+  <div class="container">
+    <p class="crumb"><a href="/">Home</a> <span>/</span> About the crawler</p>
+    <h1>About the Brickwork accessibility crawler.</h1>
+    <p class="lead">If you found <code>BrickworkAccessibilityBot</code> in your server logs, this page explains exactly what it is, what it requested, and how to stop it. Everything below is a statement of how the crawler is configured, not a policy it is expected to follow.</p>
+    <p class="cta-note">Run by Brickwork Studio, an independent web design studio in Wolverhampton, United Kingdom. A human answers the address at the bottom of this page.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--concrete-2)">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">What it is</p>
+      <h2>It counts public documents and tests them against WCAG 2.1 AA.</h2>
+      <p>Two US federal rules require public entities and recipients of federal funding to meet WCAG 2.1 Level AA — the Department of Justice rule under ADA Title II, and the HHS Section 504 rule. Both cover electronic documents, not just web pages, and most organisations have never counted how many documents they publish.</p>
+      <p>The crawler answers that question from the outside: how many PDFs a site publishes, roughly how many pages that is, and which accessibility failures are present on the pages it visits. The result is a research dataset, and where an organisation looks like it has a problem worth solving, a piece of outreach that starts with its own numbers rather than a generic pitch.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">How it behaves</p>
+      <h2>The limits it runs under.</h2>
+    </div>
+    <ul class="checklist reveal">
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>It obeys robots.txt</b><p>Every request is checked against your <code>robots.txt</code> before it is made. A <code>Disallow</code> is honoured, and so is a crawl-delay.</p></div></li>
+      <li><svg class="ic"><use href="#i-clock"/></svg><div><b>One request every 1.5 seconds, globally</b><p>That is across every site being scanned at once, not per site. Concurrency is capped at three. Your server sees a trickle, not a burst.</p></div></li>
+      <li><svg class="ic"><use href="#i-eye"/></svg><div><b>At most 60 pages per site</b><p>The crawler reads your sitemap and stops. It does not attempt an exhaustive crawl, and it does not follow links off your domain.</p></div></li>
+      <li><svg class="ic"><use href="#i-shield"/></svg><div><b>Documents are measured, not downloaded</b><p>PDF sizes come from <code>HEAD</code> requests. The files themselves are not retrieved, not stored and not copied.</p></div></li>
+      <li><svg class="ic"><use href="#i-lock"/></svg><div><b>Public content only</b><p>Nothing behind a login, a paywall or a form. No credentials are used, guessed or stored. No forms are submitted. Nothing is scanned that a member of the public could not open.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>It identifies itself</b><p>The User-Agent carries this page's address and a contact address, so nobody has to guess who is asking.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" style="background:var(--concrete-2)">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">Blocking it</p>
+      <h2>Two lines, and it stops.</h2>
+      <p>No reason needs to be given and nothing needs to be sent to me. Add this to <code>robots.txt</code> at the root of your site:</p>
+    </div>
+    <div class="codeblock reveal">
+      <pre>User-agent: BrickworkAccessibilityBot
+Disallow: /</pre>
+    </div>
+    <p class="reveal" style="margin-top:20px;color:var(--muted);max-width:64ch">The next run reads that and skips the site. If you would rather not wait for the next run, or you want the data already collected about your site deleted, email the address below and it is done the same day — no questions and no reply sequence.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="head reveal">
+      <p class="speclabel">What is not happening</p>
+      <h2>Things worth ruling out explicitly.</h2>
+    </div>
+    <ul class="checklist reveal">
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>This is not a security scan</b><p>No vulnerability probing, no port scanning, no attempts against admin paths, login forms or known exploit URLs. If you are seeing that kind of traffic, it is not this crawler.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>Nothing is republished</b><p>The public report that comes out of this work reports medians and distributions. No individual organisation is named in it as an example of failure.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>No personal data is the target</b><p>Where a published ADA Coordinator or accessibility contact is recorded, it is the role-based contact your organisation publishes for that purpose. Ask and it is removed.</p></div></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><div><b>No accessibility overlay is ever recommended</b><p>Overlay widgets do not remediate documents and do not make non-conforming content conform. The crawler records whether one is installed because that is a finding, not because one is for sale here.</p></div></li>
+    </ul>
+    <p class="reveal" style="margin-top:22px;color:var(--muted);font-size:.95rem;max-width:64ch">Brickwork Studio is not a law firm and nothing on this page is legal advice. ADA Title II applies to state and local government; the HHS Section 504 rule applies to recipients of federal financial assistance. Neither sets a technical web standard for private businesses under Title III.</p>
+  </div>
+</section>
+
+<section class="section cta-band">
+  <div class="container">
+    <h2>Questions, complaints, or a request to be removed.</h2>
+    <p>One person reads this and answers it. Say the word "remove" and your domain goes on the permanent skip list, whether or not anything was ever collected.</p>
+    <!-- TODO(email): swap to accessibility@brickworkstudio.net once the mailbox
+         receives mail. A crawler contact address that bounces is worse than a
+         Gmail one, and this page is the only thing standing between the crawler
+         and a sysadmin's firewall. -->
+    <div class="guars" style="margin-top:18px">
+      <div class="guar"><svg class="ic"><use href="#i-message"/></svg>Email <a href="mailto:robinmarwa44@gmail.com?subject=Brickwork%20crawler">robinmarwa44@gmail.com</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__bottom">
+      <span>&copy; <span id="year">2026</span> Brickwork Studio &middot; Wolverhampton, UK &middot; working with clients in the US and UK</span>
+      <span><a href="/">Home</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/terms">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

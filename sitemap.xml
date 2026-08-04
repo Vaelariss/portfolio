@@ -39,4 +39,21 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <!-- Priority 1.0, level with the homepage: this is the highest-value page on
+         the site and it was ranked below the homepage in our own sitemap. -->
+    <loc>https://brickworkstudio.net/ada-accessibility-compliance</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <!-- Low priority, but it must be indexable: a sysadmin who finds the crawler
+         in their logs will search the User-Agent string, and this is the page
+         that should answer. -->
+    <loc>https://brickworkstudio.net/bot</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
