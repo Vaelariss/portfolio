@@ -43,7 +43,7 @@
     <!-- Priority 1.0, level with the homepage: this is the highest-value page on
          the site and it was ranked below the homepage in our own sitemap. -->
     <loc>https://brickworkstudio.net/ada-accessibility-compliance</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
