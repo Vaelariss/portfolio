@@ -29,9 +29,10 @@ with a free visual mockup, so the client sees the design before paying anything.
   promise does not cover.
 - ADA accessibility compliance — $1,450 (£1,095) audit and remediation plan; remediation from
   $9/page (£7); $199/month (£149) optional ongoing care; priced and invoiced in USD; free sample audit first. WCAG 2.1 AA for a website AND its PDF
-  library. For US local government and federally funded bodies. Deadlines: ADA Title II 26 Apr 2027
-  (serving 50,000+) and 26 Apr 2028 (smaller and special districts); HHS Section 504 11 May 2027
-  (15+ employees) and 10 May 2028 (smaller). Documents are in scope, not just web pages — that is
+  library. For US local government and federally funded bodies. Deadlines: ADA Title II 24 Apr 2026,
+  already passed (population 50,000+, not special districts) and 26 Apr 2027 (under 50,000, and any
+  special district); HHS Section 504 11 May 2026, already passed (15+ employees) and 10 May 2027
+  (smaller). School districts are not special districts under the rule, so population decides. Documents are in scope, not just web pages — that is
   usually the bulk of the work. Overlay widgets do not fix documents and do not make content
   conform. Not a law firm, no legal advice, no guarantee of any legal outcome — what is delivered is
   remediation to a published technical standard. Purchase orders accepted.

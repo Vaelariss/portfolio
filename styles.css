@@ -595,6 +595,18 @@ code{font-family:var(--f-mono);font-size:.9em;background:var(--concrete-2);borde
   font-size:.95rem;line-height:1.6;max-width:64ch}
 .countdown b{font-weight:700;color:var(--brick-deep)}
 
+/* Verbatim rule text. Deliberately quiet and document-like rather than a pull
+   quote: its job is to be checkable, not to be loud. --ink on --paper is
+   15.6:1, and the citation uses --muted, which is AA on every light surface
+   here — the ink is never faded to signal secondary, only sized. */
+.quote{margin-top:26px;padding:20px 22px;background:var(--paper);
+  border:1px solid var(--line);border-left:3px solid var(--ink-2);
+  max-width:70ch}
+.quote p{font-size:.95rem;line-height:1.7;color:var(--ink)}
+.quote p + p{margin-top:14px}
+.quote cite{display:block;margin-top:14px;font-family:var(--f-mono);
+  font-size:.78rem;font-style:normal;letter-spacing:.02em;color:var(--muted)}
+
 /* Sits on the dark .roi band under the calculator. The tool stays ungated —
    this only offers the written breakdown. */
 .calc-capture{max-width:560px;margin:18px auto 0;text-align:left}
